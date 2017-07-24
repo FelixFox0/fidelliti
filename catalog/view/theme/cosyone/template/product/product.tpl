@@ -325,6 +325,8 @@
 
           <button type="submit" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="button contrast"><i class="fa fa-shopping-cart"></i> <?php echo $button_cart; ?></button>
           
+          <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button contrast"><i class="fa fa-shopping-cart"></i> <?php echo $button_cart; ?></button>
+          
           <div class="icons_wrapper">
     <a class="sq_icon" onclick="wishlist.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart"></i></a>
     <a class="sq_icon compare" onclick="compare.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_compare; ?>"><i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare"></i></a>
@@ -875,6 +877,61 @@ $('#button-review').on('click', function() {
 	});
 });
 //--></script>
+
+
+
+<script type="text/javascript">
+$('#one_click').on('click', function() {
+	$.ajax({
+		url: 'index.php?route=product/product/oneclickbye',
+		type: 'post',
+		//data: 'product_id=' ,
+		dataType: 'json',
+		beforeSend: function() {
+			
+		},
+		complete: function() {
+			
+		},
+		success: function(json) {
+
+
+			if (json['error']) {
+				if (json['error']['option']) {
+					for (i in json['error']['option']) {
+						var element = $('#input-option' + i.replace('_', '-'));
+						
+						if (element.parent().hasClass('input-group')) {
+							element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						} else {
+							element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						}
+					}
+				}
+				
+				if (json['error']['recurring']) {
+					$('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+				}
+				
+				// Highlight any found errors
+				$('.text-danger').parent().addClass('has-error');
+			}
+			
+			if (json['success']) {
+				
+
+				
+				$('#cart-total').html(json['total']);
+				
+				$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+			}
+		}
+	});
+});
+</script> 
+
+
+
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
 </div>
 <?php echo $footer; ?>

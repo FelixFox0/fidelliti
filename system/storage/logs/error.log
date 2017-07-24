@@ -1134,3 +1134,13 @@
 2017-07-21 18:19:38 - PHP Notice:  Undefined variable: home_top_center in C:\OpenServer\domains\new.fidelliti.loc\catalog\view\theme\cosyone\template\common\home.tpl on line 9
 2017-07-21 18:19:38 - PHP Notice:  Undefined variable: home_top_right in C:\OpenServer\domains\new.fidelliti.loc\catalog\view\theme\cosyone\template\common\home.tpl on line 9
 2017-07-21 18:19:38 - PHP Notice:  Undefined variable: content_bottom_half in C:\OpenServer\domains\new.fidelliti.loc\catalog\view\theme\cosyone\template\common\home.tpl on line 21
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
+2017-07-24 12:40:47 - PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\new.fidelliti.loc\admin\controller\startup\error.php:34) in C:\OpenServer\domains\new.fidelliti.loc\system\library\response.php on line 12
+2017-07-24 17:26:41 - PHP Notice:  Undefined property: Request::$session in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_common_footer.php on line 5

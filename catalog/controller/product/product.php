@@ -695,4 +695,70 @@ class ControllerProductProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        public function oneclickbye() {
+            var_dump($this->request->post);
+            $data['invoice_prefix'] = 'INV-2013-00';//
+            $data['store_id'] = 0;//
+            $data['store_name'] = 'Your Store';//
+            $data['store_url'] = 'http://new.fidelliti.loc/';//
+            $data['customer_group_id'] = '1';//
+            $data['firstname'] = 'test';//
+            $data['lastname'] = '';
+            $data['email'] = 'test@test.net';//
+            $data['telephone'] = '0000000';//
+            $data['fax'] = '';
+            $data['payment_firstname'] = 'test';//
+            $data['payment_lastname'] = '';
+            $data['payment_company'] = '';
+            $data['payment_address_1'] = '';
+            $data['payment_address_2'] = '';
+            $data['payment_city'] = '';
+            $data['payment_postcode'] = '';
+            $data['payment_country'] = '';//
+            $data['payment_country_id'] = '';//
+            $data['payment_zone'] = '';//
+            $data['payment_zone_id'] = '';//
+            $data['payment_address_format'] = '';
+            $data['payment_method'] = 'Оплата при доставке';//
+            $data['payment_code'] = 'cod';//
+            $data['shipping_firstname'] = 'test';//
+            $data['shipping_lastname'] = '';
+            $data['shipping_company'] = '';
+            $data['shipping_address_1'] = '';
+            $data['shipping_address_2'] = '';
+            $data['shipping_city'] = '';
+            $data['shipping_postcode'] = '';
+            $data['shipping_country'] = '';//
+            $data['shipping_country_id'] = '';//
+            $data['shipping_zone'] = '';//
+            $data['shipping_zone_id'] = '';//
+            $data['shipping_address_format'] = '';
+            $data['shipping_method'] = 'Доставка с фиксированной стоимостью доставки';
+            $data['shipping_code'] = 'flat.flat';
+            $data['comment'] = '';
+            $data['total'] = 185;
+            $data['affiliate_id'] = 0;
+            $data['commission'] = 0;
+            $data['marketing_id'] = 0;
+            $data['tracking'] = '';
+            $data['language_id'] = 2;//
+            $data['currency_id'] = 2;//
+            $data['currency_code'] = $this->session->data['currency'];
+            $data['currency_value'] = 1;//
+            $data['ip'] = '127.0.0.1';//
+            $data['forwarded_ip'] = '';
+            $data['user_agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36';//
+            $data['accept_language'] = 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4';//
+
+            $data['products'] = array();
+            $data['products'][0] = array(
+                
+            );
+            
+            $data['totals'] = array();
+             
+             
+            
+        }
 }

@@ -1,6 +1,8 @@
 <?php
 class ControllerCommonFooter extends Controller {
 	public function index() {
+            
+            var_dump($this->session->data);
 		$this->load->language('common/footer');
 
 		$data['scripts'] = $this->document->getScripts('footer');
