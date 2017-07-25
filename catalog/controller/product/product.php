@@ -697,18 +697,21 @@ class ControllerProductProduct extends Controller {
 	}
         
         public function oneclickbye() {
-            var_dump($this->request->post);
-            $data['invoice_prefix'] = 'INV-2013-00';//
-            $data['store_id'] = 0;//
-            $data['store_name'] = 'Your Store';//
-            $data['store_url'] = 'http://new.fidelliti.loc/';//
-            $data['customer_group_id'] = '1';//
-            $data['firstname'] = 'test';//
+//            var_dump($this->request->post);
+            $data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
+            $data['store_id'] = $this->config->get('config_store_id');
+            $data['store_name'] = $this->config->get('config_name');
+            $data['store_url'] = $this->config->get('config_url');               
+            $data['firstname'] = $this->request->post['name'];
+            $data['email'] = $this->request->post['mail'];
+            $data['telephone'] = $this->request->post['phone'];
+            $data['payment_firstname'] = $this->request->post['name'];
+            $data['shipping_firstname'] = $this->request->post['name'];
+            $data['customer_id'] = '1';
+            $data['customer_group_id'] = '1';
             $data['lastname'] = '';
-            $data['email'] = 'test@test.net';//
-            $data['telephone'] = '0000000';//
             $data['fax'] = '';
-            $data['payment_firstname'] = 'test';//
+            
             $data['payment_lastname'] = '';
             $data['payment_company'] = '';
             $data['payment_address_1'] = '';
@@ -722,7 +725,7 @@ class ControllerProductProduct extends Controller {
             $data['payment_address_format'] = '';
             $data['payment_method'] = 'Оплата при доставке';//
             $data['payment_code'] = 'cod';//
-            $data['shipping_firstname'] = 'test';//
+            
             $data['shipping_lastname'] = '';
             $data['shipping_company'] = '';
             $data['shipping_address_1'] = '';
@@ -734,31 +737,61 @@ class ControllerProductProduct extends Controller {
             $data['shipping_zone'] = '';//
             $data['shipping_zone_id'] = '';//
             $data['shipping_address_format'] = '';
-            $data['shipping_method'] = 'Доставка с фиксированной стоимостью доставки';
-            $data['shipping_code'] = 'flat.flat';
+            $data['shipping_method'] = 'Доставка с фиксированной стоимостью доставки';//
+            $data['shipping_code'] = 'flat.flat';//
             $data['comment'] = '';
-            $data['total'] = 185;
+            
+            
             $data['affiliate_id'] = 0;
             $data['commission'] = 0;
             $data['marketing_id'] = 0;
             $data['tracking'] = '';
-            $data['language_id'] = 2;//
-            $data['currency_id'] = 2;//
+            $data['language_id'] = $this->config->get('config_language_id');
+            $data['currency_id'] = $this->currency->getId($this->session->data['currency']);
             $data['currency_code'] = $this->session->data['currency'];
-            $data['currency_value'] = 1;//
-            $data['ip'] = '127.0.0.1';//
+            $data['currency_value'] = $this->currency->getValue($this->session->data['currency']);
+            $data['ip'] = $this->request->server['REMOTE_ADDR'];
             $data['forwarded_ip'] = '';
-            $data['user_agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36';//
-            $data['accept_language'] = 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4';//
-
+            if (isset($this->request->server['HTTP_USER_AGENT'])) {
+                $data['user_agent'] = $this->request->server['HTTP_USER_AGENT'];
+            } else {
+                $data['user_agent'] = '';
+            }
+            if (isset($this->request->server['HTTP_ACCEPT_LANGUAGE'])) {
+                $data['accept_language'] = $this->request->server['HTTP_ACCEPT_LANGUAGE'];
+            } else {
+                $data['accept_language'] = '';
+            }
+            $this->load->model('catalog/product');
+            $product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
+            if(isset($product_info['special'])){
+                $price = $product_info['special'];
+            }else{
+                $price = $product_info['price'];
+            }
             $data['products'] = array();
             $data['products'][0] = array(
+                'product_id' => $this->request->get['product_id'],
+                'name' => $product_info['name'],
+                'model' => $product_info['model'],
+                'quantity' => 1,
+                'subtract' => $product_info['subtract'],
+                'tax' => $this->tax->getTax($product_info['price'], $product_info['tax_class_id']),
+                'price' => $price,
+                'total' => $price,
+                'reward' => $product_info['reward'],
+                'option' => array(),
+                'download' => array(),
+                
                 
             );
+            $data['total'] = $price;
+            $this->load->model('checkout/order');
+            $order_id = $this->model_checkout_order->addOrder($data);
+            $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('cod_order_status_id'));
             
-            $data['totals'] = array();
-             
-             
-            
+            $json['success'] = true;
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($json));
         }
 }

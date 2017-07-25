@@ -1144,3 +1144,84 @@
 2017-07-24 12:40:47 - PHP Notice:  Undefined index: product_description in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-admin_model_catalog_product.php on line 8
 2017-07-24 12:40:47 - PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\OpenServer\domains\new.fidelliti.loc\admin\controller\startup\error.php:34) in C:\OpenServer\domains\new.fidelliti.loc\system\library\response.php on line 12
 2017-07-24 17:26:41 - PHP Notice:  Undefined property: Request::$session in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_common_footer.php on line 5
+2017-07-25 15:17:52 - PHP Notice:  Undefined index: customer in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 812
+2017-07-25 15:35:32 - PHP Notice:  Undefined variable: product_id in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 883
+2017-07-25 15:57:58 - PHP Notice:  Undefined variable: product in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 895
+2017-07-25 15:57:58 - PHP Notice:  Undefined variable: product in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 895
+2017-07-25 16:26:45 - PHP Notice:  Undefined variable: order_data in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 908
+2017-07-25 16:27:20 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:27:20 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:27:20 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:27:44 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:27:44 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:27:44 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:28:05 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:28:05 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:28:05 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:28:15 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:28:15 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:28:15 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:25 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:32 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:36 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 25
+2017-07-25 16:29:36 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 26
+2017-07-25 16:29:36 - PHP Notice:  Undefined index:  in C:\OpenServer\domains\new.fidelliti.loc\system\library\cart\currency.php on line 27
+2017-07-25 16:29:50 - PHP Notice:  Undefined index: customer_id in C:\OpenServer\domains\new.fidelliti.loc\catalog\model\checkout\order.php on line 6
+2017-07-25 16:29:50 - PHP Notice:  Undefined index: reward in C:\OpenServer\domains\new.fidelliti.loc\catalog\model\checkout\order.php on line 13
+2017-07-25 16:33:10 - PHP Notice:  Undefined index: customer_id in C:\OpenServer\domains\new.fidelliti.loc\catalog\model\checkout\order.php on line 6
+2017-07-25 16:33:10 - PHP Notice:  Undefined index: reward in C:\OpenServer\domains\new.fidelliti.loc\catalog\model\checkout\order.php on line 13
+2017-07-25 16:33:26 - PHP Notice:  Undefined index: reward in C:\OpenServer\domains\new.fidelliti.loc\catalog\model\checkout\order.php on line 13
+2017-07-25 16:34:33 - PHP Notice:  Undefined variable: product in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 899
+2017-07-25 16:35:02 - PHP Notice:  Undefined variable: product in C:\OpenServer\domains\new.fidelliti.loc\vqmod\vqcache\vq2-catalog_controller_product_product.php on line 899

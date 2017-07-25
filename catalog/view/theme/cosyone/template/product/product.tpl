@@ -883,9 +883,9 @@ $('#button-review').on('click', function() {
 <script type="text/javascript">
 $('#one_click').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=product/product/oneclickbye',
+		url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
 		type: 'post',
-		//data: 'product_id=' ,
+		data: 'name=test&phone=000&mail=test@test.ua' ,
 		dataType: 'json',
 		beforeSend: function() {
 			
@@ -893,38 +893,12 @@ $('#one_click').on('click', function() {
 		complete: function() {
 			
 		},
-		success: function(json) {
-
-
-			if (json['error']) {
-				if (json['error']['option']) {
-					for (i in json['error']['option']) {
-						var element = $('#input-option' + i.replace('_', '-'));
-						
-						if (element.parent().hasClass('input-group')) {
-							element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
-						} else {
-							element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
-						}
-					}
-				}
-				
-				if (json['error']['recurring']) {
-					$('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
-				}
-				
-				// Highlight any found errors
-				$('.text-danger').parent().addClass('has-error');
-			}
-			
+		success: function(json) {			
 			if (json['success']) {
-				
-
-				
-				$('#cart-total').html(json['total']);
-				
-				$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
-			}
+                            alert("Ваш заказ получен");	
+			}else{
+                            alert("Ваш заказ не получен");
+                        }
 		}
 	});
 });
