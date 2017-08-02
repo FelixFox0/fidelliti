@@ -1,15 +1,154 @@
 <?php
 class ControllerStartupSeoUrl extends Controller {
 	public function index() {
+//            die('333');
 		// Add rewrite to url class
 		if ($this->config->get('config_seo_url')) {
 			$this->url->addRewrite($this);
 		}
+//                var_dump($this->request->get['_route_']);
+                if(isset($this->request->get['_route_'])){
+                    $this->load->model('startup/url');
+                    if($this->model_startup_url->checkCountryIso(substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/')))){
+                        $this->session->data['country_code'] = substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/'));
+                        if(stripos($this->request->get['_route_'], '/index.php')){
+                            unset($this->request->get['_route_']);
+                        }else{
+                            $this->request->get['_route_'] = substr($this->request->get['_route_'], stripos($this->request->get['_route_'],'/')+1);
+                        }
+                    }elseif($this->model_startup_url->checkCountryIso(substr($this->request->get['_route_'], 0))){
+                        $this->session->data['country_code'] = substr($this->request->get['_route_'], 0);
 
+                            unset($this->request->get['_route_']);
+                        
+                    }else{
+                        if(isset($this->session->data['country_code_old'])){
+                            $this->session->data['country_code']=$this->session->data['country_code_old'];
+                        }else{
+                            $this->session->data['country_code'] = 'ua';
+                        }
+                    }
+                    
+                } else {
+                    if(isset($this->session->data['country_code_old'])){
+                        $this->session->data['country_code']=$this->session->data['country_code_old'];
+                    }else{
+                        $this->session->data['country_code'] = 'ua';
+                    }
+                }
+                
+//                var_dump($this->session->data['country_code']);
+//                var_dump($this->session->data['language']);
+//                die();
+                
+                if((!isset($this->session->data['country_code_old']))||(!isset($this->session->data['language_old']))){
+                    if(($this->session->data['country_code']=='ru')||($this->session->data['country_code']=='ua')){
+                        $code = 'ru-ru';
+                    }else{
+                        $code = 'en-gb';
+                    }
+                    $this->load->model('localisation/language');
+                    $languages = $this->model_localisation_language->getLanguages();
+                    $this->session->data['language'] = $code;
+                    $language = new Language($code);
+                    $language->load($code);
+                    $this->registry->set('language', $language);
+                    $this->config->set('config_language_id', $languages[$code]['language_id']);
+                    $this->session->data['country_code_lang'] = $this->session->data['country_code'];
+                    
+                    $this->session->data['country_code_old'] = $this->session->data['country_code'];
+                    $this->session->data['language_old'] = $this->session->data['language'];
+                }elseif($this->session->data['country_code']!=$this->session->data['country_code_old']){
+                    if(($this->session->data['country_code']=='ru')||($this->session->data['country_code']=='ua')){
+                        $code = 'ru-ru';
+                    }else{
+                        $code = 'en-gb';
+                    }
+                    $this->load->model('localisation/language');
+                    $languages = $this->model_localisation_language->getLanguages();
+                    $this->session->data['language'] = $code;
+                    $language = new Language($code);
+                    $language->load($code);
+                    $this->registry->set('language', $language);
+                    $this->config->set('config_language_id', $languages[$code]['language_id']);
+                    $this->session->data['country_code_lang'] = $this->session->data['country_code'];
+                    
+                    $this->session->data['country_code_old'] = $this->session->data['country_code'];
+                    $this->session->data['language_old'] = $this->session->data['language'];
+                }else{
+                    $this->session->data['country_code_old'] = $this->session->data['country_code'];
+                    $this->session->data['language_old'] = $this->session->data['language'];
+                }
+                
+                
+//                var_dump($this->session->data['country_code_old']);
+//                var_dump($this->session->data['language_old']);
+                // Change language by country
+                /*if(isset($this->session->data['country_code'])){
+                    if(isset($this->session->data['country_code_lang'])){
+                        if($this->session->data['country_code']!=$this->session->data['country_code_lang']){
+                            if(($this->session->data['country_code']=='RU')||($this->session->data['country_code']=='UA')){
+                                $code = 'ru-ru';
+                            }else{
+                                $code = 'en-gb';
+                            }
+                            $this->load->model('localisation/language');
+                            $languages = $this->model_localisation_language->getLanguages();
+                            $this->session->data['language'] = $code;
+                            $language = new Language($code);
+                            $language->load($code);
+                            $this->registry->set('language', $language);
+                            $this->config->set('config_language_id', $languages[$code]['language_id']);
+                            $this->session->data['country_code_lang'] = $this->session->data['country_code'];
+                        }
+                    }else{
+                        if(($this->session->data['country_code']=='RU')||($this->session->data['country_code']=='UA')){
+                            $code = 'ru-ru';
+                        }else{
+                            $code = 'en-gb';
+                        }
+                        $this->load->model('localisation/language');
+                        $languages = $this->model_localisation_language->getLanguages();
+                        $this->session->data['language'] = $code;
+                        $language = new Language($code);
+                        $language->load($code);
+                        $this->registry->set('language', $language);
+                        $this->config->set('config_language_id', $languages[$code]['language_id']);
+                        $this->session->data['country_code_lang'] = $this->session->data['country_code'];
+                    }
+                }
+                */
+                
+                
+                	
+                
+                
+                
+                /*
+                if(isset($this->request->get['_route_'])){
+                    if(stripos($this->request->get['_route_'], '/index.php')){
+                        $this->session->data['country_code'] = substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/'));
+                        //var_dump($this->session->data['country_code']);
+                        unset($this->request->get['_route_']);
+                    }else{
+                        $this->load->model('startup/url');
+                        if($this->model_startup_url->checkCountryIso(substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/')))){
+
+                            
+//                            var_dump($this->model_startup_url->checkCountryIso(substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/'))));
+
+                            $this->session->data['country_code'] = substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/'));
+                            $this->request->get['_route_'] = substr($this->request->get['_route_'], stripos($this->request->get['_route_'],'/')+1);
+                            //var_dump($this->request->get['_route_']);
+                        }
+                    }
+                }
+                */
+                
 		// Decode URL
 		if (isset($this->request->get['_route_'])) {
 			$parts = explode('/', $this->request->get['_route_']);
-
+//                        array_shift($parts);
 			// remove any empty arrays from trailing
 			if (utf8_strlen(end($parts)) == 0) {
 				array_pop($parts);

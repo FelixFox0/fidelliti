@@ -1,6 +1,7 @@
 <?php
 class ControllerCommonLanguage extends Controller {
 	public function index() {
+//            die('sda');
 		$this->load->language('common/language');
 
 		$data['text_language'] = $this->language->get('text_language');

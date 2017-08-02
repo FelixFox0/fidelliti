@@ -1,6 +1,7 @@
 <?php
 class ControllerStartupStartup extends Controller {
 	public function index() {
+//            die('111');
 		// Store
 		if ($this->request->server['HTTPS']) {
 			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "store WHERE REPLACE(`ssl`, 'www.', '') = '" . $this->db->escape('https://' . str_replace('www.', '', $_SERVER['HTTP_HOST']) . rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') . '/') . "'");
@@ -30,13 +31,15 @@ class ControllerStartupStartup extends Controller {
 				$this->config->set($result['key'], json_decode($result['value'], true));
 			}
 		}
-		
+//		var_dump($query);
+//                die();
 		// Language
 		$code = '';
 		
 		$this->load->model('localisation/language');
 		
 		$languages = $this->model_localisation_language->getLanguages();
+//                var_dump($languages);
 		
 		if (isset($this->session->data['language'])) {
 			$code = $this->session->data['language'];
@@ -70,7 +73,15 @@ class ControllerStartupStartup extends Controller {
 		if (!isset($this->request->cookie['language']) || $this->request->cookie['language'] != $code) {
 			setcookie('language', $code, time() + 60 * 60 * 24 * 30, '/', $this->request->server['HTTP_HOST']);
 		}
-				
+                //var_dump($this->session->data['language']);
+                //$this->session->data['language'] = 'ru-ru';
+                
+                //загрузка языка
+                /*$code = 'ru-ru';
+                $this->session->data['language'] = $code;
+                */
+                //загрузка языка
+//                die();
 		// Overwrite the default language object
 		$language = new Language($code);
 		$language->load($code);
@@ -79,6 +90,7 @@ class ControllerStartupStartup extends Controller {
 		
 		// Set the config language_id
 		$this->config->set('config_language_id', $languages[$code]['language_id']);	
+//                $this->config->set('config_language_id', $languages['ru-ru']['language_id']);	
 
 		// Customer
 		$customer = new Cart\Customer($this->registry);
