@@ -62,6 +62,7 @@
     <div class="drop_downs_wrapper">
     <?php echo $header_login; ?>
 	<?php echo $language; ?>
+        <?php echo $countries; ?>
   	<?php echo $currency; ?>
     </div>
     <?php } ?>
@@ -92,6 +93,7 @@
 	<?php if($cosyone_header_style == 'header1'){ ?>
     <?php echo $header_login; ?>
 	<?php echo $language; ?>
+        <?php echo $countries; ?>
   	<?php echo $currency; ?>
     <?php } ?>
   <?php if($cosyone_header_style == 'header2') { ?>
