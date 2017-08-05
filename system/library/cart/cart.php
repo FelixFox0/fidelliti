@@ -164,7 +164,6 @@ class Cart {
 				}
 
 				$price = $product_query->row['price'];
-//                                var_dump($price);
 
 				// Product Discounts
 				$discount_quantity = 0;

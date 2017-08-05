@@ -776,6 +776,7 @@
                       <td class="text-right"><?php echo $entry_price; ?></td>
                       <td class="text-left"><?php echo $entry_date_start; ?></td>
                       <td class="text-left"><?php echo $entry_date_end; ?></td>
+                      <td class="text-left">Регион</td>
                       <td></td>
                     </tr>
                   </thead>
@@ -804,6 +805,7 @@
                           <span class="input-group-btn">
                           <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                           </span></div></td>
+                      <td class="text-right"><input type="text" name="product_special[<?php echo $special_row; ?>][country_code]" value="<?php echo $product_special['country_code']; ?>" placeholder="<?php echo $country_code; ?>" class="form-control" /></td>
                       <td class="text-left"><button type="button" onclick="$('#special-row<?php echo $special_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                     </tr>
                     <?php $special_row++; ?>
@@ -811,7 +813,7 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <td colspan="5"></td>
+                      <td colspan="6"></td>
                       <td class="text-left"><button type="button" onclick="addSpecial();" data-toggle="tooltip" title="<?php echo $button_special_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
                     </tr>
                   </tfoot>
