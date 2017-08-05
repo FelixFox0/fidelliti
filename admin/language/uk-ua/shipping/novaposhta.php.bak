@@ -1,0 +1,306 @@
+<?php
+// Heading
+$_['heading_title']    						= 'Нова Пошта API';
+$_['heading_applying_api_key']				= 'Застосування ключа API';
+$_['heading_tariff']						= 'Налаштування тарифів';
+
+$_['heading_options_seat']					= 'Параметри кожного місця відправлення';
+$_['heading_components_list']				= 'Вибір складових оголошеної вартості';
+
+//Button
+$_['button_save_and_exit'] 					= 'Зберегти та вийти';
+$_['button_tariffs']						= 'Налаштувати тарифи';
+$_['button_generate']						= 'Генерувати';
+
+$_['button_create_ei']						= 'Створити &laquo;ЕН&raquo; для &laquo;Нової Пошти&raquo;';
+$_['button_edit_ei']						= 'Редагувати &laquo;ЕН&raquo; &laquo;Нової Пошти&raquo;';
+$_['button_save_ei']						= 'Зберегти експрес накладну';
+$_['button_ei_list']						= 'Список &laquo;ЕН&raquo;';
+$_['button_pdf']							= 'Скачати у форматі PDF';
+$_['button_print']							= 'Друк';
+$_['button_ei']								= '&laquo;ЕН&raquo;';
+$_['button_mark']							= 'Маркування';
+$_['button_mark_zebra']						= 'Маркування типу &laquo;Зебра&raquo;';
+$_['button_edit']							= 'Редагувати';
+$_['button_delete']							= 'Видалити';
+$_['button_back_to_orders']					= 'До замовлень';
+$_['button_warehouse_delivery']				= 'Доставка у відділення';
+$_['button_doors_delivery']					= 'Доставка на адресу кур`єром. Назву вулиці, будинку та квартири вказуйте розділяючи їх комою. Приклад: Центральна вулиця, буд. 10, 7 кв';
+$_['button_options_seat']					= 'Параметри кожного місця відправлення';
+$_['button_add_seat']						= 'Додати місце відправлення';
+$_['button_components_list']				= 'Список складових';
+
+// Tab
+$_['tab_general']							= 'Основні налаштування';
+$_['tab_database']							= 'База даних';
+$_['tab_sender']							= 'Відправник';
+$_['tab_recipient']							= 'Отримувач';
+$_['tab_departure']							= 'Відправлення';
+$_['tab_cron']								= 'Завдання Cron';
+$_['tab_support']							= 'Підтримка';
+$_['tab_global']							= 'Загальні';
+$_['tab_warehouse']							= 'Доставка у відділення';
+$_['tab_doors']								= 'Доставка кур`єром';
+
+// Column
+$_['column_type']							= 'Тип даних';
+$_['column_date']							= 'Останнє оновлення';
+$_['column_amount']				 			= 'Кількість';
+$_['column_description']					= 'Опис';
+$_['column_action']							= 'Дія';
+
+$_['column_weight']           				= 'Вага (включно)';
+$_['column_service_cost']           		= 'Вартість послуги &laquo;Відділення-Відділення&raquo;';
+$_['column_tariff_zone_ukraine']        	= 'Україна';
+
+$_['column_novaposhta_status']    	    	= 'Статус Нової Пошти';
+$_['column_store_status']           		= 'Статус магазину';
+$_['column_notification']        			= 'Сповіщення';
+$_['column_message']        				= 'Повідомлення';
+
+$_['column_ei_number']						= '№ &laquo;ЕН&raquo;';
+$_['column_order_number']					= '№ замовлення';
+$_['column_estimated_delivery_date']		= 'Дата доставки';
+$_['column_recipient']          			= 'Одержувач';
+$_['column_address']        	 			= 'Адреса';
+$_['column_announced_price']         		= 'Оголошена вартість';
+$_['column_shipping_cost']         			= 'Вартість доставки';
+$_['column_state']        	  				= 'Статус';
+
+$_['column_number_order']          			= '№ п/п';
+$_['column_volume']          				= 'Об`єм';
+$_['column_width']          				= 'Ширина';
+$_['column_length']         				= 'Довжина';
+$_['column_height']          				= 'Висота';
+$_['column_actual_weight']  	       		= 'Фактична вага';
+$_['column_volume_weight']	         		= 'Об`ємна вага';
+$_['column_price']         					= 'Вартість';
+
+// Entry
+$_['entry_status']     						= 'Статус модулю';
+$_['entry_debugging_mode'] 					= 'Налагоджувальний режим';
+$_['entry_sort_order'] 						= 'Порядок сортування';
+$_['entry_key_api'] 						= 'Ключ API';
+$_['entry_tariffs'] 						= 'Тарифи';
+$_['entry_discount'] 						= 'Знижка';
+$_['entry_additional_commission'] 			= 'Додаткова комісія';
+$_['entry_additional_commission_bottom']	= 'Нижня межа додаткової комісії';
+$_['entry_overpay_doors_warehouse']			= 'Доплата за адресний забір або адресну доставку';
+$_['entry_overpay_doors_doors']				= 'Доплата за адресний забір та адресну доставку';
+$_['entry_payment_cod'] 					= 'Метод оплати накладним платежем';
+$_['entry_image'] 							= 'Зображення';
+$_['entry_image_output_place'] 				= 'Місце виведення зображення';
+$_['entry_free_cost_text']     				= 'Текст безкоштовної доставки';
+$_['entry_method_status']     				= 'Статус';
+$_['entry_name']     						= 'Назва';
+$_['entry_geo_zone']   						= 'Географічна зона';
+$_['entry_tax_class']  						= 'Податковий клас';
+$_['entry_minimum_order_amount'] 			= 'Мінімальна сума замовлення';
+$_['entry_maximum_order_amount'] 			= 'Максимальна сума замовлення';
+$_['entry_free_shipping']	 				= 'Безкоштовна доставка від';
+$_['entry_cost'] 							= 'Вартість';
+$_['entry_api_calculation'] 				= 'API розрахунок';
+$_['entry_tariff_calculation'] 				= 'Тарифний розрахунок';
+$_['entry_delivery_period'] 				= 'Термін доставки';
+$_['entry_warehouses_filter_weight']		= 'Фільтр відділень по вазі';
+$_['entry_warehouse_types'] 				= 'Тип відділень';
+$_['entry_update_areas'] 					= 'Області';
+$_['entry_update_cities'] 					= 'Міста';
+$_['entry_update_warehouses']				= 'Відділення';
+$_['entry_update_references']				= 'Довідники';
+$_['entry_sender']              			= 'Відправник';
+$_['entry_recipient']          	   			= 'Одержувач';
+$_['entry_contact_person'] 					= 'Контактна особа';
+$_['entry_phone']              				= 'Телефон';
+$_['entry_area']              				= 'Область';
+$_['entry_city']              				= 'Місто';
+$_['entry_warehouse'] 						= 'Відділення';
+$_['entry_address'] 						= 'Адреса';
+$_['entry_preferred_delivery_date'] 		= 'Бажана дата доставки';
+$_['entry_preferred_delivery_time'] 		= 'Бажаний час доставки';
+$_['entry_departure_type']    	     	    = 'Тип відправлення';
+$_['entry_departure_description']		 	= 'Опис відправлення';
+$_['entry_additional_information'] 			= 'Додаткова інформація про відправлення';
+$_['entry_announced_price']     	        = 'Оголошена вартість';
+$_['entry_weight'] 							= 'Вага';
+$_['entry_dimensions'] 						= 'Розміри (Ш x Д x В)';
+$_['entry_calculate_volume'] 				= 'Врахування об`єму';
+$_['entry_use_parameters']					= 'Застосування параметрів';
+$_['entry_key_cron'] 						= 'Cron ключ';
+$_['entry_departures_tracking']	 			= 'Відстеження відправлень';
+$_['entry_tracking_statuses'] 				= 'Статуси для відстеження';
+$_['entry_admin_notification'] 				= 'Для адміністратора';
+$_['entry_customer_notification'] 			= 'Для покупця';
+	
+$_['entry_ei_number'] 						= 'Номер &laquo;ЕН&raquo';
+$_['entry_third_person']    	         	= 'Третя особа';
+$_['entry_width']              				= 'Ширина';
+$_['entry_length']              			= 'Довжина';
+$_['entry_height']          	    		= 'Висота';
+$_['entry_volume_weight'] 	             	= 'Об`ємна вага (Об`єм x 250)';
+$_['entry_volume_general']              	= 'Загальний об`єм відправлення';
+$_['entry_seats_amount']            	  	= 'Кількість місць';
+$_['entry_payer']            	  			= 'Платник';
+$_['entry_payment_type']            	  	= 'Форма оплати';
+$_['entry_backward_delivery']       	    = 'Зворотна доставка';
+$_['entry_backward_delivery_total']			= 'Сума зворотної доставки';
+$_['entry_backward_delivery_payer']			= 'Платник зворотної доставки';
+$_['entry_departure_date']					= 'Дата відправки';
+$_['entry_sales_order_number'] 				= 'Внутрішній номер замовлення клієнта';
+$_['entry_payment_control'] 				= 'Контроль оплати';
+
+// Help
+$_['help_status'] 							= 'Увімкнути/вимкнути модуль';
+$_['help_debugging_mode'] 					= 'Увімкнути/вимкнутиь налагоджувальний режим';
+$_['help_sort_order'] 						= 'Порядок сортування модулю';
+$_['help_key_api'] 							= 'Вставте значення ключа API, який Ви можете знайти на сайті компанії &laquo;Нова Пошта&raquo; у власному кабінеті. Дивіться розділ Налаштування &rarr; API 2.0';
+$_['help_tariffs'] 							= 'Налаштування тарифів, які будуть використовуватися замість розрахунку по API';
+$_['help_discount'] 						= 'Вкажіть знижку на доставку. Якщо у Вас немає знижки залиште поле порожнім';
+$_['help_additional_commission'] 			= 'Вкажіть розмір додаткової комісії, яка розраховується як відсоток від оголошеної вартості відправлення';
+$_['help_additional_commission_bottom']		= 'Вкажіть мінімальну оголошену вартість відправлення починаючи з якої буде розраховуватися додаткова комісія';
+$_['help_overpay_doors_warehouse']			= 'Доплата для типу послуги &laquo;Адреса-Відділення&raquo; та &laquo;Відділення-Адреса&raquo;';
+$_['help_overpay_doors_doors']				= 'Доплата для типу послуги &laquo;Адреса-Адреса&raquo;';
+$_['help_payment_cod'] 						= 'Вкажіть спосіб оплати який відповідає накладеному платежу для Нової Пошти';
+$_['help_image'] 							= 'Зображення методу доставки';
+$_['help_image_output_place'] 				= 'Вкажіть варіант виведення зображення методу доставки в кошику';
+$_['help_free_cost_text']     				= 'Цей текст буде відображатися в разі безкоштовної доставки';
+$_['help_method_status']     				= 'Увімкнути/вимкнути спосіб доставки';
+$_['help_name']     						= 'Дана назва буде відображатися покупцеві під час оформлення замовлення';
+$_['help_geo_zone'] 						= 'Оберіть географічну зону для якої буде доступний даний спосіб доставки';
+$_['help_tax_class'] 						= 'Оберіть податковий клас';
+$_['help_minimum_order_amount'] 			= 'Менше зазначеної суми спосіб доставки буде недоступний';
+$_['help_maximum_order_amount'] 			= 'Більше зазначеної суми спосіб доставки буде недоступний';
+$_['help_free_shipping'] 					= 'Вкажіть мінімальну суму замовлення для безкоштовної доставки';
+$_['help_cost'] 							= 'Розраховувати вартість доставки?';
+$_['help_api_calculation'] 					= 'Розрахунок вартості через API &laquo;Нової Пошти&raquo; - дає найбільш точні та актуальні дані про вартість доставки';
+$_['help_tariff_calculation'] 				= 'Якщо розрахунок через API &laquo;Нової Пошти&raquo; вимкнений, то буде використовуватись лише тарифний розрахунок. Якщо розрахунок через API увімкнений - буде використовуватись розрахунок вартості доставки згідно тарифів &laquo;Нової Пошти&raquo; лише у випадку недоступності API';
+$_['help_delivery_period'] 					= 'Розраховувати термін доставки?';
+$_['help_warehouses_filter_weight']			= 'Якщо увімкнути фільтр, то для клієнта список доступних відділень буде формуватися відповідно до загальної ваги товарів в кошику і максимально допустимою вагою для відділень';
+$_['help_warehouse_types']	 				= 'Обраний тип відділень буде доступний для клієнтів під час оформлення замовлення. Якщо ви не вкажете жодного типу, то будуть доступні всі відділення';
+$_['help_update_areas'] 					= 'Буде виконано оновлення областей компанії &laquo;Нова Пошта&raquo;. Дія не вплине на стандартні регіони';
+$_['help_update_cities'] 					= 'Буде виконано оновлення міст в які можлива доставка компанією &laquo;Нова Пошта&raquo;';
+$_['help_update_warehouses']				= 'Буде виконано оновлення відділень компанії &laquo;Нова пошта&raquo;';
+$_['help_update_references']				= 'Буде виконано оновлення списку відправників, контактних особ, довідникової та іншої інформації компанії &laquo;Нова Пошта&raquo; необхідної для роботи доповнення. Рекомендована частота оновлень не рідше 1-го разу в місяць';
+$_['help_sender'] 							= 'Оберіть відправника';
+$_['help_sender_contact_person']	 		= 'Оберіть контактну особу';
+$_['help_sender_city']       	       	= 'Оберіть місто з якого буде виконуватись відправка замовлення';
+$_['help_sender_address'] 					= 'Оберіть адресу з якої буде виконуватись відправка замовлення';
+$_['help_recipient'] 						= 'Виберіть одержувача за замовчуванням або вкажіть макроси для пошуку назви. Приклад: Приватна особа';
+$_['help_recipient_contact_person'] 		= 'Вкажіть макрос для П.І.Б контактної особи. Приклад: {shipping_lastname} {shipping_firstname}';
+$_['help_recipient_contact_person_phone']	= 'Вкажіть макрос для номеру телефону контактної особи. Приклад: {telephone}';
+$_['help_recipient_area']              		= 'Вкажіть макрос для області отримувача. Приклад: {shipping_zone}';
+$_['help_recipient_city']              		= 'Вкажіть макрос для міста отримувача. Приклад: {shipping_city}';
+$_['help_recipient_warehouse'] 				= 'Вкажіть макрос для відділення отримувача. Приклад: {shipping_address_1}';
+$_['help_recipient_address'] 				= 'Вкажіть макрос для адреси отримувача. Приклад: {shipping_address_1}';
+$_['help_preferred_delivery_date'] 			= 'Вкажіть макрос для бажаної дати доставки. Приклад: {shipping_date}';
+$_['help_preferred_delivery_time'] 			= 'Вкажіть макрос для бажаного часу доставки. Приклад: {shipping_time}';
+$_['help_departure_type'] 					= 'Вкажіть тип відправлення';
+$_['help_departure_description']		 	= 'Використовується як опис товару по замовчуванню при створенні &laquo;ЕН&raquo;, якщо в магазині багато товарів, які мають однаковий опис';
+$_['help_additional_information'] 			= 'Використовується як шаблон для поля додаткової інформації про відправлення при створенні &laquo;ЕН&raquo;. Можливе застосування макросів. При використанні макросів товару розділяйте текст на два блоки за допомогою символу &laquo;|&raquo; (макроси товару використовуйте в другому блоці)';
+$_['help_announced_price']            	 	= 'Вкажіть складові для оголошеної вартості відправлення';
+$_['help_weight'] 							= 'Вкажіть фактичну вагу за замовчуванням';
+$_['help_dimensions'] 						= 'Вкажіть габаритні розміри за замовчуванням';
+$_['help_calculate_volume'] 				= 'Враховувати об`ємну вагу при розрахунку попередньої вартості доставки? Використовуйте цю опцію обережно, так як модуль розраховує обсяг відправлення як суму обсягів усіх товарів в кошику, що не завжди правильно і вартість доставки може значно перевищувати реальні значення';
+$_['help_use_parameters']					= 'Вкажіть спосіб застосування параметрів по замовчуванню (вага та габарити)';
+$_['help_key_cron'] 						= 'Задайте або згенеруйте ключ';
+$_['help_tracking_statuses'] 				= 'Оберіть статуси замовлень для яких буде здійснюватися відстеження';
+
+// Text
+$_['text_shipping']    						= 'Доставка';
+$_['text_success']     						= 'Налаштування модулю доставки &laquo;Нова Пошта API&raquo; успішно збережені';
+$_['text_key_api_checking']					= 'Перевірка ключа API';
+$_['text_areas_updating']					= 'Оновлення областей';
+$_['text_cities_updating']					= 'Оновлення міст';
+$_['text_warehouses_updating']				= 'Оновлення відділень';
+$_['text_references_updating']				= 'Оновлення довідкової інформації';
+$_['text_saving_settings']					= 'Збереження налаштувань';		
+$_['text_parcel_tariffs'] 					= 'Тариф на відправлення посилок';
+$_['text_image_output_place_title'] 		= 'Заголовок варіантів доставки';
+$_['text_image_output_place_img_key'] 		= 'Елемент з ключем &laquo;img&raquo; масиву способу доставки';
+$_['text_update']	 						= 'Оновити дані';
+$_['text_update_success']	 				= 'Дані успішно оновлено';
+$_['text_products_without_parameters'] 		= 'Застосувати до товарів без параметрів';
+$_['text_all_products'] 					= 'Застосувати до кожного товару';
+$_['text_whole_order'] 						= 'Застосувати до всього замовлення';
+$_['text_base_update']						= 'Оновлення бази даних';
+$_['text_departures_tracking']				= 'Відстеження відправлень';
+$_['text_settings_departures_statuses']	 	= 'Налаштування статусів відправлення';
+$_['text_message_template_macro'] 			= 'Макроси для шаблону повідомлення';
+$_['text_order']							= 'Замовлення';
+$_['text_orders']							= 'Всі замовлення';
+$_['text_form_create']						= 'Створення експрес накладної';
+$_['text_form_edit']						= 'Редагування експрес накладної';
+$_['text_list']								= 'Список експрес накладних';
+$_['text_sender']							= 'Відправник';
+$_['text_recipient']						= 'Одержувач';
+$_['text_departure_options']				= 'Параметри відправлення';
+$_['text_payment']							= 'Оплата';
+$_['text_additionally']						= 'Додатково';
+$_['text_announced_price']     	        	= 'Оголошена вартість:';
+$_['text_no_backward_delivery']				= 'Немає зворотньої доставки';
+$_['text_during_day']						= 'Впродовж дня';
+$_['text_ei_success_save']					= 'Експрес накладна успішно збережена';
+$_['text_ei_success_delete']				= 'Видалення пройшло успішно';
+$_['text_or']								= 'або';
+$_['text_grn']								= 'грн';
+$_['text_cm']								= 'см';
+$_['text_kg']								= 'кг';
+$_['text_pct']								= '%';
+$_['text_cubic_meter']						= 'м&sup3;';
+$_['text_pc']								= 'шт';
+$_['text_confirm']							= 'Ви впевнені?';
+$_['text_cron'] 							= 'Задайте ключ і збережіть налаштування модулю, далі скопіюйте необхідну команду та додайте її в крон у Вашій панелі управління хостингом. Оптимальна частота запуску:<br/>
+	<ul>
+		<li>міста та відділення - 1 раз на добу</li>
+		<li>області та довідники - 1 раз в місяць</li>
+		<li>відстеження відправленнь - по необхідності</li>
+	</ul>';
+$_['text_order_template_macro'] 			= '<strong>Макроси замовлення:</strong><br/>
+	<code>{order_id}</code> - номер замовлення<br/>
+	<code>{invoice}</code> - номер рахунку<br/>
+	<code>{store_name}</code> - назва магазину<br/>
+	<code>{store_url}</code> - адреса магазину<br/>
+	<code>{name}</code> - ПІБ покупця<br/>
+	<code>{shipping_name}</code> - ПІБ отримувача<br/>
+	<code>{date_added}</code> - дата оформлення замовлення<br/>
+	<code>{date_modified}</code> - дата останньої зміни замовлення';
+$_['text_products_template_macro'] 			= '<strong>Макроси товару:</strong><br/>
+	<code>{product_name}</code> - назва<br/>
+	<code>{model}</code> - модель<br/>
+	<code>{sku}</code> - артикул<br/>
+	<code>{quantity}</code> - кількість кожного товару';
+$_['text_ei_template_macro'] 				= '<strong>Макроси Експрес Накладної:</strong><br/>
+	<code>{Number}</code> - номер ЕН<br/>
+	<code>{Redelivery}</code> - зворотня доставка<br/>
+	<code>{RedeliverySum}</code> - сума за зворотню доставку<br/>
+	<code>{RedeliveryNum}</code> - номер ЕН зворотньої доставки<br/>
+	<code>{RedeliveryPayer}</code> - платник за зворотню доставку<br/>
+	<code>{OwnerDocumentType}</code> - створено на основі<br/>
+	<code>{LastCreatedOnTheBasisDocumentType}</code> - останні зміни, тип документу<br/>
+	<code>{LastCreatedOnTheBasisPayerType}</code> - останні зміни, тип платника<br/>
+	<code>{LastCreatedOnTheBasisDateTime}</code> - - останні зміни, дата створення<br/>
+	<code>{LastTransactionStatusGM}</code> - дата останнього статусу<br/>
+	<code>{LastTransactionDateTimeGM}</code> - - дата останнього пересування<br/>
+	<code>{DateCreated}</code> - дата створення<br/>
+	<code>{DocumentWeight}</code> - вага вказана в інтернет документі<br/>
+	<code>{CheckWeight}</code> - вага, після контрольного зважування<br/>
+	<code>{DocumentCost}</code> - вартість за доставку<br/>
+	<code>{SumBeforeCheckWeight}</code> - сума після контрольного зважування<br/>
+	<code>{PayerType}</code> - тип платника<br/>
+	<code>{RecipientFullName}</code> - повне ім`я одержувача<br/>
+	<code>{RecipientDateTime}</code> - дата та час отримання відправлення<br/>
+	<code>{ScheduledDeliveryDate}</code> - розрахункова дата доставки<br/>
+	<code>{PaymentMethod}</code> - тип оплати<br/>
+	<code>{CargoDescriptionString}</code> - опис відправлення<br/>
+	<code>{CargoType}</code> - тип вантажу<br/>
+	<code>{CitySender}</code> - місто відправника<br/>
+	<code>{CityRecipient}</code> - місто одержувача<br/>
+	<code>{WarehouseRecipient}</code> - - відділення одержувача<br/>
+	<code>{CounterpartyType}</code> - тип контрагента<br/>
+	<code>{AfterpaymentOnGoodsCost}</code> - сума зворотньої доставки Ц1П<br/>
+	<code>{ServiceType}</code> - тип доставки<br/>
+	<code>{UndeliveryReasonsSubtypeDescription}</code> - причини не доставки відправлення<br/>
+	<code>{WarehouseRecipientNumber}</code> - номер відділення одержувача<br/>
+	<code>{LastCreatedOnTheBasisNumber}</code> - останні зміни, номер ЕН<br/>
+	<code>{Status}</code> - статус ЕН<br/>
+	<code>{StatusCode}</code> - номер статусу трекінга<br/>';

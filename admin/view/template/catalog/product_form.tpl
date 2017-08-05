@@ -147,11 +147,25 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-price"><?php echo $entry_price; ?></label>
+                <label class="col-sm-2 control-label" for="input-price"><?php echo $entry_price; ?> ua</label>
                 <div class="col-sm-10">
-                  <input type="text" name="price" value="<?php echo $price; ?>" placeholder="<?php echo $entry_price; ?>" id="input-price" class="form-control" />
+                  <input type="text" name="price" value="<?php echo $price; ?>" placeholder="<?php echo $entry_price; ?> ua" id="input-price" class="form-control" />
                 </div>
               </div>
+                
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-price_ru"><?php echo $entry_price; ?> ru</label>
+                <div class="col-sm-10">
+                  <input type="text" name="price_ru" value="<?php echo $price_ru; ?>" placeholder="<?php echo $entry_price; ?> ru" id="input-price_ru" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-price_en"><?php echo $entry_price; ?> en</label>
+                <div class="col-sm-10">
+                  <input type="text" name="price_en" value="<?php echo $price_en; ?>" placeholder="<?php echo $entry_price; ?> en" id="input-price_en" class="form-control" />
+                </div>
+              </div>
+                
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-tax-class"><?php echo $entry_tax_class; ?></label>
                 <div class="col-sm-10">

@@ -368,6 +368,8 @@ class ControllerCatalogProduct extends Controller {
 				'name'       => $result['name'],
 				'model'      => $result['model'],
 				'price'      => $result['price'],
+//                                'price_ru'      => $result['price_ru'],
+//                                'price_en'      => $result['price_en'],
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
 				'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
@@ -834,6 +836,22 @@ class ControllerCatalogProduct extends Controller {
 			$data['price'] = $product_info['price'];
 		} else {
 			$data['price'] = '';
+		}
+                
+                if (isset($this->request->post['price_ru'])) {
+			$data['price_ru'] = $this->request->post['price_ru'];
+		} elseif (!empty($product_info)) {
+			$data['price_ru'] = $product_info['price_ru'];
+		} else {
+			$data['price_ru'] = '';
+		}
+                
+                if (isset($this->request->post['price_en'])) {
+			$data['price_en'] = $this->request->post['price_en'];
+		} elseif (!empty($product_info)) {
+			$data['price_en'] = $product_info['price_en'];
+		} else {
+			$data['price_en'] = '';
 		}
 
 		$this->load->model('catalog/recurring');
@@ -1410,6 +1428,8 @@ class ControllerCatalogProduct extends Controller {
 									'option_value_id'         => $product_option_value['option_value_id'],
 									'name'                    => $option_value_info['name'],
 									'price'                   => (float)$product_option_value['price'] ? $this->currency->format($product_option_value['price'], $this->config->get('config_currency')) : false,
+                                                                        'price_ru'                   => (float)$product_option_value['price_ru'] ? $this->currency->format($product_option_value['price_ru'], $this->config->get('config_currency')) : false,
+                                                                        'price_en'                   => (float)$product_option_value['price_en'] ? $this->currency->format($product_option_value['price_en'], $this->config->get('config_currency')) : false,
 									'price_prefix'            => $product_option_value['price_prefix']
 								);
 							}
