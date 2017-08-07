@@ -163,8 +163,17 @@ class Cart {
 					}
 				}
 
-				$price = $product_query->row['price'];
-
+                                if($this->session->data['country_code']=='ua'){
+                                    $price = $product_query->row['price'];
+                                }elseif($this->session->data['country_code']=='ru'){
+                                    $price = $product_query->row['price_ru'];
+                                }else{
+                                    $price = $product_query->row['price_en'];
+                                }
+                                
+                                
+//				$price = $product_query->row['price'];
+//                                var_dump($product_query->row);
 				// Product Discounts
 				$discount_quantity = 0;
 
@@ -181,7 +190,15 @@ class Cart {
 				}
 
 				// Product Specials
-				$product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY priority ASC, price ASC LIMIT 1");
+                                if($this->session->data['country_code']=='ua'){
+                                    $country_code='ua';
+                                }elseif($this->session->data['country_code']=='ru'){
+                                    $country_code='ru';
+                                }else{
+                                    $country_code='en';
+                                }
+                                
+				$product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE country_code = '" . $country_code . "' AND product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY priority ASC, price ASC LIMIT 1");
 
 				if ($product_special_query->num_rows) {
 					$price = $product_special_query->row['price'];

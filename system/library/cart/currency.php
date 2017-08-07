@@ -8,13 +8,22 @@ class Currency {
 		$this->language = $registry->get('language');
 
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "currency");
-
+                /*
+                $this->session = $registry->get('session');
+                if($this->session->data['country_code']=='ua'){
+                    $symbol_right = ' грн';
+                }elseif($this->session->data['country_code']=='ru'){
+                    $symbol_right = ' руб';
+                }else{
+                    $symbol_right = '$';
+                }*/
 		foreach ($query->rows as $result) {
 			$this->currencies[$result['code']] = array(
 				'currency_id'   => $result['currency_id'],
 				'title'         => $result['title'],
 				'symbol_left'   => $result['symbol_left'],
 				'symbol_right'  => $result['symbol_right'],
+//                                'symbol_right'  => $symbol_right,
 				'decimal_place' => $result['decimal_place'],
 				'value'         => $result['value']
 			);

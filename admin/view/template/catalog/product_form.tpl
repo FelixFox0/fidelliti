@@ -805,7 +805,16 @@
                           <span class="input-group-btn">
                           <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                           </span></div></td>
-                      <td class="text-right"><input type="text" name="product_special[<?php echo $special_row; ?>][country_code]" value="<?php echo $product_special['country_code']; ?>" placeholder="<?php echo $country_code; ?>" class="form-control" /></td>
+                      <td class="text-right">
+                          <?php if(false){ ?><input type="text" name="product_special[<?php echo $special_row; ?>][country_code]" value="<?php echo $product_special['country_code']; ?>" placeholder="<?php echo $country_code; ?>" class="form-control" /> <?php } ?>
+                          <select name="product_special[<?php echo $special_row; ?>][country_code]" class="form-control">
+                            <option selected disabled>Выберите регион</option>
+
+                            <option <?php if($product_special['country_code']=='ua'){ echo"selected"; } ?> value="ua">UA</option>
+                            <option <?php if($product_special['country_code']=='ru'){ echo"selected"; } ?> value="ru">RU</option>
+                            <option <?php if($product_special['country_code']=='en'){ echo"selected"; } ?> value="en">EN</option>
+                          </select>
+                      </td>
                       <td class="text-left"><button type="button" onclick="$('#special-row<?php echo $special_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                     </tr>
                     <?php $special_row++; ?>
@@ -1350,6 +1359,17 @@ function addSpecial() {
 	html += '  <td class="text-right"><input type="text" name="product_special[' + special_row + '][price]" value="" placeholder="<?php echo $entry_price; ?>" class="form-control" /></td>';
     html += '  <td class="text-left" style="width: 20%;"><div class="input-group date"><input type="text" name="product_special[' + special_row + '][date_start]" value="" placeholder="<?php echo $entry_date_start; ?>" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
 	html += '  <td class="text-left" style="width: 20%;"><div class="input-group date"><input type="text" name="product_special[' + special_row + '][date_end]" value="" placeholder="<?php echo $entry_date_end; ?>" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
+
+
+        html += '<td class="text-right"><select name="product_special[<?php echo $special_row; ?>][country_code]" class="form-control">';
+        html += '<option selected disabled>Выберите регион</option>';
+        html += '<option value="ua">UA</option>';
+        html += '<option value="ru">RU</option>';
+        html += '<option value="en">EN</option>';
+        html += '</select></td>';
+
+
+
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#special-row' + special_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';
 
