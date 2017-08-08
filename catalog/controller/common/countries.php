@@ -15,6 +15,10 @@ class ControllerCommonCountries extends Controller {
             }else{
                 $data['href'] = '/'.$data['href'];
             }
+//            var_dump(substr($data['href'], 1,3));
+            if($this->model_startup_url->getLanguageByName(substr($data['href'], 1,3 ))){
+                $data['href'] = '/' . substr($data['href'], 5);
+            }
 //            var_dump($data['countries']);
 //            die();
             return $this->load->view('common/countries', $data);

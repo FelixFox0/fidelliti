@@ -1217,12 +1217,13 @@ class ModelModuleAdvajaxfilter extends Model {
 		$customer_group_id = $this->getCustomerGroup();
 
 		$sql = "SELECT product_id FROM(";
-		$sql .= "SELECT DISTINCT p.product_id, pd.name, p.model, p.quantity, p.price, p.sort_order, p.date_added ";
+		$sql .= "SELECT DISTINCT p.product_id, pd.name, p.model, p.quantity, p.price, p.price_ru, p.price_en, p.sort_order, p.date_added ";
 		if(isset($data["sort"]) && $data["sort"] == "rating") {
 			$sql .= ", (SELECT AVG(rating) AS total FROM " . DB_PREFIX . "review r1 WHERE r1.product_id = p.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating ";
 		}
 		$sql .= ", coalesce((SELECT price FROM " . DB_PREFIX . "product_discount pd2 WHERE pd2.product_id = p.product_id AND pd2.customer_group_id = '" . (int)$customer_group_id . "' AND pd2.quantity = '1' AND ((pd2.date_start = '0000-00-00' OR pd2.date_start < NOW()) AND (pd2.date_end = '0000-00-00' OR pd2.date_end > NOW())) ORDER BY pd2.priority ASC, pd2.price ASC LIMIT 1), " .
-				"(SELECT price FROM " . DB_PREFIX . "product_special ps WHERE ps.product_id = p.product_id AND ps.customer_group_id = '" . (int)$customer_group_id . "' AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority ASC, ps.price ASC LIMIT 1), " .
+				  "(SELECT price FROM " . DB_PREFIX . "product_special ps WHERE ps.product_id = p.product_id AND ps.country_code = '" . $this->session->data['country_code'] . "' AND ps.customer_group_id = '" . (int)$customer_group_id . "' AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority ASC, ps.price ASC LIMIT 1), " .
+                                //"(SELECT price FROM " . DB_PREFIX . "product_special ps WHERE ps.product_id = p.product_id AND ps.customer_group_id = '" . (int)$customer_group_id . "' AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority ASC, ps.price ASC LIMIT 1), " .
 				"p.price) as realprice ";
 		$sql .= "FROM " . DB_PREFIX . "product p" .
 				" LEFT JOIN " . DB_PREFIX . "product_option_value pov ON (pov.product_id=p.product_id)" .
@@ -1382,6 +1383,8 @@ class ModelModuleAdvajaxfilter extends Model {
 			'p.model' => 'model',
 			'p.quantity' => 'quantity',
 			'p.price' => 'realprice',
+                        'p.price_ru' => 'price_ru',
+                        'p.price_en' => 'price_en',
 			'p.sort_order' => 'sort_order',
 			'p.date_added' => 'date_added',
 			'rating' => 'rating'
@@ -1402,10 +1405,20 @@ class ModelModuleAdvajaxfilter extends Model {
 		}
         else{
             if(isset($data['sort']) && array_key_exists($data['sort'], $sort_data)) {
+//                var_dump($data['sort']);
+                if($data['sort'] == 'p.price'){    
+                   if($this->session->data['country_code']=='ua'){
+                   }elseif($this->session->data['country_code']=='ru'){
+                       $data['sort'] .='_ru';
+                   }else{
+                       $data['sort'] .='_en';
+                   }
+                    
+                } 
                 $data['sort'] = $sort_data[$data['sort']];
                 if($data['sort'] == 'name' || $data['sort'] == 'model') {
                     $sql .= " ORDER BY LCASE(" . $data['sort'] . ")";
-                } else {
+                }else {
                     $sql .= " ORDER BY " . $data['sort'];
                 }
             } else {
@@ -1430,9 +1443,9 @@ class ModelModuleAdvajaxfilter extends Model {
 
 			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
 		}
-
+//var_dump($sql);
 		$query = $this->db->query($sql);
-//		var_dump($sql);
+		
 		$product_data = array();
 		if($query->rows) {
 			$this->load->model('catalog/product');

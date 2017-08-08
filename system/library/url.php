@@ -11,7 +11,7 @@ class Url {
 		$this->rewrite[] = $rewrite;
 	}
 
-	public function link($route, $args = '', $secure = false) {
+	public function link($route, $args = '', $secure = false, $country_code = false, $language = false) {
 		if ($this->ssl && $secure) {
 			$url = 'https://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
 		} else {

@@ -6,4 +6,11 @@ class ModelStartupUrl extends Model {
 //                die();
 		return $query->row;
 	}
+        public function getLanguageByName($name) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language WHERE name = '" . $name . "'");
+//                var_dump($name);
+//                    var_dump($query->row);
+//                    die();
+		return $query->row;
+	}
 }
