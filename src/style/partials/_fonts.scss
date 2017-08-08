@@ -1,0 +1,17 @@
+@import "bourbon/bourbon";
+
+
+@include font-face("Ral-eb", "fonts/Raleway-ExtraBold", normal, $file-formats: woff);
+@include font-face("Ral-eb", "fonts/Raleway-ExtraBold", normal, $file-formats: ttf);
+
+@include font-face("Ral-b", "fonts/Raleway-Bold", normal, $file-formats: woff);
+@include font-face("Ral-b", "fonts/Raleway-Bold", normal, $file-formats: ttf);
+
+@include font-face("Ral-m", "fonts/Raleway-Medium", normal, $file-formats: woff);
+@include font-face("Ral-m", "fonts/Raleway-Medium", normal, $file-formats: ttf);
+
+@include font-face("Ral-sb", "fonts/Raleway-SemiBold", normal, $file-formats: woff);
+@include font-face("Ral-sb", "fonts/Raleway-SemiBold", normal, $file-formats: ttf);
+
+@include font-face("Rob-b", "fonts/Roboto-Bold", normal, $file-formats: woff);
+@include font-face("Rob-b", "fonts/Roboto-Bold", normal, $file-formats: ttf);

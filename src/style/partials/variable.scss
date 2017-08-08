@@ -1,0 +1,16 @@
+
+a,button{
+	transition: all .2s ease;
+	display: inline-block;
+	&:before{
+		transition: all .2s ease;
+	}
+	&:link,&:visited,&:hover,&:active,&:focus{
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+
+$brand:      #ffeb3b;
+$brand2:     #5f2a43;

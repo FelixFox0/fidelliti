@@ -1,0 +1,21 @@
+{
+  "name": "sv.loc",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Padavan"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "normalize-css": "normalize.css#^4.2.0"
+  }
+}

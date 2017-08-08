@@ -1,0 +1,28 @@
+{
+  "name": "sv.loc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://padavan1994@bitbucket.org/garnetsoftware/sv.git"
+  },
+  "author": "Padavan",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/garnetsoftware/sv#readme",
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
+    "gulp.spritesmith": "^6.4.0"
+  }
+}
