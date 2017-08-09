@@ -117,7 +117,7 @@ class ControllerPaymentPerpetualPayments extends Controller {
 
 				$this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('perpetual_payments_order_status_id'), $message, false);
 
-				$json['redirect'] = $this->url->link('checkout/success');
+				$json['redirect'] = $this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			} else {
 				$json['error'] = end($data);
 			}

@@ -4,7 +4,7 @@ class ControllerAffiliateForgotten extends Controller {
 
 	public function index() {
 		if ($this->affiliate->isLogged()) {
-			$this->response->redirect($this->url->link('affiliate/account', '', true));
+			$this->response->redirect($this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$this->load->language('affiliate/forgotten');
@@ -58,24 +58,24 @@ class ControllerAffiliateForgotten extends Controller {
 				$this->model_affiliate_activity->addActivity('forgotten', $activity_data);
 			}
 
-			$this->response->redirect($this->url->link('affiliate/login', '', true));
+			$this->response->redirect($this->url->link('affiliate/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_account'),
-			'href' => $this->url->link('affiliate/account', '', true)
+			'href' => $this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_forgotten'),
-			'href' => $this->url->link('affiliate/forgotten', '', true)
+			'href' => $this->url->link('affiliate/forgotten', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -94,9 +94,9 @@ class ControllerAffiliateForgotten extends Controller {
 			$data['error_warning'] = '';
 		}
 
-		$data['action'] = $this->url->link('affiliate/forgotten', '', true);
+		$data['action'] = $this->url->link('affiliate/forgotten', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
-		$data['back'] = $this->url->link('affiliate/login', '', true);
+		$data['back'] = $this->url->link('affiliate/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

@@ -53,7 +53,7 @@ class ControllerProductQuickview extends Controller {
 			$data['text_option'] = $this->language->get('text_option');
 			$data['text_minimum'] = sprintf($this->language->get('text_minimum'), $product_info['minimum']);
 			$data['text_write'] = $this->language->get('text_write');
-			$data['text_login'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true));
+			$data['text_login'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->url->link('account/register', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			$data['text_note'] = $this->language->get('text_note');
 			$data['text_tags'] = $this->language->get('text_tags');
 			$data['text_related'] = $this->language->get('text_related');
@@ -400,7 +400,7 @@ class ControllerProductQuickview extends Controller {
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 

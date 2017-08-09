@@ -10,7 +10,7 @@ class ControllerProductTestimonial extends Controller {
 
    		$data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home', '', true),
+			'href'      => $this->url->link('common/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']),
       		'separator' => false
    		);
 
@@ -23,7 +23,7 @@ class ControllerProductTestimonial extends Controller {
 
 	   		$data['breadcrumbs'][] = array(
 	       		'text'      => $this->language->get('heading_title'),
-				'href'      => $this->url->link('product/testimonial', '', true),
+				'href'      => $this->url->link('product/testimonial', '', true, $this->session->data['country_code'], $this->session->data['language_name']),
 	      		'separator' => $this->language->get('text_separator')
 	   		);
 
@@ -38,7 +38,7 @@ class ControllerProductTestimonial extends Controller {
       		$data['text_stars'] = $this->language->get('text_stars');
       		$data['text_no_rating'] = $this->language->get('text_no_rating');
 			
-			$data['continue'] = $this->url->link('common/home', '', true);
+			$data['continue'] = $this->url->link('common/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$this->page_limit = $this->config->get('config_product_limit');
 			
@@ -76,10 +76,10 @@ class ControllerProductTestimonial extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 			
-				$data['write_url'] = $this->url->link('product/testimonialform', '', true); 	
+				$data['write_url'] = $this->url->link('product/testimonialform', '', true, $this->session->data['country_code'], $this->session->data['language_name']); 	
 			
 			if ( isset($this->request->get['testimonial_id']) ){
-				$data['showall_url'] = $this->url->link('product/testimonial', '', true); 	
+				$data['showall_url'] = $this->url->link('product/testimonial', '', true, $this->session->data['country_code'], $this->session->data['language_name']); 	
 			}
 			
 			else{
@@ -113,7 +113,7 @@ class ControllerProductTestimonial extends Controller {
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 			

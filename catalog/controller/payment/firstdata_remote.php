@@ -107,7 +107,7 @@ class ControllerPaymentFirstdataRemote extends Controller {
 			$message = '';
 
 			if (isset($capture_result['transaction_result']) && strtoupper($capture_result['transaction_result']) == 'APPROVED') {
-				$json['success'] = $this->url->link('checkout/success');
+				$json['success'] = $this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 				$message .= $this->language->get('text_result') . $capture_result['transaction_result'] . '<br />';
 				$message .= $this->language->get('text_avs') . $address_codes[$capture_result['avs']] . ' (' . $capture_result['avs'] . ')<br />';

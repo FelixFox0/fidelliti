@@ -5,7 +5,7 @@ class ControllerModuleSagepayServerCards extends Controller {
 			$this->load->language('account/sagepay_server_cards');
 
 			$data['text_card'] = $this->language->get('text_card');
-			$data['card'] = $this->url->link('account/sagepay_server_cards', '', true);
+			$data['card'] = $this->url->link('account/sagepay_server_cards', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			return $this->load->view('module/sagepay_server_cards', $data);
 		}

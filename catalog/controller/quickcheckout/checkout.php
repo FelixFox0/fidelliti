@@ -3,7 +3,7 @@ class ControllerQuickCheckoutCheckout extends Controller {
 	public function index() {
 		
 		/*if (!$this->customer->isLogged() && !$this->config->get('config_checkout_guest')) {
-		$this->response->redirect($this->url->link('account/login', '', true));
+		$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}*/
 
 		if ($this->config->get('quickcheckout_load_screen')) {
@@ -50,13 +50,13 @@ class ControllerQuickCheckoutCheckout extends Controller {
 		
 		if (!$this->config->get('quickcheckout_debug') || !isset($this->request->get['debug'])) {
 			if (!$this->config->get('quickcheckout_status')) {
-				$this->response->redirect($this->url->link('checkout/checkout'));
+				$this->response->redirect($this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		}
 		
 		// Validate cart has products and has stock.
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
-	  		$this->response->redirect($this->url->link('checkout/cart'));
+	  		$this->response->redirect($this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
     	}	
 		
 		// Validate minimum quantity requirements.			
@@ -72,7 +72,7 @@ class ControllerQuickCheckoutCheckout extends Controller {
 			}		
 			
 			if ($product['minimum'] > $product_total) {
-				$this->response->redirect($this->url->link('checkout/cart'));
+				$this->response->redirect($this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 			}				
 		}
 				
@@ -84,17 +84,17 @@ class ControllerQuickCheckoutCheckout extends Controller {
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home')
+			'href'      => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
       	); 
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_cart'),
-			'href'      => $this->url->link('checkout/cart')
+			'href'      => $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 		
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('quickcheckout/checkout', '', true)
+			'href'      => $this->url->link('quickcheckout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 					
 	    $data['heading_title'] = $this->language->get('heading_title');

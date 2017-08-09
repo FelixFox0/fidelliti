@@ -202,7 +202,7 @@ class ControllerQuickCheckoutGuest extends Controller {
 
 		// Validate if customer is logged in.
 		if ($this->customer->isLogged()) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', true);
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		if (!$json) {

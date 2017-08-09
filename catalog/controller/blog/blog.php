@@ -17,12 +17,12 @@ class ControllerBlogBlog extends Controller {
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home')
+			'href'      => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_blog'),
-			'href'      => $this->url->link('blog/home')
+			'href'      => $this->url->link('blog/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 				
 		$this->load->model('blog/blog_category');
@@ -46,7 +46,7 @@ class ControllerBlogBlog extends Controller {
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $category_info['name'],
-						'href' => $this->url->link('blog/category', 'blogpath=' . $path)
+						'href' => $this->url->link('blog/category', 'blogpath=' . $path, false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 			}
@@ -59,7 +59,7 @@ class ControllerBlogBlog extends Controller {
 
 				$data['breadcrumbs'][] = array(
 					'text' => $category_info['name'],
-					'href' => $this->url->link('blog/category', 'blogpath=' . $this->request->get['blogpath'] . $url)
+					'href' => $this->url->link('blog/category', 'blogpath=' . $this->request->get['blogpath'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 		}		
@@ -81,7 +81,7 @@ class ControllerBlogBlog extends Controller {
 			
 			$data['breadcrumbs'][] = array(
 			'text'      => $blog_info['title'],
-			'href' => $this->url->link('blog/blog', $url . '&blog_id=' . $this->request->get['blog_id'])
+			'href' => $this->url->link('blog/blog', $url . '&blog_id=' . $this->request->get['blog_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 			
 			$data['new_read_counter_value'] = $blog_info['count_read']+1;
@@ -120,7 +120,7 @@ class ControllerBlogBlog extends Controller {
         		'date_added_full' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_added' => $result['date_added'],
         		'image' => $this->model_tool_image->resize($result['image'], $this->config->get('blogsetting_rel_thumbs_w'), $this->config->get('blogsetting_rel_thumbs_h')),
-	    		'href'  => $this->url->link('blog/blog', 'blog_id=' . $result['blog_id'])
+	    		'href'  => $this->url->link('blog/blog', 'blog_id=' . $result['blog_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
       			);
     		  }
     		}
@@ -135,7 +135,7 @@ class ControllerBlogBlog extends Controller {
 			$this->document->setDescription($blog_info['meta_description']);
 			$this->document->setKeywords($blog_info['meta_keyword']);
 			
-			$this->document->addLink($this->url->link('blog/blog', 'blog_id=' . $this->request->get['blog_id']), 'canonical');
+			$this->document->addLink($this->url->link('blog/blog', 'blog_id=' . $this->request->get['blog_id']), 'canonical', false, $this->session->data['country_code'], $this->session->data['language_name']);
 										
       		$data['heading_title'] = $blog_info['title'];
 			
@@ -151,7 +151,7 @@ class ControllerBlogBlog extends Controller {
 				foreach ($tags as $tag) {
 					$data['tags'][] = array(
 						'tag'  => trim($tag),
-						'href' => $this->url->link('blog/home', 'tag=' . trim($tag))
+						'href' => $this->url->link('blog/home', 'tag=' . trim($tag), false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 			}
@@ -188,7 +188,7 @@ class ControllerBlogBlog extends Controller {
 			
 			$data['allow_comment'] = $blog_info['allow_comment'];
 			
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			
 			$data['blog_id'] = (int)$this->request->get['blog_id'];
 			
@@ -215,7 +215,7 @@ class ControllerBlogBlog extends Controller {
 			$url = '';
 			
       		$data['breadcrumbs'] [] = array(
-        		'href'      => $this->url->link('blog/blog', $url . '&blog_id=' . $this->request->get['blog_id']),
+        		'href'      => $this->url->link('blog/blog', $url . '&blog_id=' . $this->request->get['blog_id'], false, $this->session->data['country_code'], $this->session->data['language_name']),
         		'text'      => $this->language->get('text_error')
       		);
 				
@@ -227,7 +227,7 @@ class ControllerBlogBlog extends Controller {
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 
@@ -283,7 +283,7 @@ class ControllerBlogBlog extends Controller {
 			$pagination->total = $comment_total;
 			$pagination->page = $page;
 			$pagination->limit = $this->config->get('blogsetting_comment_per_page'); 
-			$pagination->url = $this->url->link('blog/blog/comment', 'blog_id=' . $this->request->get['blog_id'] . '&page={page}');
+			$pagination->url = $this->url->link('blog/blog/comment', 'blog_id=' . $this->request->get['blog_id'] . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			
 			$data['pagination'] = $pagination->render();
 

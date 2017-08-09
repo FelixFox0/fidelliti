@@ -16,12 +16,12 @@ class ControllerBlogHome extends Controller {
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home')
+			'href'      => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_blog'),
-			'href'      => $this->url->link('blog/home')
+			'href'      => $this->url->link('blog/home','', false, $this->session->data['country_code'], $this->session->data['language_name'])
       	);	
 		
 		if (isset($this->request->get['page'])) {
@@ -64,7 +64,7 @@ class ControllerBlogHome extends Controller {
 			'date_added_full' => $result['date_added'],
 			'author' => $result['author'],
 			'image'   		=> $this->model_tool_image->resize($result['image'], $this->config->get('blogsetting_thumbs_w'), $this->config->get('blogsetting_thumbs_h')),
-			'href' => $this->url->link('blog/blog', 'blog_id=' . $result['blog_id'])
+			'href' => $this->url->link('blog/blog', 'blog_id=' . $result['blog_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 		
@@ -125,7 +125,7 @@ class ControllerBlogHome extends Controller {
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('blogsetting_blogs_per_page');
 		$pagination->text = $this->language->get('text_pagination');
-		$pagination->url = $this->url->link('blog/home', $url . '&page={page}');
+		$pagination->url = $this->url->link('blog/home', $url . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		$data['pagination'] = $pagination->render();
 		

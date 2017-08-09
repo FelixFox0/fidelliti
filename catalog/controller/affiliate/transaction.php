@@ -2,9 +2,9 @@
 class ControllerAffiliateTransaction extends Controller {
 	public function index() {
 		if (!$this->affiliate->isLogged()) {
-			$this->session->data['redirect'] = $this->url->link('affiliate/transaction', '', true);
+			$this->session->data['redirect'] = $this->url->link('affiliate/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
-			$this->response->redirect($this->url->link('affiliate/login', '', true));
+			$this->response->redirect($this->url->link('affiliate/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$this->load->language('affiliate/transaction');
@@ -15,17 +15,17 @@ class ControllerAffiliateTransaction extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_account'),
-			'href' => $this->url->link('affiliate/account', '', true)
+			'href' => $this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_transaction'),
-			'href' => $this->url->link('affiliate/transaction', '', true)
+			'href' => $this->url->link('affiliate/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$this->load->model('affiliate/transaction');
@@ -72,7 +72,7 @@ class ControllerAffiliateTransaction extends Controller {
 		$pagination->total = $transaction_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('affiliate/transaction', 'page={page}', true);
+		$pagination->url = $this->url->link('affiliate/transaction', 'page={page}', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['pagination'] = $pagination->render();
 
@@ -80,7 +80,7 @@ class ControllerAffiliateTransaction extends Controller {
 
 		$data['balance'] = $this->currency->format($this->model_affiliate_transaction->getBalance(), $this->session->data['currency']);
 
-		$data['continue'] = $this->url->link('affiliate/account', '', true);
+		$data['continue'] = $this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

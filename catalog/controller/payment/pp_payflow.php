@@ -162,7 +162,7 @@ class ControllerPaymentPPPayflow extends Controller {
 
 			$this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('pp_payflow_order_status_id'), $message, false);
 
-			$json['success'] = $this->url->link('checkout/success');
+			$json['success'] = $this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		} else {
 			switch ($response_info['RESULT']) {
 				case '1':

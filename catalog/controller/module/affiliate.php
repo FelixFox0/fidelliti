@@ -17,16 +17,16 @@ class ControllerModuleAffiliate extends Controller {
 		$data['text_transaction'] = $this->language->get('text_transaction');
 
 		$data['logged'] = $this->affiliate->isLogged();
-		$data['register'] = $this->url->link('affiliate/register', '', true);
-		$data['login'] = $this->url->link('affiliate/login', '', true);
-		$data['logout'] = $this->url->link('affiliate/logout', '', true);
-		$data['forgotten'] = $this->url->link('affiliate/forgotten', '', true);
-		$data['account'] = $this->url->link('affiliate/account', '', true);
-		$data['edit'] = $this->url->link('affiliate/edit', '', true);
-		$data['password'] = $this->url->link('affiliate/password', '', true);
-		$data['payment'] = $this->url->link('affiliate/payment', '', true);
-		$data['tracking'] = $this->url->link('affiliate/tracking', '', true);
-		$data['transaction'] = $this->url->link('affiliate/transaction', '', true);
+		$data['register'] = $this->url->link('affiliate/register', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['login'] = $this->url->link('affiliate/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['logout'] = $this->url->link('affiliate/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['forgotten'] = $this->url->link('affiliate/forgotten', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['account'] = $this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['edit'] = $this->url->link('affiliate/edit', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['password'] = $this->url->link('affiliate/password', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['payment'] = $this->url->link('affiliate/payment', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['tracking'] = $this->url->link('affiliate/tracking', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['transaction'] = $this->url->link('affiliate/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		return $this->load->view('module/affiliate', $data);
 	}

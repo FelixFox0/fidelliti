@@ -135,7 +135,7 @@ class ControllerPaymentGlobalpayRemote extends Controller {
 					$json['ACSURL'] = (string)$verify_3ds->url;
 					$json['MD'] = $md;
 					$json['PaReq'] = (string)$verify_3ds->pareq;
-					$json['TermUrl'] = $this->url->link('payment/globalpay_remote/acsReturn', '', true);
+					$json['TermUrl'] = $this->url->link('payment/globalpay_remote/acsReturn', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 					$this->response->addHeader('Content-Type: application/json');
 					$this->response->setOutput(json_encode($json));
@@ -224,7 +224,7 @@ class ControllerPaymentGlobalpayRemote extends Controller {
 		if ($capture_result->result != '00') {
 			$json['error'] = (string)$capture_result->message . ' (' . (int)$capture_result->result . ')';
 		} else {
-			$json['success'] = $this->url->link('checkout/success');
+			$json['success'] = $this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
@@ -309,7 +309,7 @@ class ControllerPaymentGlobalpayRemote extends Controller {
 
 					$this->session->data['error'] = $this->language->get('error_3d_unsuccessful');
 
-					$this->response->redirect($this->url->link('checkout/checkout', '', true));
+					$this->response->redirect($this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 					die();
 				}
 			}
@@ -337,12 +337,12 @@ class ControllerPaymentGlobalpayRemote extends Controller {
 			if ($capture_result->result != '00') {
 				$this->session->data['error'] = (string)$capture_result->message . ' (' . (int)$capture_result->result . ')';
 
-				$this->response->redirect($this->url->link('checkout/checkout', '', true));
+				$this->response->redirect($this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			} else {
-				$this->response->redirect($this->url->link('checkout/success'));
+				$this->response->redirect($this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		} else {
-			$this->response->redirect($this->url->link('account/login', '', true));
+			$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 }

@@ -20,11 +20,11 @@ class ControllerCommonHeaderLogin extends Controller {
 		
 		$this->load->model('account/customer');
 
-		$data['action'] = $this->url->link('account/login', '', true);
-		$data['logout_link'] = $this->url->link('account/logout', '', true);
-		$data['login_link'] = $this->url->link('account/login', '', true);
-		$data['register'] = $this->url->link('account/register', '', true);
-		$data['forgotten'] = $this->url->link('account/forgotten', '', true);
+		$data['action'] = $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['logout_link'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['login_link'] = $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['register'] = $this->url->link('account/register', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['forgotten'] = $this->url->link('account/forgotten', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		$data['logged'] = $this->customer->isLogged();
 		

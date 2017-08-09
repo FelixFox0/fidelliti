@@ -28,22 +28,22 @@ class ControllerCommonFooter extends Controller {
 			if ($result['bottom']) {
 				$data['informations'][] = array(
 					'title' => $result['title'],
-					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 		}
 
-		$data['contact'] = $this->url->link('information/contact');
-		$data['return'] = $this->url->link('account/return/add', '', true);
-		$data['sitemap'] = $this->url->link('information/sitemap');
-		$data['manufacturer'] = $this->url->link('product/manufacturer');
-		$data['voucher'] = $this->url->link('account/voucher', '', true);
-		$data['affiliate'] = $this->url->link('affiliate/account', '', true);
-		$data['special'] = $this->url->link('product/special');
-		$data['account'] = $this->url->link('account/account', '', true);
-		$data['order'] = $this->url->link('account/order', '', true);
-		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
-		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
+		$data['contact'] = $this->url->link('information/contact','', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['return'] = $this->url->link('account/return/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['sitemap'] = $this->url->link('information/sitemap', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['manufacturer'] = $this->url->link('product/manufacturer','', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['voucher'] = $this->url->link('account/voucher', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['affiliate'] = $this->url->link('affiliate/account', '', true,$this->session->data['country_code'], $this->session->data['language_name']);
+		$data['special'] = $this->url->link('product/special', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['account'] = $this->url->link('account/account', '', true,$this->session->data['country_code'], $this->session->data['language_name']);
+		$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['wishlist'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 

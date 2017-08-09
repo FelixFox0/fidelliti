@@ -9,31 +9,31 @@ class ControllerCheckoutFailure extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_basket'),
-			'href' => $this->url->link('checkout/cart')
+			'href' => $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_checkout'),
-			'href' => $this->url->link('checkout/checkout', '', true)
+			'href' => $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_failure'),
-			'href' => $this->url->link('checkout/failure')
+			'href' => $this->url->link('checkout/failure', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
-		$data['text_message'] = sprintf($this->language->get('text_message'), $this->url->link('information/contact'));
+		$data['text_message'] = sprintf($this->language->get('text_message'), $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 
 		$data['button_continue'] = $this->language->get('button_continue');
 
-		$data['continue'] = $this->url->link('common/home');
+		$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

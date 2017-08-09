@@ -4,9 +4,9 @@ class ControllerAffiliatePayment extends Controller {
 
 	public function index() {
 		if (!$this->affiliate->isLogged()) {
-			$this->session->data['redirect'] = $this->url->link('affiliate/payment', '', true);
+			$this->session->data['redirect'] = $this->url->link('affiliate/payment', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
-			$this->response->redirect($this->url->link('affiliate/login', '', true));
+			$this->response->redirect($this->url->link('affiliate/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$this->load->language('affiliate/payment');
@@ -30,24 +30,24 @@ class ControllerAffiliatePayment extends Controller {
 
 			$this->model_affiliate_activity->addActivity('payment', $activity_data);
 
-			$this->response->redirect($this->url->link('affiliate/account', '', true));
+			$this->response->redirect($this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_account'),
-			'href' => $this->url->link('affiliate/account', '', true)
+			'href' => $this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_payment'),
-			'href' => $this->url->link('affiliate/payment', '', true)
+			'href' => $this->url->link('affiliate/payment', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -70,7 +70,7 @@ class ControllerAffiliatePayment extends Controller {
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_back'] = $this->language->get('button_back');
 
-		$data['action'] = $this->url->link('affiliate/payment', '', true);
+		$data['action'] = $this->url->link('affiliate/payment', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		if ($this->request->server['REQUEST_METHOD'] != 'POST') {
 			$affiliate_info = $this->model_affiliate_affiliate->getAffiliate($this->affiliate->getId());
@@ -148,7 +148,7 @@ class ControllerAffiliatePayment extends Controller {
 			$data['bank_account_number'] = '';
 		}
 
-		$data['back'] = $this->url->link('affiliate/account', '', true);
+		$data['back'] = $this->url->link('affiliate/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

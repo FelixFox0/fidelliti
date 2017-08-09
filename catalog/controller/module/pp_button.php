@@ -16,7 +16,7 @@ class ControllerModulePPButton extends Controller {
 				$data['mobile'] = false;
 			}
 
-			$data['payment_url'] = $this->url->link('payment/pp_express/express', '', true);
+			$data['payment_url'] = $this->url->link('payment/pp_express/express', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			return $this->load->view('module/pp_button', $data);
 		}

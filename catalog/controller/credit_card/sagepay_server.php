@@ -2,9 +2,9 @@
 class ControllerCreditCardSagepayServer extends Controller {
 	public function index() {
 		if (!$this->customer->isLogged()) {
-			$this->session->data['redirect'] = $this->url->link('account/account', '', true);
+			$this->session->data['redirect'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
-			$this->response->redirect($this->url->link('account/login', '', true));
+			$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$this->load->language('credit_card/sagepay_server');
@@ -17,12 +17,12 @@ class ControllerCreditCardSagepayServer extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_account'),
-			'href' => $this->url->link('account/account', '', true)
+			'href' => $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 
@@ -81,8 +81,8 @@ class ControllerCreditCardSagepayServer extends Controller {
 			$data['results'] = false;
 		}
 
-		$data['back'] = $this->url->link('account/account', '', true);
-		$data['add'] = $this->url->link('credit_card/sagepay_server/add', '', true);
+		$data['back'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['add'] = $this->url->link('credit_card/sagepay_server/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
@@ -124,7 +124,7 @@ class ControllerCreditCardSagepayServer extends Controller {
 		} else {
 			$this->session->data['error_warning'] = $this->language->get('text_fail_card');
 		}
-		$this->response->redirect($this->url->link('credit_card/sagepay_server', '', true));
+		$this->response->redirect($this->url->link('credit_card/sagepay_server', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 	}
 
 	public function addCard() {
@@ -146,7 +146,7 @@ class ControllerCreditCardSagepayServer extends Controller {
 		$payment_data['TxType'] = 'TOKEN';
 		$payment_data['Vendor'] = $this->config->get('sagepay_server_vendor');
 		$payment_data['VendorTxCode'] = 'server_card_' . strftime("%Y%m%d%H%M%S") . mt_rand(1, 999);
-		$payment_data['NotificationURL'] = $this->url->link('credit_card/sagepay_server/callback', '', true);
+		$payment_data['NotificationURL'] = $this->url->link('credit_card/sagepay_server/callback', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$payment_data['Currency'] = $this->session->data['currency'];
 
 		$response_data = $this->model_payment_sagepay_server->sendCurl($url, $payment_data);
@@ -179,8 +179,8 @@ class ControllerCreditCardSagepayServer extends Controller {
 
 		$this->model_payment_sagepay_server->logger('Callback data', $this->request->post);
 
-		$success_page = $this->url->link('credit_card/sagepay_server/success', '', true);
-		$error_page = $this->url->link('credit_card/sagepay_server/failure', '', true);
+		$success_page = $this->url->link('credit_card/sagepay_server/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$error_page = $this->url->link('credit_card/sagepay_server/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$end_ln = chr(13) . chr(10);
 
 		if (isset($this->request->post['VendorTxCode'])) {
@@ -273,13 +273,13 @@ class ControllerCreditCardSagepayServer extends Controller {
 		$this->load->model('payment/sagepay_server');
 		$this->model_payment_sagepay_server->logger('Success', '');
 		$this->session->data['success'] = 'Success';
-		$this->response->redirect($this->url->link('credit_card/sagepay_server', '', true));
+		$this->response->redirect($this->url->link('credit_card/sagepay_server', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 	}
 
 	public function failure() {
 		$this->load->model('payment/sagepay_server');
 		$this->model_payment_sagepay_server->logger('Failure', '');
 		$this->session->data['error_warning'] = 'Failure';
-		$this->response->redirect($this->url->link('credit_card/sagepay_server', '', true));
+		$this->response->redirect($this->url->link('credit_card/sagepay_server', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 	}
 }

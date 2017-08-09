@@ -19,7 +19,7 @@ class ControllerModuleInformation extends Controller {
 			);
 		}
 
-		$data['contact'] = $this->url->link('information/contact');
+		$data['contact'] = $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['sitemap'] = $this->url->link('information/sitemap');
 
 		return $this->load->view('module/information', $data);

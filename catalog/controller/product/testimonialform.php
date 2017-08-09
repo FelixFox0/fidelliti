@@ -24,7 +24,7 @@ class ControllerProductTestimonialform extends Controller {
 
 		$this->language->load('module/testimonial');
 		$data['show_all'] = $this->language->get('show_all');
-		$data['showall_url'] = $this->url->link('product/testimonial', '', true);
+		$data['showall_url'] = $this->url->link('product/testimonial', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['button_send'] = $this->language->get('button_send');
 
 		$this->load->model('catalog/testimonial');
@@ -106,12 +106,12 @@ class ControllerProductTestimonialform extends Controller {
 
       	$data['breadcrumbs'][] = array(
 	        	'text'      => $this->language->get('text_home'),
-				'href'      => $this->url->link('common/home', '', true)
+				'href'      => $this->url->link('common/home', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 
       	$data['breadcrumbs'][] = array(
 	        	'text'      => $this->language->get('heading_title'),
-				'href'      => $this->url->link('product/testimonialform', '', true)
+				'href'      => $this->url->link('product/testimonialform', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
       	);			
 
 	    $data['entry_title'] = $this->language->get('entry_title');
@@ -205,12 +205,12 @@ class ControllerProductTestimonialform extends Controller {
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home', '', true)
+			'href'      => $this->url->link('common/home', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
       	);
 
       	$data['breadcrumbs'][] = array(
         	'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('product/testimonialform', '', true)
+			'href'      => $this->url->link('product/testimonialform', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
       	);			
 		
 	    	$data['heading_title'] = $this->language->get('heading_title');
@@ -219,7 +219,7 @@ class ControllerProductTestimonialform extends Controller {
 	
 	    	$data['button_continue'] = $this->language->get('button_continue');
 	
-    		$data['continue'] = $this->url->link('common/home', '', true);
+    		$data['continue'] = $this->url->link('common/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			
 			$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

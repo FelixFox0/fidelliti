@@ -4,7 +4,7 @@ class ControllerAccountReset extends Controller {
 
 	public function index() {
 		if ($this->customer->isLogged()) {
-			$this->response->redirect($this->url->link('account/account', '', true));
+			$this->response->redirect($this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		if (isset($this->request->get['code'])) {
@@ -36,7 +36,7 @@ class ControllerAccountReset extends Controller {
 
 				$this->session->data['success'] = $this->language->get('text_success');
 
-				$this->response->redirect($this->url->link('account/login', '', true));
+				$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 
 			$data['heading_title'] = $this->language->get('heading_title');
@@ -53,17 +53,17 @@ class ControllerAccountReset extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_home'),
-				'href' => $this->url->link('common/home')
+				'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_account'),
-				'href' => $this->url->link('account/account', '', true)
+				'href' => $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('account/reset', '', true)
+				'href' => $this->url->link('account/reset', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			if (isset($this->error['password'])) {
@@ -78,9 +78,9 @@ class ControllerAccountReset extends Controller {
 				$data['error_confirm'] = '';
 			}
 
-			$data['action'] = $this->url->link('account/reset', 'code=' . $code, true);
+			$data['action'] = $this->url->link('account/reset', 'code=' . $code, true, $this->session->data['country_code'], $this->session->data['language_name']);
 
-			$data['back'] = $this->url->link('account/login', '', true);
+			$data['back'] = $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			if (isset($this->request->post['password'])) {
 				$data['password'] = $this->request->post['password'];

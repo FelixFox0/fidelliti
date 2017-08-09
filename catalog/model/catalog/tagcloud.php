@@ -51,7 +51,7 @@ class ModelCatalogTagCloud extends Model {
 					$tag_href = 'product/search&filter_tag=' . $record['tag'];
 				}
 			
-				$cloud[] = '<a class="sq_tag" href="' . $this->url->link(str_replace('&', '&amp;', $tag_href)) . '" title="' . $record['qty'] . ' ' .$this->language->get('text_href_title') . ' ' . $record['tag'] . '">' . $record['tag'] . '</a> ';
+				$cloud[] = '<a class="sq_tag" href="' . $this->url->link(str_replace('&', '&amp;', $tag_href), '', false, $this->session->data['country_code'], $this->session->data['language_name']) . '" title="' . $record['qty'] . ' ' .$this->language->get('text_href_title') . ' ' . $record['tag'] . '">' . $record['tag'] . '</a> ';
 			}
 		
 		} else {
@@ -64,7 +64,7 @@ class ModelCatalogTagCloud extends Model {
 					$tag_href = 'product/search&filter_tag=' . $record['tag'];
 				}
 			
-				$cloud[] = '<a href="' . $this->url->link(str_replace('&', '&amp;', $tag_href)) . '" title="' . $record['qty'] . ' ' .$this->language->get('text_href_title') . ' ' . $record['tag'] . '">' . $record['tag'] . '</a> ';
+				$cloud[] = '<a href="' . $this->url->link(str_replace('&', '&amp;', $tag_href), '', $this->session->data['country_code'], $this->session->data['language_name']) . '" title="' . $record['qty'] . ' ' .$this->language->get('text_href_title') . ' ' . $record['tag'] . '">' . $record['tag'] . '</a> ';
 			}
 		}
 	

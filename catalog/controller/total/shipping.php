@@ -62,7 +62,7 @@ class ControllerTotalShipping extends Controller {
 		}
 
 		if (!$this->cart->hasShipping()) {
-			$json['error']['warning'] = sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact'));
+			$json['error']['warning'] = sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		if ($this->request->post['country_id'] == '') {
@@ -162,7 +162,7 @@ class ControllerTotalShipping extends Controller {
 			if ($this->session->data['shipping_methods']) {
 				$json['shipping_method'] = $this->session->data['shipping_methods'];
 			} else {
-				$json['error']['warning'] = sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact'));
+				$json['error']['warning'] = sprintf($this->language->get('error_no_shipping'), $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		}
 
@@ -192,7 +192,7 @@ class ControllerTotalShipping extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$json['redirect'] = $this->url->link('checkout/cart');
+			$json['redirect'] = $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

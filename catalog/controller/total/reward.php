@@ -65,9 +65,9 @@ class ControllerTotalReward extends Controller {
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			if (isset($this->request->post['redirect'])) {
-				$json['redirect'] = $this->url->link($this->request->post['redirect']);
+				$json['redirect'] = $this->url->link($this->request->post['redirect'], '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			} else {
-				$json['redirect'] = $this->url->link('checkout/cart');	
+				$json['redirect'] = $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']);	
 			}
 		}
 

@@ -168,7 +168,7 @@ class ControllerPaymentAuthorizeNetAim extends Controller {
 					$this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('config_order_status_id'));
 				}
 
-				$json['redirect'] = $this->url->link('checkout/success', '', true);
+				$json['redirect'] = $this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			} else {
 				$json['error'] = $response_info[4];
 			}

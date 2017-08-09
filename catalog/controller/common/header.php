@@ -1,6 +1,8 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+//            var_dump($this->session->data['language_name']);
+//            var_dump($this->url->link('product/category', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		// Analytics
 		$this->load->model('extension/extension');
 
@@ -57,7 +59,7 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
-		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
+		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->customer->getFirstName(), $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');
@@ -70,20 +72,20 @@ class ControllerCommonHeader extends Controller {
 		$data['text_category'] = $this->language->get('text_category');
 		$data['text_all'] = $this->language->get('text_all');
 
-		$data['home'] = $this->url->link('common/home');
-		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
+		$data['home'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['wishlist'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['logged'] = $this->customer->isLogged();
-		$data['account'] = $this->url->link('account/account', '', true);
-		$data['register'] = $this->url->link('account/register', '', true);
-		$data['login'] = $this->url->link('account/login', '', true);
-		$data['order'] = $this->url->link('account/order', '', true);
-		$data['transaction'] = $this->url->link('account/transaction', '', true);
-		$data['download'] = $this->url->link('account/download', '', true);
-		$data['logout'] = $this->url->link('account/logout', '', true);
-		$data['shopping_cart'] = $this->url->link('checkout/cart');
-		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
-		$data['contact'] = $this->url->link('information/contact');
-		$data['telephone'] = $this->config->get('config_telephone');
+		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['register'] = $this->url->link('account/register', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['login'] = $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['transaction'] = $this->url->link('account/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['download'] = $this->url->link('account/download', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['shopping_cart'] = $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['checkout'] = $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['contact'] = $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['telephone'] = $this->config->get('config_telephone', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		// Menu
 		$this->load->model('catalog/category');
@@ -109,7 +111,7 @@ class ControllerCommonHeader extends Controller {
 
 					$children_data[] = array(
 						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
+						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'], false,$this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 
@@ -118,7 +120,7 @@ class ControllerCommonHeader extends Controller {
 					'name'     => $category['name'],
 					'children' => $children_data,
 					'column'   => $category['column'] ? $category['column'] : 1,
-					'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
+					'href'     => $this->url->link('product/category', 'path=' . $category['category_id'], false,$this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 		}

@@ -13,4 +13,8 @@ class ModelStartupUrl extends Model {
 //                    die();
 		return $query->row;
 	}
+        public function getLanguageByCode($code) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "language WHERE code = '" . $code . "'");
+		return $query->row;
+	}
 }

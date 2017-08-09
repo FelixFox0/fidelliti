@@ -284,7 +284,7 @@ class ControllerPaymentSagepayDirect extends Controller {
 			$this->model_payment_sagepay_direct->logger('$payment_data', $payment_data);
 			$this->model_payment_sagepay_direct->logger('order_id', $this->session->data['order_id']);
 
-			$json['TermUrl'] = $this->url->link('payment/sagepay_direct/callback', '', true);
+			$json['TermUrl'] = $this->url->link('payment/sagepay_direct/callback', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		} elseif ($response_data['Status'] == 'OK' || $response_data['Status'] == 'AUTHENTICATED' || $response_data['Status'] == 'REGISTERED') {
 			$message = '';
 
@@ -349,7 +349,7 @@ class ControllerPaymentSagepayDirect extends Controller {
 				}
 			}
 
-			$json['redirect'] = $this->url->link('checkout/success', '', true);
+			$json['redirect'] = $this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		} else {
 			$json['error'] = $response_data['Status'] . ': ' . $response_data['StatusDetail'];
 			$this->model_payment_sagepay_direct->logger('Response data', $json['error']);
@@ -433,14 +433,14 @@ class ControllerPaymentSagepayDirect extends Controller {
 					}
 				}
 
-				$this->response->redirect($this->url->link('checkout/success', '', true));
+				$this->response->redirect($this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			} else {
 				$this->session->data['error'] = $response_data['StatusDetail'];
 
-				$this->response->redirect($this->url->link('checkout/checkout', '', true));
+				$this->response->redirect($this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		} else {
-			$this->response->redirect($this->url->link('account/login', '', true));
+			$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 

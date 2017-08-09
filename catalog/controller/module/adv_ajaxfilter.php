@@ -215,7 +215,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 			$data['route'] = $this->request->get['route'];
 		} 
 		
-		$data['url']   = $this->url->link('product/adv_ajaxfilter', '');
+		$data['url']   = $this->url->link('product/adv_ajaxfilter', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		return $this->load->view('module/adv_ajaxfilter', $data);
         
@@ -391,7 +391,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
         $pagination->total = $product_total;
         $pagination->page = $page;
         $pagination->limit = $limit;
-        $pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&page={page}');
+        $pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
         $pagination_result = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
 
@@ -526,14 +526,14 @@ class ControllerModuleAdvajaxfilter extends Controller {
 			  'special_date_end' => $special_date_end,
 			  'thumb_hover'  => $this->model_tool_image->resize($images, $this->config->get('theme_default_image_product_width'), $this->config->get('theme_default_image_product_height')),
 			  'brand_name'		=> $result['manufacturer'],
-			  'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', true),
+			  'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', true, $this->session->data['country_code'], $this->session->data['language_name']),
 			  'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 			  // Cosyone custom code ends
 
 				'tax'         => $tax,
 				'rating'      => $result['rating'],
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-				'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'])
+				'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
         

@@ -211,7 +211,7 @@ class ControllerQuickCheckoutRegister extends Controller {
 					$this->session->data['shipping_address'] = $this->model_account_address->getAddress($this->customer->getAddressId());
 				}
 			} else {
-				$json['redirect'] = $this->url->link('account/success');
+				$json['redirect'] = $this->url->link('account/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			}
 
 			unset($this->session->data['guest']);

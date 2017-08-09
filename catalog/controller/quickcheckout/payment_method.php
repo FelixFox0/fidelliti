@@ -151,7 +151,7 @@ class ControllerQuickCheckoutPaymentMethod extends Controller {
 		}
    
 		if (empty($this->session->data['payment_methods'])) {
-			$data['error_warning'] = sprintf($this->language->get('error_no_payment'), $this->url->link('information/contact'));
+			$data['error_warning'] = sprintf($this->language->get('error_no_payment'), $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		} else {
 			$data['error_warning'] = '';
 		}	

@@ -18,7 +18,7 @@ class ControllerQuickCheckoutLogin extends Controller {
 		
 		$data['button_login'] = $this->language->get('button_login');
 		
-		$data['forgotten'] = $this->url->link('account/forgotten', '', true);
+		$data['forgotten'] = $this->url->link('account/forgotten', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		$this->response->setOutput($this->load->view('quickcheckout/login', $data));
 		
@@ -30,7 +30,7 @@ class ControllerQuickCheckoutLogin extends Controller {
 		$json = array();
 		
 		if ($this->customer->isLogged()) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', true);			
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);			
 		}
 		
 		if (!$json) {
@@ -72,7 +72,7 @@ class ControllerQuickCheckoutLogin extends Controller {
 		}
 		
 		if (!$json) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', true);
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 		
 		$this->response->addHeader('Content-Type: application/json');

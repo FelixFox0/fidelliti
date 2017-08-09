@@ -355,7 +355,7 @@ class ControllerModuleMegaFilter extends Controller {
 		$data['breadcrumbs'] = array();
    		$data['breadcrumbs'][] = array( 
        		'text'      => $this->language->get('text_home'),
-			'href'      => $this->url->link('common/home'),
+			'href'      => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']),
       		'separator' => false
    		);
 		

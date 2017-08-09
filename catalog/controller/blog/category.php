@@ -15,12 +15,12 @@ class ControllerBlogCategory extends Controller {
 
 	$data['breadcrumbs'][] = array(
 		'text'      => $this->language->get('text_home'),
-		'href'      => $this->url->link('common/home')
+		'href'      => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 	);
 
 	$data['breadcrumbs'][] = array(
 		'text'      => $this->language->get('text_blog'),
-		'href'      => $this->url->link('blog/home')
+		'href'      => $this->url->link('blog/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 	);	
 		
 				
@@ -40,7 +40,7 @@ class ControllerBlogCategory extends Controller {
 				}
 
 	       		$data['breadcrumbs'] [] = array(
-   	    			'href'      => $this->url->link('blog/category', 'blogpath=' . $path),
+   	    			'href'      => $this->url->link('blog/category', 'blogpath=' . $path, false, $this->session->data['country_code'], $this->session->data['language_name']),
     	   			'text'      => $blog_category_info['name']
         		);
 			}
@@ -119,7 +119,7 @@ class ControllerBlogCategory extends Controller {
         		'description' => html_entity_decode($result['description']),
         		'short_description' => html_entity_decode($result['short_description'], ENT_QUOTES, 'UTF-8'),
         		'image' => $this->model_tool_image->resize($result['image'], $this->config->get('blogsetting_thumbs_w'), $this->config->get('blogsetting_thumbs_h')),
-				'href'  => $this->url->link('blog/blog', 'blogpath=' . $this->request->get['blogpath'] . '&blog_id=' . $result['blog_id'])
+				'href'  => $this->url->link('blog/blog', 'blogpath=' . $this->request->get['blogpath'] . '&blog_id=' . $result['blog_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				
       		);
     		}
@@ -133,7 +133,7 @@ class ControllerBlogCategory extends Controller {
 			$pagination->page = $page;
 			$pagination->limit = $this->config->get('blogsetting_blogs_per_page'); 
 			$pagination->text = $this->language->get('text_pagination');
-			$pagination->url = $this->url->link('blog/category', 'blogpath=' . $this->request->get['blogpath'] . $url . '&page={page}');
+			$pagination->url = $this->url->link('blog/category', 'blogpath=' . $this->request->get['blogpath'] . $url . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			
 			$limit = $this->config->get('blogsetting_blogs_per_page');
 			
@@ -164,7 +164,7 @@ class ControllerBlogCategory extends Controller {
 			if (isset($this->request->get['blogpath'])) {	
 				$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('blog/category', 'blogpath=' . $path)
+				'href' => $this->url->link('blog/category', 'blogpath=' . $path, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 			}
 			
@@ -176,7 +176,7 @@ class ControllerBlogCategory extends Controller {
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
       	

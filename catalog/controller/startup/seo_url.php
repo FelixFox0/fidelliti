@@ -146,6 +146,8 @@ class ControllerStartupSeoUrl extends Controller {
                     $this->session->data['language_old'] = $this->session->data['language'];
                 }
                 
+                $this->load->model('startup/url');
+                $this->session->data['language_name'] = $this->model_startup_url->getLanguageByCode($this->session->data['language'])['name'];
                 
 //                var_dump(substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/')));
 //                var_dump($code);

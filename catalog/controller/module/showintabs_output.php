@@ -127,7 +127,7 @@ class ControllerModuleShowintabsoutput extends Controller {
 						'rating'     => $rating,
 						'reviews'    => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
 						'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
-						'quickview'  => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', true),
+						'quickview'  => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', true, $this->session->data['country_code'], $this->session->data['language_name']),
 						'sales_percantage' => number_format($sales_percantage, 0, ',', '.'),
 						'special_date_end' => $special_date_end,
 						'brand_name'		=> $result['manufacturer'],

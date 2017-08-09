@@ -14,7 +14,7 @@ class ControllerModuleAmazonPay extends Controller {
 			$this->document->addScript($amazon_payment_js);
 
 			$data['amazon_login_pay_client_id'] = $this->config->get('amazon_login_pay_client_id');
-			$data['amazon_pay_return_url'] = $this->url->link('module/amazon_pay/login', '', true);
+			$data['amazon_pay_return_url'] = $this->url->link('module/amazon_pay/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			if ($this->config->get('amazon_login_pay_test') == 'sandbox') {
 				$data['amazon_login_pay_test'] = true;
 			}
@@ -59,15 +59,15 @@ class ControllerModuleAmazonPay extends Controller {
 			if (isset($user->error)) {
 				$this->model_payment_amazon_login_pay->logger($user->error . ': ' . $user->error_description);
 				$this->session->data['lpa']['error'] = $this->language->get('error_login');
-				$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true));
+				$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 
 			if ($this->customer->isLogged() && $this->customer->getEmail() != $user->email) {
 				$this->session->data['lpa']['error'] = sprintf($this->language->get('error_login_email'), $this->config->get('config_name'));
-				$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true));
+				$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			} elseif ($this->customer->isLogged()) {
 				$this->model_payment_amazon_login_pay->logger('isLogged');
-				$this->response->redirect($this->url->link('payment/amazon_login_pay/address', '', true));
+				$this->response->redirect($this->url->link('payment/amazon_login_pay/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 
 			$customer_info = $this->model_account_customer->getCustomerByEmail($user->email);
@@ -99,10 +99,10 @@ class ControllerModuleAmazonPay extends Controller {
 				} else {
 					$this->model_payment_amazon_login_pay->logger('Could not login to - ID: ' . $customer_info['customer_id'] . ', Email: ' . $customer_info['email']);
 					$this->session->data['lpa']['error'] = $this->language->get('error_login');
-					$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true));
+					$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				}
 
-				$this->response->redirect($this->url->link('payment/amazon_login_pay/address', '', true));
+				$this->response->redirect($this->url->link('payment/amazon_login_pay/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			} else {
 				$country_id = 0;
 				$zone_id = 0;
@@ -154,17 +154,17 @@ class ControllerModuleAmazonPay extends Controller {
 
 					$this->model_account_activity->addActivity('login', $activity_data);
 					$this->model_payment_amazon_login_pay->logger('Customer logged in - ID: ' . $customer_id . ', Email: ' . $user->email);
-					$this->response->redirect($this->url->link('payment/amazon_login_pay/address', '', true));
+					$this->response->redirect($this->url->link('payment/amazon_login_pay/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				} else {
 					$this->model_payment_amazon_login_pay->logger('Could not login to - ID: ' . $customer_id . ', Email: ' . $user->email);
 					$this->session->data['lpa']['error'] = $this->language->get('error_login');
-					$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true));
+					$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				}
 			}
 		} else {
 
 			$this->session->data['lpa']['error'] = $this->language->get('error_login');
-			$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true));
+			$this->response->redirect($this->url->link('payment/amazon_login_pay/loginFailure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 

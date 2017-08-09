@@ -17,7 +17,7 @@ class ModelModuleCosyoneTagcloud extends Model {
 	if ($tags) {
 		foreach ($tags as $record) { 
 			$tag_href = 'product/search&tag=' . $record['tag'];
-			$cloud[] = '<a class="sq_tag" href="' . $this->url->link(str_replace('&', '&amp;', $tag_href)) . '" title="' . $record['tag'] . '">' . $record['tag'] . '</a> ';
+			$cloud[] = '<a class="sq_tag" href="' . $this->url->link(str_replace('&', '&amp;', $tag_href),'', false, $this->session->data['country_code'], $this->session->data['language_name']) . '" title="' . $record['tag'] . '">' . $record['tag'] . '</a> ';
 			}
 			$tagcloud = '';
 			for ($x = 0; $x < count($cloud); $x++) { $tagcloud .= $cloud[$x]; }

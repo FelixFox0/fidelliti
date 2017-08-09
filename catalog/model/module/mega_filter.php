@@ -2629,7 +2629,7 @@ class ModelModuleMegaFilter extends Model {
 							$row['top_path'] = $row['top_path'] ? implode( '_', $row['top_path'] ) : 0;
 						}
 
-						$row['top_url'] = $row['top_path'] ? $this->url->link( 'product/category', '&path=' . $row['top_path'], 'SSL' ) : '';
+						$row['top_url'] = $row['top_path'] ? $this->url->link( 'product/category', '&path=' . $row['top_path'], 'SSL' , $this->session->data['country_code'], $this->session->data['language_name']) : '';
 					} else {
 						$row = NULL;
 					}

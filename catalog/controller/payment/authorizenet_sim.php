@@ -73,7 +73,7 @@ class ControllerPaymentAuthorizeNetSim extends Controller {
 
 				$this->model_checkout_order->addOrderHistory($details['x_invoice_num'], $this->config->get('authorizenet_sim_order_status_id'), $message, true);
 
-				$this->response->redirect($this->url->link('checkout/success'));
+				$this->response->redirect($this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 			} else {
 				$this->response->redirect($this->url->link('checkout/failure'));
 			}

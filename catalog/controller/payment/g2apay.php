@@ -5,7 +5,7 @@ class ControllerPaymentG2APay extends Controller {
 
 		$data['button_confirm'] = $this->language->get('button_confirm');
 
-		$data['action'] = $this->url->link('payment/g2apay/checkout', '', true);
+		$data['action'] = $this->url->link('payment/g2apay/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		return $this->load->view('payment/g2apay', $data);
 	}
@@ -52,7 +52,7 @@ class ControllerPaymentG2APay extends Controller {
 						$item->qty = 1;
 						$item->id = $order_data['totals'][$i]['code'];
 						$item->price = $order_data['totals'][$i]['value'];
-						$item->url = $this->url->link('common/home', '', true);
+						$item->url = $this->url->link('common/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 						$items[] = $item;
 					}
 
@@ -104,11 +104,11 @@ class ControllerPaymentG2APay extends Controller {
 		$this->model_payment_g2apay->logger($fields);
 
 		if ($response_data === false) {
-			$this->response->redirect($this->url->link('payment/failure', '', true));
+			$this->response->redirect($this->url->link('payment/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		if (strtolower($response_data->status) != 'ok') {
-			$this->response->redirect($this->url->link('payment/failure', '', true));
+			$this->response->redirect($this->url->link('payment/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$this->model_payment_g2apay->addG2aOrder($order_info);
@@ -145,7 +145,7 @@ class ControllerPaymentG2APay extends Controller {
 			$this->model_checkout_order->addOrderHistory($order_id, $this->config->get('g2apay_order_status_id'));
 		}
 
-		$this->response->redirect($this->url->link('checkout/success'));
+		$this->response->redirect($this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 	}
 
 	public function ipn() {

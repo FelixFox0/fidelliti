@@ -61,8 +61,8 @@ class ControllerPaymentLaybuy extends Controller {
 
 				$data['VERSION']      = '0.2';
 				$data['MEMBER']       = $this->config->get('laybuys_membership_id');
-				$data['RETURNURL']    = $this->url->link('payment/laybuy/callback', '', true);
-				$data['CANCELURL']    = $this->url->link('payment/laybuy/cancel', '', true);
+				$data['RETURNURL']    = $this->url->link('payment/laybuy/callback', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+				$data['CANCELURL']    = $this->url->link('payment/laybuy/cancel', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 				$data['AMOUNT']       = round(floatval($order_info['total']), 2, PHP_ROUND_HALF_DOWN);
 				$data['CURRENCY']     = $order_info['currency_code'];
 				$data['INIT']         = (int)$this->request->post['INIT'];
@@ -109,17 +109,17 @@ class ControllerPaymentLaybuy extends Controller {
 				} else {
 					$this->model_payment_laybuy->log('Failure response. Redirecting to checkout/failure.');
 
-					$this->response->redirect($this->url->link('checkout/failure', '', true));
+					$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				}
 			} else {
 				$this->model_payment_laybuy->log('No matching order. Redirecting to checkout/failure.');
 
-				$this->response->redirect($this->url->link('checkout/failure', '', true));
+				$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		} else {
 			$this->model_payment_laybuy->log('No $_POST data. Redirecting to checkout/failure.');
 
-			$this->response->redirect($this->url->link('checkout/failure', '', true));
+			$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 
@@ -157,27 +157,27 @@ class ControllerPaymentLaybuy extends Controller {
 
 					$this->model_payment_laybuy->log('Success. Redirecting to checkout/success.');
 
-					$this->response->redirect($this->url->link('checkout/success', '', true));
+					$this->response->redirect($this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				} else {
 					$this->model_payment_laybuy->log('No matching order. Redirecting to checkout/failure.');
 
-					$this->response->redirect($this->url->link('checkout/failure', '', true));
+					$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				}
 			} else {
 				$this->model_payment_laybuy->log('Token does not match. Redirecting to checkout/failure.');
 
-				$this->response->redirect($this->url->link('checkout/failure', '', true));
+				$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		} elseif ($this->request->server['REQUEST_METHOD'] == 'POST' && isset($this->request->post['RESULT']) && $this->request->post['RESULT'] == 'FAILURE') {
 			$this->model_payment_laybuy->log('Failure Response: ' . $this->request->post);
 
 			$this->model_payment_laybuy->log('Redirecting to checkout/failure.');
 
-			$this->response->redirect($this->url->link('checkout/failure', '', true));
+			$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		} else {
 			$this->model_payment_laybuy->log('Either no $_POST data or unknown response. Redirecting to checkout/failure.');
 
-			$this->response->redirect($this->url->link('checkout/failure', '', true));
+			$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 
@@ -186,7 +186,7 @@ class ControllerPaymentLaybuy extends Controller {
 
 		$this->model_payment_laybuy->log('Transaction canceled by user. Redirecting to checkout/checkout.');
 
-		$this->response->redirect($this->url->link('checkout/checkout', '', true));
+		$this->response->redirect($this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 	}
 
 	public function reviseCallback() {
@@ -305,26 +305,26 @@ class ControllerPaymentLaybuy extends Controller {
 
 						$this->model_payment_laybuy->deleteRevisedTransaction($revised_transaction['laybuy_revise_request_id']);
 
-						$this->response->redirect($this->url->link('checkout/success', '', true));
+						$this->response->redirect($this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 					} else {
 						$this->model_payment_laybuy->log('No matching order. Redirecting to checkout/failure.');
 
-						$this->response->redirect($this->url->link('checkout/failure', '', true));
+						$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 					}
 				} else {
 					$this->model_payment_laybuy->log('Token does not match. Redirecting to checkout/failure.');
 
-					$this->response->redirect($this->url->link('checkout/failure', '', true));
+					$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 				}
 			} else {
 				$this->model_payment_laybuy->log('No success response');
 
-				$this->response->redirect($this->url->link('checkout/failure', '', true));
+				$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		} else {
 			$this->model_payment_laybuy->log('No $_POST data');
 
-			$this->response->redirect($this->url->link('checkout/failure', '', true));
+			$this->response->redirect($this->url->link('checkout/failure', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 
@@ -333,7 +333,7 @@ class ControllerPaymentLaybuy extends Controller {
 
 		$this->model_payment_laybuy->log('Revise canceled. Redirecting to checkout/checkout.');
 
-		$this->response->redirect($this->url->link('checkout/checkout', '', true));
+		$this->response->redirect($this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 	}
 
 	public function deleteOrder($route = '', $output = '', $order_id = 0, $order_status_id = 0) {

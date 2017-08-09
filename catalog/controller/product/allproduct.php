@@ -47,7 +47,7 @@ class ControllerProductAllproduct extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 
@@ -270,9 +270,9 @@ class ControllerProductAllproduct extends Controller {
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
-			    $this->document->addLink($this->url->link('product/allproduct', '', true), 'canonical');
+			    $this->document->addLink($this->url->link('product/allproduct', '', true, $this->session->data['country_code'], $this->session->data['language_name']), 'canonical');
 			} elseif ($page == 2) {
-			    $this->document->addLink($this->url->link('product/allproduct', '', true), 'prev');
+			    $this->document->addLink($this->url->link('product/allproduct', '', true, $this->session->data['country_code'], $this->session->data['language_name']), 'prev');
 			} else {
 			    $this->document->addLink($this->url->link('product/allproduct', '&page='. ($page - 1), true), 'prev');
 			}
@@ -285,7 +285,7 @@ class ControllerProductAllproduct extends Controller {
 			$data['order'] = $order;
 			$data['limit'] = $limit;
 
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
@@ -331,7 +331,7 @@ class ControllerProductAllproduct extends Controller {
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 

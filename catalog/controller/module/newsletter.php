@@ -37,7 +37,7 @@ class ControllerModuleNewsletter extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text'      => $this->language->get('text_home'),
-				'href'      => $this->url->link('common/home')
+				'href'      => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['breadcrumbs'][] = array(
@@ -49,7 +49,7 @@ class ControllerModuleNewsletter extends Controller {
 			
 			$data['button_continue'] = $this->language->get('button_continue');
 			
-			$data['continue'] = $this->url->link('common/home');
+			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 			
 			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "newsletter WHERE md5(CONCAT('newsletter', email)) = '" . $this->db->escape($this->request->get['id']) . "'");
 			
@@ -77,7 +77,7 @@ class ControllerModuleNewsletter extends Controller {
 			$this->response->setOutput($this->load->view('common/success', $data));
 			
 		} else {
-			$this->response->redirect($this->url->link('common/home'));
+			$this->response->redirect($this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 	

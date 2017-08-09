@@ -17,11 +17,11 @@ class ControllerCommonHeaderWishlistCompare extends Controller {
 		}
 		
 		
-		$data['wishlist_link'] = $this->url->link('account/wishlist', '', true);
+		$data['wishlist_link'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		
 		$data['text_header_compare'] = sprintf($this->language->get('text_header_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
-		$data['compare_link'] = $this->url->link('product/compare', '', true);
+		$data['compare_link'] = $this->url->link('product/compare', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			return $this->load->view('common/header_wishlist_compare', $data);
 			

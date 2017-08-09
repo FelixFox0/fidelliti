@@ -84,7 +84,7 @@ class ControllerPaymentSagepayUS extends Controller {
 
 			$this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('sagepay_us_order_status_id'), $message, false);
 
-			$json['redirect'] = $this->url->link('checkout/success');
+			$json['redirect'] = $this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		} else {
 			$json['error'] = substr($response, 8, 32);
 		}

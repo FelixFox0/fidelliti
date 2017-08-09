@@ -250,7 +250,7 @@ class ControllerQuickCheckoutCart extends Controller {
 		
 		
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
-			$json['redirect'] = $this->url->link('checkout/cart');
+			$json['redirect'] = $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 		
 		$this->response->addHeader('Content-Type: application/json');

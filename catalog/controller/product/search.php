@@ -77,7 +77,7 @@ class ControllerProductSearch extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$url = '';
@@ -432,9 +432,9 @@ class ControllerProductSearch extends Controller {
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
-			    $this->document->addLink($this->url->link('product/search', '', true), 'canonical');
+			    $this->document->addLink($this->url->link('product/search', '', true, $this->session->data['country_code'], $this->session->data['language_name']), 'canonical');
 			} elseif ($page == 2) {
-			    $this->document->addLink($this->url->link('product/search', '', true), 'prev');
+			    $this->document->addLink($this->url->link('product/search', '', true, $this->session->data['country_code'], $this->session->data['language_name']), 'prev');
 			} else {
 			    $this->document->addLink($this->url->link('product/search', $url . '&page='. ($page - 1), true), 'prev');
 			}
