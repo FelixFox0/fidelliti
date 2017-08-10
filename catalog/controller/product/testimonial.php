@@ -88,7 +88,7 @@ class ControllerProductTestimonial extends Controller {
 				$pagination->page = $page;
 				$pagination->limit = $this->page_limit; 
 				$pagination->text = $this->language->get('text_pagination');
-				$pagination->url = $this->url->link('product/testimonial', '&page={page}', true);
+				$pagination->url = $this->url->link('product/testimonial', '&page={page}', true, $this->session->data['country_code'], $this->session->data['language_name']);
 				$data['pagination'] = $pagination->render();				
 
 			}

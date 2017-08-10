@@ -68,7 +68,7 @@ class ControllerProductQuestion extends Controller {
 		$pagination->total = $questions_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('product_question_per_page');
-		$pagination->url = $this->url->link('product/question/question_list', 'product_id=' . $this->request->get['product_id'] . '&page={page}');
+		$pagination->url = $this->url->link('product/question/question_list', 'product_id=' . $this->request->get['product_id'] . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['pagination'] = $pagination->render();
 

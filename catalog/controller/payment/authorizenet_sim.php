@@ -75,10 +75,10 @@ class ControllerPaymentAuthorizeNetSim extends Controller {
 
 				$this->response->redirect($this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 			} else {
-				$this->response->redirect($this->url->link('checkout/failure'));
+				$this->response->redirect($this->url->link('checkout/failure', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 			}
 		} else {
-			$this->response->redirect($this->url->link('checkout/failure'));
+			$this->response->redirect($this->url->link('checkout/failure', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 	}
 }

@@ -49,7 +49,7 @@ class ControllerModuleBlogCategory extends Controller {
 			'category_2_id' => $category_2['blog_category_id'],
 			'name'    	=> $category_2['name'],
 			'children'	=> $level_3_data,
-			'href'    	=> $this->url->link('blog/category', 'blogpath=' . $category_1['blog_category_id'] . '_' . $category_2['blog_category_id'])
+			'href'    	=> $this->url->link('blog/category', 'blogpath=' . $category_1['blog_category_id'] . '_' . $category_2['blog_category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);					
 		}
 			
@@ -60,7 +60,7 @@ class ControllerModuleBlogCategory extends Controller {
 				'category_1_id' => $category_1['blog_category_id'],
 				'name'     => $category_1['name'],				
 				'children' => $level_2_data,
-				'href'     => $this->url->link('blog/category', 'blogpath=' . $category_1['blog_category_id'])
+				'href'     => $this->url->link('blog/category', 'blogpath=' . $category_1['blog_category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 		

@@ -342,7 +342,7 @@ class ControllerQuickCheckoutPaymentMethod extends Controller {
 		
 		// Validate if payment address has been set.
 		if (!isset($this->session->data['payment_address'])) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL');
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		$payment_address = $this->session->data['payment_address'];

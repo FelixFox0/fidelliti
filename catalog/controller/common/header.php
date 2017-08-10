@@ -152,7 +152,22 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
+                
+                $this->load->model('catalog/information');
 
+		$data['informations'] = array();
+
+		foreach ($this->model_catalog_information->getInformations() as $result) {
+			if ($result['top']) {
+				$data['informations'][] = array(
+					'title' => $result['title'],
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
+				);
+			}
+		}
+//                var_dump($data['informations']);
+                
+//                var_dump($data);
 		return $this->load->view('common/header', $data);
 	}
 }

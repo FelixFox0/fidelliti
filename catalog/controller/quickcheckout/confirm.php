@@ -466,7 +466,7 @@ class ControllerQuickCheckoutConfirm extends Controller {
 					'subtract'   => $product['subtract'],
 					'price'      => $price,
 					'total'      => $total,
-					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 

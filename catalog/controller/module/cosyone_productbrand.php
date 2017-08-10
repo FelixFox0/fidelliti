@@ -28,7 +28,7 @@ class ControllerModuleCosyoneProductbrand extends Controller {
                 }
                 
                 $data['manufacturer_img'] = $image; 
-                $data['manufacturer_url'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $manufacturer_info['manufacturer_id']);
+                $data['manufacturer_url'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $manufacturer_info['manufacturer_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
             }
         } 
 

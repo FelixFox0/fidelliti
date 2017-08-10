@@ -47,8 +47,8 @@ class ControllerModuleCosyoneTestimonial extends Controller {
 		$data['write_testimonial'] = $this->language->get('write_testimonial');
 		$data['show_all'] = $this->language->get('show_all');
 		$data['showall_url'] = $this->url->link('product/testimonial', '', true, $this->session->data['country_code'], $this->session->data['language_name']); 
-		$data['more'] = $this->url->link('product/testimonial', 'testimonial_id=' , true); 
-		$data['link'] = $this->url->link('product/testimonial', 'testimonial_id=' , true); 
+		$data['more'] = $this->url->link('product/testimonial', 'testimonial_id=' , true, $this->session->data['country_code'], $this->session->data['language_name']); 
+		$data['link'] = $this->url->link('product/testimonial', 'testimonial_id=' , true, $this->session->data['country_code'], $this->session->data['language_name']); 
 		$data['href_write_testimonial'] = $this->url->link('product/testimonialform', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$this->load->model('catalog/testimonial');

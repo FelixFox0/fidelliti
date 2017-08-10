@@ -353,12 +353,12 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 		
 		// Validate if shipping is required. If not the customer should not have reached this page.
 		if (!$this->cart->hasShipping()) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL');
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		// Validate if shipping address has been set.
 		if (!isset($this->session->data['shipping_address'])) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL');
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 		
 		$shipping_address = $this->session->data['shipping_address'];

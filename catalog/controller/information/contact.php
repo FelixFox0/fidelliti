@@ -24,7 +24,7 @@ class ControllerInformationContact extends Controller {
 			$mail->setText($this->request->post['enquiry']);
 			$mail->send();
 
-			$this->response->redirect($this->url->link('information/contact/success'));
+			$this->response->redirect($this->url->link('information/contact/success','',false, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$data['breadcrumbs'] = array();

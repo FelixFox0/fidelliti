@@ -110,7 +110,7 @@ class ControllerQuickCheckoutPaymentAddress extends Controller {
 
 		// Validate if customer is logged in.
 		if (!$this->customer->isLogged()) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL');
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		if (!$json) {

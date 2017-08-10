@@ -38,11 +38,11 @@ class ControllerModuleBlogLatest extends Controller {
 				'description' => substr(html_entity_decode($result['short_description'], ENT_QUOTES, 'UTF-8'), 0, $setting['characters']) . "...",
 				'count_read' => $result['count_read'],
 				'image'   		=> $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']),
-	    		'href'  => $this->url->link('blog/blog', 'blog_id=' . $result['blog_id'])
+	    		'href'  => $this->url->link('blog/blog', 'blog_id=' . $result['blog_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
       		);
     	}
 		
-		$data['blog_show_all'] = $this->url->link('blog/home');
+		$data['blog_show_all'] = $this->url->link('blog/home','', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		$data['text_show_all'] = $this->language->get('text_show_all');
 		$data['text_posted_on'] = $this->language->get('text_posted_on');

@@ -128,8 +128,12 @@
          <li class="col<?php echo $category_1['column']; ?>"><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
          <?php } ?>
           <?php if ($category_1['children']) { ?>
+          
+
+          
           <div class="menu_drop_down" style="width: <?php echo ((($category_1['column']) * (195)) + (10)); ?>px">
           <div class="wrapper">
+                        <img src="<?php echo $category_1['thumb']; ?>" />
           <ul><?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
             <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?><i class="fa fa-caret-right"></i></a>
@@ -161,10 +165,43 @@
         </div></li>
 		<?php } ?>
         <?php if($cosyone_custom_menu_title1){ ?>
-		<li><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $cosyone_custom_menu_title1; ?></a></li>
+		<li class="col1 withsubs"><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $cosyone_custom_menu_title1; ?></a></li>
+                    
+                
+                
         <?php } ?>
-        <?php if($cosyone_custom_menu_title2){ ?>
-		<li><a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $cosyone_custom_menu_title2; ?></a></li>
+        <?php if($cosyone_custom_menu_title2){ ?>      
+                <li class="col1 withsubs">
+                    <a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $cosyone_custom_menu_title2; ?><i class="fa fa-sort-desc"></i></a>
+                    
+                
+                
+                <?php if ($informations) { ?>
+                <div class="menu_drop_down" style="width: <?php echo ((($category_1['column']) * (195)) + (10)); ?>px">
+                <div class="wrapper">
+                    <!-- тут пихани статикой картинку -->
+                <img src="<?php echo $category_1['thumb']; ?>" />
+                <ul>
+                <?php foreach ($informations as $information) { ?>
+                
+                <li class="column level2"><i class="fa fa-caret-right"></i><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+                
+                <?php } ?>
+                </ul>
+                
+                </ul>
+                </div>
+                </div>
+                <?php } ?>
+                </li>
+                
+                
+                
+
+                
+                
+                
+                
         <?php } ?>
         <?php if($cosyone_custom_menu_title3){ ?>
 		<li><a href="<?php echo $cosyone_custom_menu_url3; ?>"><?php echo $cosyone_custom_menu_title3; ?></a></li>

@@ -3,6 +3,8 @@ class ControllerStartupSeoUrl extends Controller {
 	public function index() {
 //            die('333');
 		// Add rewrite to url class
+//            var_dump($this->session->data['language_name']);
+//                        die();
 		if ($this->config->get('config_seo_url')) {
 			$this->url->addRewrite($this);
 		}

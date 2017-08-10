@@ -7,50 +7,50 @@
 <file name="catalog/controller/product/product.php">
 	<operation error="log">
 		<search position="before"><![CDATA[					
-		'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+		'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 		]]></search>
 		<add><![CDATA[
-		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', 'SSL'),
+		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']),
 		]]></add>
 	</operation>
 </file>
 <file name="catalog/controller/product/category.php">
 	<operation error="log">
 		<search position="before"><![CDATA[					
-		'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+		'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		]]></search>
 		<add><![CDATA[
-		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', 'SSL'),
+		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']),
 		]]></add>
 	</operation>
 </file>
 <file name="catalog/controller/product/manufacturer.php">	
 	<operation error="log">
 		<search position="before"><![CDATA[					
-		'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
+		'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		]]></search>
 		<add><![CDATA[
-		'quickview'        => $this->url->link('product/quickview', '&manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url, '', 'SSL'),
+		'quickview'        => $this->url->link('product/quickview', '&manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url, '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']),
 		]]></add>
 	</operation>
 </file>
 <file name="catalog/controller/product/search.php">	
 	<operation error="log">
 		<search position="before"><![CDATA[					
-		'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+		'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		]]></search>
 		<add><![CDATA[
-		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'] . $url, '', 'SSL'),
+		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'] . $url, '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']),
 		]]></add>
 	</operation>
 </file>
 <file name="catalog/controller/product/special.php">	
 	<operation error="log">
 		<search position="before"><![CDATA[					
-		'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+		'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		]]></search>
 		<add><![CDATA[
-		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'] . $url, '', 'SSL'),
+		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'] . $url, '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']),
 		]]></add>
 	</operation>
 </file>

@@ -196,7 +196,7 @@ class ControllerQuickCheckoutCart extends Controller {
 				'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 				'price'     => $price,
 				'total'     => $total,
-				'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+				'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 		
@@ -209,7 +209,7 @@ class ControllerQuickCheckoutCart extends Controller {
 					'key'         => $key,
 					'description' => $voucher['description'],
 					'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency']),
-					'remove'      => $this->url->link('checkout/cart', 'remove=' . $key)
+					'remove'      => $this->url->link('checkout/cart', 'remove=' . $key, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 		}

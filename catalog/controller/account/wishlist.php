@@ -21,7 +21,7 @@ class ControllerAccountWishList extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_remove');
 
-			$this->response->redirect($this->url->link('account/wishlist'));
+			$this->response->redirect($this->url->link('account/wishlist','',false, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
 		$this->document->setTitle($this->language->get('heading_title'));
