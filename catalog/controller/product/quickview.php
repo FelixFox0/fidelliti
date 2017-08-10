@@ -20,7 +20,7 @@ class ControllerProductQuickview extends Controller {
 		
 		$data['styles'] = $this->document->getStyles();
 		
-		$data['share_url'] = $this->url->link('product/product', 'product_id=' . $this->request->get['product_id']);
+		$data['share_url'] = $this->url->link('product/product', 'product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		if (isset($this->request->get['product_id'])) {
 			$product_id = (int)$this->request->get['product_id'];
@@ -38,7 +38,7 @@ class ControllerProductQuickview extends Controller {
 			$this->document->setTitle($product_info['meta_title']);
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
-			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
+			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']), 'canonical');
 			
 			$data['heading_title'] = $product_info['name'];
 
@@ -87,7 +87,7 @@ class ControllerProductQuickview extends Controller {
 
 			$data['product_id'] = (int)$this->request->get['product_id'];
 			$data['manufacturer'] = $product_info['manufacturer'];
-			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
+			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 			$data['model'] = $product_info['model'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
@@ -180,7 +180,7 @@ class ControllerProductQuickview extends Controller {
 			$data['thumb_width'] = $this->config->get('theme_default_image_thumb_width');
 			$data['additional_width'] = $this->config->get('theme_default_image_additional_width');
 			$data['additional_height'] = $this->config->get('theme_default_image_additional_height');
-			$data['product_href'] = $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id']);
+			$data['product_href'] = $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 			// Cosyone end
 			   
 			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
@@ -312,7 +312,7 @@ class ControllerProductQuickview extends Controller {
 			   
 					'tax'         => $tax,
 					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 
@@ -324,7 +324,7 @@ class ControllerProductQuickview extends Controller {
 				foreach ($tags as $tag) {
 					$data['tags'][] = array(
 						'tag'  => trim($tag),
-						'href' => $this->url->link('product/search', 'tag=' . trim($tag))
+						'href' => $this->url->link('product/search', 'tag=' . trim($tag), false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 			}
@@ -389,7 +389,7 @@ class ControllerProductQuickview extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id)
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));

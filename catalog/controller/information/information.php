@@ -27,7 +27,7 @@ class ControllerInformationInformation extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $information_info['title'],
-				'href' => $this->url->link('information/information', 'information_id=' .  $information_id)
+				'href' => $this->url->link('information/information', 'information_id=' .  $information_id,false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['heading_title'] = $information_info['title'];
@@ -49,7 +49,7 @@ class ControllerInformationInformation extends Controller {
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('information/information', 'information_id=' . $information_id)
+				'href' => $this->url->link('information/information', 'information_id=' . $information_id, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));

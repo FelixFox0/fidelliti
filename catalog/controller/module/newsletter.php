@@ -42,7 +42,7 @@ class ControllerModuleNewsletter extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text'      => $this->language->get('heading_title'),
-				'href'      => $this->url->link('module/newsletter/unsubscribe')
+				'href'      => $this->url->link('module/newsletter/unsubscribe', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 			
 			$data['heading_title'] = $this->language->get('heading_title');

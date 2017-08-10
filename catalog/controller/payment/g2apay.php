@@ -71,7 +71,7 @@ class ControllerPaymentG2APay extends Controller {
 			$item->qty = $product['quantity'];
 			$item->id = $product['product_id'];
 			$item->price = $product['price'];
-			$item->url = $this->url->link('product/product', 'product_id=' . $product['product_id'], true);
+			$item->url = $this->url->link('product/product', 'product_id=' . $product['product_id'], true, $this->session->data['country_code'], $this->session->data['language_name']);
 			$items[] = $item;
 		}
 
@@ -92,8 +92,8 @@ class ControllerPaymentG2APay extends Controller {
 			'amount' => $order_total,
 			'currency' => $order_info['currency_code'],
 			'email' => $order_info['email'],
-			'url_failure' => $this->url->link('checkout/failure'),
-			'url_ok' => $this->url->link('payment/g2apay/success'),
+			'url_failure' => $this->url->link('checkout/failure', '', false, $this->session->data['country_code'], $this->session->data['language_name']),
+			'url_ok' => $this->url->link('payment/g2apay/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']),
 			'items' => json_encode($items)
 		);
 

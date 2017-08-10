@@ -391,12 +391,12 @@ class ControllerPaymentPPExpress extends Controller {
 		);
 
 		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('payment/pp_express/express'),
+			'href' => $this->url->link('payment/pp_express/express', '', false, $this->session->data['country_code'], $this->session->data['language_name']),
 			'text' => $this->language->get('text_title')
 		);
 
 		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('payment/pp_express/expressConfirm'),
+			'href' => $this->url->link('payment/pp_express/expressConfirm', '', false, $this->session->data['country_code'], $this->session->data['language_name']),
 			'text' => $this->language->get('express_text_title')
 		);
 
@@ -528,8 +528,8 @@ class ControllerPaymentPPExpress extends Controller {
 				'reward'                => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 				'price'                 => $price,
 				'total'                 => $total,
-				'href'                  => $this->url->link('product/product', 'product_id=' . $product['product_id']),
-				'remove'                => $this->url->link('checkout/cart', 'remove=' . $product['cart_id']),
+				'href'                  => $this->url->link('product/product', 'product_id=' . $product['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']),
+				'remove'                => $this->url->link('checkout/cart', 'remove=' . $product['cart_id'], false, $this->session->data['country_code'], $this->session->data['language_name']),
 				'recurring'             => $product['recurring'],
 				'recurring_name'        => (isset($product['recurring']['recurring_name']) ? $product['recurring']['recurring_name'] : ''),
 				'recurring_description' => $recurring_description
@@ -1841,7 +1841,7 @@ class ControllerPaymentPPExpress extends Controller {
 	public function shipping() {
 		$this->shippingValidate($this->request->post['shipping_method']);
 
-		$this->response->redirect($this->url->link('payment/pp_express/expressConfirm'));
+		$this->response->redirect($this->url->link('payment/pp_express/expressConfirm'),'', false, $this->session->data['country_code'], $this->session->data['language_name']);
 	}
 
 	protected function shippingValidate($code) {

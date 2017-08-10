@@ -108,7 +108,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 							'special' => $special,
                             'name' => $name,
 							'model' => $model,
-							'href'  => $this->url->link('product/product', 'product_id=' . $values['product_id'])
+							'href'  => $this->url->link('product/product', 'product_id=' . $values['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 						);
 						}
 						$data_i++;
@@ -160,7 +160,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 							'special' => $special,
                             'name' => $name,
 							'model' => false,
-							'href'  => $this->url->link('product/category', 'path=' . $values['category_id'])
+							'href'  => $this->url->link('product/category', 'path=' . $values['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 						);
 						}
 						$data_i++;
@@ -208,7 +208,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 							'special' => $special,
                             'name' => $name,
 							'model' => false,
-							'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $values['manufacturer_id'])
+							'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $values['manufacturer_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 						);
 						}
 						$data_i++;
@@ -253,7 +253,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 							'special' => $special,
                             'name' => $name,
 							'model' => false,
-							'href'  => $this->url->link('information/information', 'information_id=' . $values['information_id'])
+							'href'  => $this->url->link('information/information', 'information_id=' . $values['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 						);
 						}
 						$data_i++;
@@ -306,7 +306,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 							'special' => $special,
                             'name' => $name,
 							'model' => false,
-							'href'  => $this->url->link('blog/article', 'article_id=' . $values['article_id'])
+							'href'  => $this->url->link('blog/article', 'article_id=' . $values['article_id'], false, $this->session->data['country_code'], $this->session->data['language_name'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 						);
 						}
 						$data_i++;
@@ -361,7 +361,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 							'special' => $special,
                             'name' => $name,
 							'model' => false,
-							'href'  => $this->url->link('blog/category', 'category_id=' . $values['category_id'])
+							'href'  => $this->url->link('blog/category', 'category_id=' . $values['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 						);
 						}
 						$data_i++;
@@ -376,7 +376,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 			$this->load->language('module/d_ajax_search');
 			if( $data_i > 0 ){
 				$d_search_result = $this->language->get('text_view_all');
-				$d_href_result = $this->url->link('product/search', 'search=' . $this->request->get['keyword']);
+				$d_href_result = $this->url->link('product/search', 'search=' . $this->request->get['keyword'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 			}else{
 				$d_search_result = $this->language->get('text_no_result');
 				$d_href_result = '#';

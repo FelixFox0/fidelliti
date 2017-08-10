@@ -53,12 +53,12 @@
 			$data['cosyone_menu_mega_second_thumb'] = $this->config->get('cosyone_menu_mega_second_thumb');
 			$data['cosyone_menu_block_width'] = $this->config->get('cosyone_menu_block_width');
 			$data['cosyone_custom_menu_block'] = $this->config->get('cosyone_custom_menu_block');
-			$data['cosyone_custom_menu_url1'] = $this->config->get('cosyone_custom_menu_url1');
-			$data['cosyone_custom_menu_url2'] = $this->config->get('cosyone_custom_menu_url2');
-			$data['cosyone_custom_menu_url3'] = $this->config->get('cosyone_custom_menu_url3');
-			$data['cosyone_custom_menu_url4'] = $this->config->get('cosyone_custom_menu_url4');
-			$data['cosyone_custom_menu_url5'] = $this->config->get('cosyone_custom_menu_url5');
-                        $data['cosyone_custom_menu_url6'] = $this->config->get('cosyone_custom_menu_url6');
+			$data['cosyone_custom_menu_url1'] = '/' . $this->session->data['country_code'] . '/' . $this->session->data['language_name'] . $this->config->get('cosyone_custom_menu_url1');
+			$data['cosyone_custom_menu_url2'] = '/' . $this->session->data['country_code'] . '/' . $this->session->data['language_name'] . $this->config->get('cosyone_custom_menu_url2');
+			$data['cosyone_custom_menu_url3'] = '/' . $this->session->data['country_code'] . '/' . $this->session->data['language_name'] . $this->config->get('cosyone_custom_menu_url3');
+			$data['cosyone_custom_menu_url4'] = '/' . $this->session->data['country_code'] . '/' . $this->session->data['language_name'] . $this->config->get('cosyone_custom_menu_url4');
+			$data['cosyone_custom_menu_url5'] = '/' . $this->session->data['country_code'] . '/' . $this->session->data['language_name'] . $this->config->get('cosyone_custom_menu_url5');
+                        $data['cosyone_custom_menu_url6'] = '/' . $this->session->data['country_code'] . '/' . $this->session->data['language_name'] . $this->config->get('cosyone_custom_menu_url6');
 			$cosyone_top_promo = $this->config->get('cosyone_top_promo_message');
 			if(empty($cosyone_top_promo[$this->config->get('config_language_id')])) {
 				$data['cosyone_top_promo_message'] = false;
@@ -156,7 +156,7 @@
 
 					$level_3_data[] = array(
 					'name' => $category_3['name'] .($this->config->get('config_product_count') ?  ' (' . $total . ')' : ''),
-					'href' => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'] . '_' . $category_3['category_id'])
+					'href' => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'] . '_' . $category_3['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				 } 
 				
@@ -174,20 +174,27 @@
 					'name'    	=> $category_2['name']  .($this->config->get('config_product_count') ?  '<span>' . ' (' . $total . ')' . '</span>' : ''),
 					'thumb' 	=> $category_2_image,
 					'children'	=> $level_3_data,
-					'href'    	=> $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'])
+					'href'    	=> $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);					
 		}
 			
 				// First level
+                        if ($category_1['image']) {
+                        $category_1_image = $this->model_tool_image->resize($category_1['image'], 350, 350);
+                        } else {
+                        $category_1_image = '';
+                        }
 			$data['categories'][] = array(
 				'category_1_id' => $category_1['category_id'],
 				'column'   => $category_1['column'] ? $category_1['column'] : 1,
 				'name'     => $category_1['name'],
 				'children' => $level_2_data,
-				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'])
+				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name']),
+                                'thumb'    => $category_1_image,
 			);
 		}
 	}
+                            //var_dump($data['categories']);
 	// Custom categories ends
 	]]></add>
 		</operation>
@@ -374,7 +381,7 @@ $data['small'] = '';
 			$json['image'] = $this->model_tool_image->resize('placeholder.png', 80, 80);
 			}
 			$json['text_wishlist'] = $this->language->get('button_login');
-			$json['link_wishlist'] = $this->url->link('account/wishlist', '', true);
+			$json['link_wishlist'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			</add>
 		</operation>
 		<operation>
@@ -400,7 +407,7 @@ $data['small'] = '';
 	$json['image'] = $this->model_tool_image->resize('placeholder.png', 80, 80);
 	}
 	$json['text_compare'] = $this->language->get('heading_title');
-	$json['link_compare'] = $this->url->link('product/compare', '', true);
+	$json['link_compare'] = $this->url->link('product/compare', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			</add>
 		</operation>
 	</file>
@@ -795,8 +802,8 @@ public function getLayoutForAllPages() {
 				$this->load->language('common/cart');
 				$json['text_checkout'] = $this->language->get('text_checkout');
 				$json['text_cart'] = $this->language->get('text_cart');
-				$json['link_checkout'] = $this->url->link('checkout/checkout', '', true);
-				$json['link_cart'] = $this->url->link('checkout/cart', '', true);
+				$json['link_checkout'] = $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+				$json['link_cart'] = $this->url->link('checkout/cart', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			</add>
 		</operation>
 	</file>

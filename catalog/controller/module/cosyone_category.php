@@ -80,7 +80,7 @@ class ControllerModuleCosyoneCategory extends Controller {
 					$level_3_data[] = array(
 					'category_3_id' => $category_3['category_id'],
 					'name' => $category_3['name'] .($this->config->get('config_product_count') ?  ' (' . $total . ')' : ''),
-					'href' => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'] . '_' . $category_3['category_id'])
+					'href' => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'] . '_' . $category_3['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				 } 
 				
@@ -93,7 +93,7 @@ class ControllerModuleCosyoneCategory extends Controller {
 					'category_2_id' => $category_2['category_id'],
 					'name'    	=> $category_2['name']  .($this->config->get('config_product_count') ?  '<span>' . ' (' . $total . ')' . '</span>' : ''),
 					'children'	=> $level_3_data,
-					'href'    	=> $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'])
+					'href'    	=> $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);					
 		}
 			
@@ -104,7 +104,7 @@ class ControllerModuleCosyoneCategory extends Controller {
 				'category_1_id' => $category_1['category_id'],
 				'name'     => $category_1['name'] .($this->config->get('config_product_count') ?  '<span>' . ' (' . $total . ')' . '</span>' : ''),				
 				'children' => $level_2_data,
-				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'])
+				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 		return $this->load->view('module/cosyone_category', $data);

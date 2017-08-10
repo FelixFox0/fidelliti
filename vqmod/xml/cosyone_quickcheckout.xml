@@ -10,7 +10,7 @@
 			]]></search>
 			<add><![CDATA[
 				if ($this->config->get('quickcheckout_status')) {
-					$this->response->redirect($this->url->link('quickcheckout/checkout', '', 'SSL'));
+					$this->response->redirect($this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']));
 				}
 			]]></add>
 		</operation>

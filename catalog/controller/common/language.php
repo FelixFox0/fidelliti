@@ -26,7 +26,7 @@ class ControllerCommonLanguage extends Controller {
 		}
 
 		if (!isset($this->request->get['route'])) {
-			$data['redirect'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['redirect'] = $this->url->link('common/home');
 		} else {
 			$url_data = $this->request->get;
 
@@ -40,7 +40,7 @@ class ControllerCommonLanguage extends Controller {
 				$url = '&' . urldecode(http_build_query($url_data, '', '&'));
 			}
 
-			$data['redirect'] = $this->url->link($route, $url, $this->request->server['HTTPS'], $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['redirect'] = $this->url->link($route, $url, $this->request->server['HTTPS']);
 		}
 
 		return $this->load->view('common/language', $data);
@@ -51,12 +51,16 @@ class ControllerCommonLanguage extends Controller {
 			$this->session->data['language'] = $this->request->post['code'];
                         $this->load->model('startup/url');
                         $this->session->data['language_name'] = $this->model_startup_url->getLanguageByCode($this->session->data['language'])['name'];
+//                        $this->session->data['country_code_old'] = $this->request->post['code'];
+//                        var_dump($this->session->data['language_name']);
+//                        die();
 		}
-
+//                var_dump($this->request->post);
+//                die();
 		if (isset($this->request->post['redirect'])) {
 			$this->response->redirect($this->request->post['redirect']);
 		} else {
-			$this->response->redirect($this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
+			$this->response->redirect($this->url->link('common/home'));
 		}
 	}
 }

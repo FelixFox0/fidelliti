@@ -116,12 +116,12 @@ class ControllerQuickCheckoutShippingAddress extends Controller {
 
 		// Validate if customer is logged in.
 		if (!$this->customer->isLogged()) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL');
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		// Validate if shipping is required. If not the customer should not have reached this page.
 		if (!$this->cart->hasShipping()) {
-			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL');
+			$json['redirect'] = $this->url->link('quickcheckout/checkout', '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']);
 		}
 
 		if (!$json) {

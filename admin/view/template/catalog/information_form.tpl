@@ -125,6 +125,20 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-top">Отображить сверху</label>
+                <div class="col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <?php if ($top) { ?>
+                      <input type="checkbox" name="top" value="1" checked="checked" id="input-top" />
+                      <?php } else { ?>
+                      <input type="checkbox" name="top" value="1" id="input-top" />
+                      <?php } ?>
+                      &nbsp; </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-bottom"><span data-toggle="tooltip" title="<?php echo $help_bottom; ?>"><?php echo $entry_bottom; ?></span></label>
                 <div class="col-sm-10">
                   <div class="checkbox">

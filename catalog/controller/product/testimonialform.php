@@ -99,7 +99,7 @@ class ControllerProductTestimonialform extends Controller {
 
 			}
 			
-			$this->response->redirect($this->url->link('product/testimonialform/success'));
+			$this->response->redirect($this->url->link('product/testimonialform/success', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 			
       	$data['breadcrumbs'] = array();
@@ -144,7 +144,7 @@ class ControllerProductTestimonialform extends Controller {
 		
     	$data['button_continue'] = $this->language->get('button_continue');
     
-		$data['action'] = $this->url->link('product/testimonialform');
+		$data['action'] = $this->url->link('product/testimonialform', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];

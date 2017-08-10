@@ -15,12 +15,12 @@ class ControllerModuleInformation extends Controller {
 		foreach ($this->model_catalog_information->getInformations() as $result) {
 			$data['informations'][] = array(
 				'title' => $result['title'],
-				'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 
 		$data['contact'] = $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
-		$data['sitemap'] = $this->url->link('information/sitemap');
+		$data['sitemap'] = $this->url->link('information/sitemap', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		return $this->load->view('module/information', $data);
 	}

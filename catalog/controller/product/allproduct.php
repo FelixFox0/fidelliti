@@ -79,7 +79,7 @@ class ControllerProductAllproduct extends Controller {
 			// Set the last AllProduct breadcrumb
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('product/allproduct')
+				'href' => $this->url->link('product/allproduct', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$url = '';
@@ -140,7 +140,7 @@ class ControllerProductAllproduct extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', '&product_id=' . $result['product_id'] .$url)
+					'href'        => $this->url->link('product/product', '&product_id=' . $result['product_id'] .$url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 
@@ -159,57 +159,57 @@ class ControllerProductAllproduct extends Controller {
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_default'),
 				'value' => 'p.sort_order-ASC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_name_asc'),
 				'value' => 'pd.name-ASC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_name_desc'),
 				'value' => 'pd.name-DESC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_asc'),
 				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_desc'),
 				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			if ($this->config->get('config_review_status')) {
 				$data['sorts'][] = array(
 					'text'  => $this->language->get('text_rating_desc'),
 					'value' => 'rating-DESC',
-					'href'  => $this->url->link('product/allproduct', $url)
+					'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 
 				$data['sorts'][] = array(
 					'text'  => $this->language->get('text_rating_asc'),
 					'value' => 'rating-ASC',
-					'href'  => $this->url->link('product/allproduct', $url)
+					'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_asc'),
 				'value' => 'p.model-ASC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_desc'),
 				'value' => 'p.model-DESC',
-				'href'  => $this->url->link('product/allproduct', $url)
+				'href'  => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$url = '';
@@ -236,7 +236,7 @@ class ControllerProductAllproduct extends Controller {
 				$data['limits'][] = array(
 					'text'  => $value,
 					'value' => $value,
-					'href'  => $this->url->link('product/allproduct', $url . '&limit=' . $value)
+					'href'  => $this->url->link('product/allproduct', $url . '&limit=' . $value, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 
@@ -262,7 +262,7 @@ class ControllerProductAllproduct extends Controller {
 			$pagination->total = $product_total;
 			$pagination->page = $page;
 			$pagination->limit = $limit;
-			$pagination->url = $this->url->link('product/allproduct', $url . '&page={page}');
+			$pagination->url = $this->url->link('product/allproduct', $url . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$data['pagination'] = $pagination->render();
 
@@ -274,11 +274,11 @@ class ControllerProductAllproduct extends Controller {
 			} elseif ($page == 2) {
 			    $this->document->addLink($this->url->link('product/allproduct', '', true, $this->session->data['country_code'], $this->session->data['language_name']), 'prev');
 			} else {
-			    $this->document->addLink($this->url->link('product/allproduct', '&page='. ($page - 1), true), 'prev');
+			    $this->document->addLink($this->url->link('product/allproduct', '&page='. ($page - 1), true, $this->session->data['country_code'], $this->session->data['language_name']), 'prev');
 			}
 
 			if ($limit && ceil($product_total / $limit) > $page) {
-			    $this->document->addLink($this->url->link('product/allproduct', '&page='. ($page + 1), true), 'next');
+			    $this->document->addLink($this->url->link('product/allproduct', '&page='. ($page + 1), true, $this->session->data['country_code'], $this->session->data['language_name']), 'next');
 			}
 
 			$data['sort'] = $sort;
@@ -320,7 +320,7 @@ class ControllerProductAllproduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/allproduct', $url)
+				'href' => $this->url->link('product/allproduct', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));

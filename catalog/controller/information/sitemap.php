@@ -14,7 +14,7 @@ class ControllerInformationSitemap extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/sitemap')
+			'href' => $this->url->link('information/sitemap', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -52,25 +52,25 @@ class ControllerInformationSitemap extends Controller {
 				foreach ($categories_3 as $category_3) {
 					$level_3_data[] = array(
 						'name' => $category_3['name'],
-						'href' => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'] . '_' . $category_3['category_id'])
+						'href' => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'] . '_' . $category_3['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 
 				$level_2_data[] = array(
 					'name'     => $category_2['name'],
 					'children' => $level_3_data,
-					'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'])
+					'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 
 			$data['categories'][] = array(
 				'name'     => $category_1['name'],
 				'children' => $level_2_data,
-				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'])
+				'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 
-		$data['special'] = $this->url->link('product/special');
+		$data['special'] = $this->url->link('product/special', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['edit'] = $this->url->link('account/edit', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['password'] = $this->url->link('account/password', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
@@ -79,7 +79,7 @@ class ControllerInformationSitemap extends Controller {
 		$data['download'] = $this->url->link('account/download', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['cart'] = $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
-		$data['search'] = $this->url->link('product/search');
+		$data['search'] = $this->url->link('product/search', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['contact'] = $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$this->load->model('catalog/information');
@@ -89,7 +89,7 @@ class ControllerInformationSitemap extends Controller {
 		foreach ($this->model_catalog_information->getInformations() as $result) {
 			$data['informations'][] = array(
 				'title' => $result['title'],
-				'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 

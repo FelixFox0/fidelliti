@@ -219,9 +219,9 @@ class ControllerModuleMegaFilter extends Controller {
 		
 		$mijo_shop = class_exists( 'MijoShop' ) ? true : false;
 		
-		$data['ajaxInfoUrl']		= $this->url->link( 'module/mega_filter/ajaxinfo', '', 'SSL' );
-		$data['ajaxResultsUrl']		= $this->url->link( 'module/mega_filter/results', '', 'SSL' );
-		$data['ajaxCategoryUrl']	= $this->url->link( 'module/mega_filter/categories', '', 'SSL' );
+		$data['ajaxInfoUrl']		= $this->url->link( 'module/mega_filter/ajaxinfo', '', 'SSL' , $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['ajaxResultsUrl']		= $this->url->link( 'module/mega_filter/results', '', 'SSL' , $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['ajaxCategoryUrl']	= $this->url->link( 'module/mega_filter/categories', '', 'SSL' , $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		$scheme_find = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'http://' : 'https://';
 		$scheme_replace = $scheme_find == 'https://' ? 'http://' : 'https://';
@@ -361,12 +361,12 @@ class ControllerModuleMegaFilter extends Controller {
 		
    		$data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('module/mega_filter/results', $url),
+			'href'      => $this->url->link('module/mega_filter/results', $url, false, $this->session->data['country_code'], $this->session->data['language_name']),
       		'separator' => $this->language->get('text_separator')
    		);
 		
 		$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
-		$data['compare'] = $this->url->link('product/compare');
+		$data['compare'] = $this->url->link('product/compare', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		
 		$data['products'] = array();
 
@@ -454,7 +454,7 @@ class ControllerModuleMegaFilter extends Controller {
 				'tax'         => $tax,
 				'rating'      => $result['rating'],
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 					
@@ -469,57 +469,57 @@ class ControllerModuleMegaFilter extends Controller {
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_default'),
 			'value' => 'p.sort_order-ASC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.sort_order&order=ASC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.sort_order&order=ASC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 			
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_name_asc'),
 			'value' => 'pd.name-ASC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=pd.name&order=ASC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=pd.name&order=ASC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		); 
 	
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_name_desc'),
 			'value' => 'pd.name-DESC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=pd.name&order=DESC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=pd.name&order=DESC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 	
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_price_asc'),
 			'value' => 'p.price-ASC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.price&order=ASC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.price&order=ASC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		); 
 	
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_price_desc'),
 			'value' => 'p.price-DESC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.price&order=DESC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.price&order=DESC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		); 
 			
 		if ($this->config->get('config_review_status')) {
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_rating_desc'),
 				'value' => 'rating-DESC',
-				'href'  => $this->url->link('module/mega_filter/results', 'sort=rating&order=DESC' . $url)
+				'href'  => $this->url->link('module/mega_filter/results', 'sort=rating&order=DESC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			); 
 				
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_rating_asc'),
 				'value' => 'rating-ASC',
-				'href'  => $this->url->link('module/mega_filter/results', 'sort=rating&order=ASC' . $url)
+				'href'  => $this->url->link('module/mega_filter/results', 'sort=rating&order=ASC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 			
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_model_asc'),
 			'value' => 'p.model-ASC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.model&order=ASC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.model&order=ASC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		); 
 	
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_model_desc'),
 			'value' => 'p.model-DESC',
-			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.model&order=DESC' . $url)
+			'href'  => $this->url->link('module/mega_filter/results', 'sort=p.model&order=DESC' . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 	
 		$url = '';
@@ -546,7 +546,7 @@ class ControllerModuleMegaFilter extends Controller {
 			$data['limits'][] = array(
 				'text'  => $limits,
 				'value' => $limits,
-				'href'  => $this->url->link('module/mega_filter/results', $url . '&limit=' . $limits)
+				'href'  => $this->url->link('module/mega_filter/results', $url . '&limit=' . $limits, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 					
@@ -568,18 +568,18 @@ class ControllerModuleMegaFilter extends Controller {
 		$pagination->total = $product_total;
 		$pagination->page = $page;
 		$pagination->limit = $limit;
-		$pagination->url = $this->url->link('module/mega_filter/results', $url . '&page={page}');
+		$pagination->url = $this->url->link('module/mega_filter/results', $url . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['pagination'] = $pagination->render();
 
-		$this->document->addLink($this->url->link('module/mega_filter/results', $url . '&page=' . $pagination->page), 'canonical');
+		$this->document->addLink($this->url->link('module/mega_filter/results', $url . '&page=' . $pagination->page, false, $this->session->data['country_code'], $this->session->data['language_name']), 'canonical');
 
 		if ($pagination->limit && ceil($pagination->total / $pagination->limit) > $pagination->page) {
-			$this->document->addLink($this->url->link('module/mega_filter/results', $url . '&page=' . ($pagination->page + 1)), 'next');
+			$this->document->addLink($this->url->link('module/mega_filter/results', $url . '&page=' . ($pagination->page + 1), false, $this->session->data['country_code'], $this->session->data['language_name']), 'next');
 		}
 
 		if ($pagination->page > 1) {
-			$this->document->addLink($this->url->link('module/mega_filter/results', $url . '&page=' . ($pagination->page - 1)), 'prev');
+			$this->document->addLink($this->url->link('module/mega_filter/results', $url . '&page=' . ($pagination->page - 1), false, $this->session->data['country_code'], $this->session->data['language_name']), 'prev');
 		}
 		
 		$data['results'] = sprintf(

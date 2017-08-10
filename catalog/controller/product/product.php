@@ -33,7 +33,7 @@ class ControllerProductProduct extends Controller {
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $category_info['name'],
-						'href' => $this->url->link('product/category', 'path=' . $path)
+						'href' => $this->url->link('product/category', 'path=' . $path, false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 			}
@@ -62,7 +62,7 @@ class ControllerProductProduct extends Controller {
 
 				$data['breadcrumbs'][] = array(
 					'text' => $category_info['name'],
-					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url)
+					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 		}
@@ -72,7 +72,7 @@ class ControllerProductProduct extends Controller {
 		if (isset($this->request->get['manufacturer_id'])) {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_brand'),
-				'href' => $this->url->link('product/manufacturer')
+				'href' => $this->url->link('product/manufacturer', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$url = '';
@@ -98,7 +98,7 @@ class ControllerProductProduct extends Controller {
 			if ($manufacturer_info) {
 				$data['breadcrumbs'][] = array(
 					'text' => $manufacturer_info['name'],
-					'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . $url)
+					'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 		}
@@ -144,7 +144,7 @@ class ControllerProductProduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_search'),
-				'href' => $this->url->link('product/search', $url)
+				'href' => $this->url->link('product/search', $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 		}
 
@@ -211,13 +211,13 @@ class ControllerProductProduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $product_info['name'],
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$this->document->setTitle($product_info['meta_title']);
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
-			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
+			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']), 'canonical');
 			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
 			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
@@ -265,7 +265,7 @@ class ControllerProductProduct extends Controller {
 
 			$data['product_id'] = (int)$this->request->get['product_id'];
 			$data['manufacturer'] = $product_info['manufacturer'];
-			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
+			$data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 			$data['model'] = $product_info['model'];
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
@@ -398,7 +398,7 @@ class ControllerProductProduct extends Controller {
 				$data['captcha'] = '';
 			}
 
-			$data['share'] = $this->url->link('product/product', 'product_id=' . (int)$this->request->get['product_id']);
+			$data['share'] = $this->url->link('product/product', 'product_id=' . (int)$this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 
@@ -447,7 +447,7 @@ class ControllerProductProduct extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
 
@@ -459,7 +459,7 @@ class ControllerProductProduct extends Controller {
 				foreach ($tags as $tag) {
 					$data['tags'][] = array(
 						'tag'  => trim($tag),
-						'href' => $this->url->link('product/search', 'tag=' . trim($tag))
+						'href' => $this->url->link('product/search', 'tag=' . trim($tag), false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}
 			}
@@ -529,7 +529,7 @@ class ControllerProductProduct extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id)
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id, false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));
@@ -587,7 +587,7 @@ class ControllerProductProduct extends Controller {
 		$pagination->total = $review_total;
 		$pagination->page = $page;
 		$pagination->limit = 5;
-		$pagination->url = $this->url->link('product/product/review', 'product_id=' . $this->request->get['product_id'] . '&page={page}');
+		$pagination->url = $this->url->link('product/product/review', 'product_id=' . $this->request->get['product_id'] . '&page={page}', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['pagination'] = $pagination->render();
 
