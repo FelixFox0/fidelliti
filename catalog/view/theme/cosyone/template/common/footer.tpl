@@ -66,8 +66,5 @@ Please donate via PayPal to donate@opencart.com
 <?php echo $live_search; ?>
 <?php echo $cosyone_cookie; ?>
 
-
-
-
     
 </body></html>

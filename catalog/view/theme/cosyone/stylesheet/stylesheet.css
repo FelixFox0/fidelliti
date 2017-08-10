@@ -69,12 +69,6 @@ p {
 	margin-bottom: 15px;
 	line-height:21px;
 }
-a, a.active, a.selected, input, button, .button, a:hover, button:hover, .button:hover, li.active > a, .box-content > ul > li ul > li > a, .box-content > ul > li ul > li > a:hover {
-	transition:			color 300ms, border-color 300ms ease-in-out, background-color 300ms ease-in-out;
-	-moz-transition:	color 300ms, border-color 300ms ease-in-out, background-color 300ms ease-in-out;
-	-webkit-transition:	color 300ms, border-color 300ms ease-in-out, background-color 300ms ease-in-out;
-	-o-transition:		color 300ms, border-color 300ms ease-in-out, background-color 300ms ease-in-out;
-}
 a, a b {
 	cursor: pointer;
 	text-decoration:none;
@@ -98,7 +92,7 @@ a, a:hover, a:active, a:focus {
 a img, img {
 	border: none;
 	max-width:100%;
-	height:auto !important;
+	height:auto;
 	transition:			border 300ms;
 	-moz-transition:	border 300ms;
 	-webkit-transition:	border 300ms;

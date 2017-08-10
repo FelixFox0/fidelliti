@@ -3,7 +3,7 @@
 <!--[if IE 8 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
 <!--[if IE 9 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
+<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>"> 
 <!--<![endif]-->
 <head>
 <meta charset="UTF-8" />
@@ -21,20 +21,13 @@
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/stylesheet.css" />
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/grid/<?php echo $cosyone_max_width; ?>.css" />
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<?php if($cosyone_use_responsive == 'enabled'){ ?>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/responsive.css" />
-<?php } ?>
-<?php foreach ($styles as $style) { ?>
-<link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
-<?php } ?>
-<?php if ($direction == 'rtl') { ?>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/rtl.css" />
-<?php } ?>
+
+<link href="catalog/view/theme/default/css/main.css" rel="stylesheet">
+
 
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cosyone_common.js"></script>
@@ -47,7 +40,6 @@
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
-<?php echo $cosyone_styles; ?>
 </head>
 <body class="<?php echo $class; ?>">
 <div class="outer_container <?php echo $cosyone_default_product_style; ?> <?php if($cosyone_use_custom){ echo $cosyone_container_layout; } ?> <?php echo $cosyone_use_breadcrumb; ?>">
@@ -249,5 +241,51 @@
 </div>
 </div> <!-- header_wrapper ends -->
 </div> <!-- inner conainer ends -->
+
+<div class="first-frame">
+  <div class="first-frame__image">
+    <img src="image/CountrySelector.jpg" alt="image">
+  </div>
+  <div class="first-frame__countries">
+    <div class="first-frame__title">
+      Пожалуйста выберите страну, что бы продолжить.
+    </div>
+    <div class="first-frame__list">
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
+
+    </div>
+  </div>
+</div>
+
+
 <div class="breadcrumb_wrapper"></div>
 <div id="notification" class="container"></div>
