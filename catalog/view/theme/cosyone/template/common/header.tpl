@@ -17,13 +17,10 @@
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <?php } ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<?php foreach ($links as $link) { ?>
-<link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
-<?php } ?>
+
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/stylesheet.css" />
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/grid/<?php echo $cosyone_max_width; ?>.css" />
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 <link href="catalog/view/theme/default/css/main.css" rel="stylesheet">
@@ -47,32 +44,32 @@
 <?php echo $cosyone_menu_sticky; ?> 
 <?php echo $cosyone_menu_border; ?> 
 <?php echo $cosyone_header_style; ?>">
-<div class="header_top_line_wrapper">
-<div class="header_top_line container">
-<?php if($cosyone_header_style == 'header1'){ ?>
-    <?php } else { ?>
-    <div class="drop_downs_wrapper">
-    <?php echo $header_login; ?>
-	<?php echo $language; ?>
-        <?php echo $countries; ?>
-  	<?php echo $currency; ?>
+
+<header class="header">
+  <div class="header__top">
+    <div class="header__lang">
+      <?php echo $language; ?>
     </div>
-    <?php } ?>
-  <div class="promo_message"><?php echo $cosyone_top_promo_message; ?></div>
-  <div class="links contrast_font">
-  <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
-  <a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a>
-  <a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a>
-  <a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
+    <div class="header__promo">
+      <?php echo $cosyone_top_promo_message; ?>
+    </div>
+    <div class="header__register">
+      <?php //echo $header_login; ?>
+      <a href="#">Регистрация</a>
+      <a href="#">Авторизация</a>
+    </div>
   </div>
-  <div class="clearfix"></div>
-</div>
-</div>
-<div class="container header">
+</header>
+
+<div class="container header-wrap">
 <div class="header_main">
   <div class="header_right"> 
   <?php if ($logo) { ?>
-  <div class="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
+  <div class="logo">
+  <span>ОНЛАЙН - БУТИК</span>
+  <a href="<?php echo $home; ?>">
+  <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
+  </div>
   <?php } ?>
  <?php if($cosyone_header_style == 'header3') { ?>
  <?php } else { ?>
@@ -102,7 +99,6 @@
     <?php } ?>
 
 <div class="menu_wrapper">
-<div class="container menu_border"></div>
 <div class="container menu_holder">
 <div id="menu">
 <?php if($cosyone_header_style == 'header2') { ?>
@@ -119,24 +115,24 @@
  <?php } ?>
 <a class="mobile_menu_trigger up_to_tablet"><i class="fa fa-bars"></i> <?php echo $cosyone_text_mobile_menu; ?></a>
   <ul class="only_desktop">
-	<li class="home only_desktop <?php echo $cosyone_show_home_icon; ?>"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
+	<li class="home only_desktop <?php echo $cosyone_show_home_icon; ?>"><a href="<?php echo $home; ?>" class="hvr-underline-from-center"><?php echo $text_home; ?></a></li>
        <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
         <?php if ($category_1['category_1_id'] == $category_1_id) { ?>
-		<li class="col<?php echo $category_1['column']; ?> current"><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
+		<li class="col<?php echo $category_1['column']; ?> current"><a href="<?php echo $category_1['href']; ?>" class="hvr-underline-from-center"><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
          <?php } else { ?>
-         <li class="col<?php echo $category_1['column']; ?>"><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
+         <li class="col<?php echo $category_1['column']; ?>"><a href="<?php echo $category_1['href']; ?>" class="hvr-underline-from-center"><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
          <?php } ?>
           <?php if ($category_1['children']) { ?>
           
 
           
-          <div class="menu_drop_down" style="width: <?php echo ((($category_1['column']) * (195)) + (10)); ?>px">
+          <div class="menu_drop_down" >
           <div class="wrapper">
-                        <img src="<?php echo $category_1['thumb']; ?>" />
+                        
           <ul><?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
-            <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?><i class="fa fa-caret-right"></i></a>
+            <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></a>
             <?php if($cosyone_menu_mega_second_thumb == 'enabled' && $category_2['thumb']) { ?>
           <a href="<?php echo $category_2['href']; ?>" class="sub_thumb"><img src="<?php echo $category_2['thumb']; ?>" alt="<?php echo $category_2['name']; ?>"/></a>
           <?php } ?>
@@ -152,6 +148,10 @@
             </li>
             <?php } ?>
           </ul>
+          <div class="wrapper-image">
+            <img src="<?php echo $category_1['thumb']; ?>" />
+          </div>
+          
           </div><!-- wrapper ends -->
           </div>
           <?php } ?>
@@ -160,34 +160,37 @@
         <?php } ?>
         <?php if($cosyone_custom_menu_block == 'enabled'){ ?>
 		<li class="withsubs custom_block"><a><?php echo $cosyone_custom_menu_block_title; ?><i class="fa fa-sort-desc"></i></a>
-        <div class="menu_drop_down" style="width:<?php echo $cosyone_menu_block_width; ?>px">
+        <div class="menu_drop_down">
         <?php echo $cosyone_menu_custom_block_content; ?>
         </div></li>
 		<?php } ?>
         <?php if($cosyone_custom_menu_title1){ ?>
-		<li class="col1 withsubs"><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $cosyone_custom_menu_title1; ?></a></li>
+		<li class="col1 withsubs"><a href="<?php echo $cosyone_custom_menu_url1 ?>" class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title1; ?></a></li>
                     
                 
                 
         <?php } ?>
         <?php if($cosyone_custom_menu_title2){ ?>      
                 <li class="col1 withsubs">
-                    <a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $cosyone_custom_menu_title2; ?><i class="fa fa-sort-desc"></i></a>
+                    <a href="<?php echo $cosyone_custom_menu_url2 ?>"  class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title2; ?><i class="fa fa-sort-desc"></i></a>
                     
                 
                 
                 <?php if ($informations) { ?>
-                <div class="menu_drop_down" style="width: <?php echo ((($category_1['column']) * (195)) + (10)); ?>px">
+                <div class="menu_drop_down">
                 <div class="wrapper">
                     <!-- тут пихани статикой картинку -->
-                <img src="<?php echo $category_1['thumb']; ?>" />
+                
                 <ul>
                 <?php foreach ($informations as $information) { ?>
                 
-                <li class="column level2"><i class="fa fa-caret-right"></i><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+                <li class="column level2"><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
                 
                 <?php } ?>
                 </ul>
+                <div class="wrapper-image">
+                  <img src="<?php echo $category_1['thumb']; ?>" />
+                </div>
                 
                 </ul>
                 </div>
@@ -279,49 +282,9 @@
 </div> <!-- header_wrapper ends -->
 </div> <!-- inner conainer ends -->
 
-<div class="first-frame">
-  <div class="first-frame__image">
-    <img src="image/CountrySelector.jpg" alt="image">
-  </div>
-  <div class="first-frame__countries">
-    <div class="first-frame__title">
-      Пожалуйста выберите страну, что бы продолжить.
-    </div>
-    <div class="first-frame__list">
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
 
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
-      <span class="first-frame__list-li"><a href="#" class="first-frame__list-item">Украина</a></span>
 
-    </div>
-  </div>
-</div>
+<?php echo $countries; ?>
 
 
 <div class="breadcrumb_wrapper"></div>

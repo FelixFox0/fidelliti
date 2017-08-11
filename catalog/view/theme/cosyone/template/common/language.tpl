@@ -2,7 +2,7 @@
 <div class="language_current contrast_font">
 <?php foreach ($languages as $language) { ?>
     <?php if ($language['code'] == $code) { ?>
-    <a class="head"><img src="catalog/language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" />
+    <a class="head"><?php echo $language['name']; ?>
     <i class="fa fa-angle-down"></i></a>
     <?php } ?>
     <?php } ?>
@@ -11,10 +11,10 @@
   <div class="top_header_drop_down">
     <?php foreach ($languages as $language) { ?>
     <?php if ($language['code'] == $code) { ?>
-    <a class="current"><img src="catalog/language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" /><?php echo $language['name']; ?></a>
+    <a class="current"><?php echo $language['name']; ?></a>
     <?php } else { ?>
     <a href="<?php echo $language['code']; ?>">
-    <img src="catalog/language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>" /><?php echo $language['name']; ?></a>
+    <?php echo $language['name']; ?></a>
     <?php } ?>
     <?php } ?>
     <input type="hidden" name="code" value="" />

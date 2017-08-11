@@ -16,15 +16,27 @@
 @import "partials/sprite.scss";
 
 body {
-	font-family: "Ral-m";
-	letter-spacing: 1px;
+	font-family: "gotic";
+	letter-spacing: 0.5px;
+
 }
 
 a {
 	transition: all .2s ease-in;
 	display: inline-block;
+	color: #000;
+
+	&:hover {
+		color: #797777;
+	}
 }
 
+
+.container {
+	width: 1440px;
+	max-width: 1440px;
+
+}
 
 a.button, input.button, button.button, .btn { 
 	text-transform:uppercase;
@@ -206,7 +218,7 @@ a.button.active:hover, input.button.active:hover, #button-confirm:hover, .style-
 		padding: 50px 80px;
 
 		&-li {
-			width: 33%;
+			max-width: 25%;
 		}
 
 		&-item {
@@ -236,6 +248,67 @@ a.button.active:hover, input.button.active:hover, #button-confirm:hover, .style-
 					transform: translateX(0);
 					opacity: 1;
 				}
+			}
+		}
+	}
+}
+
+.header {
+	
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #ededed;
+		padding: 5px 50px;
+		font-family: "gotic";
+		font-size: 13px;
+
+		.language_current  {
+			a {
+				font-family: "gotic";
+			}
+		}
+	}
+
+	&__register {
+		a {
+			margin-left: 20px;
+		}
+	}
+}
+
+.logo {
+	font-size: 13px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	span {
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+}
+
+.header-wrap {
+	padding: 104px 0 20px 0;
+}
+
+.menu_drop_down {
+	max-width: 70%;
+	left: 15%;
+	margin: 0 auto; 
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+
+		& > ul {
+			width: 186px;
+
+			&  ul {
+				border-left: 1px solid #000 !important;
 			}
 		}
 	}

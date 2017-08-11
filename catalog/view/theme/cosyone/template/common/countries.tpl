@@ -31,18 +31,19 @@
 
 
 <?php if (count($countries) > 1) { ?>
-<div class="language_current contrast_font">
-    <a class="head">
-        <?php echo $country_s; ?>
-        <i class="fa fa-angle-down"></i>
-    </a>
-    <form action="" method="post" enctype="" id="country">
-        <div class="top_header_drop_down">
-            <?php foreach ($countries as $country) { ?>
-            <a href="/<?php echo strtolower($country['iso_code_2']) . $href; ?>"><?php echo $country['name']; ?></a>
-            <?php //var_dump($href); ?>
-            <?php } ?>
-        </div>
-    </form>
+<div class="first-frame">
+  <div class="first-frame__image">
+    <img src="image/CountrySelector.jpg" alt="image">
+  </div>
+  <div class="first-frame__countries">
+    <div class="first-frame__title">
+      Пожалуйста выберите страну, что бы продолжить.
+    </div>
+    <div class="first-frame__list">
+      <?php foreach ($countries as $country) { ?>
+        <span class="first-frame__list-li"><a href="/<?php echo strtolower($country['iso_code_2']) . $href; ?>" class="first-frame__list-item"><?php echo $country['name']; ?></a></span>
+      <?php } ?>
+    </div>
+  </div>
 </div>
 <?php } ?>

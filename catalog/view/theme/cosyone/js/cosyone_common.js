@@ -94,12 +94,12 @@ $(document).ready(function() {
 		
 		var i = (dropdown.left + $(this).outerWidth()) - (menu.left + $('#menu').outerWidth());
 		if (i > 0) {
-			$(this).css('margin-left', '-' + i + 'px');
+			/*$(this).css('margin-left', '-' + i + 'px');*/
 		}
 		// RTL Version		
 		var r = (menu.left - dropdown_wrapper.left);
 		if (r > 0) {
-			$(this).css('margin-right', '-' + r + 'px');
+			/*$(this).css('margin-right', '-' + r + 'px');*/
 		}
 	});
 	
