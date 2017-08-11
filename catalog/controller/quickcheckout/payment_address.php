@@ -32,7 +32,7 @@ class ControllerQuickCheckoutPaymentAddress extends Controller {
 		$this->load->model('account/address');
 
 		$data['addresses'] = $this->model_account_address->getAddresses();
-
+/*
 		if (isset($this->session->data['payment_address']['country_id'])) {
 			$data['country_id'] = $this->session->data['payment_address']['country_id'];
 		} elseif (isset($this->session->data['shipping_address']['country_id'])) {
@@ -42,6 +42,9 @@ class ControllerQuickCheckoutPaymentAddress extends Controller {
 
 			$data['country_id'] = $country['default'];
 		}
+                */
+                $this->load->model('startup/url');
+                $data['country_id'] = $this->model_startup_url->checkCountryIso($this->session->data['country_code'])['country_id'];
 
 		if (isset($this->session->data['payment_address']['zone_id'])) {
 			$data['zone_id'] = $this->session->data['payment_address']['zone_id'];

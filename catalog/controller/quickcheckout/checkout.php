@@ -205,11 +205,16 @@ class ControllerQuickCheckoutCheckout extends Controller {
   	}
 	
 	public function country() {
+//            die('scsc');
+            
 		$json = array();
 		
 		$this->load->model('localisation/country');
 
     	$country_info = $this->model_localisation_country->getCountry($this->request->get['country_id']);
+        $this->session->data['country_code'] = strtolower($country_info['iso_code_2']);
+        $this->session->data['country_code_old'] = strtolower($country_info['iso_code_2']);
+        
 		
 		if ($country_info) {
 			$this->load->model('localisation/zone');

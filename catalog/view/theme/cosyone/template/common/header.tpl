@@ -284,7 +284,7 @@
 
 
 
-<?php echo $countries; ?>
+<?php //echo $countries; ?>
 
 
 <div class="breadcrumb_wrapper"></div>
