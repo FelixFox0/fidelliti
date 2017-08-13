@@ -238,8 +238,23 @@ function syncImgCbs() {
     });
 }
 
-function filter(b, c ) {
+
+$(window).on('scroll', function(event) {
+    event.preventDefault();
+    
+    var b = $("#adv_ajaxfilter_page").val();
+    
+    var cont = getContainer();
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+        $("#adv_ajaxfilter_page").val(+b + 1);
+        filter(false, false, true);
+        
+    }
+});
+
+function filter(b, c, status) {
     var a = $("#adv_ajaxfilter").serialize().replace(/[^&]+=\.?(?:&|$)/g, "").replace(/&+$/, "");
+
 	var cont = getContainer();
     if (!b) {
         window.location.hash = a
@@ -260,25 +275,34 @@ function filter(b, c ) {
         $(cont).advOverlay();
         $("#adv_ajaxfilter").advOverlay();
 
-        $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json",
+        $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json", async: false,
             success:function (g) {
-                adv_result(g, b);
+                console.log(g.result_html);
+                adv_result(g, b, status);
                 cache[h] = g;
                 var cont = getContainer();
                 $(cont).advUnoverlay();
                 $("#adv_ajaxfilter").advUnoverlay();
+
             }
 		});
     }
 }
 
-function adv_result(g, b) {
+function adv_result(g, b, status) {
+
     var cont = getContainer();
     var view = 'product-layout';
 
     var hash = window.location.hash.substr(1);
     if (typeof(g.result_html) != "undefined") {
-        $(cont).parent().html(g.result_html);
+        if(status) {
+            $(cont).parent().append(g.result_html);
+        } else {
+            $(cont).parent().html(g.result_html);
+        }
+        
+        /*$(cont).parent().append(g.result_html);*/
         if (localStorage.getItem('display') == 'list') {
        		$('#list-view').trigger('click');
        	} else {
@@ -435,6 +459,10 @@ function adv_result(g, b) {
 
 function getContainer(){
     return '.product-layout';
+}
+
+function getContainerParent(){
+    return $(getContainer()).parent();
 }
 
 function delayedFilter() {

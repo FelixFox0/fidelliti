@@ -153,9 +153,9 @@ $(document).ready(function() {
 	
 	// Image thumb swipe  //
    $(".product-list .item, .product-grid .item").hover(function() {
-         $(this).find(".image_hover").stop(true).fadeTo(600,1);
+         $(this).find(".image_hover").stop(true).fadeTo(300,1);
    }, function() {
-         $(this).find(".image_hover").stop(true).fadeTo(300,0);
+         $(this).find(".image_hover").stop(true).fadeTo(150,0);
    });
    
    // Show special countdown on hover

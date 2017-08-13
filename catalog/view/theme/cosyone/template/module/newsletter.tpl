@@ -14,7 +14,6 @@
 
 <?php } else if (($style) == ('default')) { ?>
 <div class="box newsletter">
-  <div class="box-heading"><?php echo $heading_title; ?></div>
   <div class="box-content">
   <p class="contrast_font intro"><?php echo $entry_email; ?></p>
              <input type="text" value="" placeholder="<?php echo $text_email; ?>" name="email" id="newsletter_email<?php echo $module; ?>" class="form-control" />

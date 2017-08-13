@@ -464,7 +464,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 
 		foreach ($results as $result) {
 			if ($result['image']) {
-				$image = $this->model_tool_image->resize($result['image'], $this->config->get('theme_default_image_product_width'), $this->config->get('theme_default_image_product_height'));
+				$image = $this->model_tool_image->resize($result['image'], 274, 497);
 			} else {
 				$image = false;
 			}
@@ -524,7 +524,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 				// Cosyone custom code starts	
 			  'sales_percantage' => number_format($sales_percantage, 0, ',', '.'),
 			  'special_date_end' => $special_date_end,
-			  'thumb_hover'  => $this->model_tool_image->resize($images, $this->config->get('theme_default_image_product_width'), $this->config->get('theme_default_image_product_height')),
+			  'thumb_hover'  => $this->model_tool_image->resize($images, 274, 497),
 			  'brand_name'		=> $result['manufacturer'],
 			  'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', true, $this->session->data['country_code'], $this->session->data['language_name']),
 			  'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,

@@ -45,18 +45,156 @@
 <?php echo $cosyone_menu_border; ?> 
 <?php echo $cosyone_header_style; ?>">
 
+
+<div class="popup-countries mfp-hide">
+  <div class="popup-countries__header">
+    Пожалуйста выберите страну, что бы продолжить.
+  </div>
+  <ul class="popup-countries__items">
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+    <li class="popup-countries__item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
+      <a href="#">Страна</a>
+    </li>
+  </ul>
+</div>
+
 <header class="header">
-  <div class="header__top">
-    <div class="header__lang">
-      <?php echo $language; ?>
-    </div>
-    <div class="header__promo">
-      <?php echo $cosyone_top_promo_message; ?>
-    </div>
-    <div class="header__register">
-      <?php //echo $header_login; ?>
-      <a href="#">Регистрация</a>
-      <a href="#">Авторизация</a>
+  <div class="container">
+    <div class="header__top">
+      <div class="header__group">
+        <div class="header__delivery">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <span>Доставка в:</span>
+          <a href=".popup-countries" class="open-popup">UA</a>
+        </div>
+        <div class="header__lang">
+          <?php echo $language; ?>
+        </div>
+      </div>
+      <div class="header__promo">
+        <?php echo $cosyone_top_promo_message; ?>
+      </div>
+      <div class="header__register">
+        <?php //echo $header_login; ?>
+        <a href="#">Регистрация</a>
+        <a href="#">Авторизация</a>
+      </div>
     </div>
   </div>
 </header>
@@ -64,6 +202,20 @@
 <div class="container header-wrap">
 <div class="header_main">
   <div class="header_right"> 
+  <div class="service-block">
+    <div class="service-block__item">
+      <a href="#"><i class="icon-phone"></i></a>
+    </div>
+    <div class="service-block__item">
+      <a href="#"><i class="icon-man"></i></a>
+    </div>
+    <div class="service-block__item">
+      <?php if ($cosyone_header_cart) { echo $cart; } ?>
+    </div>
+    <div class="service-block__item">
+      <a href="#" class="js-search"><i class="icon-search"></i></a>
+    </div>
+  </div>
   <?php if ($logo) { ?>
   <div class="logo">
   <span>ОНЛАЙН - БУТИК</span>
@@ -71,12 +223,7 @@
   <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
   </div>
   <?php } ?>
- <?php if($cosyone_header_style == 'header3') { ?>
- <?php } else { ?>
- <?php if($cosyone_header_search == 'enabled') { ?>
- <?php echo $search; ?>
- <?php } ?>
- <?php } ?>
+ 
  <div class="mobile_clear"></div>
   <!-- Position for header login, lang, curr, in the header main -->
 	<?php if($cosyone_header_style == 'header1'){ ?>
@@ -86,10 +233,6 @@
   	<?php echo $currency; ?>
     <?php } ?>
   <?php if($cosyone_header_style == 'header2') { ?>
-    	<div class="shortcuts_wrapper">
-       	<?php echo $header_wishlist_compare; ?>
-        <?php if ($cosyone_header_cart) { echo $cart; } ?>
-        </div>
     	<?php } else { ?>
     <?php } ?>
   <?php if($cosyone_header_style == 'header3'){ ?>
@@ -99,7 +242,21 @@
     <?php } ?>
 
 <div class="menu_wrapper">
-<div class="container menu_holder">
+<div class="search-block">
+  <div class="container"> 
+    <?php if($cosyone_header_search == 'enabled') { ?>
+   <?php echo $search; ?>
+   <?php } ?>
+  </div>
+ </div>
+
+<div class="menu_holder">
+<?php if ($logo) { ?>
+  <div class="logo2">
+  <a href="<?php echo $home; ?>">
+  <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
+  </div>
+  <?php } ?>
 <div id="menu">
 <?php if($cosyone_header_style == 'header2') { ?>
     	<?php } else { ?>
@@ -119,9 +276,9 @@
        <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
         <?php if ($category_1['category_1_id'] == $category_1_id) { ?>
-		<li class="col<?php echo $category_1['column']; ?> current"><a href="<?php echo $category_1['href']; ?>" class="hvr-underline-from-center"><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
+		<li class="col<?php echo $category_1['column']; ?> current"><a href="<?php echo $category_1['href']; ?>" class="hvr-underline-from-center"><?php echo $category_1['name']; ?></a>
          <?php } else { ?>
-         <li class="col<?php echo $category_1['column']; ?>"><a href="<?php echo $category_1['href']; ?>" class="hvr-underline-from-center"><?php echo $category_1['name']; ?><i class="fa fa-sort-desc"></i></a>
+         <li class="col<?php echo $category_1['column']; ?>"><a href="<?php echo $category_1['href']; ?>" class="hvr-underline-from-center"><?php echo $category_1['name']; ?></a>
          <?php } ?>
           <?php if ($category_1['children']) { ?>
           
@@ -159,7 +316,7 @@
         <?php } ?>
         <?php } ?>
         <?php if($cosyone_custom_menu_block == 'enabled'){ ?>
-		<li class="withsubs custom_block"><a><?php echo $cosyone_custom_menu_block_title; ?><i class="fa fa-sort-desc"></i></a>
+		<li class="withsubs custom_block"><a><?php echo $cosyone_custom_menu_block_title; ?></a>
         <div class="menu_drop_down">
         <?php echo $cosyone_menu_custom_block_content; ?>
         </div></li>
@@ -172,7 +329,7 @@
         <?php } ?>
         <?php if($cosyone_custom_menu_title2){ ?>      
                 <li class="col1 withsubs">
-                    <a href="<?php echo $cosyone_custom_menu_url2 ?>"  class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title2; ?><i class="fa fa-sort-desc"></i></a>
+                    <a href="<?php echo $cosyone_custom_menu_url2 ?>"  class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title2; ?></a>
                     
                 
                 
@@ -194,6 +351,20 @@
                 
                 </ul>
                 </div>
+                <div class="service-block _no-fixed">
+                    <div class="service-block__item">
+                      <a href="#"><i class="icon-phone"></i></a>
+                    </div>
+                    <div class="service-block__item">
+                      <a href="#"><i class="icon-man"></i></a>
+                    </div>
+                    <div class="service-block__item">
+                      <?php if ($cosyone_header_cart) { echo $cart; } ?>
+                    </div>
+                    <div class="service-block__item">
+                      <a href="#" class="js-search"><i class="icon-search"></i></a>
+                    </div>
+                  </div>
                 </div>
                 <?php } ?>
                 </li>
@@ -278,11 +449,11 @@
       </ul>
 
 </div>
+
 </div>
+
 </div> <!-- header_wrapper ends -->
 </div> <!-- inner conainer ends -->
-
-
 
 <?php //echo $countries; ?>
 
