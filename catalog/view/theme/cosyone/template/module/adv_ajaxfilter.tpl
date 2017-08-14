@@ -14,7 +14,7 @@
                     <input type="checkbox" class="filtered" name="instock" id="instock" <?php if($instock_checked) echo 'checked="checked"'; ?>><label for="instock"><?php echo $text_instock?></label>
                 </div>
             </div> -->
-            <div class="option_box" <?php if(!$price_slider) { echo '';}?>>
+            <div class="option_box" style="display: none;" <?php if(!$price_slider) { echo '';}?>>
                 <div class="option_name contrast_font"><?php echo $text_price_range?></div>
                 <div class="price_slider collapsible">
                 <div class="price_range"><?php //echo $text_range; ?>  
