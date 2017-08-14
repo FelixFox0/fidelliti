@@ -51,126 +51,12 @@
     Пожалуйста выберите страну, что бы продолжить.
   </div>
   <ul class="popup-countries__items">
+    <?php foreach ($countries_array as $country) { ?>
     <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
+      <img src="/image/flags/<?php echo strtolower($country['iso_code_2']); ?>.png" alt="">
+      <a href="/<?php echo strtolower($country['iso_code_2']) . $href; ?>" class="first-frame__list-item"><?php echo $country['name']; ?></a>
     </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
-    <li class="popup-countries__item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7w7tTb5sTIY-6vq_2T5RRYGV6Z0XladTWo1SrWXzpOAaXOaQkw" alt="">
-      <a href="#">Страна</a>
-    </li>
+    <?php } ?>
   </ul>
 </div>
 
@@ -181,7 +67,7 @@
         <div class="header__delivery">
           <i class="fa fa-globe" aria-hidden="true"></i>
           <span>Доставка в:</span>
-          <a href=".popup-countries" class="open-popup">UA</a>
+          <a href=".popup-countries" class="open-popup"><?php echo strtoupper($country_s); ?></a>
         </div>
         <div class="header__lang">
           <?php echo $language; ?>
@@ -192,8 +78,12 @@
       </div>
       <div class="header__register">
         <?php //echo $header_login; ?>
-        <a href="#">Регистрация</a>
-        <a href="#">Авторизация</a>
+        <?php if($logged){ ?>
+        <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
+        <?php }else{ ?>
+        <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
+        <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a>
+        <?php } ?>
       </div>
     </div>
   </div>
@@ -322,10 +212,10 @@
         </div></li>
 		<?php } ?>
         <?php if($cosyone_custom_menu_title1){ ?>
-		<li class="col1 withsubs"><a href="<?php echo $cosyone_custom_menu_url1 ?>" class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title1; ?></a></li>
-                    
-                
-                
+		<li class="col1 withsubs">
+                    <a href="<?php echo $cosyone_custom_menu_url1 ?>" class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title1; ?></a>
+                </li>
+             
         <?php } ?>
         <?php if($cosyone_custom_menu_title2){ ?>      
                 <li class="col1 withsubs">
@@ -455,7 +345,11 @@
 </div> <!-- header_wrapper ends -->
 </div> <!-- inner conainer ends -->
 
-<?php //echo $countries; ?>
+<?php 
+if($countries){
+    echo $countries; 
+}
+?>
 
 
 <div class="breadcrumb_wrapper"></div>

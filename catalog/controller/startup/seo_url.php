@@ -11,7 +11,7 @@ class ControllerStartupSeoUrl extends Controller {
 //                var_dump($this->request->get['_route_']);
                 $this->load->model('startup/url');
                 $this->load->model('localisation/language');
-                
+                unset($this->session->data['country_test']);
                 if(isset($this->request->get['_route_'])){
                     
                     if($this->model_startup_url->checkCountryIso(substr($this->request->get['_route_'], 0, stripos($this->request->get['_route_'],'/')))){
@@ -35,6 +35,7 @@ class ControllerStartupSeoUrl extends Controller {
                             $this->session->data['country_code']=$this->session->data['country_code_old'];
                         }else{
                             $this->session->data['country_code'] = 'ua';
+                            $this->session->data['country_test'] = true;
                         }
                     }
                     
@@ -43,6 +44,7 @@ class ControllerStartupSeoUrl extends Controller {
                         $this->session->data['country_code']=$this->session->data['country_code_old'];
                     }else{
                         $this->session->data['country_code'] = 'ua';
+                        $this->session->data['country_test'] = true;
                     }
                 }
                 

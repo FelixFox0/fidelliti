@@ -130,10 +130,34 @@ class ControllerCommonHeader extends Controller {
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
                 
-                $data['countries'] = $this->load->controller('common/countries');
-//                var_dump($data['countries']);
-                //$countries = $this->model_common_header->getCountries();
-
+                if(isset($this->session->data['country_test'])){
+                    $data['countries'] = $this->load->controller('common/countries');
+                } else{
+                    $data['countries'] = false;
+                }
+                
+                
+                
+                
+                $this->load->model('common/countries');
+                $data['countries_array'] = $this->model_common_countries->getCountries();
+                $data['country_s'] = $this->session->data['country_code'];
+                $data['href'] = substr($_SERVER['REQUEST_URI'],1);
+                $this->load->model('startup/url');
+                if($this->model_startup_url->checkCountryIso(substr($data['href'], 0, stripos($data['href'],'/')))){
+                    $data['href'] = substr($data['href'], stripos($data['href'],'/'));
+                }elseif($this->model_startup_url->checkCountryIso(substr($data['href'], 0))){
+                    $data['href'] = '/';
+                }else{
+                    $data['href'] = '/'.$data['href'];
+                }
+                if($this->model_startup_url->getLanguageByName(substr($data['href'], 1,3 ))){
+                    $data['href'] = '/' . substr($data['href'], 5);
+                }
+                
+//                var_dump($data['countries_array']);
+//                var_dump($data['href']);
+                
 		// For page specific css
 		if (isset($this->request->get['route'])) {
 			if (isset($this->request->get['product_id'])) {

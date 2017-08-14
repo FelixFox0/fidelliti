@@ -8704,3 +8704,15 @@
 2017-08-13 21:57:33 - PHP Warning:  Division by zero in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\controller\module\adv_ajaxfilter.php on line 396
 2017-08-13 22:55:53 - PHP Warning:  Division by zero in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\controller\module\adv_ajaxfilter.php on line 396
 2017-08-13 22:59:16 - PHP Warning:  Division by zero in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\controller\module\adv_ajaxfilter.php on line 396
+2017-08-14 16:56:11 - PHP Notice:  Undefined variable: country_array in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 61
+2017-08-14 16:56:11 - PHP Notice:  Undefined variable: country_array in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 61
+2017-08-14 16:56:11 - PHP Notice:  Undefined variable: country_array in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 61
+2017-08-14 16:56:11 - PHP Notice:  Undefined variable: country_array in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 61
+2017-08-14 16:56:11 - PHP Notice:  Undefined variable: country_array in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 61
+2017-08-14 16:56:11 - PHP Notice:  Undefined variable: country_array in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 61
+2017-08-14 16:57:15 - PHP Warning:  Invalid argument supplied for foreach() in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 57
+2017-08-14 16:57:15 - PHP Warning:  Invalid argument supplied for foreach() in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 57
+2017-08-14 16:57:15 - PHP Warning:  Invalid argument supplied for foreach() in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 57
+2017-08-14 17:48:24 - PHP Notice:  Undefined variable: data in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 84
+2017-08-14 17:48:24 - PHP Notice:  Undefined variable: data in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 84
+2017-08-14 17:48:25 - PHP Notice:  Undefined variable: data in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 84
