@@ -277,7 +277,6 @@ function filter(b, c, status) {
 
         $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json", async: false,
             success:function (g) {
-                console.log(g.result_html);
                 adv_result(g, b, status);
                 cache[h] = g;
                 var cont = getContainer();
