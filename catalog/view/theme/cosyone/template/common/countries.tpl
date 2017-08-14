@@ -37,7 +37,7 @@
   </div>
   <div class="first-frame__countries">
     <div class="first-frame__title">
-      Пожалуйста выберите страну, что бы продолжить.
+      Please select a country and language to continue.
     </div>
     <div class="first-frame__list">
       <?php foreach ($countries as $country) { ?>

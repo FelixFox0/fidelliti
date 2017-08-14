@@ -1,7 +1,7 @@
 <?php
 // Text
 $_['text_cart']	= 'Корзина';
-$_['text_image']	= 'изображение';
+$_['text_image']	= 'Изображение';
 $_['text_name']		= 'Продукт';
 $_['text_quantity']	= 'Количество';
 $_['text_price']	= 'Цена';

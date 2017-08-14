@@ -8716,3 +8716,9 @@
 2017-08-14 17:48:24 - PHP Notice:  Undefined variable: data in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 84
 2017-08-14 17:48:24 - PHP Notice:  Undefined variable: data in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 84
 2017-08-14 17:48:25 - PHP Notice:  Undefined variable: data in C:\OpenServer\domains\new.fidelitti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 84
+2017-08-15 2:28:16 - PHP Notice:  Undefined offset: 4 in D:\OpenServer\domains\fidelitti.loc\catalog\controller\blog\home.php on line 76
+2017-08-15 2:28:16 - PHP Notice:  Undefined offset: 4 in D:\OpenServer\domains\fidelitti.loc\catalog\controller\blog\home.php on line 80
+2017-08-15 2:28:16 - PHP Notice:  Undefined offset: 4 in D:\OpenServer\domains\fidelitti.loc\catalog\controller\blog\home.php on line 83
+2017-08-15 2:28:16 - PHP Notice:  Undefined offset: 4 in D:\OpenServer\domains\fidelitti.loc\catalog\controller\blog\home.php on line 87
+2017-08-15 2:28:16 - PHP Notice:  Undefined offset: 4 in D:\OpenServer\domains\fidelitti.loc\catalog\controller\blog\home.php on line 92
+2017-08-15 2:28:16 - PHP Notice:  Undefined offset: 4 in D:\OpenServer\domains\fidelitti.loc\catalog\controller\blog\home.php on line 98
