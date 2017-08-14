@@ -1,6 +1,6 @@
 <?php if($filter_groups || $categories || $options || $manufacturers || $attributes || $price_slider) { ?>
 <div class="box filter_holder">
-<div class="box-heading"><?php echo $heading_title; ?></div>
+<!-- <div class="box-heading"><?php echo $heading_title; ?></div> -->
 
 <div class="box" id="adv_ajaxfilter_box">
 
@@ -8,16 +8,16 @@
     <div class="bordered_content">
         
         <form id="adv_ajaxfilter">
-            <div class="option_box" <?php if(!$instock_visible) echo 'style="display:none"'; ?>>
+            <!-- <div class="option_box" <?php if(!$instock_visible) echo ''; ?>>
                 <div class="option_name contrast_font"><?php echo $text_instock; ?></div>
                 <div class="collapsible filters">
                     <input type="checkbox" class="filtered" name="instock" id="instock" <?php if($instock_checked) echo 'checked="checked"'; ?>><label for="instock"><?php echo $text_instock?></label>
                 </div>
-            </div>
-            <div class="option_box" <?php if(!$price_slider) { echo 'style="display:none"';}?>>
+            </div> -->
+            <div class="option_box" <?php if(!$price_slider) { echo '';}?>>
                 <div class="option_name contrast_font"><?php echo $text_price_range?></div>
                 <div class="price_slider collapsible">
-                <div class="price_range"><?php echo $text_range; ?>  
+                <div class="price_range"><?php //echo $text_range; ?>  
                 <?php if($symbol_left){ echo $symbol_left; } ?><span id="min_p_holder"></span><?php if($symbol_right){ echo $symbol_right; } ?> - 
                 <?php if($symbol_left){ echo $symbol_left; } ?><span id="max_p_holder"></span><?php if($symbol_right){ echo $symbol_right; } ?>
                 </div>
@@ -34,11 +34,12 @@
                     <?php foreach ($filter_groups as $filter_group) { ?>
                     <div class="option_box">
                         <div class="option_name contrast_font <?php if(empty($expanded_filters)){echo "hided";} ?>"><?php echo $filter_group['name']; ?></div>
-                        <div class="collapsible filters" <?php if(empty($expanded_filters)){echo 'style="display:none"';}?>>
+                        <div class="collapsible filters" <?php if(empty($expanded_filters)){echo '';}?>>
                               <?php foreach ($filter_group['filter'] as $filter) { ?>
-                             
+                                <div class="checkk">
                                 <input type="checkbox" class="filtered" name="filter[<?php echo $filter_group['filter_group_id']; ?>][]" value="<?php echo $filter['filter_id']; ?>" id="filter<?php echo $filter['filter_id']; ?>" />
                                 <label for="filter<?php echo $filter['filter_id']; ?>"><?php echo $filter['name']; ?></label>
+                                </div>
                               <?php } ?>
                             
                         </div>
@@ -48,12 +49,13 @@
                     <?php foreach ($filter_groups as $filter_group) { ?>
                     <div class="option_box">
                         <div class="option_name contrast_font <?php if(empty($expanded_filters)){echo "hided";} ?>"><?php echo $filter_group['name']; ?></div>
-                        <div class="collapsible filters" <?php if(empty($expanded_filters)){echo 'style="display:none"';}?>>
+                        <div class="collapsible filters" <?php if(empty($expanded_filters)){echo '';}?>>
                             
                               <?php foreach ($filter_group['filter'] as $filter) { ?>
-                              
+                                <div class="checkk">
                                 <input type="radio" class="filtered" name="filter[<?php echo $filter_group['filter_group_id']; ?>][]" value="<?php echo $filter['filter_id']; ?>" id="filter<?php echo $filter['filter_id']; ?>" />
                                 <label for="filter<?php echo $filter['filter_id']; ?>"><?php echo $filter['name']; ?></label>
+                                </div>
                               
                               
                               
@@ -66,7 +68,7 @@
                     <?php foreach ($filter_groups as $filter_group) { ?>
                     <div class="option_box">
                         <div class="option_name contrast_font <?php if(empty($expanded_filters)){echo "hided";} ?>"><?php echo $filter_group['name']; ?></div>
-                        <div class="collapsible" <?php if(empty($expanded_filters)){echo 'style="display:none"';}?>>
+                        <div class="collapsible" <?php if(empty($expanded_filters)){echo '';}?>>
                         <select id="filter_group_<?php echo $filter_group['filter_group_id']; ?>" name="filter[<?php echo $filter_group['filter_group_id']; ?>][]" class="filtered">
                             <option value=""><?php echo $text_all?></option>
                             <?php foreach ($filter_group['filter'] as $filter) { ?>
@@ -116,7 +118,7 @@
             <?php if($categories) { ?>
             <div class="option_box">
                 <div class="option_name contrast_font <?php if(empty($expanded_categories)){echo "hided";}?>"><?php echo $text_categories; ?></div>
-                <div class="collapsible filters" <?php if(empty($expanded_categories)){echo 'style="display:none"';}?>>
+                <div class="collapsible filters" <?php if(empty($expanded_categories)){echo '';}?>>
                 <?php if($display_categories == 'select') { ?>
                     <div>
                         <select name="categories[]" class="filtered">
@@ -131,11 +133,12 @@
                         <div id="filter_categories">
                             <?php foreach($categories as $category) { ?>
                             
-                                    
-                                    <input id="cat_<?php echo $category['category_id']; ?>" class="filtered"
-                                           type="checkbox" name="categories[]"
-                                           value="<?php echo $category['category_id']; ?>">
-                                    <label for="cat_<?php echo $category['category_id']; ?>"><?php echo $category['name']; ?></label>
+                                    <div class="checkk">
+                                        <input id="cat_<?php echo $category['category_id']; ?>" class="filtered"
+                                               type="checkbox" name="categories[]"
+                                               value="<?php echo $category['category_id']; ?>">
+                                        <label for="cat_<?php echo $category['category_id']; ?>"><?php echo $category['name']; ?></label>
+                                    </div>
                                
                             <?php } ?>
                         </div>
@@ -147,15 +150,16 @@
                 <?php if(isset($tags)) { ?>
             <div class="option_box">
                 <div class="option_name contrast_font <?php if(empty($expanded_tags)){echo "hided";}?>"><?php echo $text_tags; ?></div>
-                <div class="collapsible filters" <?php if(empty($expanded_tags)){echo 'style="display:none"';}?>>
+                <div class="collapsible filters" <?php if(empty($expanded_tags)){echo '';}?>>
                     <div id="filter_tags">
                         <?php foreach($tags as $tag) { ?>
 
-                                
+                                <div class="checkk">
                                 <input id="tag_<?php echo $tag['tag']; ?>" class="filtered"
                                        type="checkbox" name="tags[]"
                                        value="<?php echo $tag['tag']; ?>">
                                 <label for="tag_<?php echo $tag['tag']; ?>"><?php echo $tag['name']; ?></label>
+                                </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -166,7 +170,7 @@
                 <?php if($manufacturers) { ?>
             <div class="option_box">
                 <div class="option_name contrast_font <?php if(empty($expanded_manufacturer)){echo "hided";}?>"><?php echo $text_manufacturers; ?></div>
-                <div class="collapsible filters" <?php if(empty($expanded_manufacturer)){echo 'style="display:none"';}?>>
+                <div class="collapsible filters" <?php if(empty($expanded_manufacturer)){echo '';}?>>
                     <?php if($display_manufacturer == 'select') { ?>
                     <div>
                         <select name="manufacturer[]" class="filtered">
@@ -181,28 +185,34 @@
                     
                         <?php foreach($manufacturers as $manufacturer) { ?>
                         
+                        <div class="checkk">
                         <input id="manufacturer_<?php echo $manufacturer['manufacturer_id']?>" class="manufacturer_value filtered" type="checkbox" name="manufacturer[]" value="<?php echo $manufacturer['manufacturer_id']?>">
                         <label for="manufacturer_<?php echo $manufacturer['manufacturer_id']?>"><span><?php echo $manufacturer['name']?></span></label>
+                        </div>
                             
                         <?php } ?>
                     
                     <?php } elseif($display_manufacturer == 'radio') { ?>
                     
                         <?php foreach($manufacturers as $manufacturer) { ?>
-                       
-                                <input id="manufacturer_<?php echo $manufacturer['manufacturer_id']?>" class="manufacturer_value filtered"
-                                       type="radio" name="manufacturer[]"
-                                       value="<?php echo $manufacturer['manufacturer_id']?>">
-                            
-                                <label for="manufacturer_<?php echo $manufacturer['manufacturer_id']?>"><?php echo $manufacturer['name']?></label>
+                                
+                                <div class="checkk">
+                                    <input id="manufacturer_<?php echo $manufacturer['manufacturer_id']?>" class="manufacturer_value filtered"
+                                           type="radio" name="manufacturer[]"
+                                           value="<?php echo $manufacturer['manufacturer_id']?>">
+                                
+                                    <label for="manufacturer_<?php echo $manufacturer['manufacturer_id']?>"><?php echo $manufacturer['name']?></label>
+                                </div>
                            
                         <?php } ?>
                     
                     <?php } elseif($display_manufacturer == 'image') { ?>
                     <div class="filter_image_holder">
                         <?php foreach($manufacturers as $manufacturer) { ?>
-                                <input style="display: none;" class="filtered manufacturer_value" id="manufacturer_<?php echo $manufacturer['manufacturer_id']?>" type="checkbox" name="manufacturer[]" value="<?php echo $manufacturer['manufacturer_id']?>">
-                                <img src="<?php echo $manufacturer['image']?>" data-toggle="tooltip" title="<?php echo $manufacturer['name']?>" alt="<?php echo $manufacturer['name']?>"/>
+                                <div class="checkk">
+                                    <input style="display: none;" class="filtered manufacturer_value" id="manufacturer_<?php echo $manufacturer['manufacturer_id']?>" type="checkbox" name="manufacturer[]" value="<?php echo $manufacturer['manufacturer_id']?>">
+                                    <img src="<?php echo $manufacturer['image']?>" data-toggle="tooltip" title="<?php echo $manufacturer['name']?>" alt="<?php echo $manufacturer['name']?>"/>
+                                </div>
                         <?php } ?>
                         </div>
                     <?php }?>
@@ -221,7 +231,7 @@
                     <div class="attribute_box <?php if($attr_group=="0") echo "option_box"; ?>">
 
                         <div class="option_name contrast_font <?php if(!$attribute_value['expanded']){echo "hided";}?>"><?php echo $attribute_value['name']; ?></div>
-                        <div class="collapsible filters" <?php if(!$attribute_value['expanded']){echo 'style="display:none"';}?>>
+                        <div class="collapsible filters" <?php if(!$attribute_value['expanded']){echo '';}?>>
                             <?php if($attribute_value['display'] == 'select') { ?>
                             <div>
                                 <select class="filtered" name="attribute_value[<?php echo $attribute_value_id?>][]">
@@ -238,7 +248,7 @@
                             <?php } elseif($attribute_value['display'] == 'checkbox') { ?>
                             
                                 <?php foreach($attribute_value['values'] as $i => $value) { ?>
-                                
+                                        <div class="checkk">
                                         <input class="filtered a_name"
                                                id="attribute_value_<?php echo $attribute_value_id . $i; ?>"
                                                type="checkbox" name="attribute_value[<?php echo $attribute_value_id?>][]"
@@ -249,13 +259,14 @@
                                                at_v_t="<?php echo $attribute_value_id . '_' . htmlspecialchars(preg_replace('/\s+|\n|\r|\s+$/m', '_', $value)); ?>"
                                                data-value="<?php echo $value; ?>"
                                                value="<?php echo $value ?>"><?php echo $value?></label>
+                                        </div>
                                    
                                 <?php } ?>
                             
                             <?php } elseif($attribute_value['display'] == 'radio') { ?>
                             
                                 <?php foreach($attribute_value['values'] as $i => $value) { ?>
-                                
+                                        <div class="checkk">
                                         <input class="filtered a_name"
                                                id="attribute_value_<?php echo $attribute_value_id . $i; ?>"
                                                type="radio" name="attribute_value[<?php echo $attribute_value_id?>][]"
@@ -266,6 +277,7 @@
                                                at_v_t="<?php echo $attribute_value_id . '_' . htmlspecialchars(preg_replace('/\s+|\n|\r|\s+$/m', '_', $value)) ?>"
                                                data-value="<?php echo $value ?>"
                                                value="<?php echo $value ?>"><?php echo $value?></label>
+                                        </div>
                                    
                                 <?php } ?>
                             
@@ -323,7 +335,7 @@
                 <div class="option_box">
                     <div class="option_name contrast_font <?php if(!$option['expanded']){echo "hided";}?>"><?php echo $option['name']; ?></div>
                     <?php if($option['display'] == 'select') { ?>
-                    <div class="collapsible" <?php if(!$option['expanded']){echo 'style="display:none"';}?>>
+                    <div class="collapsible" <?php if(!$option['expanded']){echo '';}?>>
                         <select class="filtered" name="option_value[<?php echo $option['option_id']?>][]">
                             <option value=""><?php echo $text_all?></option>
                             <?php foreach($option['option_values'] as $option_value) { ?>
@@ -333,39 +345,42 @@
                         </select>
                     </div>
                     <?php } elseif($option['display'] == 'checkbox') { ?>
-                    <div class="collapsible filters" <?php if(!$option['expanded']){echo 'style="display:none"';}?>>
+                    <div class="collapsible filters" <?php if(!$option['expanded']){echo '';}?>>
                         <?php foreach($option['option_values'] as $option_value) { ?>
-                       
+                                    
+                                <div class="checkk">
                                 <input class="filtered option_value" id="option_value_<?php echo $option_value['option_value_id']?>"
                                        type="checkbox" name="option_value[<?php echo $option['option_id']?>][]"
                                        value="<?php echo $option_value['option_value_id']?>">
                            
                                 <label for="option_value_<?php echo $option_value['option_value_id']?>"><?php echo $option_value['name']?></label>
+                                </div>
                            
                         <?php } ?>
                     </div>
                     <?php } elseif($option['display'] == 'radio') { ?>
-                    <div class="collapsible filters" <?php if(!$option['expanded']){echo 'style="display:none"';}?>>
+                    <div class="collapsible filters" <?php if(!$option['expanded']){echo '';}?>>
                         <?php foreach($option['option_values'] as $option_value) { ?>
-                        
+                                <div class="checkk">
                                 <input class="filtered option_value" id="option_value_<?php echo $option_value['option_value_id']?>"
                                        type="radio" name="option_value[<?php echo $option['option_id']?>][]"
                                        value="<?php echo $option_value['option_value_id']?>">
                             
                                 <label for="option_value_<?php echo $option_value['option_value_id']?>"><?php echo $option_value['name']?></label>
+                                </div>
                             
                         <?php } ?>
                     </div>
                     <?php } elseif($option['display'] == 'image') { ?>
-                    <div class="collapsible" <?php if(!$option['expanded']) { echo 'style="display:none"'; }?>>
+                    <div class="collapsible" <?php if(!$option['expanded']) { echo ''; }?>>
                     <div class="filter_image_holder">
                         <?php foreach($option['option_values'] as $option_value) { ?>
-						
+						          <div class="checkk">
                                 <input style="display: none;" class="filtered option_value" id="option_value_<?php echo $option_value['option_value_id']?>"
                                        type="checkbox" name="option_value[<?php echo $option['option_id']?>][]"
                                        value="<?php echo $option_value['option_value_id']?>">
                                 <img src="<?php echo $option_value['thumb'];?>" data-toggle="tooltip" title="<?php echo $option_value['name'];?>" alt="<?php echo $option_value['name'];?>"/>
-
+                                </div>
                         <?php } ?>
                         </div>
                     </div>
@@ -380,4 +395,33 @@
     </div>
 </div>
 </div>
+
+
+<script>
+    $('.sort-comp__sort a').click(function(event) {
+        event.preventDefault();
+
+        window.location = $(this).attr('href');
+    });
+
+    $('.js-filter').click(function(event) {
+        event.preventDefault();
+
+        console.log($(this).data('target') === 'sort')
+
+        if($(this).data('target') === 'sort') {
+           $('.sort-comp__filter').removeClass('active');
+           $('.sort-comp__sort').toggleClass('active');
+        } else {
+           $('.sort-comp__sort').removeClass('active');
+           $('.sort-comp__filter').toggleClass('active');
+        }
+    });
+
+    
+
+    $('#filter_categories').perfectScrollbar({
+        suppressScrollX: true
+    }); 
+</script>
 <?php } ?>

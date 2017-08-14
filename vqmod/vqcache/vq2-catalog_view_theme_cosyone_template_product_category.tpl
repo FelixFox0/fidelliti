@@ -1,4 +1,4 @@
-<?php echo $header; ?>
+<?php echo $header; ?><?php if( ! empty( $mfilter_json ) ) { echo '<div id="mfilter-json" style="display:none">' . base64_encode( $mfilter_json ) . '</div>'; } ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -11,7 +11,7 @@
       <a href="#" class="js-filter" data-target="sort"><?php echo $text_sort; ?> <span>+</span></a>
     </div>
     <div class="sort-comp__filter">
-      <?php echo $content_top; ?>
+      <?php echo $content_top; ?><div id="mfilter-content-container">
       </div>
     </div>
     <div class="sort-comp__sort">
@@ -177,7 +177,7 @@
     <div class="pull-right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
   </div>
   <?php } ?>
-  <?php echo $content_bottom; ?></div>
+  </div><?php echo $content_bottom; ?></div>
   <?php echo $column_right; ?></div>
   
 

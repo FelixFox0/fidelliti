@@ -707,6 +707,7 @@ a.sq_tag {
 	cursor:default;
 	color: #000;
 	text-transform: uppercase;
+	z-index: 99;
 }
 /* Language/currency in topline */
 .header_top_line .currency_current, .header_top_line .language_current {
@@ -759,9 +760,11 @@ a.sq_tag {
 	display:block;
 	padding:10px 15px;
 	border-top:1px solid #ffffff;
+	background-color: #f7f7f7;
 }
 .top_header_drop_down a:hover, .top_header_drop_down .current {
-	color:#276658;
+	color:#000;
+	background-color: #ededed;
 }
 .top_header_drop_down .current:hover {
 	cursor:default;
@@ -2131,6 +2134,7 @@ a.button.remove:hover, .button.remove:hover {
 	width:100%;
 	display:table;
 	font-size:13px;
+	display: none;
 }
 .product-filter, .product-filter a, .product-filter select {
 	color:#888888;
@@ -2321,7 +2325,7 @@ a.button.remove:hover, .button.remove:hover {
 	transition:border-color 500ms;
 }
 .grid2 .product-grid .item {width:50%;}
-.grid3 .product-grid .item {width:33.33%;}
+.grid3 .product-grid .item {width:33.32%;}
 .grid4 .product-grid .item {width:25%;}
 .grid5 .product-grid .item {width:20%;}
 
