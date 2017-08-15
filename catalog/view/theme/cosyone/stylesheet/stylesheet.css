@@ -1632,14 +1632,14 @@ a.button.quickview:hover {
 }
 
 /* Cart/contrast buttons */
-a.button.contrast, .button.contrast, .sq_icon.contrast, input.button.contrast { 
+button.button.contrast, a.button.contrast, .button.contrast, .sq_icon.contrast, input.button.contrast { 
 	background-color: #ffffff;
-	color: #d6a916;
+	color: #222222;
 	border:1px solid;
-	border-color:#d6a916;
+	border-color:#222222;
 }
-a.button.contrast:hover, .button.contrast:hover, .sq_icon.contrast:hover, input.button.contrast:hover { 
-	background-color: #d6a916;
+button.button, a.button.contrast:hover, .button.contrast:hover, .sq_icon.contrast:hover, input.button.contrast:hover { 
+	background-color: #222222;
 	color:#ffffff;
 }
 /* Highlighted button*/
