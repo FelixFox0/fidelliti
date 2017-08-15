@@ -140,6 +140,7 @@ class ControllerCommonMenu extends Controller {
 		$data['fraud'] = $this->url->link('extension/fraud', 'token=' . $this->session->data['token'], true);
 		$data['geo_zone'] = $this->url->link('localisation/geo_zone', 'token=' . $this->session->data['token'], true);
 		$data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], true);
+                $data['informationf'] = $this->url->link('catalog/informationf', 'token=' . $this->session->data['token'], true);
 		$data['installer'] = $this->url->link('extension/installer', 'token=' . $this->session->data['token'], true);
 		$data['language'] = $this->url->link('localisation/language', 'token=' . $this->session->data['token'], true);
 		$data['layout'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'], true);
