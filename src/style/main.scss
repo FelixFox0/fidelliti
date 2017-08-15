@@ -735,7 +735,7 @@ a {
 	}
 
 	&__sort {
-		display: none;
+		pointer-events: none;
 		flex-direction: column;
 		text-align: center;
 		align-items: center;
@@ -746,9 +746,15 @@ a {
 		top: 100%;
 		left: 0;
 		z-index: 5;
+		opacity: 0;
+		transform: translateY(-15px);
+		transition: all .2s ease-in;
+		animation-fill-mode: forwards;
 
 		&.active {
 			display: flex;
+			opacity: 1;
+			transform: translateY(0);
 		}
 
 		a {
@@ -763,7 +769,7 @@ a {
 	}
 
 	&__filter {
-		display: none;
+		pointer-events: none;
 		padding: 30px;
 		width: 100%;
 		position: absolute;
@@ -771,9 +777,15 @@ a {
 		top: 100%;
 		left: 0;
 		z-index: 5;
+		opacity: 0;
+		transform: translateY(-15px);
+		transition: all .2s ease-in;
+		animation-fill-mode: forwards;
 
 		&.active {
 			display: flex;
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 

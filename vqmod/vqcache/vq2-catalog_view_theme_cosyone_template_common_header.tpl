@@ -219,6 +219,16 @@
         <?php if($cosyone_custom_menu_title1){ ?>
 		<li class="col1 withsubs">
                     <a href="<?php echo $cosyone_custom_menu_url1 ?>" class="hvr-underline-from-center"><?php echo $cosyone_custom_menu_title1; ?></a>
+                    <div class="menu_drop_down">
+                      <div class="wrapper">
+                        <ul>
+                          <li class="column level2"><a href="#">qweqweqweqwe</a></li>
+                        </ul>
+                        <div class="wrapper-image">
+                          <img src="<?php echo $category_1['thumb']; ?>" />
+                        </div>
+                      </div>
+                  </div>
                 </li>
              
         <?php } ?>
