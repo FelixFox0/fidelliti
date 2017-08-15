@@ -45,8 +45,9 @@ class ControllerCommonFooter extends Controller {
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
-		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+//		$data['powered'] = sprintf(date('Y', time()), $this->config->get('config_name'), $this->language->get('text_powered'));
 
+                $data['powered'] = '© ' . date('Y', time()) . ' ' . $this->config->get('config_name') . $this->language->get('text_powered');
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');

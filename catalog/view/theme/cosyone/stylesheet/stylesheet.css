@@ -3667,7 +3667,8 @@ h3.faq_section {
 	display:inline-block;
 	font-size:14px;
 	vertical-align:top;
-	width: 25%;
+	/*width: 25%;*/
+        width: 24.9%;
 	padding:0 0 20px;
 	padding-left:25px;
 }

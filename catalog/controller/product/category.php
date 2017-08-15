@@ -114,6 +114,8 @@ class ControllerProductCategory extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 			$data['button_list'] = $this->language->get('button_list');
 			$data['button_grid'] = $this->language->get('button_grid');
+                        $data['text_filter'] = $this->language->get('text_filter');
+                        
 
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(

@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <td class="text-left required"><?php echo $entry_name ?></td>
+                <td class="text-right">Цвет</td>
                 <td class="text-right"><?php echo $entry_sort_order; ?></td>
                 <td></td>
               </tr>
@@ -65,6 +66,7 @@
                   <div class="text-danger"><?php echo $error_filter[$filter_row][$language['language_id']]; ?></div>
                   <?php } ?>
                   <?php } ?></td>
+                <td class="text-right"><input type="text" name="filter[<?php echo $filter_row; ?>][color]" value="<?php echo $filter['color']; ?>" placeholder="Цвет" id="input-sort-order" class="form-control" /></td>
                 <td class="text-right"><input type="text" name="filter[<?php echo $filter_row; ?>][sort_order]" value="<?php echo $filter['sort_order']; ?>" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" /></td>
                 <td class="text-left"><button type="button" onclick="$('#filter-row<?php echo $filter_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
               </tr>
@@ -73,7 +75,7 @@
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2"></td>
+                <td colspan="3"></td>
                 <td class="text-left"><a onclick="addFilterRow();" data-toggle="tooltip" title="<?php echo $button_filter_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></a></td>
               </tr>
             </tfoot>
@@ -94,6 +96,10 @@ function addFilterRow() {
     html += '  </div>';
 	<?php } ?>
 	html += '  </td>';
+        
+        html += '<td class="text-right"><input type="text" name="filter[' + filter_row + '][color]" value="" placeholder="Цвет" id="input-sort-order" class="form-control" /></td>';
+                
+        
 	html += '  <td class="text-right"><input type="text" name="filter[' + filter_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#filter-row' + filter_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';	

@@ -15,7 +15,7 @@
                 </div>
             </div> -->
             <div class="option_box" style="display: none;" <?php if(!$price_slider) { echo '';}?>>
-                <div class="option_name contrast_font"><?php echo $text_price_range?></div>
+                <div class="option_name contrast_font"><?php echo $text_price_range; ?></div>
                 <div class="price_slider collapsible">
                 <div class="price_range"><?php //echo $text_range; ?>  
                 <?php if($symbol_left){ echo $symbol_left; } ?><span id="min_p_holder"></span><?php if($symbol_right){ echo $symbol_right; } ?> - 
@@ -38,7 +38,7 @@
                               <?php foreach ($filter_group['filter'] as $filter) { ?>
                                 <div class="checkk">
                                 <input type="checkbox" class="filtered" name="filter[<?php echo $filter_group['filter_group_id']; ?>][]" value="<?php echo $filter['filter_id']; ?>" id="filter<?php echo $filter['filter_id']; ?>" />
-                                <label for="filter<?php echo $filter['filter_id']; ?>"><?php echo $filter['name']; ?></label>
+                                <label for="filter<?php echo $filter['filter_id']; ?>"><?php echo $filter['name']; ?> <?php echo $filter['color']; ?></label>
                                 </div>
                               <?php } ?>
                             

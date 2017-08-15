@@ -30,6 +30,7 @@
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cosyone_common.js"></script>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
@@ -50,7 +51,8 @@
 
 <div class="popup-countries mfp-hide">
   <div class="popup-countries__header">
-    Пожалуйста выберите страну, что бы продолжить.
+      <?php echo $text_select_country; ?>
+
   </div>
   <ul class="popup-countries__items">
     <?php foreach ($countries_array as $country) { ?>
@@ -68,7 +70,7 @@
       <div class="header__group">
         <div class="header__delivery">
           <i class="fa fa-globe" aria-hidden="true"></i>
-          <span>Доставка в:</span>
+          <span><?php echo $shippig; ?></span>
           <a href=".popup-countries" class="open-popup"><?php echo strtoupper($country_s); ?></a>
         </div>
         <div class="header__lang">
@@ -114,7 +116,7 @@
   </div>
   <?php if ($logo) { ?>
   <div class="logo">
-  <span>ОНЛАЙН - БУТИК</span>
+  <span><?php echo $text_logo_top; ?></span>
   <a href="<?php echo $home; ?>">
   <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
   </div>

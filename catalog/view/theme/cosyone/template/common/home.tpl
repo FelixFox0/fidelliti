@@ -3,56 +3,57 @@
   <div class="container banners__container">
     <div class="banners__item">
       <div class="banners__item-img">
-        <a href="#"><img src="/image/home1.jpg" alt=""></a>
+        <a href="<?php echo $link_0; ?>"><img src="/image/home1.jpg" alt=""></a>
       </div>
       <div class="banners__item-info">
         <div class="banners__item-title">
-          Коллекция весна-лето 2017        
+          <?php echo $text_0; ?>     
         </div>
         <div class="banners__item-button">
-          <a href="#" class="button">К покупкам</a>
+          <a href="<?php echo $link_0; ?>" class="button"><?php echo $shopping; ?></a>
         </div>
       </div>
     </div>
     <div class="banners__item">
       <div class="banners__item-img">
-        <a href="#"><img src="/image/home2.jpg" alt=""></a>
+        <a href="<?php echo $link_0; ?>"><img src="/image/home2.jpg" alt=""></a>
       </div>
       <div class="banners__item-info">
         <div class="banners__item-title">
-          Для женщин     
+          <?php echo $text_1; ?>     
+          
         </div>
         <div class="banners__item-button">
-          <a href="#" class="button">К покупкам</a>
+          <a href="<?php echo $link_0; ?>" class="button"><?php echo $shopping; ?></a>
         </div>
       </div>
     </div>
     <div class="banners__item">
       <div class="banners__item-img">
-        <a href="#"><img src="/image/home3.jpg" alt=""></a>
+        <a href="<?php echo $link_1; ?>"><img src="/image/home3.jpg" alt=""></a>
       </div>
       <div class="banners__item-info">
         <div class="banners__item-title">
-          Для мужчин    
+          <?php echo $text_2; ?>        
         </div>
         <div class="banners__item-button">
-          <a href="#" class="button">К покупкам</a>
+          <a href="<?php echo $link_1; ?>" class="button"><?php echo $shopping; ?></a>
         </div>
       </div>
     </div>
     <div class="banners__item">
       <div class="banners__item-img">
-        <a href="#"><img src="/image/home4.jpg" alt=""></a>
+        <a href="<?php echo $link_2; ?>"><img src="/image/home4.jpg" alt=""></a>
       </div>
       <div class="banners__item-info">
         <div class="banners__item-title">
-          Коллекция весна-лето 2017        
+          <?php echo $text_0; ?>            
         </div>
         <div class="banners__item-subtitle">
-          ЛОВИ МОМЕНТ, ПОКА ЦЕНЫ ОТДЫХАЮТ 
+          <?php echo $text_3; ?>     
         </div>
         <div class="banners__item-button">
-          <a href="#" class="button">К покупкам</a>
+          <a href="<?php echo $link_2; ?>" class="button"><?php echo $shopping; ?></a>
         </div>
       </div>
     </div>

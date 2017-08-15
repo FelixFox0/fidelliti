@@ -11,7 +11,7 @@ class ModelCatalogFilter extends Model {
 
 		if (isset($data['filter'])) {
 			foreach ($data['filter'] as $filter) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "filter SET filter_group_id = '" . (int)$filter_group_id . "', sort_order = '" . (int)$filter['sort_order'] . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "filter SET filter_group_id = '" . (int)$filter_group_id . "', sort_order = '" . (int)$filter['sort_order'] . "', color = '" . $filter['color'] . "'");
 
 				$filter_id = $this->db->getLastId();
 
@@ -39,9 +39,9 @@ class ModelCatalogFilter extends Model {
 		if (isset($data['filter'])) {
 			foreach ($data['filter'] as $filter) {
 				if ($filter['filter_id']) {
-					$this->db->query("INSERT INTO " . DB_PREFIX . "filter SET filter_id = '" . (int)$filter['filter_id'] . "', filter_group_id = '" . (int)$filter_group_id . "', sort_order = '" . (int)$filter['sort_order'] . "'");
+					$this->db->query("INSERT INTO " . DB_PREFIX . "filter SET filter_id = '" . (int)$filter['filter_id'] . "', filter_group_id = '" . (int)$filter_group_id . "', sort_order = '" . (int)$filter['sort_order'] . "', color = '" . $filter['color'] . "'");
 				} else {
-					$this->db->query("INSERT INTO " . DB_PREFIX . "filter SET filter_group_id = '" . (int)$filter_group_id . "', sort_order = '" . (int)$filter['sort_order'] . "'");
+					$this->db->query("INSERT INTO " . DB_PREFIX . "filter SET filter_group_id = '" . (int)$filter_group_id . "', sort_order = '" . (int)$filter['sort_order'] . "', color = '" . $filter['color'] . "'");
 				}
 
 				$filter_id = $this->db->getLastId();
@@ -164,6 +164,7 @@ class ModelCatalogFilter extends Model {
 			$filter_data[] = array(
 				'filter_id'          => $filter['filter_id'],
 				'filter_description' => $filter_description_data,
+                                'color'         => $filter['color'],
 				'sort_order'         => $filter['sort_order']
 			);
 		}

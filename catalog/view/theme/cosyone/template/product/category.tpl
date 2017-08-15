@@ -7,7 +7,7 @@
   </ul>
   <div class="sort-comp">
     <div class="sort-comp__header">
-      <a href="#" class="js-filter" data-target="filter">Фильтр <span>+</span></a>
+      <a href="#" class="js-filter" data-target="filter"><?php echo $text_filter; ?> <span>+</span></a>
       <a href="#" class="js-filter" data-target="sort"><?php echo $text_sort; ?> <span>+</span></a>
     </div>
     <div class="sort-comp__filter">

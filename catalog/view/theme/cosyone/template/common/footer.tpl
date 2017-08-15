@@ -2,24 +2,7 @@
 <?php echo $footer_modules ?>
 <div id="footer" class="footer">
   <div class="container footer__container">
-	<div class="column text-center">
-	<div class="box-heading heading">
-    Следите за нами
-    <?php echo $cosyone_footer_custom_block_title; ?>
-    </div>
-    <div class="custom_block">
-      <div class="footer__icons">
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-vk"></i></a>
-      </div>
-      <div class="footer__phone">
-        <span>Украина (бесплатно)</span>
-        <a href="tel:0 800 210 385">0 800 210 385</a>
-      </div>
-    <?php echo $cosyone_footer_custom_block; ?>
-    </div>
-    </div><!--
+    <!--
   --><div class="column">
     <div class="box-heading heading"><?php echo $text_information; ?></div>
     <ul class="contrast_font">
@@ -51,6 +34,26 @@
       <li></i><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
     </ul>
   </div>
+  <div class="column text-center">
+	<div class="box-heading heading">
+    <?php echo $cosyone_footer_custom_block_title; ?>
+    </div>
+    <div class="custom_block">
+      <div class="footer__icons">
+        <a href="https://www.instagram.com/fidelitti/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.facebook.com/fidelitti"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-vk"></i></a>
+      </div>
+      <div class="footer__phone">
+        <span>Украина (бесплатно)</span>
+        <a href="tel:0 800 210 385">0 800 210 385</a>
+      </div>
+    <?php echo $cosyone_footer_custom_block; ?>
+    </div>
+    </div>
+  
+  
+  
   </div>
 </div> <!-- #footer ends --> 
   <div class="bottom_line"> <div class="scroll_to_top"><a class="scroll_top icon tablet_hide"><i class="fa fa-angle-up"></i></a></div>

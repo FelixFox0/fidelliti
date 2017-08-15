@@ -14,3 +14,6 @@ $_['text_logout']        = 'Logout';
 $_['text_checkout']      = 'Checkout';
 $_['text_search']        = 'Search';
 $_['text_all']           = 'Show All';
+$_['text_logo_top']           = 'ONLINE - BOUTIQUE';
+$_['shippig']           = 'Shipping to:';
+$_['text_select_country']           = 'Please select a country to continue';
