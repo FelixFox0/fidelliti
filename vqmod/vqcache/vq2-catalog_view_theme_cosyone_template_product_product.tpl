@@ -88,6 +88,13 @@
               </ul>
                   
                   <div class="tab-content">
+
+			<?php if ($question_status) { ?>
+          	<div class="tab-pane" id="tab-questions">
+          	<?php echo $product_questions; ?>
+			</div>
+          	<?php } ?>
+			
                   
                   <div class="tab-pane active" id="tab-description"><?php echo $description; ?>
                   <?php if ($tags) { ?>
@@ -433,6 +440,11 @@
           <div class="icons_wrapper">
     <a class="sq_icon" onclick="wishlist.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart"></i></a>
     <a class="sq_icon compare" onclick="compare.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_compare; ?>"><i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare"></i></a>
+
+			<?php if ($question_status) { ?>
+			<a id="button_ask" onclick="$('a[href=\'#tab-questions\']').trigger('click');" class="sq_icon" data-tooltip="<?php echo $button_ask; ?>"><i class="fa fa-question"></i>&nbsp;</a>
+			<?php } ?>
+			
         </div>
         
         
@@ -488,6 +500,11 @@
   
 	<li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
                 
+
+			<?php if ($question_status) { ?>
+            <li id="product-question"><a href="#tab-questions" data-toggle="tab"><?php echo $tab_questions; ?> (<?php echo $questions_total; ?>)</a></li>
+            <?php } ?>
+			
     <?php if ($attribute_groups) { ?>
     <li><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
     <?php } ?>
@@ -507,6 +524,13 @@
   </ul>
   
   <div class="tab-content">
+
+			<?php if ($question_status) { ?>
+          	<div class="tab-pane" id="tab-questions">
+          	<?php echo $product_questions; ?>
+			</div>
+          	<?php } ?>
+			
   
   <div class="tab-pane active" id="tab-description"><?php echo $description; ?>
   <?php if ($tags) { ?>

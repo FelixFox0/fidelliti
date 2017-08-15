@@ -218,8 +218,8 @@ class ControllerProductProduct extends Controller {
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']), 'canonical');
-			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
-			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
+			
+			
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
 			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
 			$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
@@ -281,6 +281,14 @@ class ControllerProductProduct extends Controller {
 
 			$this->load->model('tool/image');
 
+			if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
+			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+			} else {
+			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			}
+			$data['direction'] = $this->language->get('direction');
+			
+
 			if ($product_info['image']) {
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 417, 706);
 			} else {
@@ -293,6 +301,14 @@ class ControllerProductProduct extends Controller {
 				$data['thumb'] = '';
 			}
 
+// Start cloud zoom
+if ($product_info['image']) {
+$data['small'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('theme_default_image_additional_width'), $this->config->get('theme_default_image_additional_height'));
+} else {
+$data['small'] = '';
+}
+// Cosyone ends
+
 			$data['images'] = array();
 
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
@@ -300,7 +316,13 @@ class ControllerProductProduct extends Controller {
 			foreach ($results as $result) {
 				$data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], 417, 706),
-					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+					// Cloud zoom thumb start
+'small' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_default_image_additional_width'), $this->config->get('theme_default_image_additional_height')),
+//Cloud zoom thumb ends
+// New thumb function
+'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_default_image_thumb_width'), $this->config->get('theme_default_image_thumb_height'))
+// Cosyone ends
+
 				);
 			}
 
@@ -312,6 +334,10 @@ class ControllerProductProduct extends Controller {
 
 			if ((float)$product_info['special']) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+
+			  $data['sales_percantage_main'] = round((($product_info['price'] - $product_info['special']) / $product_info['price'] * 100));
+			  // Cosyone ends
+			   
 			} else {
 				$data['special'] = false;
 			}
@@ -322,6 +348,48 @@ class ControllerProductProduct extends Controller {
 				$data['tax'] = false;
 			}
 
+
+			// Cosyone start
+			$data['cosyone_product_zoom'] = $this->config->get('cosyone_product_zoom');
+				$data['cosyone_product_share'] = $this->config->get('cosyone_product_share');
+				$data['cosyone_percentage_sale_badge'] = $this->config->get('cosyone_percentage_sale_badge');
+				$data['cosyone_product_yousave'] = $this->config->get('cosyone_product_yousave');
+				$cosyone_quicklook = $this->config->get('cosyone_text_ql');
+				if(empty($cosyone_quicklook[$this->config->get('config_language_id')])) {
+					$data['cosyone_text_ql'] = false;
+				} else if (isset($cosyone_quicklook[$this->config->get('config_language_id')])) {
+					$data['cosyone_text_ql'] = html_entity_decode($cosyone_quicklook[$this->config->get('config_language_id')], ENT_QUOTES, 'UTF-8');
+				}
+				$data['cosyone_product_countdown'] = $this->config->get('cosyone_product_countdown');
+				$data['cosyone_product_hurry'] = $this->config->get('cosyone_product_hurry');
+				$data['cosyone_image_options'] = $this->config->get('cosyone_image_options');
+				$data['cosyone_grid_related'] = $this->config->get('cosyone_grid_related');
+				$data['cosyone_brand'] = $this->config->get('cosyone_brand');
+			if ((float)$product_info['special']) {
+    		$special_info = $this->model_catalog_product->getSpecialPriceEnd($product_id);
+        	$data['special_date_end'] = strtotime($special_info['date_end']) - time();
+			$data['yousave'] = $this->currency->format(($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')))-($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax'))), $this->session->data['currency']);
+			
+    		} else {
+        	$data['special_date_end'] = false;
+    		}
+			$this->load->language('common/cosyone');
+			$data['text_special_price'] = $this->language->get('text_special_price');
+			$data['text_old_price'] = $this->language->get('text_old_price');
+			$data['text_you_save'] = $this->language->get('text_you_save');
+			$data['text_expire'] = $this->language->get('text_expire');
+			$data['text_items_sold'] = sprintf($this->language->get('text_items_sold'), $this->model_catalog_product->getItemsSold($product_id));
+			$data['data_qty'] = $product_info['quantity'];
+			$data['text_stock_quantity'] = sprintf($this->language->get('text_stock_quantity'), $product_info['quantity']);
+			$data['count_reviews'] = $product_info['reviews'];
+			$data['thumb_width'] = $this->config->get('theme_default_image_thumb_width');
+			$data['additional_width'] = $this->config->get('theme_default_image_additional_width');
+			$data['additional_height'] = $this->config->get('theme_default_image_additional_height');
+			$data['currency_code'] = $this->session->data['currency'];
+			$data['lang'] = $this->config->get('config_language_id');
+			
+			// Cosyone end
+			   
 			$discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
 
 			$data['discounts'] = array();
@@ -404,6 +472,20 @@ class ControllerProductProduct extends Controller {
 
 			$data['products'] = array();
 
+for( $i=1; $i< 6; $i++) {
+					$data['product_tabs_' . $i] = array();
+				}
+
+				$product_tabs = $this->model_catalog_product->getProductTabs($this->request->get['product_id']);
+
+				foreach ($product_tabs as $product_tab) {
+
+					$data['product_tabs_' . $product_tab['position']][] = array(
+						'tab_id' 	=> $product_tab['tab_id'],
+						'name'    => $product_tab['name'],
+						'text'    => html_entity_decode($product_tab['text'], ENT_QUOTES, 'UTF-8')
+					);
+				}
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
 
 			foreach ($results as $result) {
@@ -437,6 +519,14 @@ class ControllerProductProduct extends Controller {
 					$rating = false;
 				}
 
+
+			  if ((float)$result['special']) {
+				$sales_percantage = ((($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')))-($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'))))/(($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')))/100));
+				} else {
+				$sales_percantage = false;
+				}
+				// Cosyone ends
+			   
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
@@ -444,9 +534,17 @@ class ControllerProductProduct extends Controller {
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
 					'special'     => $special,
+
+			 'sales_percantage' => number_format($sales_percantage, 0, ',', '.'),
+			 'brand_name' 	 => $result['manufacturer'],
+			// Cosyone ends
+			   
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $rating,
+
+		'quickview'        => $this->url->link('product/quickview', 'product_id=' . $result['product_id'], '', 'SSL', $this->session->data['country_code'], $this->session->data['language_name']),
+		
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}
@@ -467,6 +565,15 @@ class ControllerProductProduct extends Controller {
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
+
+			$data['question_status'] = $this->config->get('product_question_status');
+			$data['product_questions'] = $this->load->controller('product/question');
+			$this->load->language('product/question');
+			$data['tab_questions'] = $this->language->get('tab_questions');
+			$data['button_ask'] = $this->language->get('button_ask');
+			$this->load->model('catalog/question');
+			$data['questions_total'] = $this->model_catalog_question->getTotalQuestionsByProductId($this->request->get['product_id']);
+			
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
