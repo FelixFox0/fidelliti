@@ -99,7 +99,11 @@
       <a href="#"><i class="icon-phone"></i></a>
     </div>
     <div class="service-block__item">
-      <a href="#"><i class="icon-man"></i></a>
+      <?php if($logged){ ?>
+      <a href="<?php echo $account; ?>"><i class="icon-man"></i></a>
+      <?php }else{ ?>
+      <a href="<?php echo $login; ?>"><i class="icon-man"></i></a>
+      <?php } ?>
     </div>
     <div class="service-block__item">
       <?php if ($cosyone_header_cart) { echo $cart; } ?>
