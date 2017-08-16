@@ -115,7 +115,8 @@
 	 <!-- Related Blog End -->
 	 
      <!-- Comment Area start -->
-  		<?php if($allow_comment){ ?>
+     <?php if(false){ ?>
+  		<?php // if($allow_comment){ ?>
         <div class="box-heading"><?php echo $text_comments; ?></div>
               <form id="comment_form">
                 <div id="comment"></div>

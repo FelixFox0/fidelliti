@@ -137,7 +137,7 @@ class ControllerBlogHome extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
-			
+//                var_dump($data['blogs']);
 		$this->response->setOutput($this->load->view('blog/blog_home', $data));
 		 
 	}

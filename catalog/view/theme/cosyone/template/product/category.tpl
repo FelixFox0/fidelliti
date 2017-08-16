@@ -5,6 +5,7 @@
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
+    <?php if($product_total){ ?>
   <div class="sort-comp">
     <div class="sort-comp__header">
       <a href="#" class="js-filter" data-target="filter"><?php echo $text_filter; ?> <span>+</span></a>
@@ -23,6 +24,7 @@
           <?php } ?>
         <?php } ?>
     </div>
+    <?php } ?>
   </div>
   <div class="row"><?php echo $column_left; ?>
 <?php if ($column_left && $column_right) { ?>
@@ -48,7 +50,8 @@
   </div>
   <?php } ?>
   
-  <?php if ($categories && $cosyone_category_refine) { ?>
+  <?php if ($categories && !$product_total) { ?>
+  <?php //if ($categories && $cosyone_category_refine) { ?>
   <div class="box-heading"><?php echo $text_refine; ?></div>
   <div class="grid_holder">
   <div class="category-grid <?php echo $cosyone_category_per_row; ?>">

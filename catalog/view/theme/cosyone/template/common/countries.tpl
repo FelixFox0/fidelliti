@@ -44,6 +44,18 @@
         <span class="first-frame__list-li"><a href="/<?php echo strtolower($country['iso_code_2']) . $href; ?>" class="first-frame__list-item"><?php echo $country['name']; ?></a></span>
       <?php } ?>
     </div>
+      
+<?php if (count($languages) > 1) { ?>
+<select name="languages" class="form-control">
+    <?php foreach ($languages as $language) { ?>
+    <option value="<?php echo $language['name']; ?>"><?php echo $language['name']; ?></option>
+    <?php } ?>
+    
+</select>
+<?php } ?>
+      
   </div>
 </div>
+
+
 <?php } ?>

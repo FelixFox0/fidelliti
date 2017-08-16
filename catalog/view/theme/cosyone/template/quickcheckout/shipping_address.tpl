@@ -251,7 +251,7 @@ $('#shipping-address select[name=\'zone_id\']').on('change', function() {
 
 $('#shipping-address select[name=\'country_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/checkout/country&country_id=' + this.value,
+		url: 'index.php?route=quickcheckout/checkout/country&country_id=' + this.value+'&shipping=shipping',
 		dataType: 'json',
 		cache: false,
 		beforeSend: function() {

@@ -1,6 +1,7 @@
 <?php 
 class ControllerQuickCheckoutCart extends Controller {
 	public function index() {
+//            var_dump($this->session->data['country_code']);
 		$this->language->load('quickcheckout/cart');
 		$this->language->load('checkout/cart');
 			

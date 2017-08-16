@@ -155,6 +155,8 @@ class ControllerInformationContact extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+                $data['left_menu'] = $this->load->controller('information/leftmenu');
+                
 		$this->response->setOutput($this->load->view('information/contact', $data));
 	}
 

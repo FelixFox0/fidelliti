@@ -212,9 +212,15 @@ class ControllerQuickCheckoutCheckout extends Controller {
 		$this->load->model('localisation/country');
 
     	$country_info = $this->model_localisation_country->getCountry($this->request->get['country_id']);
-        $this->session->data['country_code'] = strtolower($country_info['iso_code_2']);
-        $this->session->data['country_code_old'] = strtolower($country_info['iso_code_2']);
         
+//            var_dump($country_info);
+//            die();
+        
+        if(!isset($this->request->get['shipping'])){
+            $this->session->data['country_code'] = strtolower($country_info['iso_code_2']);
+            $this->session->data['country_code_old'] = strtolower($country_info['iso_code_2']);
+        }
+//        var_dump($this->session->data['country_code']);
 		
 		if ($country_info) {
 			$this->load->model('localisation/zone');

@@ -17,6 +17,7 @@ class ControllerInformationInformation extends Controller {
 		} else {
 			$information_id = 0;
 		}
+                
 
 		$information_info = $this->model_catalog_information->getInformation($information_id);
 
@@ -30,6 +31,8 @@ class ControllerInformationInformation extends Controller {
 				'href' => $this->url->link('information/information', 'information_id=' .  $information_id,false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
 
+                        $data['left_menu'] = $this->load->controller('information/leftmenu');
+                        
 			$data['heading_title'] = $information_info['title'];
 
 			$data['button_continue'] = $this->language->get('button_continue');
@@ -44,6 +47,8 @@ class ControllerInformationInformation extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+                        
+                        
 
 			$this->response->setOutput($this->load->view('information/information', $data));
 		} else {
@@ -61,7 +66,7 @@ class ControllerInformationInformation extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 
 			$data['continue'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
-
+                        
 			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 
 			$data['column_left'] = $this->load->controller('common/column_left');

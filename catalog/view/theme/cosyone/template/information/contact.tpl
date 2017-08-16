@@ -5,7 +5,12 @@
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
-  <div class="row"><?php echo $column_left; ?>
+  <div class="row">
+      
+      <?php echo $left_menu; ?>
+      
+      
+      <?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>

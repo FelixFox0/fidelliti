@@ -21,6 +21,23 @@ class ControllerCommonCountries extends Controller {
             }
 //            var_dump($data['countries']);
 //            die();
+            
+            $this->load->model('localisation/language');
+
+		$data['languages'] = array();
+
+		$results = $this->model_localisation_language->getLanguages();
+
+		foreach ($results as $result) {
+			if ($result['status']) {
+				$data['languages'][] = array(
+					'name' => $result['name'],
+					'code' => $result['code']
+				);
+			}
+		}
+                
+//                var_dump($results);
             return $this->load->view('common/countries', $data);
             
         }

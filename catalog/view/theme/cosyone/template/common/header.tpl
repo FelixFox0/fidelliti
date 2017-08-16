@@ -225,7 +225,7 @@
                     <div class="menu_drop_down">
                       <div class="wrapper">
                         <ul>
-                          <li class="column level2"><a href="<?php echo $cosyone_menu_custom_block_content; ?>">Новости и мероприятия</a></li>
+                          <li class="column level2"><a href="<?php echo $blog ?>">Новости и мероприятия</a></li>
                         </ul>
                         <div class="wrapper-image">
                           <img src="<?php echo $category_1['thumb']; ?>" />
