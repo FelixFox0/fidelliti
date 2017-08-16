@@ -91,6 +91,8 @@ class ControllerCommonHeader extends Controller {
 		$data['contact'] = $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['telephone'] = $this->config->get('config_telephone', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
+                $data['blog'] = $this->url->link('blog/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                
 		// Menu
 		$this->load->model('catalog/category');
 
