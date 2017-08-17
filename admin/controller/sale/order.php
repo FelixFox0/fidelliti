@@ -340,6 +340,21 @@ class ControllerSaleOrder extends Controller {
 	}
 
 	public function getForm() {
+                $this->load->model('user/user');
+                
+            $arr['user_group_id'] = 11;
+            $data['managers'] = $this->model_user_user->getUsersByGroup($arr);
+//                $api_info = $this->model_user_api->getApi($this->config->get('config_api_id'));
+//                var_dump($data['managers']);
+
+                $data['manager'] = $this->model_user_user->getUser($this->user->getId());;
+                
+                if($data['manager']['user_group_id'] != '11' ){
+                    $data['manager'] = '';
+                }
+                var_dump($data['manager']);
+                
+            
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_form'] = !isset($this->request->get['order_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
@@ -519,7 +534,21 @@ class ControllerSaleOrder extends Controller {
 			$data['shipping_custom_field'] = $order_info['shipping_custom_field'];
 			$data['shipping_method'] = $order_info['shipping_method'];
 			$data['shipping_code'] = $order_info['shipping_code'];
+                        $data['country_code'] = $order_info['shipping_iso_code_2'];
+                        $data['user_id'] = $order_info['user_id'];
+                        
+                        if($data['user_id']){
+                            $data['user'] = $this->model_user_user->getUser($data['user_id']);;
+                        }else{
+                            $data['user'] = '';
+                        }
 
+//                        var_dump($data['user']);
+//                        var_dump($order_info['shipping_iso_code_2']);
+                        
+//                        $this->session->data['country_code'] = $order_info['shipping_iso_code_2'];
+//                        var_dump( $this->session->data);
+//                        unset($this->session->data['country_code']);
 			// Products
 			$data['order_products'] = array();
 
@@ -675,7 +704,7 @@ class ControllerSaleOrder extends Controller {
 		$data['order_statuses'] = $this->model_localisation_order_status->getOrderStatuses();
 
 		$this->load->model('localisation/country');
-
+//var_dump($data);
 		$data['countries'] = $this->model_localisation_country->getCountries();
 
 		$this->load->model('localisation/currency');
@@ -706,7 +735,7 @@ class ControllerSaleOrder extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
-
+                
 		$this->response->setOutput($this->load->view('sale/order_form', $data));
 	}
 

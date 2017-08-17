@@ -16,7 +16,37 @@
       <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-pencil"></i> <?php echo $text_form; ?></h3>
       </div>
+ 
+        
       <div class="panel-body">
+          
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-store">Менеджер</label>
+            <div class="col-sm-8">
+              <select name="manager" id="manager" class="form-control">
+                  <option value="0" >Менеджер не назначен</option>
+                  <?php foreach($managers as $manag){ ?>
+                  
+                    <?php if($manag['user_id'] == $user['user_id']){ ?>
+
+                            <option value="<?php echo $manag['user_id']; ?>" selected="selected"><?php echo $manag['firstname']; ?></option>
+
+                    <?php }elseif($manag['user_id'] == $manager['user_id']){ ?>
+
+                            <option value="<?php echo $manag['user_id']; ?>" selected="selected"><?php echo $manag['firstname']; ?></option>
+                    <?php }else{ ?>
+                        <option value="<?php echo $manag['user_id']; ?>"><?php echo $manag['firstname']; ?></option>
+                    <?php } ?>
+                  <?php } ?>
+                  </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" id="" class="btn btn-primary">Поменять менеджера</button>
+            </div>
+            
+          </div>
+          <br/><br/><br/><br/>
+          
         <form class="form-horizontal">
           <ul id="order" class="nav nav-tabs nav-justified">
             <li class="disabled active"><a href="#tab-customer" data-toggle="tab">1. <?php echo $tab_customer; ?></a></li>
@@ -947,6 +977,22 @@
     </div>
   </div>
   <script type="text/javascript"><!--
+<?php if($user_id){ ?>
+$(document).ready(function() {
+    alert('Заказ уже обрабатывает менеджер <?php echo $user["firstname"]; ?>');
+})
+<?php }elseif($manager){ ?>
+
+
+<?php } ?>
+
+
+
+
+
+
+
+
 // Disable the tabs
 $('#order a[data-toggle=\'tab\']').on('click', function(e) {
 	return false;
@@ -1048,7 +1094,7 @@ $('select[name=\'currency\']').on('change', function() {
 // Add all products to the cart using the api
 $('#button-refresh').on('click', function() {
 	$.ajax({
-		url: '<?php echo $store_url; ?>index.php?route=api/cart/products&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+		url: '<?php echo $store_url; ?>index.php?route=api/cart/products&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 		dataType: 'json',
 		crossDomain: true,
 		success: function(json) {
@@ -1942,7 +1988,7 @@ $('#button-payment-address').on('click', function() {
 			} else {
 				// Payment Methods
 				$.ajax({
-					url: '<?php echo $store_url; ?>index.php?route=api/payment/methods&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+					url: '<?php echo $store_url; ?>index.php?route=api/payment/methods&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 					dataType: 'json',
 					crossDomain: true,
 					beforeSend: function() {
@@ -2092,7 +2138,7 @@ $('#tab-shipping select[name=\'country_id\']').trigger('change');
 
 $('#button-shipping-address').on('click', function() {
 	$.ajax({
-		url: '<?php echo $store_url; ?>index.php?route=api/shipping/address&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+		url: '<?php echo $store_url; ?>index.php?route=api/shipping/address&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 		type: 'post',
 		data: $('#tab-shipping input[type=\'text\'], #tab-shipping input[type=\'hidden\'], #tab-shipping input[type=\'radio\']:checked, #tab-shipping input[type=\'checkbox\']:checked, #tab-shipping select, #tab-shipping textarea'),
 		dataType: 'json',
@@ -2128,7 +2174,7 @@ $('#button-shipping-address').on('click', function() {
 			} else {
 				// Shipping Methods
 				var request = $.ajax({
-					url: '<?php echo $store_url; ?>index.php?route=api/shipping/methods&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+					url: '<?php echo $store_url; ?>index.php?route=api/shipping/methods&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 					dataType: 'json',
 					beforeSend: function() {
 						$('#button-shipping-address i').replaceWith('<i class="fa fa-circle-o-notch fa-spin"></i>');
@@ -2188,7 +2234,7 @@ $('#button-shipping-address').on('click', function() {
 // Shipping Method
 $('#button-shipping-method').on('click', function() {
 	$.ajax({
-		url: '<?php echo $store_url; ?>index.php?route=api/shipping/method&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+		url: '<?php echo $store_url; ?>index.php?route=api/shipping/method&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 		type: 'post',
 		data: 'shipping_method=' + $('select[name=\'shipping_method\'] option:selected').val(),
 		dataType: 'json',
@@ -2226,7 +2272,7 @@ $('#button-shipping-method').on('click', function() {
 // Payment Method
 $('#button-payment-method').on('click', function() {
 	$.ajax({
-		url: '<?php echo $store_url; ?>index.php?route=api/payment/method&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+		url: '<?php echo $store_url; ?>index.php?route=api/payment/method&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 		type: 'post',
 		data: 'payment_method=' + $('select[name=\'payment_method\'] option:selected').val(),
 		dataType: 'json',
@@ -2405,9 +2451,9 @@ $('input[name=\'affiliate\']').autocomplete({
 // Checkout
 $('#button-save').on('click', function() {
 	if ($('input[name=\'order_id\']').val() == 0) {
-		var url = '<?php echo $store_url; ?>index.php?route=api/order/add&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val();
+		var url = '<?php echo $store_url; ?>index.php?route=api/order/add&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>';
 	} else {
-		var url = '<?php echo $store_url; ?>index.php?route=api/order/edit&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&order_id=' + $('input[name=\'order_id\']').val();
+		var url = '<?php echo $store_url; ?>index.php?route=api/order/edit&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&order_id=' + $('input[name=\'order_id\']').val() + '&country_code=<?php echo $country_code ?>';
 	}
 
 	$.ajax({

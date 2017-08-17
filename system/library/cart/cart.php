@@ -10,6 +10,8 @@ class Cart {
 		$this->db = $registry->get('db');
 		$this->tax = $registry->get('tax');
 		$this->weight = $registry->get('weight');
+                
+                $this->request = $registry->get('request');
 
 		// Remove all the expired carts with no customer ID
 		$this->db->query("DELETE FROM " . DB_PREFIX . "cart WHERE customer_id = '0' AND date_added < DATE_SUB(NOW(), INTERVAL 1 HOUR)");
@@ -163,17 +165,28 @@ class Cart {
 					}
 				}
 
-                                if($this->session->data['country_code']=='ua'){
-                                    $price = $product_query->row['price'];
-                                }elseif($this->session->data['country_code']=='ru'){
-                                    $price = $product_query->row['price_ru'];
+                                //payment_country
+//                                var_dump($this->session->data['country_code']);
+                                if(isset($this->session->data['country_code'])){
+                                    if($this->session->data['country_code']=='ua'){
+                                        $price = $product_query->row['price'];
+                                    }elseif($this->session->data['country_code']=='ru'){
+                                        $price = $product_query->row['price_ru'];
+                                    }else{
+                                        $price = $product_query->row['price_en'];
+                                    }
                                 }else{
-                                    $price = $product_query->row['price_en'];
+                                    if($this->request->get['country_code']=='ua'){
+                                        $price = $product_query->row['price'];
+                                    }elseif($this->request->get['country_code']=='ru'){
+                                        $price = $product_query->row['price_ru'];
+                                    }else{
+                                        $price = $product_query->row['price_en'];
+                                    }
                                 }
                                 
-                                
 //				$price = $product_query->row['price'];
-//                                var_dump($product_query->row);
+//                                var_dump($this->request->get);
 				// Product Discounts
 				$discount_quantity = 0;
 
@@ -190,12 +203,23 @@ class Cart {
 				}
 
 				// Product Specials
-                                if($this->session->data['country_code']=='ua'){
-                                    $country_code='ua';
-                                }elseif($this->session->data['country_code']=='ru'){
-                                    $country_code='ru';
+                                
+                                if(isset($this->session->data['country_code'])){
+                                    if($this->session->data['country_code']=='ua'){
+                                        $country_code='ua';
+                                    }elseif($this->session->data['country_code']=='ru'){
+                                        $country_code='ru';
+                                    }else{
+                                        $country_code='en';
+                                    }
                                 }else{
-                                    $country_code='en';
+                                    if($this->request->get['country_code']=='ua'){
+                                        $country_code='ua';
+                                    }elseif($this->request->get['country_code']=='ru'){
+                                        $country_code='ru';
+                                    }else{
+                                        $country_code='en';
+                                    }
                                 }
                                 
 				$product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE country_code = '" . $country_code . "' AND product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY priority ASC, price ASC LIMIT 1");
