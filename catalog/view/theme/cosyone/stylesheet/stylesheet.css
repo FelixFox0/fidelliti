@@ -275,7 +275,7 @@ ul.list-unstyled.margin-b li {
 }
 /* price */
 .price, .price-new {
-	color:#276658;
+	color:#000;
 }
 .price-old {
 	color:#888888;
@@ -422,26 +422,18 @@ a.sq_tag {
 }
 /* Slideshow and carousel arrows  */
 .slide_arrow_next, .slide_arrow_prev {
-	position:absolute;
 	z-index:9;
-	height:30px;
 	line-height:26px;
-	width:30px;
 	text-align:center;
-	border:1px solid #e5e5e5;
-	font-size:18px;
-	right:0;
-	background:#ffffff;
+	font-size:61px;
 	transition:border 300ms, background 300ms;
+	color: #797777;
 }
 .slide_arrow_prev {
 	right:35px;
 }
 .slide_arrow_next:hover, .slide_arrow_prev:hover {
-	border-color:transparent;
-	background:#222222;
-	color:#ffffff;
-	transition:border 300ms, background 300ms;
+	color: #000;
 }
 /* Arrows from carousels */
 .owl-controls {
@@ -842,7 +834,7 @@ a.sq_tag {
 	right:0;
 	border-top:2px solid #ffffff;
 	background:#fff;
-	width:210px;
+	width:260px;
 	color:#222222;
 	clear: both;
 	min-height: 40px;
@@ -854,9 +846,10 @@ a.sq_tag {
 	transform: translateY(6px);
 }
 
-#cart .content > * {
+#cart .content {
 	box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
+
 #cart:hover .content {
 	transform: translateY(0);
 	opacity:1;
@@ -869,7 +862,7 @@ a.sq_tag {
 	font-family:Tahoma, Geneva, sans-serif;
 }
 #cart td {
-	vertical-align: top;
+	vertical-align: middle;
 	padding:15px 20px;
 	font-size:12px;
 }
@@ -3238,9 +3231,6 @@ a.button.remove:hover, .button.remove:hover {
 }
 .cart-info td {
 	padding: 18px;
-	vertical-align: top;
-	border:1px solid #f0f0f2;
-	color:#595959;
 }
 .cart-info tr.confirm_totals td {
 	padding: 10px 18px;
@@ -3294,11 +3284,7 @@ a.button.remove:hover, .button.remove:hover {
 	color: #F00;
 }
 .cart-info .cart_bottom_line {
-	background:#f9f9fa;
 	padding:10px 20px;
-	border:1px solid #f0f0f2;
-	border-top:none;
-	margin-bottom:30px;
 }
 .cart-info .cart_bottom_line .buttons {
 	margin-bottom:0px;
@@ -3335,31 +3321,22 @@ a.button.remove:hover, .button.remove:hover {
 	width:100%;
 	margin-bottom:15px;
 }
-.cart-total {
-	border:1px solid #e5e5e5;
-	margin-bottom:30px;
-}
+
 .cart-total table {
 	width:100%;
-	border-collapse:collapse;
 	color:#666666;
 }
 .cart-total td {
 	padding: 12px 5px 12px 15px;
-	border-bottom:1px solid #f0f0f2;
 }
 .cart-total .right.amounts {
-	color:#222222;
-	border-left:1px solid #f0f0f2;
+
 	width:60%;
 }
 .cart-total tr:last-child td, .cart-total #total tr:last-child > td:last-child {
 	color:#276658;
 }
-.cart-total .cart-total-bottom{
-	background:#f9f9fa;
-	padding:15px;
-}
+
 .cart-total .cart-total-bottom .button {
 	width:100%;
 }

@@ -43,7 +43,7 @@
     </div>
     <div class="checkoutbuttons">
     <a class="button" href="<?php echo $cart; ?>"><?php echo $text_cart; ?></a>
-    <a class="button active" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
+    <a class="button" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
     </div>
     <?php } else { ?>
     <div class="empty main_font"><?php echo $text_empty; ?></div>

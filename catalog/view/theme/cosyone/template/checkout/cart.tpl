@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container cart-page">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -29,7 +29,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
+      <h1 class="title-center"><?php echo $heading_title; ?>
         <?php if ($weight) { ?>
         &nbsp;(<?php echo $weight; ?>)
         <?php } ?>
@@ -37,7 +37,7 @@
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="basket">
         <div class="cart-info-wrapper">
     	<div class="cart-info">
-          <table class="contrast_font">
+          <table class="contrast_font cart-top">
             <thead>
               <tr>
             <td class="image mobile_hide"><?php echo $column_image; ?></td>
@@ -104,7 +104,22 @@
               <?php } ?>
             </tbody>
           </table>
-          <div class="cart_bottom_line"><a href="<?php echo $continue; ?>" class="button contrast"><?php echo $button_shopping; ?></a></div>
+          <div class="cart_bottom_line">
+          <a href="<?php echo $continue; ?>" class="button"><?php echo $button_shopping; ?></a>
+
+          <div class="cart-total">
+               <table id="total" class="contrast_font">
+              <?php foreach ($totals as $total) { ?>
+              <tr>
+                <td class="right"><?php echo $total['title']; ?></td>
+                <td class="right amounts"><?php echo $total['text']; ?></td>
+              </tr>
+              <?php } ?>
+            </table>
+            <div class="cart-total-bottom">
+            <a href="<?php echo $checkout; ?>" class="button"><?php echo $button_checkout; ?></a>
+            </div>
+          </div>
           </div>
         </div>
       </form>
@@ -122,18 +137,7 @@
       </div>
       
       <div class="col-sm-4">
-      <div class="cart-total">
-       <table id="total" class="contrast_font">
-      <?php foreach ($totals as $total) { ?>
-      <tr>
-        <td class="right"><?php echo $total['title']; ?></td>
-        <td class="right amounts"><?php echo $total['text']; ?></td>
-      </tr>
-      <?php } ?>
-    </table>
-    <div class="cart-total-bottom">
-    <a href="<?php echo $checkout; ?>" class="button active checkout"><?php echo $button_checkout; ?></a>
-    </div>
+      
        </div>
       </div>
       

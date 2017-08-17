@@ -1,6 +1,6 @@
 <div class="box products">
   	<div class="box-heading products"><?php echo $heading_title; ?></div>
-    <div class="<?php echo $grid; ?>">
+    <div class="<?php echo $grid; ?>">qweqwe
     <div class="grid_holder">
     <div class="product-grid">
       <?php foreach ($products as $product) { ?>

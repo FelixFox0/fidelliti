@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery-all.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery.min.js"></script>
 
 
 
@@ -14,6 +14,8 @@
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
+
+  </div>
    <div class="row"><?php echo $column_left; ?>
    <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -23,14 +25,24 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
 <div id="content" class="<?php echo $class; ?> product" itemscope itemtype="http://data-vocabulary.org/Product">
-  <?php echo $content_top; ?>
+  
 
   
-  <div class="product-page">
+  <div class="product-page _top">
     <div class="container">
       <div class="product-page__container">
       <div class="product-page__image">
         <div class="product-slider" id="#imageGallery">
+            <?php if ($thumb) { ?>
+              <?php if ($cosyone_product_zoom) { ?>
+              <li data-thumb="<?php echo $thumb; ?>" data-src="<?php echo $popup; ?>">
+              <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></li>
+
+              <?php } else { ?>
+              <li data-thumb="<?php echo $popup; ?>" data-src="<?php echo $popup; ?>">
+              <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></li>
+              <?php } ?>
+            <?php } ?>
             <?php foreach ($images as $image) { ?>
                 <li data-thumb="<?php echo $image['thumb']; ?>" data-src="<?php echo $image['popup']; ?>">
                   <img src="<?php echo $image['popup']; ?>" />
@@ -38,7 +50,7 @@
                 <?php } ?>
           </div>
       </div>
-      <div class="product-page__info">
+      <div class="product-page__info" id="product">
             <div class="product-page__title">
               <h1 itemprop="name"><?php echo $heading_title; ?></h1>
             </div>
@@ -112,12 +124,20 @@
                   </div>
                 </div>
             </div>
+
+            <div class="product-page__options">
+              
+            </div>
           </div>
         </div>
     </div>
   </div>
+
+
+
   
-  <?php if(false): ?>
+<?php if (false): ?>
+
   
   <div class="product-info">
     <?php if ($thumb || $images) { ?>
@@ -478,9 +498,11 @@
        
     </div> <!-- product-info-right END -->
 
-  <?php endif; ?>
     
     </div> <!-- product-info END -->
+
+
+<?php endif ?>
    
    <?php if(false): ?>
   
