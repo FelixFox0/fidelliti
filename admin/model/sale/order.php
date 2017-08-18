@@ -156,7 +156,7 @@ class ModelSaleOrder extends Model {
 	}
 
 	public function getOrders($data = array()) {
-		$sql = "SELECT o.order_id, CONCAT(o.firstname, ' ', o.lastname) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS order_status, o.shipping_code, o.total, o.currency_code, o.currency_value, o.date_added, o.date_modified FROM `" . DB_PREFIX . "order` o";
+		$sql = "SELECT o.order_id, o.user_id, CONCAT(o.firstname, ' ', o.lastname) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS order_status, o.shipping_code, o.total, o.currency_code, o.currency_value, o.date_added, o.date_modified FROM `" . DB_PREFIX . "order` o";
 
 		if (isset($data['filter_order_status'])) {
 			$implode = array();
@@ -228,7 +228,7 @@ class ModelSaleOrder extends Model {
 		}
 
 		$query = $this->db->query($sql);
-
+//                var_dump($query->rows);
 		return $query->rows;
 	}
 
@@ -433,4 +433,12 @@ class ModelSaleOrder extends Model {
 
 		return $query->row['total'];
 	}
+        
+        
+        public function changeManager($order_id, $manager) {
+        
+            $this->db->query("UPDATE `" . DB_PREFIX . "order` SET user_id = '" . $manager . "' WHERE order_id ='" . $order_id . "'");
+
+//            return $order_info['invoice_prefix'] . $invoice_no;
+        }
 }

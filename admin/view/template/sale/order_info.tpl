@@ -126,6 +126,41 @@
         <h3 class="panel-title"><i class="fa fa-info-circle"></i> <?php echo $text_order; ?></h3>
       </div>
       <div class="panel-body">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-store">Менеджер</label>
+            <div class="col-sm-8">
+              <select name="manager" id="manager" class="form-control">
+                  <option value="0" >Менеджер не назначен</option>
+                  <?php foreach($managers as $manag){ ?>
+                                     
+                    
+                   
+                    <?php if($user){ ?>
+                        <?php if($manag['user_id'] == $user['user_id']){ ?>
+                            <option value="<?php echo $manag['user_id']; ?>" selected="selected"><?php echo $manag['firstname']; ?></option>
+                        <?php }else{ ?>
+                            <option value="<?php echo $manag['user_id']; ?>"><?php echo $manag['firstname']; ?></option>
+                        <?php } ?>
+                    <?php }elseif($manager){ ?>
+                        <?php if($manag['user_id'] == $manager['user_id']){ ?>
+                            <option value="<?php echo $manag['user_id']; ?>" selected="selected"><?php echo $manag['firstname']; ?></option>
+                        <?php }else{ ?>
+                            <option value="<?php echo $manag['user_id']; ?>"><?php echo $manag['firstname']; ?></option>
+                        <?php } ?>
+                    <?php }else{ ?>
+                        <option value="<?php echo $manag['user_id']; ?>"><?php echo $manag['firstname']; ?></option>
+                    <?php } ?>
+                    
+                  <?php } ?>
+                  </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" id="change_manager" class="btn btn-primary">Поменять менеджера</button>
+            </div>
+            
+          </div>
+          <br/><br/><br/><br/>
+          
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -350,6 +385,52 @@
     </div>
   </div>
   <script type="text/javascript"><!--
+      
+<?php if($user_id){ ?>
+$(document).ready(function() {
+    alert('Заказ уже обрабатывает менеджер <?php echo $user["firstname"]; ?>');
+})
+<?php }elseif($manager){ ?>
+        $.ajax({
+		url: 'index.php?route=sale/order/manager&token=<?php echo $token; ?>&manager=<?php echo $manager["user_id"]; ?>&order_id=<?php echo $order_id; ?>',
+		dataType: 'json',
+		beforeSend: function() {
+		},
+		complete: function() {
+		},
+		success: function(json) {
+
+			if (json['error']) {
+                                
+                        }
+
+		},
+		error: function(xhr, ajaxOptions, thrownError) {
+			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		}
+	});
+
+<?php } ?>
+
+
+$('#change_manager').on('click', function() {
+    $.ajax({
+        url: 'index.php?route=sale/order/manager&token=<?php echo $token; ?>&manager=' + $('#manager option:selected').val() + '&order_id=<?php echo $order_id; ?>',
+        dataType: 'json',
+        
+        success: function(json) {
+            alert('Менеджер изменен');
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+    });
+
+})
+      
+      
+      
+      
 $(document).delegate('#button-ip-add', 'click', function() {
 	$.ajax({
 		url: 'index.php?route=user/api/addip&token=<?php echo $token; ?>&api_id=<?php echo $api_id; ?>',

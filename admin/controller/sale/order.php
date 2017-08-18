@@ -159,8 +159,65 @@ class ControllerSaleOrder extends Controller {
 		$order_total = $this->model_sale_order->getTotalOrders($filter_data);
 
 		$results = $this->model_sale_order->getOrders($filter_data);
-
+                $this->load->model('user/user');
 		foreach ($results as $result) {
+                    
+                    
+                    
+                    
+                    $order_products = array();
+
+		$products = $this->model_sale_order->getOrderProducts($result['order_id']);
+                foreach ($products as $product) {
+				$option_data = array();
+
+				$options = $this->model_sale_order->getOrderOptions($result['order_id'], $product['order_product_id']);
+                                
+				foreach ($options as $option) {
+					if ($option['type'] != 'file') {
+						$option_data[] = array(
+							'name'  => $option['name'],
+							'value' => $option['value'],
+							'type'  => $option['type']
+						);
+					} else {
+						$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+						if ($upload_info) {
+							$option_data[] = array(
+								'name'  => $option['name'],
+								'value' => $upload_info['name'],
+								'type'  => $option['type'],
+								'href'  => $this->url->link('tool/upload/download', 'token=' . $this->session->data['token'] . '&code=' . $upload_info['code'], true)
+							);
+						}
+					}
+				}
+                                $order_info = $this->model_sale_order->getOrder($result['order_id']);
+//                                var_dump($order_info);
+                                
+                                //$data['shipping_method'] = $order_info['shipping_method'];
+                                
+                                $order_info['currency_code'] = 'UAH';
+                                $order_info['currency_value'] = 1;
+				$order_products[] = array(
+					'order_product_id' => $product['order_product_id'],
+					'product_id'       => $product['product_id'],
+					'name'    	 	   => $product['name'],
+					'model'    		   => $product['model'],
+					'option'   		   => $option_data,
+					'quantity'		   => $product['quantity'],
+					'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
+					'total'    		   => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
+					'href'     		   => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $product['product_id'], true)
+				);
+			}
+                    
+                        
+                        
+                    
+                    
+                    
 			$data['orders'][] = array(
 				'order_id'      => $result['order_id'],
 				'customer'      => $result['customer'],
@@ -171,9 +228,30 @@ class ControllerSaleOrder extends Controller {
 				'shipping_code' => $result['shipping_code'],
 				'view'          => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, true),
 				'edit'          => $this->url->link('sale/order/edit', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, true),
+                                'user_id'       => $result['user_id'] ? $this->model_user_user->getUser($result['user_id'])['firstname']: $data['user'] = '',
+                                'products'       => $order_products,
+                                'order_info' => $order_info,
 			);
+                        
+                        
+                        
+                        
+                        
+                        
+                        
 		}
-
+//                var_dump($data['orders']);
+//                var_dump($this->model_user_user->getUser($result['user_id']));
+/*
+                $data['country_code'] = $order_info['shipping_iso_code_2'];
+                        $data['user_id'] = $order_info['user_id'];
+                        
+                        if($data['user_id']){
+                            $data['user'] = $this->model_user_user->getUser($data['user_id']);
+                        }else{
+                            $data['user'] = '';
+                        }
+                */
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_list'] = $this->language->get('text_list');
@@ -331,6 +409,12 @@ class ControllerSaleOrder extends Controller {
 			$data['api_key'] = '';
 			$data['api_ip'] = '';
 		}
+                
+                
+                
+                
+//                var_dump($data['products']);
+                
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -352,7 +436,7 @@ class ControllerSaleOrder extends Controller {
                 if($data['manager']['user_group_id'] != '11' ){
                     $data['manager'] = '';
                 }
-                var_dump($data['manager']);
+//                var_dump($data['manager']);
                 
             
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -740,6 +824,22 @@ class ControllerSaleOrder extends Controller {
 	}
 
 	public function info() {
+            
+                            $this->load->model('user/user');
+                
+            $arr['user_group_id'] = 11;
+            $data['managers'] = $this->model_user_user->getUsersByGroup($arr);
+//                $api_info = $this->model_user_api->getApi($this->config->get('config_api_id'));
+//                var_dump($data['managers']);
+
+                $data['manager'] = $this->model_user_user->getUser($this->user->getId());;
+                
+                if($data['manager']['user_group_id'] != '11' ){
+                    $data['manager'] = '';
+                }
+//                var_dump($data['manager']);
+            
+            
 		$this->load->model('sale/order');
 
 		if (isset($this->request->get['order_id'])) {
@@ -749,8 +849,18 @@ class ControllerSaleOrder extends Controller {
 		}
 
 		$order_info = $this->model_sale_order->getOrder($order_id);
-
+//                var_dump($order_info);
 		if ($order_info) {
+                    
+                        $data['country_code'] = $order_info['shipping_iso_code_2'];
+                        $data['user_id'] = $order_info['user_id'];
+                        
+                        if($data['user_id']){
+                            $data['user'] = $this->model_user_user->getUser($data['user_id']);;
+                        }else{
+                            $data['user'] = '';
+                        }
+                    
 			$this->load->language('sale/order');
 
 			$this->document->setTitle($this->language->get('heading_title'));
@@ -1958,4 +2068,16 @@ class ControllerSaleOrder extends Controller {
 
 		$this->response->setOutput($this->load->view('sale/order_shipping', $data));
 	}
+        
+        
+        public function manager() {
+//            var_dump($this->request->get);
+//            die();
+            $this->load->model('sale/order');
+            $this->model_sale_order->changeManager($this->request->get['order_id'], $this->request->get['manager']);
+            $json = array();
+    
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($json));
+        }
 }

@@ -30,6 +30,7 @@
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cosyone_common.js"></script>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
@@ -66,7 +67,7 @@
 
 <div class="popup-countries mfp-hide">
   <div class="popup-countries__header">
-    Пожалуйста выберите страну, что бы продолжить.
+    <?php echo $text_select_country; ?>
   </div>
   <ul class="popup-countries__items">
     <?php foreach ($countries_array as $country) { ?>
@@ -84,7 +85,7 @@
       <div class="header__group">
         <div class="header__delivery">
           <i class="fa fa-globe" aria-hidden="true"></i>
-          <span>Доставка в:</span>
+          <span><?php echo $shippig; ?></span>
           <a href=".popup-countries" class="open-popup"><?php echo strtoupper($country_s); ?></a>
         </div>
         <div class="header__lang">
@@ -98,6 +99,7 @@
         <?php //echo $header_login; ?>
         <?php if($logged){ ?>
         <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
+        <a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
         <?php }else{ ?>
         <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
         <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a>
@@ -115,7 +117,11 @@
       <a href="#"><i class="icon-phone"></i></a>
     </div>
     <div class="service-block__item">
-      <a href="#"><i class="icon-man"></i></a>
+     <?php if($logged){ ?>
+        <a href="<?php echo $account; ?>"><i class="icon-man"></i></a>
+    <?php }else{ ?>
+        <a href="<?php echo $login; ?>"><i class="icon-man"></i></a>
+    <?php } ?>
     </div>
     <div class="service-block__item">
       <?php if ($cosyone_header_cart) { echo $cart; } ?>
@@ -126,7 +132,7 @@
   </div>
   <?php if ($logo) { ?>
   <div class="logo">
-  <span>ОНЛАЙН - БУТИК</span>
+  <span><?php echo $text_logo_top; ?></span>
   <a href="<?php echo $home; ?>">
   <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
   </div>
@@ -235,7 +241,7 @@
                     <div class="menu_drop_down">
                       <div class="wrapper">
                         <ul>
-                          <li class="column level2"><a href="#">qweqwe</a></li>
+                          <li class="column level2"><a href="<?php echo $blog ?>">Новости и мероприятия</a></li>
                         </ul>
                         <div class="wrapper-image">
                           <img src="<?php echo $category_1['thumb']; ?>" />
