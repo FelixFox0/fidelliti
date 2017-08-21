@@ -4,6 +4,7 @@ class Currency {
 	private $currencies = array();
 
 	public function __construct($registry) {
+//            var_dump($registry->get('session'));
 		$this->db = $registry->get('db');
 		$this->language = $registry->get('language');
 
@@ -12,8 +13,22 @@ class Currency {
                 $this->session = $registry->get('session');
                 $symbol_right = '';
                 $symbol_left = '';
+//                var_dump($this->session->data['country_code']);
                 
-                if(isset($this->session->data['country_code'])){
+                $this->request = $registry->get('request');
+//                var_dump($this->request->get['country_code']);
+                
+                
+                
+                if(isset($this->request->get['country_code'])){
+                if($this->request->get['country_code']=='ua'){
+                    $symbol_right = ' грн';
+                }elseif($this->request->get['country_code']=='ru'){
+                    $symbol_right = ' руб';
+                }else{
+                    $symbol_left = '$';
+                }
+                }elseif(isset($this->session->data['country_code'])){
                 if($this->session->data['country_code']=='ua'){
                     $symbol_right = ' грн';
                 }elseif($this->session->data['country_code']=='ru'){
@@ -36,15 +51,29 @@ class Currency {
 		}
 	}
 
-	public function format($number, $currency, $value = '', $format = true) {
+	public function format($number, $currency, $value = '', $format = true, $country_code = false) {
+            
 		$symbol_left = $this->currencies[$currency]['symbol_left'];
 		$symbol_right = $this->currencies[$currency]['symbol_right'];
 		$decimal_place = $this->currencies[$currency]['decimal_place'];
-
+//                var_dump($this->session->data['country_code']);
 		if (!$value) {
 			$value = $this->currencies[$currency]['value'];
 		}
 
+//                var_dump($country_code);
+                if($country_code){
+                    $symbol_right = '';
+                    $symbol_left = '';
+                    if($country_code == 'ua'){
+                        $symbol_right = ' грн';
+                    }elseif($country_code == 'ru'){
+                        $symbol_right = ' руб';
+                    }else{
+                        $symbol_left = '$';
+                    }
+                }
+//                var_dump($symbol_left);
 		$amount = $value ? (float)$number * $value : (float)$number;
 		
 		$amount = round($amount, (int)$decimal_place);

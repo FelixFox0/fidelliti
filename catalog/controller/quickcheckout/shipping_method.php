@@ -10,6 +10,13 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 		$shipping_address = array();
 		
 		if ($this->customer->isLogged() && isset($this->request->get['address_id'])) {
+                    
+//                        $this->model_account_address->getAddress($this->request->get['address_id']);
+//                        var_dump($this->model_account_address->getAddress($this->request->get['address_id'])['iso_code_2']);
+                        $this->session->data['country_code'] = strtolower($this->model_account_address->getAddress($this->request->get['address_id'])['iso_code_2']);
+                        $this->session->data['country_code_old'] = strtolower($this->model_account_address->getAddress($this->request->get['address_id'])['iso_code_2']);
+//                        var_dump($this->session->data['country_code']);
+                        
 			// Selected stored address
 			$shipping_address = $this->model_account_address->getAddress($this->request->get['address_id']);
 
@@ -68,13 +75,13 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 			$this->load->model('extension/extension');
 
 			$results = $this->model_extension_extension->getExtensions('shipping');
-
+//                        var_dump($this->session->data['country_code']);
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
 					$this->load->model('shipping/' . $result['code']);
-
+//                                        var_dump($this->session->data['country_code']);
 					$quote = $this->{'model_shipping_' . $result['code']}->getQuote($shipping_address);
-
+//                                        var_dump($quote);
 					if ($quote) {
 						$method_data[$result['code']] = array(
 							'title'      => $quote['title'],
@@ -85,7 +92,7 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 					}
 				}
 			}
-
+//var_dump($method_data);
 			$sort_order = array();
 
 			foreach ($method_data as $key => $value) {

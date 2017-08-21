@@ -30,6 +30,15 @@ class ControllerQuickCheckoutShippingAddress extends Controller {
 		$this->load->model('account/address');
 
 		$data['addresses'] = $this->model_account_address->getAddresses();
+//                var_dump($data['addresses']);
+                
+                foreach ($data['addresses'] as $key => $value) {
+                    if($key == $data['address_id'] ){
+//                        var_dump($value['iso_code_2']);
+                        $this->session->data['country_code'] = strtolower($value['iso_code_2']);
+                        $this->session->data['country_code_old'] = strtolower($value['iso_code_2']);
+                    }
+                }
 
 		if (isset($this->session->data['shipping_postcode'])) {
 			$data['postcode'] = $this->session->data['shipping_postcode'];
@@ -38,7 +47,7 @@ class ControllerQuickCheckoutShippingAddress extends Controller {
 		} else {
 			$data['postcode'] = '';
 		}
-
+/*
 		if (isset($this->session->data['shipping_country_id'])) {
 			$data['country_id'] = $this->session->data['shipping_country_id'];
 		} elseif (isset($this->session->data['shipping_address']['country_id'])) {
@@ -48,6 +57,9 @@ class ControllerQuickCheckoutShippingAddress extends Controller {
 
 			$data['country_id'] = $country['default'];
 		}
+                */
+                $this->load->model('startup/url');
+                $data['country_id'] = $this->model_startup_url->checkCountryIso($this->session->data['country_code'])['country_id'];
 
 		if (isset($this->session->data['shipping_zone_id'])) {
 			$data['zone_id'] = $this->session->data['shipping_zone_id'];

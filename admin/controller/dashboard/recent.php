@@ -40,7 +40,7 @@ class ControllerDashboardRecent extends Controller {
 				'view'       => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'], true),
 			);
 		}
-
+//                var_dump($data['orders']);
 		return $this->load->view('dashboard/recent', $data);
 	}
 }

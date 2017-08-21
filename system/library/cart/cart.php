@@ -167,6 +167,7 @@ class Cart {
 
                                 //payment_country
 //                                var_dump($this->session->data['country_code']);
+                                /*
                                 if(isset($this->session->data['country_code'])){
                                     if($this->session->data['country_code']=='ua'){
                                         $price = $product_query->row['price'];
@@ -184,6 +185,27 @@ class Cart {
                                         $price = $product_query->row['price_en'];
                                     }
                                 }
+                                */
+                                
+                                if(isset($this->request->get['country_code'])){
+                                    if($this->request->get['country_code']=='ua'){
+                                        $price = $product_query->row['price'];
+                                    }elseif($this->request->get['country_code']=='ru'){
+                                        $price = $product_query->row['price_ru'];
+                                    }else{
+                                        $price = $product_query->row['price_en'];
+                                    }
+                                }else{
+                                    if($this->session->data['country_code']=='ua'){
+                                        $price = $product_query->row['price'];
+                                    }elseif($this->session->data['country_code']=='ru'){
+                                        $price = $product_query->row['price_ru'];
+                                    }else{
+                                        $price = $product_query->row['price_en'];
+                                    }
+                                }
+                                
+                                
                                 
 //				$price = $product_query->row['price'];
 //                                var_dump($this->request->get);

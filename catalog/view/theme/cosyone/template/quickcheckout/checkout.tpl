@@ -1,5 +1,9 @@
 <?php echo $header; ?>
+<?php if($logged){ ?>
+<div class="container logged">
+<?php }else{ ?>
 <div class="container">
+<?php } ?>
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -741,7 +745,9 @@ function validatePaymentMethod() {
 				$('#shipping-method .quickcheckout-content').html('<div class="text-center"><i class="fa fa-spinner fa-spin fa-5x"></i></div>');
 			},
 			success: function(html) {
+                                reloadShippingMethod('shipping');
 				$('#shipping-method .quickcheckout-content').html(html);
+                                
 			},
 			<?php if ($debug) { ?>
 			error: function(xhr, ajaxOptions, thrownError) {

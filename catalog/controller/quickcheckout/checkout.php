@@ -216,10 +216,10 @@ class ControllerQuickCheckoutCheckout extends Controller {
 //            var_dump($country_info);
 //            die();
         
-        if(!isset($this->request->get['shipping'])){
+        //if(!isset($this->request->get['shipping'])){
             $this->session->data['country_code'] = strtolower($country_info['iso_code_2']);
             $this->session->data['country_code_old'] = strtolower($country_info['iso_code_2']);
-        }
+        //}
 //        var_dump($this->session->data['country_code']);
 		
 		if ($country_info) {
@@ -236,7 +236,7 @@ class ControllerQuickCheckoutCheckout extends Controller {
 				'status'            => $country_info['status']		
 			);
 		}
-		
+//		var_dump($json);
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}

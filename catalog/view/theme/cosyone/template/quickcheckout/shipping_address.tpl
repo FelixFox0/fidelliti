@@ -156,6 +156,7 @@
 <script type="text/javascript"><!--
 // Shipping address form functions
 $('#shipping-address input[name=\'shipping_address\']').on('change', function() {
+$('#shipping-address select[name=\'country_id\']').trigger('change');
 	if (this.value == 'new') {
 		$('#shipping-existing').slideUp();
 		$('#shipping-new').slideDown();
@@ -166,6 +167,7 @@ $('#shipping-address input[name=\'shipping_address\']').on('change', function() 
 		$('#shipping-new').slideUp();
 
 		reloadShippingMethodById($('#shipping-address select[name=\'address_id\']').val());
+                //$('#shipping-address select[name=\'country_id\']').trigger('change');
 	}
 });
 
