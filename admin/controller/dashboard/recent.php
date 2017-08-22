@@ -31,16 +31,17 @@ class ControllerDashboardRecent extends Controller {
 		$results = $this->model_sale_order->getOrders($filter_data);
 
 		foreach ($results as $result) {
+
 			$data['orders'][] = array(
 				'order_id'   => $result['order_id'],
 				'customer'   => $result['customer'],
 				'status'     => $result['order_status'],
 				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
-				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
+				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value'], true, $this->model_sale_order->getOrder($result['order_id'])['shipping_iso_code_2']),
 				'view'       => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'], true),
 			);
 		}
-//                var_dump($data['orders']);
+//                var_dump($results);
 		return $this->load->view('dashboard/recent', $data);
 	}
 }

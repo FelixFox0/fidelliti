@@ -85,7 +85,7 @@
     <?php echo $column_right; ?>
     </div>
 </div>
-
+<?php if(false){ ?>
 <div class="static-pages">
   <div class="static-pages__title">
     Политика COOKIES
@@ -178,6 +178,7 @@
     </div>
   </div>
 </div>
+<?php } ?>
 
 <div id="text-popup" class="white-popup mfp-hide">
     <div class="large-12 columns modal_title">
