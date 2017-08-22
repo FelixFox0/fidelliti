@@ -85,7 +85,7 @@
     <?php echo $column_right; ?>
     </div>
 </div>
-<?php if(false){ ?>
+
 <div class="static-pages">
   <div class="static-pages__title">
     Политика COOKIES
@@ -178,65 +178,4 @@
     </div>
   </div>
 </div>
-<?php } ?>
-
-<div id="text-popup" class="white-popup mfp-hide">
-    <div class="large-12 columns modal_title">
-        ОБСЛУЖИВАНИЕ КЛИЕНТОВ
-    </div>
-    <div class="white-popup__items">
-    <div class="large-6 medium-6 small-6 columns modal__phone">
-        <div><img src="/image/call-answer1.png" alt=""></div>
-        <div>Телефон</div>
-        <div><span class="prmn-cmngr-message">8 800 505 72 13</span></div>
-
-        <div>С понедельника по пятницу</div> 
-        <div>с 9:30 до 18:30 <br>По выходным <br>с 10:00 до 18:00 <br> UTC+02:00 </div>
-    </div>
-    <div class="large-6 medium-6 small-6 columns modal__email">
-        <div>
-            <img src="/image/mail-black-envelope-symbol.png" alt="">
-        </div>
-        <div>
-            E-mail
-        </div>
-        <div>
-            Пожалуйста, свяжитесь<br>
-            с нами, перейдя по ссылке ниже
-        </div>
-        <div>
-            <a href="/contact-us/">Отправить E-mail</a>
-        </div>
-    </div>
-    <div class="large-6 medium-6 small-6 columns modal__chat">
-        <div>
-            <img src="/image/chat.png" alt="">
-        </div>
-        <div>
-            ЧАТ
-        </div>
-        <div>
-            Наши операторы<br> 
-            в настоящее время доступны.
-        </div>
-        <div>
-            <a href="javascript:jivo_api.open();">Задать вопрос</a>
-        </div>
-    </div>
-    <div class="large-6 medium-6 small-6 columns modal__faq">
-        <div>
-            <img src="/image/question.png" alt="">
-        </div>
-        <div>
-            FAQ 
-        </div>
-        <div>
-            Читайте часто задаваемые вопросы для получения  дополнительной информации 
-        </div>
-        <div>
-            <a href="/faq/">Читать FAQ</a>
-        </div>
-    </div>
-    </div>
-<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>
 <?php echo $footer; ?> 
