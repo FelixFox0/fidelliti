@@ -6,6 +6,34 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery.min.js"></script>
 
 
+<div class="one-click mfp-hide">
+  <div class="one-click__inner">
+    <div class="one-click__header">
+      КУПИТЬ В ОДИН КЛИК
+    </div>
+    <div class="one-click__body">
+      <form action="" class="one-click__form">
+        <div class="one-click__input" >
+          <input type="text" placeholder="Имя">
+        </div>
+        <div class="one-click__input">
+          <input type="text" placeholder="Телефон">
+        </div>
+        <div class="one-click__input" >
+          <input type="text" placeholder="Ваша почта">
+        </div>
+        <div class="one-click__submit">
+          <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button>
+        </div>
+      </form>
+    </div>
+    <div class="one-click__footer">
+      <div>Заказаны следующие товары: <b>Tondo mini</b></div>
+      <div>На общую стоимость: <b>8220р</b>,</div>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="container">
@@ -78,8 +106,10 @@
                       <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
 
                       <button type="submit" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="button contrast"><?php echo $button_cart; ?></button>
+
+                      <button class="button contrast open-popup" data-mfp-src=".one-click">Купить в 1 клик</button>
                       
-                      <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button contrast"><?php echo $button_cart; ?></button>
+                      
                       
                       <div class="icons_wrapper">
                 <a class="" onclick="wishlist.add('<?php echo $product_id; ?>');" ><i class="fa fa-heart-o"></i>Добавить в закладки</a>
