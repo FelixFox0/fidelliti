@@ -47,7 +47,6 @@ a {
 
 .container,
 .breadcrumb {
-	width: 1440px;
 	max-width: 1440px;
 	margin: 0 auto;
 	background-color: transparent;
@@ -1188,6 +1187,113 @@ a {
 		align-items: flex-end;
 	}
 }
+
+
+.static-pages {
+
+	&__title {
+		color: #000000;
+		font-family: "Century Gothic";
+		font-size: 36px;
+		font-weight: 400;
+		line-height: 30px;
+		padding: 25px 15px;
+	}
+
+	&__container {
+		padding: 25px 0;
+		border-top: 1px solid #acacac;
+	}
+
+	&__sidebar {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+			padding-left: 30px;
+			margin: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+
+			li {
+				& + li {
+					margin-top: 9px;
+				}
+
+				a {
+					line-height: 19px;
+					font-size: 16px;
+					display: flex;
+					i {
+						font-size: 9px;
+						margin-right: 10px;
+						position: relative;
+						top: 3px;
+					}
+				}
+			}
+		}
+
+		& > li {
+			margin-bottom: 9px;
+
+			& > a {
+				display: inline-block;
+				width: 100%;
+				color: #000000;
+				font-family: "Helvetica";
+				padding: 3px 0;
+				font-size: 16px;
+				padding-left: 15px;
+				background-color: #e8e8e8;
+				max-width: 341px;
+			}
+		}
+	}
+
+	&__content {
+
+		.panel-heading {
+			background-color: #fff;
+			border: none;
+		}
+
+		.panel-default {
+			border: none;
+			box-shadow: none;
+
+			a {
+				display: flex;
+				align-items: center;
+			}
+
+			i {
+				font-size: 9px;
+				margin-right: 3px;
+				width: 10px;
+			}
+		}
+
+		a[aria-expanded="true"] {
+			
+			i {
+				&:before {
+					content: "\f078";
+				}
+			}
+		}
+
+		.panel-group .panel-heading+.panel-collapse>.panel-body {
+			border-top: none;
+			background-color: #e8e8e8;
+		}
+	}
+}
+
+
 
 
 @import "partials/media.scss";

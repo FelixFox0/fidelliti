@@ -85,4 +85,85 @@
     <?php echo $column_right; ?>
     </div>
 </div>
+
+<div class="static-pages">
+  <div class="static-pages__title">
+    Политика COOKIES
+  </div>
+  <div class="clearfix static-pages__container">
+    <div class="col-md-3">
+      <ul class="static-pages__sidebar">
+        <li>
+          <a href="#">Нужна помощь?</a>
+          <ul>
+            <li><a href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>Часто задаваемые вопросы</a></li>
+            <li><a href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>Политика конфиденциальности</a></li>
+            <li><a href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>Часто задаваемые вопросы</a></li>
+            <li><a href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>Политика конфиденциальности</a></li>
+            <li><a href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>Часто задаваемые вопросы</a></li>
+            <li><a href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>Политика конфиденциальности</a></li>
+          </ul>
+          </li>
+
+          <li>
+          <a href="#">Колл-центр</a>
+          <ul>
+            <li><a href="tel:8 800 505 72 13">8 800 505 72 13</a></li>
+          </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="static-pages__content">
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                Collapsible Group 1</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                Collapsible Group 2</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                Collapsible Group 3</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <?php echo $footer; ?> 
