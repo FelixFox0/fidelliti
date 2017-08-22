@@ -114,7 +114,7 @@
   <div class="header_right"> 
   <div class="service-block">
     <div class="service-block__item">
-      <a href="#"><i class="icon-phone"></i></a>
+      <a href="#text-popup" class="open-popup"><i class="icon-phone"></i></a>
     </div>
     <div class="service-block__item">
      <?php if($logged){ ?>
