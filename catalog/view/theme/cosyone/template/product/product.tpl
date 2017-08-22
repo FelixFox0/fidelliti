@@ -12,15 +12,15 @@
       КУПИТЬ В ОДИН КЛИК
     </div>
     <div class="one-click__body">
-      <form action="" class="one-click__form">
+      <form id='one_click_form' action="" class="one-click__form">
         <div class="one-click__input" >
-          <input type="text" placeholder="Имя">
+          <input name='name' type="text" placeholder="Имя">
         </div>
         <div class="one-click__input">
-          <input type="text" placeholder="Телефон">
+          <input name='phone' type="text" placeholder="Телефон">
         </div>
         <div class="one-click__input" >
-          <input type="text" placeholder="Ваша почта">
+          <input name='mail' type="text" placeholder="Ваша почта">
         </div>
         <div class="one-click__submit">
           <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button>
@@ -28,8 +28,19 @@
       </form>
     </div>
     <div class="one-click__footer">
-      <div>Заказаны следующие товары: <b>Tondo mini</b></div>
-      <div>На общую стоимость: <b>8220р</b>,</div>
+      <div>Заказаны следующие товары: <b><?php echo $heading_title; ?></b></div>
+              <div>На общую стоимость: <b>
+          
+        <?php if ($price) { ?>
+        <?php if ($special) { ?>
+        <?php echo $special; ?>
+
+       
+        <?php }else{ ?>
+        <?php echo $price; ?>
+        <?php } ?>
+           <?php } ?>           
+          </b></div>
     </div>
   </div>
 </div>
@@ -1041,11 +1052,12 @@ $('#button-review').on('click', function() {
 
 
 <script type="text/javascript">
-$('#one_click').on('click', function() {
+$('#one_click').on('click', function(e) {
+        e.preventDefault();
 	$.ajax({
 		url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
 		type: 'post',
-		data: 'name=test&phone=000&mail=test@test.ua' ,
+		data: $('#one_click_form').serialize(),
 		dataType: 'json',
 		beforeSend: function() {
 			

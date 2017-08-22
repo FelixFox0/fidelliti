@@ -698,6 +698,7 @@ class ControllerProductProduct extends Controller {
         
         public function oneclickbye() {
 //            var_dump($this->request->post);
+//            die();
             $data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
             $data['store_id'] = $this->config->get('config_store_id');
             $data['store_name'] = $this->config->get('config_name');
