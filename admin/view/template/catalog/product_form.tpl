@@ -72,6 +72,29 @@
                       <?php } ?>
                     </div>
                   </div>
+                    
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>">Детали</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="product_description[<?php echo $language['language_id']; ?>][detali]" value="<?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['detali'] : ''; ?>" id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control" />
+                      <?php if (isset($error_meta_title[$language['language_id']])) { ?>
+                      <div class="text-danger"><?php echo $error_meta_title[$language['language_id']]; ?></div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                    
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>">Размер</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="product_description[<?php echo $language['language_id']; ?>][razmer]" value="<?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['razmer'] : ''; ?>" id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control" />
+                      <?php if (isset($error_meta_title[$language['language_id']])) { ?>
+                      <div class="text-danger"><?php echo $error_meta_title[$language['language_id']]; ?></div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                    
+                    
+                    
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-meta-description<?php echo $language['language_id']; ?>"><?php echo $entry_meta_description; ?></label>
                     <div class="col-sm-10">

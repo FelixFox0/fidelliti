@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container ">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -26,7 +26,7 @@
     </div>
     <?php } ?>
   </div>
-  <div class="row"><?php echo $column_left; ?>
+  <div class="clearfix category-main"><?php echo $column_left; ?>
 <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -52,12 +52,16 @@
   
   <?php if ($categories && !$product_total) { ?>
   <?php //if ($categories && $cosyone_category_refine) { ?>
-  <div class="box-heading"><?php echo $text_refine; ?></div>
-  <div class="grid_holder">
+<!--   <div class="box-heading"><?php echo $text_refine; ?></div> -->
+  <div class="grid_holder container">
   <div class="category-grid <?php echo $cosyone_category_per_row; ?>">
   
   <?php foreach ($categories as $category) { ?><!--
-    --><div class="item contrast_font">
+    -->
+<?php //var_dump($category['thumb']); ?>
+
+    <!-- ТУТ НУЖНО УБРАТЬ "ИЛИ" СДЕЛАНО В ТЕСТОВЫХ ЦЕЛЯХ, ЧТО БЫ ВИДИТЬ -->
+    <div class="item contrast_font">
     <?php if ($category['thumb']) { ?>
 	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" /></a></div>
 	<?php } ?>

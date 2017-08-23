@@ -162,7 +162,8 @@ class ControllerProductCategory extends Controller {
 
 				$data['categories'][] = array(
 					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
+					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name']),
+                                        'thumb' => ($result['image']) ? $this->model_tool_image->resize($result['image'], 675, 500) : $this->model_tool_image->resize('no_image.png', 675, 500),
 				);
 			}
 
