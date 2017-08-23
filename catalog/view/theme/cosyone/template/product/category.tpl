@@ -53,17 +53,17 @@
   <?php if ($categories && !$product_total) { ?>
   <?php //if ($categories && $cosyone_category_refine) { ?>
 <!--   <div class="box-heading"><?php echo $text_refine; ?></div> -->
-  <div class="grid_holder">
+  <div class="grid_holder container">
   <div class="category-grid <?php echo $cosyone_category_per_row; ?>">
   
   <?php foreach ($categories as $category) { ?><!--
     -->
-
+<?php //var_dump($category['thumb']); ?>
 
     <!-- ТУТ НУЖНО УБРАТЬ "ИЛИ" СДЕЛАНО В ТЕСТОВЫХ ЦЕЛЯХ, ЧТО БЫ ВИДИТЬ -->
     <div class="item contrast_font">
-    <?php if ($category['thumb'] || true) { ?>
-	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?> /image/home2.jpg" alt="<?php echo $category['name']; ?>" /></a></div>
+    <?php if ($category['thumb']) { ?>
+	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" /></a></div>
 	<?php } ?>
     <div class="name"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></div>
     </div>
