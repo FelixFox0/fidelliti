@@ -1067,7 +1067,8 @@ $('#one_click').on('click', function(e) {
 		},
 		success: function(json) {			
 			if (json['success']) {
-                            alert("Ваш заказ получен");	
+                            location = json['success'];
+                            //alert("Ваш заказ получен");	
 			}else{
                             alert("Ваш заказ не получен");
                         }

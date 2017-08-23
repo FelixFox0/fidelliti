@@ -699,6 +699,12 @@ class ControllerProductProduct extends Controller {
         public function oneclickbye() {
 //            var_dump($this->request->post);
 //            die();
+            
+            $this->session->data['country_code'];
+            
+            $this->load->model('startup/url');
+            $country = $this->model_startup_url->checkCountryIso($this->session->data['country_code']);
+//            die();
             $data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
             $data['store_id'] = $this->config->get('config_store_id');
             $data['store_name'] = $this->config->get('config_name');
@@ -708,7 +714,7 @@ class ControllerProductProduct extends Controller {
             $data['telephone'] = $this->request->post['phone'];
             $data['payment_firstname'] = $this->request->post['name'];
             $data['shipping_firstname'] = $this->request->post['name'];
-            $data['customer_id'] = '1';
+            $data['customer_id'] = '0';
             $data['customer_group_id'] = '1';
             $data['lastname'] = '';
             $data['fax'] = '';
@@ -719,8 +725,8 @@ class ControllerProductProduct extends Controller {
             $data['payment_address_2'] = '';
             $data['payment_city'] = '';
             $data['payment_postcode'] = '';
-            $data['payment_country'] = '';//
-            $data['payment_country_id'] = '';//
+            $data['payment_country'] = $country['name'];//
+            $data['payment_country_id'] = $country['country_id'];//
             $data['payment_zone'] = '';//
             $data['payment_zone_id'] = '';//
             $data['payment_address_format'] = '';
@@ -733,8 +739,8 @@ class ControllerProductProduct extends Controller {
             $data['shipping_address_2'] = '';
             $data['shipping_city'] = '';
             $data['shipping_postcode'] = '';
-            $data['shipping_country'] = '';//
-            $data['shipping_country_id'] = '';//
+            $data['shipping_country'] = $country['name'];//
+            $data['shipping_country_id'] = $country['country_id'];//
             $data['shipping_zone'] = '';//
             $data['shipping_zone_id'] = '';//
             $data['shipping_address_format'] = '';
@@ -790,8 +796,10 @@ class ControllerProductProduct extends Controller {
             $this->load->model('checkout/order');
             $order_id = $this->model_checkout_order->addOrder($data);
             $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('cod_order_status_id'));
-            
-            $json['success'] = true;
+            $this->session->data['order_id'] = $order_id;
+            $json['success'] = $this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+	
+//            $json['success'] = $order_id;
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($json));
         }

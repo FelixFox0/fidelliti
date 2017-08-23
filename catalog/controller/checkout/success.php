@@ -2,8 +2,9 @@
 class ControllerCheckoutSuccess extends Controller {
 	public function index() {
 		$this->load->language('checkout/success');
-
+                $order_id = '';
 		if (isset($this->session->data['order_id'])) {
+                    $order_id = $this->session->data['order_id'];
 			$this->cart->clear();
 
 			// Add to activity log
@@ -64,7 +65,7 @@ class ControllerCheckoutSuccess extends Controller {
 			'href' => $this->url->link('checkout/success', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
-		$data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_title'] = $this->language->get('heading_title') . ($order_id ? ' #'.$order_id : '');
 
 		if ($this->customer->isLogged()) {
 			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->url->link('account/download', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
