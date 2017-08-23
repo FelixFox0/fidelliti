@@ -85,7 +85,7 @@
     <?php echo $column_right; ?>
     </div>
 </div>
-
+<?php if(false){ ?>
 <div class="static-pages">
   <div class="static-pages__title">
     Политика COOKIES
@@ -178,4 +178,5 @@
     </div>
   </div>
 </div>
+<?php } ?>
 <?php echo $footer; ?> 
