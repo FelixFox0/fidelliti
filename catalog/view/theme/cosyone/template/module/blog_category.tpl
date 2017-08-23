@@ -1,12 +1,12 @@
-<div class="box">
-<div class="box-heading"><?php echo $heading_title_category; ?></div>
+<div class="box ">
+<!-- <div class="box-heading"><?php echo $heading_title_category; ?></div> -->
 <div class="box-content box-category">
 <?php if (!empty($categories)) { ?>
 <ul>
 <?php foreach ($categories as $category_1) { ?>
    <?php if ($category_1['category_1_id'] == $category_1_id) { ?>
      <li class="open active"><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?></a>
-      <?php } else { ?>
+      <?php } else { ?> 
       <li><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?></a> 
       <?php } ?>
       <?php if ($category_1['children']) { ?>

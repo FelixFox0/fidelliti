@@ -246,7 +246,6 @@ $(window).on('scroll', function(event) {
     
     var cont = getContainer();
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
-        $("#adv_ajaxfilter_page").val(+b + 1);
         filter(false, false, true);
         
     }
@@ -275,8 +274,15 @@ function filter(b, c, status) {
         $(cont).advOverlay();
         $("#adv_ajaxfilter").advOverlay();
 
-        $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json", async: false,
+        $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json", async: true,
             success:function (g) {
+                console.log(g.result_html !== "");
+                if(g.totals_data
+.options[0].t / 15 <= 10 ){
+                    $("#adv_ajaxfilter_page").val(+$("#adv_ajaxfilter_page").val() + 1);
+                }
+                console.log(g);
+                console.log($("#adv_ajaxfilter_page").val())
                 adv_result(g, b, status);
                 cache[h] = g;
                 var cont = getContainer();
