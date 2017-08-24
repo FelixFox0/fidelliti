@@ -48,3 +48,16 @@ $_['tab_review']               = 'Reviews (%s)';
 $_['error_name']               = 'Warning: Review Name must be between 3 and 25 characters!';
 $_['error_text']               = 'Warning: Review Text must be between 25 and 1000 characters!';
 $_['error_rating']             = 'Warning: Please select a review rating!';
+
+$_['text_by1click'] = 'BUY IN ONE CLICK';
+$_['text_name'] = 'Name';
+$_['text_phone'] = 'Phone';
+$_['text_mail'] = 'Your mail';
+$_['text_prod'] = 'The following items are ordered:';
+$_['text_price'] = 'To the total cost:';
+$_['text_by1cl'] = 'Buy in one click';
+$_['text_add_favorite'] = 'Add to bookmarks';
+$_['text_delivery'] = 'Delivery and payment';
+$_['text_sku'] = 'Article:';
+$_['text_detali'] = 'Detail';
+$_['text_size'] = 'Size';

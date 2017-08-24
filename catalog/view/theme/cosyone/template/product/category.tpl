@@ -60,7 +60,7 @@
     -->
 <?php //var_dump($category['thumb']); ?>
 
-    <!-- ТУТ НУЖНО УБРАТЬ "ИЛИ" СДЕЛАНО В ТЕСТОВЫХ ЦЕЛЯХ, ЧТО БЫ ВИДИТЬ -->
+
     <div class="item contrast_font">
     <?php if ($category['thumb']) { ?>
 	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" /></a></div>

@@ -243,6 +243,22 @@ class ControllerProductProduct extends Controller {
 			$data['text_related'] = $this->language->get('text_related');
 			$data['text_payment_recurring'] = $this->language->get('text_payment_recurring');
 			$data['text_loading'] = $this->language->get('text_loading');
+                        
+                        
+                        
+                        $data['text_detali'] = $this->language->get('text_detali');
+                        $data['text_size'] = $this->language->get('text_size');
+                        $data['text_by1click'] = $this->language->get('text_by1click');
+                        $data['text_name'] = $this->language->get('text_name');
+                        $data['text_phone'] = $this->language->get('text_phone');
+                        $data['text_mail'] = $this->language->get('text_mail');
+                        $data['text_prod'] = $this->language->get('text_prod');
+                        $data['text_price'] = $this->language->get('text_price');
+                        $data['text_by1cl'] = $this->language->get('text_by1cl');
+                        $data['text_add_favorite'] = $this->language->get('text_add_favorite');
+                        $data['text_delivery'] = $this->language->get('text_delivery');
+                        $data['text_sku'] = $this->language->get('text_sku');
+                        
 
 			$data['entry_qty'] = $this->language->get('entry_qty');
 			$data['entry_name'] = $this->language->get('entry_name');
@@ -270,6 +286,9 @@ class ControllerProductProduct extends Controller {
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
+                        $data['sku'] = $product_info['sku'];
+                        $data['detali'] = $product_info['detali'];
+                        $data['razmer'] = $product_info['razmer'];
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
@@ -463,7 +482,7 @@ class ControllerProductProduct extends Controller {
 					);
 				}
 			}
-
+//                        var_dump($data);
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
