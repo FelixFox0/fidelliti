@@ -9,18 +9,18 @@
 <div class="one-click mfp-hide">
   <div class="one-click__inner">
     <div class="one-click__header">
-      КУПИТЬ В ОДИН КЛИК
+      <?php echo $text_by1click; ?>
     </div>
     <div class="one-click__body">
       <form id='one_click_form' action="" class="one-click__form">
         <div class="one-click__input" >
-          <input name='name' type="text" placeholder="Имя">
+          <input name='name' type="text" placeholder="<?php echo $text_name; ?>">
         </div>
         <div class="one-click__input">
-          <input name='phone' type="text" placeholder="Телефон">
+          <input name='phone' type="text" placeholder="<?php echo $text_phone; ?>">
         </div>
         <div class="one-click__input" >
-          <input name='mail' type="text" placeholder="Ваша почта">
+          <input name='mail' type="text" placeholder="<?php echo $text_mail; ?>">
         </div>
         <div class="one-click__submit">
           <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button>
@@ -28,8 +28,8 @@
       </form>
     </div>
     <div class="one-click__footer">
-      <div>Заказаны следующие товары: <b><?php echo $heading_title; ?></b></div>
-              <div>На общую стоимость: <b>
+      <div><?php echo $text_prod; ?><b><?php echo $heading_title; ?></b></div>
+              <div><?php echo $text_price; ?><b>
           
         <?php if ($price) { ?>
         <?php if ($special) { ?>
@@ -118,13 +118,13 @@
 
                       <button type="submit" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="button contrast"><?php echo $button_cart; ?></button>
 
-                      <button class="button contrast open-popup" data-mfp-src=".one-click">Купить в 1 клик</button>
+                      <button class="button contrast open-popup" data-mfp-src=".one-click"><?php echo $text_by1cl; ?></button>
                       
                       
                       
                       <div class="icons_wrapper">
-                <a class="" onclick="wishlist.add('<?php echo $product_id; ?>');" ><i class="fa fa-heart-o"></i>Добавить в закладки</a>
-                <a href="#">Доставка и оплата</a>
+                <a class="" onclick="wishlist.add('<?php echo $product_id; ?>');" ><i class="fa fa-heart-o"></i><?php echo $text_add_favorite; ?></a>
+                <a href="#"><?php echo $text_delivery; ?></a>
     
                     </div>
                     
@@ -143,6 +143,7 @@
                   <div class="tab-content">
                   
                   <div class="tab-pane active" id="tab-description"><?php echo $description; ?>
+                      <?php echo $text_sku; ?><?php echo $sku; ?>
                   <?php if ($tags) { ?>
                   <div class="tags">
                     <?php for ($i = 0; $i < count($tags); $i++) { ?>
@@ -157,11 +158,11 @@
                   </div>
 
                   <div class="tab-pane" id="tab-detail">
-                      Details
+                      <?php echo $detali; ?>
                   </div>
 
                   <div class="tab-pane" id="tab-size">
-                      Size
+                      <?php echo $razmer; ?>
                   </div>
                 </div>
             </div>
@@ -572,6 +573,7 @@
   <div class="tab-content">
   
   <div class="tab-pane active" id="tab-description"><?php echo $description; ?>
+      <?php echo $sku; ?>
   <?php if ($tags) { ?>
   <div class="tags">
     <?php for ($i = 0; $i < count($tags); $i++) { ?>
