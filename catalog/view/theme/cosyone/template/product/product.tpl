@@ -921,9 +921,11 @@ $('#button-cart').on('click', function() {
 			}
 			
 			if (json['success']) {
+
+        //ТУТ В ПОПАПЕ ПОМЕНЯЙ  ТЕКСТ НА "НАЗАД К ПОКУПКАМ"
 				
 				$.colorbox({
-html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="btn btn-default" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="btn btn-primary" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button contrast" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
 className: "notification",
 initialHeight:50,
 initialWidth:50,
