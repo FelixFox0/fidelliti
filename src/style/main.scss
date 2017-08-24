@@ -1561,6 +1561,11 @@ a {
 
 	.blog_summary {
 		padding-left: 100px;
+		width: 500px;
+	}
+
+	.zoom_image_container {
+		flex-shrink: 0;
 	}
 
 	.secondary_background {
@@ -1767,6 +1772,26 @@ a {
 				opacity: 0;
 			}
 		}
+	}
+}
+
+.lg-backdrop {
+	background-color: #fff !important;
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev {
+	color: #fff !important;
+}
+
+.lg-toolbar {
+	background-color: #010101 !important;
+
+	& > * {
+		display: none !important;
+	}
+
+	& > .lg-close {
+		display: block !important;
 	}
 }
 

@@ -39,18 +39,12 @@
 				<span class="month"><?php echo date("M",strtotime($blog['date_added_full']));?></span>
 				</div>
                 <?php } ?>
-                <?php if($comments_count_status){ ?>
-        		<a href="<?php echo $blog['href'];?>" title="<?php echo $blog['title'];?>"><span class="comment_count"><i class="fa fa-comments"></i> <?php echo $blog['comment_total'];?></span></a>
-				<?php } ?>
                 </div> <!-- left ends -->
                 <div class="right">
                 <h2 class="blog_title"><a href="<?php echo $blog['href']; ?>"><?php echo $blog['title']; ?></a></h2>
-                <div class="blog_stats">
-                <?php if($author_status){ ?><span><b class="text"><?php echo $text_posted_by; ?></b> <b class="hl"><?php echo $blog['author']; ?></b></span><?php } ?>
-				<?php if($page_view_status){ ?><span><b class="text"><?php echo $text_read; ?></b> <b class="hl"><?php echo $blog['count_read']; ?></b></span><?php } ?>
-                </div> <!-- blog-stats ends -->
+ <!-- blog-stats ends -->
                 <p><?php echo $blog['short_description']; ?></p>
-                <p><a href="<?php echo $blog['href']; ?>" class="button remove"><?php echo $text_read_more; ?></a></p>
+                <p><a href="<?php echo $blog['href']; ?>" class=""><?php echo $text_read_more; ?><i class="fa fa-chevron-right"></i></a></p>
                 </div> <!-- right ends -->
                </div> <!-- summary ends -->
               </div> <!-- item ends -->
