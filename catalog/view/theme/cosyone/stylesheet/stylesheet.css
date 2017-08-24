@@ -161,7 +161,8 @@ input[type='text'], input[type='password'], input[type='email'], input[type='tel
 	margin-bottom:12px;
 }
 .control-label {
-	margin-bottom:5px;
+	margin-bottom:1px;
+	text-transform: uppercase;
 }
 div.required .control-label:after {
     content: " *";
@@ -1603,7 +1604,7 @@ input.button, button.button {
 	margin: 0;
 	padding:8px 20px;
 }
-a.button:hover, input.button:hover, button.button:hover, .btn:hover, .btn:focus { 
+a.button:hover, input.button:hover, button.button:hover, .btn:hover, .btn:focus, a.button:focus, a.button:active { 
 	background-color: transparent;
 	color:#222222;
 	border-color:#222222;

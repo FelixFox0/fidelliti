@@ -7,7 +7,7 @@
   <table class="quickcheckout-cart contrast_font">
 	<thead>
 		<tr>
-		  <td class="image mobile_hide"><?php echo $text_image; ?></td>
+		  <!-- <td class="image mobile_hide"><?php echo $text_image; ?></td> -->
 		  <td class="name"><?php echo $text_name; ?></td>
 		  <td class="quantity"><?php echo $text_quantity; ?></td>
 		  <td class="unit-price mobile_hide"><?php echo $text_price; ?></td>
@@ -18,10 +18,13 @@
 	<tbody>
         <?php foreach ($products as $product) { ?>
         <tr>
-          <td class="image mobile_hide"><?php if ($product['thumb']) { ?>
+          <td class="name">
+            <div>
+          <?php if ($product['thumb']) { ?>
             <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
-            <?php } ?></td>
-          <td class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+            <?php } ?>
+
+          <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
           <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>
                   <?php } ?>
@@ -33,14 +36,28 @@
 			  <?php if ($product['recurring']) { ?>
 			  <small><?php echo $text_recurring_item; ?>: <?php echo $product['recurring']; ?></small>
 			  <?php } ?>
-            </div></td>
+            </div>
+            </div>
+            </td>
           <td class="quantity"><?php if ($edit_cart) { ?>
-            <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" style="max-width:35px;" value="<?php echo $product['quantity']; ?>" /><a data-tooltip="<?php echo $button_update; ?>" class="button-update sq_icon"><i class="fa fa-refresh"></i></a><a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa fa-times"></i></a>
+            <div class="counter">
+              <button class="minus">-</button>
+              <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" style="max-width:35px;" value="<?php echo $product['quantity']; ?>" />
+              <button class="plus">+</button>
+            </div>
+
+            <!-- <a data-tooltip="<?php echo $button_update; ?>" class="button-update sq_icon"><i class="fa fa-refresh"></i></a> -->
             <?php } else { ?>
 			x&nbsp;<?php echo $product['quantity']; ?>
 			<?php } ?></td>
 		  <td class="unit-price mobile_hide"><?php echo $product['price']; ?></td>
           <td class="total"><?php echo $product['total']; ?></td>
+        </tr>
+        <tr class='btns'>
+          <td colspan="4">
+            <a href="" class="sq_icon" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="Список желаний"><i class="fa fa-heart-o"  ></i> Список желаний</a>
+            <a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa fa-times"></i>Удалить</a>
+          </td>
         </tr>
         <?php } ?>
         <?php foreach ($vouchers as $voucher) { ?>
@@ -54,15 +71,42 @@
         </tbody>
         <?php } ?>
         </table>
-        <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
+        <!-- <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
         <tbody>
-		<?php foreach ($totals as $total) { ?>
-			<tr>
-				<td style="text-align:right;" colspan="4"><?php echo $total['title']; ?>:</td>
-				<td style="text-align:right;"><?php echo $total['text']; ?></td>
-			</tr>
+            <?php foreach ($totals as $total) { ?>
+              <tr>
+                <td style="text-align:right;" colspan="4"><?php echo $total['title']; ?>:</td>
+                <td style="text-align:right;"><?php echo $total['text']; ?></td>
+              </tr>
         <?php } ?>
-	</tbody>
-    </table>
+          </tbody>
+            </table> -->
     <?php } ?>
 </table>
+
+
+<div class="cart-total-info">
+  <div class="cart-total-info__title">
+    Итоговая информация о заказе
+  </div>
+  <div class="cart-total-info__table">
+    <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
+        <tbody>
+            <?php foreach ($totals as $total) { ?>
+              <tr>
+                <td style="text-align:left;" colspan="4"><?php echo $total['title']; ?>:</td>
+                <td style="text-align:right;"><?php echo $total['text']; ?></td>
+              </tr>
+        <?php } ?>
+          </tbody>
+    </table>
+  </div>
+  <div class="cart-total-info__button">
+    <button class='get-order button'>ЗАКАЗАТЬ</button>
+  </div>
+  <div class="cart-total-info__footer">
+    <p>Информация о доставке</p>
+    <a href="#">Нужна помощь? +</a>
+  </div>
+
+</div>

@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
 <?php if($logged){ ?>
 <div class="container logged">
 <?php }else{ ?>
@@ -37,24 +38,30 @@
 	  <div id="quickcheckout-countdown"></div>
 
 	  <div id="quickcheckoutconfirm">
-
-	  <?php if (!$logged && $login_module) { ?>
-      
-      <p class="contrast_font"><a class="login_trigger" data-toggle="collapse" href="#login-box" aria-expanded="false"><?php echo $text_already_have_account; ?></a></p>
-  <div class="quickcheckoutmid collapse" id="login-box">
-    <div id="checkout">
-	  <div class="quickcheckout-heading box-heading"><?php echo $text_checkout_option; ?></div>
-      <div class="quickcheckout-content"></div>
-    </div>
-  </div>
-  
-  		
-  
-	  <?php } ?>
       
       <div class="grid_holder">
+      <div class="grid_holder__left">	
       
 	  <div class="checkout-column">
+		<?php if (!$logged && $login_module) { ?>
+      
+	      <p class="contrast_font"><a class="login_trigger button" data-toggle="collapse" href="#login-box" aria-expanded="false"><?php echo $text_already_have_account; ?></a></p>
+	  <div class="quickcheckoutmid collapse" id="login-box">
+	    <div id="checkout">
+		  <div class="quickcheckout-heading box-heading"><?php echo $text_checkout_option; ?></div>
+	      <div class="quickcheckout-content"></div>
+	    </div>
+	  </div>
+	 
+		  <?php } ?>
+
+
+		<?php if ($cart_module) { ?>
+		<div id="cart1">
+		  <div class="quickcheckout-content" style="border:none; padding: 0px;"></div>
+		</div>
+		<?php } ?>
+
 		<?php if (!$logged) { ?>
 		<div id="payment-address">
 		  <div class="quickcheckout-heading box-heading"><span><?php echo $text_checkout_account; ?></span></div>
@@ -75,6 +82,7 @@
 	  </div>
       
 	  <div class="checkout-column">
+
 		<?php if ($shipping_required) { ?>
 		<?php if ($shipping_module) { ?>
 		<div id="shipping-method">
@@ -104,11 +112,7 @@
   		<div class="checkout-column cart"> <!-- not if 2 columns -->
   		<?php } ?>
       
-		<?php if ($cart_module) { ?>
-		<div id="cart1">
-		  <div class="quickcheckout-content" style="border:none; padding: 0px;"></div>
-		</div>
-		<?php } ?>
+		
         
 		<?php if ($voucher_module || $coupon_module || $reward_module) { ?>
 	  <div id="voucher">
@@ -124,6 +128,12 @@
 	  
 
 	  </div>
+
+	</div>
+
+	<div class="grid_holder__right" id="cart-info-container">
+		
+	</div>
 
 </div> <!-- grid_holder ends -->
 
@@ -614,7 +624,7 @@ function validateShippingAddress() {
 <?php } ?>
 
 // Confirm payment
-$(document).on('click', '#button-payment-method', function() {
+$(document).on('click', '#button-payment-method, .get-order', function() {
 	$('#button-payment-method').prop('disabled', true);
 	$('#button-payment-method').button('loading');
 	
@@ -927,8 +937,26 @@ function loadCart() {
 	});
 }
 
+function loadCartInfo() {
+	$( "#cart-info-container" ).load( "index.php?route=quickcheckout/cart .cart-total-info", function( response, status, xhr ) {
+		console.log(response);
+
+		$(".cart-total-info").stick_in_parent({
+			offset_top: 50
+		});
+
+
+	  if ( status == "error" ) {
+	    var msg = "Sorry but there was an error: ";
+	    $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+	  }
+	});
+}
+
+
 $(document).ready(function(){
 	loadCart();
+	loadCartInfo();
 });
 <?php } ?>
 
@@ -1186,7 +1214,31 @@ $(document).on('focusout', 'input[name=\'postcode\']', function(){
 <?php } ?>
 
 <?php if ($edit_cart) { ?>
-$(document).on('click', '.button-update', function() {
+
+
+
+
+
+
+$(document).on('click', '.counter button', function() {
+
+	var $this = $(this);
+	var val = $this.parent().find('input').val();
+
+	if($this.hasClass('minus')) {
+
+		if(val > 1) {
+			$this.parent().find('input').val(+val - 1);
+		}
+		
+		
+	} else {
+		$this.parent().find('input').val(+val + 1);
+		console.log(this.data);
+	}
+
+	
+
 	$.ajax({
 		url: 'index.php?route=quickcheckout/cart/update',
 		type: 'post',
@@ -1194,7 +1246,9 @@ $(document).on('click', '.button-update', function() {
 		dataType: 'json',
 		cache: false,
 		beforeSend: function() {
+
 			$('#cart1 .button-update').prop('disabled', true);
+
 		},
 		success: function(json) {
 			if (json['redirect']) {

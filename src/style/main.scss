@@ -116,6 +116,11 @@ a {
 		color: #0a0a0a;
 	}
 
+	&__item {
+		margin-bottom: 20px;
+		width: 20%;
+	}
+
 	&__list {
 		position: relative;
 		max-height: 60vh;
@@ -130,10 +135,8 @@ a {
 		}
 
 		&-item {
-			margin-bottom:  20px;
 			color: #000;
 			transform: translateX(0);
-			width: 20%;
 
 			&:after {
 				content: "";
@@ -593,10 +596,11 @@ a {
 
 	&__item {
 		margin-bottom: 20px;
+		width: 20%;
 		
 		img {
-			height: 21px;
-			width: auto;
+			height: 11px;
+			width: auto; 
 			margin-right: 4px;
 		}
 
@@ -1184,12 +1188,18 @@ a {
 		td:last-child {
 			font-weight: normal;
 		}
+
+
 	}
 
 	.cart_bottom_line {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+
+		.cart-total {
+			max-width: 265px;
+		}
 	}
 }
 
@@ -1898,6 +1908,276 @@ a {
 		}
 	}
 }
+
+.quickcheckout-checkout {
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+
+	.quickcheckout-heading,
+	.checkout-heading {
+		text-transform: uppercase;
+		font-size: 14px;
+		text-decoration: underline;
+		margin-bottom: 20px;
+	}
+
+	h1 {
+		margin-bottom: 35px;
+	}
+
+	.confirm {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top-color: #333 !important;
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			text-transform: uppercase;
+
+			i {
+				margin-right: 10px;
+				font-size: 9px;
+			}
+		}
+	}
+
+	#terms {
+		border-bottom: none !important;
+	}
+
+	.btns {
+		td {
+			padding-top: 20px;
+		}
+
+		.sq_icon {
+			border: none;
+			width: auto;
+			margin-right: 25px;
+			height: auto;
+			display: inline-block;
+
+			i {
+				margin-right: 6px;
+			}
+		}
+	}
+}
+
+#cart1 {
+	.cart-total-info {
+			display: none !important; 
+		}
+}
+
+#quickcheckoutconfirm {
+
+	.checkout-column {
+		width: 590px;
+		position: relative;
+
+		& > div {
+			margin-bottom: 30px;
+			border-bottom: 1px solid #666;
+			padding-bottom: 30px;
+		}
+	}
+
+	.quickcheckout-cart {
+
+
+		thead {
+			border-bottom: 1px solid #e5e5e5;
+			td {
+				text-transform: uppercase;
+				font-size: 15px;
+				padding: 20px 10px;
+			}
+		}
+
+		tbody {
+			td {
+				text-transform: uppercase;
+				vertical-align: bottom;
+			}
+
+			.name {
+
+				& > div {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+
+			.quantity {
+				.counter {
+					display: flex;
+					align-items: center;
+					position: relative;
+					top: 5px;
+
+					input {
+						margin: 0 7px;
+						border: none;
+						width: 30px;
+						height: 25px;
+						text-align: center;
+						padding: 0;
+					}
+
+					button {
+						background-color: transparent;
+						border: 1px solid #ccc;
+						padding: 4px 9px 4px 9px;
+						display: inline-block;
+						width: 30px;
+						height: 30px;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+
+	table {
+		width: 100%;
+	}
+
+	select {
+		 background: rgb(221, 221, 221);
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	select,
+	textarea {
+		height: 43px;
+		border: 1px solid #666;
+		width: 100%;
+		border-radius: 0;
+
+		&:focus {
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+		}
+	}
+
+	textarea {
+		height: 150px;
+	}
+
+	#login {
+
+		input[type='button'] {
+			width: 200px;
+			height: 50px;
+		}
+		
+		.login-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 25px;
+
+			input {
+				width: 400px;
+			}
+
+			label {
+				font-size: 12px;
+				text-transform: uppercase;
+				font-weight: normal;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.quickcheckout-content {
+
+		.col-sm-6 {
+			margin-bottom: 10px;
+		}
+	}
+	.grid_holder{
+		margin: 0;
+		display: flex;
+
+		&__right {
+			flex-grow: 1;
+			position: relative;
+			width: calc(100% - 580px);
+		}
+	}
+	
+
+	#coupon-content {
+		display: flex;
+		align-items: center;
+
+		button {
+			margin-left: 15px;
+			flex-shrink: 0;
+			height: 44px;
+		}
+	}
+
+}
+
+#cart-info-container {
+	padding-left: 100px;
+}
+
+.cart-total-info {
+    background: #f2f2f2;
+    width: 280px;
+
+	&__title {
+		margin-bottom: 20px;
+		font-size: 17px;
+		text-transform: none;
+		letter-spacing: 2px;
+		font-weight: bold;
+		padding: 25px 20px 0;
+	}
+
+	&__table {
+		padding: 20px;
+
+		td {
+			font-size: 12px;
+			vertical-align: middle !important;
+		}
+	}
+
+	&__button {
+		background-color: #fff;
+
+		button {
+			width: 100%;
+			height: 45px;
+		}
+	}
+
+	&__footer {
+		padding: 25px 20px 20px;
+		border: 1px solid #e5e5e5;
+		border-top: 0;
+		background-color: #fff;
+		border-radius: 0 0 4px 4px;
+
+		a {
+			font-size: 	14px;
+		}
+	}
+}
+
 
 @import "partials/media.scss";
 

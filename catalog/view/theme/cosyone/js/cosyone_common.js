@@ -232,7 +232,7 @@ var cart = {
 				}
 
 				//ТУТ В ПОПАПЕ ПОМЕНЯЙ  ТЕКСТ НА "НАЗАД К ПОКУПКАМ"
-					
+
 				if (json['success']) {
 					$.colorbox({
 					html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
@@ -326,6 +326,7 @@ var voucher = {
 
 var wishlist = {
 'add': function(product_id) {
+	event.preventDefault();
 $.ajax({
 url: 'index.php?route=account/wishlist/add',
 type: 'post',

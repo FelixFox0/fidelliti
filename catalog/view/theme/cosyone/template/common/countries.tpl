@@ -40,9 +40,13 @@
       Please select a country and language to continue.
     </div>
     <div class="first-frame__list">
+      <select name="" id="">
       <?php foreach ($countries as $country) { ?>
-        <span class="first-frame__list-li"><a href="/<?php echo strtolower($country['iso_code_2']) . $href; ?>" class="first-frame__list-item"><?php echo $country['name']; ?></a></span>
+      <option value="/<?php echo strtolower($country['iso_code_2']) . $href; ?>"><?php echo $country['name']; ?></option>
       <?php } ?>
+        
+      </select>
+      
     </div>
       
 <?php if (count($languages) > 1) { ?>
