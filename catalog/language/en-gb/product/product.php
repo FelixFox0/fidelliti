@@ -59,3 +59,5 @@ $_['text_by1cl'] = 'Buy in one click';
 $_['text_add_favorite'] = 'Add to bookmarks';
 $_['text_delivery'] = 'Delivery and payment';
 $_['text_sku'] = 'Article:';
+$_['text_detali'] = 'Detail';
+$_['text_size'] = 'Size';

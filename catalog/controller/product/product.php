@@ -246,6 +246,8 @@ class ControllerProductProduct extends Controller {
                         
                         
                         
+                        $data['text_detali'] = $this->language->get('text_detali');
+                        $data['text_size'] = $this->language->get('text_size');
                         $data['text_by1click'] = $this->language->get('text_by1click');
                         $data['text_name'] = $this->language->get('text_name');
                         $data['text_phone'] = $this->language->get('text_phone');

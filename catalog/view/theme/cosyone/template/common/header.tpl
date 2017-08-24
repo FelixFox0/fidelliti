@@ -241,7 +241,7 @@
                     <div class="menu_drop_down">
                       <div class="wrapper">
                         <ul>
-                          <li class="column level2"><a href="<?php echo $blog ?>">Новости и мероприятия</a></li>
+                          <li class="column level2"><a href="<?php echo $blog ?>"><?php echo $text_blog ?></a></li>
                           <li class="column level2"><a href="https://www.instagram.com/fidelitti/" target="_blank">#Fidelittigirls</a></li>
                         </ul>
                         
@@ -393,16 +393,16 @@ if($countries){
 
 <div id="text-popup" class="white-popup mfp-hide">
     <div class="large-12 columns modal_title">
-        ОБСЛУЖИВАНИЕ КЛИЕНТОВ
+        <?php echo $text_customer; ?>
     </div>
     <div class="white-popup__items">
     <div class="large-6 medium-6 small-6 columns modal__phone">
         <div><img src="/image/call-answer1.png" alt=""></div>
-        <div>Телефон</div>
+        <div><?php echo $text_phone; ?></div>
         <div><span class="prmn-cmngr-message">8 800 505 72 13</span></div>
 
-        <div>С понедельника по пятницу</div> 
-        <div>с 9:30 до 18:30 <br>По выходным <br>с 10:00 до 18:00 <br> UTC+02:00 </div>
+        <div><?php echo $text_work_week; ?></div> 
+        <div><?php echo $text_work_time; ?></div>
     </div>
     <div class="large-6 medium-6 small-6 columns modal__email">
         <div>
@@ -412,11 +412,10 @@ if($countries){
             E-mail
         </div>
         <div>
-            Пожалуйста, свяжитесь<br>
-            с нами, перейдя по ссылке ниже
+            <?php echo $text_call_me; ?>
         </div>
         <div>
-            <a href="/contact-us/">Отправить E-mail</a>
+            <a href="/contact-us/"><?php echo $text_sand_mail; ?></a>
         </div>
     </div>
     <div class="large-6 medium-6 small-6 columns modal__chat">
@@ -424,14 +423,13 @@ if($countries){
             <img src="/image/chat.png" alt="">
         </div>
         <div>
-            ЧАТ
+            <?php echo $text_chat; ?>
         </div>
         <div>
-            Наши операторы<br> 
-            в настоящее время доступны.
+            <?php echo $text_our_managers; ?>
         </div>
         <div>
-            <a href="javascript:jivo_api.open();">Задать вопрос</a>
+            <a href="javascript:jivo_api.open();"><?php echo $text_asc_question; ?></a>
         </div>
     </div>
     <div class="large-6 medium-6 small-6 columns modal__faq">
@@ -442,10 +440,10 @@ if($countries){
             FAQ 
         </div>
         <div>
-            Читайте часто задаваемые вопросы для получения  дополнительной информации 
+            <?php echo $text_read_faq; ?>
         </div>
         <div>
-            <a href="/faq/">Читать FAQ</a>
+            <a href="/faq/"><?php echo $text_read_faq_but; ?></a>
         </div>
     </div>
     </div>

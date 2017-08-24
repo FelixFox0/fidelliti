@@ -72,6 +72,20 @@ class ControllerCommonHeader extends Controller {
 		$data['text_category'] = $this->language->get('text_category');
 		$data['text_all'] = $this->language->get('text_all');
                 
+                
+                $data['text_blog'] = $this->language->get('text_blog');
+                $data['text_customer']= $this->language->get('text_customer');
+                $data['text_phone'] = $this->language->get('text_phone');
+                $data['text_work_week'] = $this->language->get('text_work_week');
+                $data['text_work_time'] = $this->language->get('text_work_time');
+                $data['text_call_me'] = $this->language->get('text_call_me');
+                $data['text_sand_mail'] = $this->language->get('text_sand_mail');
+                $data['text_chat']  = $this->language->get('text_chat');
+                $data['text_our_managers'] = $this->language->get('text_our_managers');
+                $data['text_asc_question'] = $this->language->get('text_asc_question');
+                $data['text_read_faq'] = $this->language->get('text_read_faq');
+                $data['text_read_faq_but'] = $this->language->get('text_read_faq_but');
+                
                 $data['text_logo_top'] = $this->language->get('text_logo_top');
                 $data['shippig'] = $this->language->get('shippig');
                 $data['text_select_country'] = $this->language->get('text_select_country');

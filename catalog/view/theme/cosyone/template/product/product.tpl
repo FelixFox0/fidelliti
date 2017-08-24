@@ -136,8 +136,8 @@
             <div class="product-page__tabs">
               <ul class="nav nav-tabs product-page">
                 <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
-                <li class=""><a href="#tab-detail" data-toggle="tab">Detail</a></li>
-                <li class=""><a href="#tab-size" data-toggle="tab">Size</a></li>             
+                <li class=""><a href="#tab-detail" data-toggle="tab"><?php echo $text_detali; ?></a></li>
+                <li class=""><a href="#tab-size" data-toggle="tab"><?php echo $text_size; ?></a></li>             
               </ul>
                   
                   <div class="tab-content">
