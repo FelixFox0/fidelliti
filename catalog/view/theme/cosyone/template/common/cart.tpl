@@ -1,4 +1,7 @@
 <div id="cart" class="shortcut">
+
+
+
  <a class="shortcut_heading" href="<?php echo $cart; ?>" id="cart-total"><?php echo $text_items; ?></a>
   <div class="content">
     <?php if ($products || $vouchers) { ?>
@@ -19,17 +22,21 @@
               <?php if ($product['recurring']) { ?>
               <?php echo $text_recurring ?>: <?php echo $product['recurring']; ?><br />
               <?php } ?>
+
+              <a title="<?php echo $button_remove; ?>" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><span class="remove">удалить</span></a>
             </div></td>
-          <td class="remove border"><a title="<?php echo $button_remove; ?>" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><span class="remove">x</span></a></td>
         </tr>
         <?php } ?>
         <?php foreach ($vouchers as $voucher) { ?>
         <tr>
           <td colspan="2" class="voucher border"><span class="name" style="display:block; float:left">1&nbsp;x&nbsp;<?php echo $voucher['description']; ?></span></td>
-          <td class="remove border"><a title="<?php echo $button_remove; ?>" onclick="(getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') ? location = 'index.php?route=checkout/cart&remove=<?php echo $voucher['key']; ?>' : $('#cart').load('index.php?route=module/cart&remove=<?php echo $voucher['key']; ?>' + ' #cart > *');"><span class="remove">x</span></a></td>
+          <td class="remove border"></td>
           </tr>
         <?php } ?>
       </table>
+    </div>
+    <div class="mini-go-cart">
+      <a class="" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
     </div>
     <div class="mini-cart-total">
       <table>
@@ -42,8 +49,8 @@
       </table>
     </div>
     <div class="checkoutbuttons">
-    <a class="button" href="<?php echo $cart; ?>"><?php echo $text_cart; ?></a>
-    <a class="button" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
+    <a class="" href="<?php echo $cart; ?>"><?php echo $text_cart; ?></a>
+    
     </div>
     <?php } else { ?>
     <div class="empty main_font"><?php echo $text_empty; ?></div>
