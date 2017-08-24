@@ -125,9 +125,12 @@ a {
 		position: relative;
 		max-height: 60vh;
 		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
+		align-items: center;
+		
+		select {
+			margin-right: 30px;
+		}
+
 		padding: 50px 80px;
 
 		&-li {

@@ -40,26 +40,35 @@
       Please select a country and language to continue.
     </div>
     <div class="first-frame__list">
-      <select name="" id="">
+      <select name="" id="country" class="form-control">
       <?php foreach ($countries as $country) { ?>
       <option value="/<?php echo strtolower($country['iso_code_2']) . $href; ?>"><?php echo $country['name']; ?></option>
       <?php } ?>
-        
       </select>
+      <?php if (count($languages) > 1) { ?>
+      <select id="lang" name="languages" class="form-control">
+          <?php foreach ($languages as $language) { ?>
+          <option value="<?php echo $language['name']; ?>"><?php echo $language['name']; ?></option>
+          <?php } ?>
+          
+      </select>
+      <?php } ?>
+      <button class="button setCountryAndLang">Продолжить</button> 
       
     </div>
       
-<?php if (count($languages) > 1) { ?>
-<select name="languages" class="form-control">
-    <?php foreach ($languages as $language) { ?>
-    <option value="<?php echo $language['name']; ?>"><?php echo $language['name']; ?></option>
-    <?php } ?>
-    
-</select>
-<?php } ?>
+
       
   </div>
 </div>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".setCountryAndLang").click(function(event) {
+      window.location = $("#country").val() + $("#lang").val();
+    });
+  });
+</script>
 
 
 <?php } ?>
