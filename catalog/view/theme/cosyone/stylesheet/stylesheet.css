@@ -1554,6 +1554,7 @@ table.radio tr.highlight td {
 	font-size:13px;
 	color:#595959;
 	line-height:28px;
+	visibility: hidden;
 }
 .pagination_holder .col-sm-6 {
 	padding:0;
