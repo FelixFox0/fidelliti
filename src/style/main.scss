@@ -979,10 +979,14 @@ a {
 		.nav-tabs {
 			border-bottom: none;
 			text-align: center;
+			display: flex;
+			justify-content: center;
 		}
 		
 		.nav-tabs>li {
-			margin-right: 12px;
+			& + li {
+				margin-left: 12px;
+			}
 
 			&.active a {
 				&:before {

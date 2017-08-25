@@ -1013,6 +1013,7 @@ a.sq_tag {
 
 .header3 #menu > ul > li.withsubs > a {
 	padding: 0 15px;
+
 }
 
 .header3 #menu .mobile_menu_trigger {
@@ -1030,7 +1031,7 @@ a.sq_tag {
 	position:relative;
 }
 #menu > ul > li.withsubs > a {
-	
+	letter-spacing: 1.65px;
 }
 /* Arrow for categories that have sub categories */
 #menu > ul > li i {
@@ -1553,7 +1554,6 @@ table.radio tr.highlight td {
 	font-size:13px;
 	color:#595959;
 	line-height:28px;
-	display: none;
 }
 .pagination_holder .col-sm-6 {
 	padding:0;

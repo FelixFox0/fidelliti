@@ -109,7 +109,7 @@
                       
                   </div> 
                   <span class="stockk">
-                  <span itemprop="availability" content="<?php if ($data_qty > 0) {echo "in_stock"; } else {echo "out_of_stock"; } ?>"><?php echo $text_stock; ?></span> <span class="stock_status <?php if ($data_qty > 0) {echo "in_stock"; } ?>"><?php echo $stock; ?></span>
+                  <span class=" <?php if ($data_qty > 0) {echo "in_stock"; } ?>"><?php echo $stock; ?></span>
                  </span> <!-- rich snippet ends -->
                  </span>
                   <?php } ?>

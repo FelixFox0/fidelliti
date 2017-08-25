@@ -116,9 +116,9 @@ $(document).ready(function () {
         var a = $(this).attr("href");
         var b = a.match(/page=(\d+)/);
         $("#adv_ajaxfilter_page").val(b[1]);
-        filter(false);
-        var cont = getContainer();
-        $('html, body').animate({ scrollTop: $(cont).offset().top - 150 }, 'slow');
+        filter(false, false, true);
+        /*var cont = getContainer();*/
+        /*$('html, body').animate({ scrollTop: $(cont).offset().top - 150 }, 'slow');*/
 		return false;
 		
     }));
@@ -246,7 +246,8 @@ $(window).on('scroll', function(event) {
     
     var cont = getContainer();
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
-        filter(false, false, true);
+        $(".pagination li:not(:last-child) a:contains('>')").trigger('click');
+        /*filter(false, false, true);*/
         
     }
 });
@@ -275,14 +276,13 @@ function filter(b, c, status) {
         $("#adv_ajaxfilter").advOverlay();
 
         $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json", async: true,
+            beforeSend: function() {
+                var cont = getContainer();
+                
+            },
             success:function (g) {
                 console.log(g.result_html !== "");
-                if(g.totals_data
-.options[0].t / 15 <= 10 ){
-                    $("#adv_ajaxfilter_page").val(+$("#adv_ajaxfilter_page").val() + 1);
-                }
-                console.log(g);
-                console.log($("#adv_ajaxfilter_page").val())
+                $(".loadinn").remove();
                 adv_result(g, b, status);
                 cache[h] = g;
                 var cont = getContainer();
@@ -473,5 +473,5 @@ function getContainerParent(){
 function delayedFilter() {
     clearTimeout(timeoutID);
     $("#adv_ajaxfilter_page").val(0);
-    timeoutID = setTimeout("filter(false, false)", delay)
+    timeoutID = setTimeout("filter(false, false, true)", delay)
 }
