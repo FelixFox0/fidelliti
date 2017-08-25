@@ -4,6 +4,12 @@ class ControllerCommonFooter extends Controller {
 		$this->load->language('common/footer');
 
 		$data['scripts'] = $this->document->getScripts('footer');
+                if(($this->session->data['country_code']=='ua')||($this->session->data['country_code']=='ru')){
+                    $country = $this->session->data['country_code'];
+                }else{
+                    $country = 'en';
+                }
+                $data['country_code'] = $country;
 
 		$data['text_information'] = $this->language->get('text_information');
 		$data['text_service'] = $this->language->get('text_service');
@@ -19,6 +25,22 @@ class ControllerCommonFooter extends Controller {
 		$data['text_order'] = $this->language->get('text_order');
 		$data['text_wishlist'] = $this->language->get('text_wishlist');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
+                
+                $data['text_customers'] = $this->language->get('text_customers');
+                $data['text_policy'] = $this->language->get('text_policy');
+                $data['text_company'] = $this->language->get('text_company');
+                $data['text_call_me'] = $this->language->get('text_call_me');
+                $data['text_faq'] = $this->language->get('text_faq');
+                $data['text_payment'] = $this->language->get('text_payment');
+                $data['text_delivery'] = $this->language->get('text_delivery');
+                $data['text_return'] = $this->language->get('text_return');
+                $data['text_news'] = $this->language->get('text_news');
+                $data['text_production'] = $this->language->get('text_production');
+                $data['text_works'] = $this->language->get('text_works');
+                $data['text_phone'] = $this->language->get('text_'.$country.'_phone');
+
+                $data['text_numb'] = $this->language->get('text_'.$country);
+
 
 		$this->load->model('catalog/information');
 
@@ -44,7 +66,29 @@ class ControllerCommonFooter extends Controller {
 		$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                
+                $data['faq'] = $this->url->link('information/information','information_id=4', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['all_news'] = $this->url->link('blog/home','', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['our_production'] = $this->url->link('information/informationf','information_id=8', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['works'] = $this->url->link('information/information','information_id=7', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                
+                if($this->session->data['country_code']=='ua'){
+                    $country = $this->session->data['country_code'];
+                    $data['paymant'] = $this->url->link('information/information','information_id=14', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                    $data['delivery'] = $this->url->link('information/information','information_id=11', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                    $data['return'] = $this->url->link('information/information','information_id=10', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
+                }elseif($this->session->data['country_code']=='ru'){
+                    $data['paymant'] = $this->url->link('information/information','information_id=15', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                    $data['delivery'] = $this->url->link('information/information','information_id=12', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                    $data['return'] = $this->url->link('information/information','information_id=17', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                }else{
+                    $data['paymant'] = $this->url->link('information/information','information_id=16', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                    $data['delivery'] = $this->url->link('information/information','information_id=13', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                    $data['return'] = $this->url->link('information/information','information_id=18', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                }
+                
+                
 //		$data['powered'] = sprintf(date('Y', time()), $this->config->get('config_name'), $this->language->get('text_powered'));
 
                 $data['powered'] = '© ' . date('Y', time()) . ' ' . $this->config->get('config_name') . $this->language->get('text_powered');

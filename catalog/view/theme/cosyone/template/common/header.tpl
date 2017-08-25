@@ -267,12 +267,12 @@
                     <!-- тут пихани статикой картинку -->
                 
                 <ul>
-                <li class="column level2"><a href="<?php echo $contact; ?>">addsad</a></li>
-                <?php foreach ($informations as $information) { ?>
+                <li class="column level2"><a href="<?php echo $my_company; ?>">О компании</a></li>
+                <li class="column level2"><a href="<?php echo $contact; ?>">Сотрудничество</a></li>
+                <li class="column level2"><a href="<?php echo $our_production; ?>">Наше производство</a></li>
+                <li class="column level2"><a href="<?php echo $contact; ?>">Контакты</a></li>
                 
-                <li class="column level2"><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
                 
-                <?php } ?>
                 </ul>
                 <div class="wrapper-image">
                   <img src="<?php echo $category_1['thumb']; ?>" />

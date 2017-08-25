@@ -104,6 +104,10 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['contact'] = $this->url->link('information/contact', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['telephone'] = $this->config->get('config_telephone', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                
+                $data['my_company'] = $this->url->link('information/informationf','information_id=7', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['our_production'] = $this->url->link('information/informationf','information_id=8', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                
 
                 $data['blog'] = $this->url->link('blog/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
                 

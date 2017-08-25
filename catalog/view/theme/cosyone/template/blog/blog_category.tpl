@@ -15,7 +15,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <div class="blog blog_list">
-		<h1><?php echo $heading_title; ?></h1>
+		<h1><?php //echo $heading_title; ?></h1>
   	
 		<div class="main_description">
 		<?php echo $blog_category_description; ?>
@@ -23,9 +23,11 @@
 
   	<?php if($blogs){ ?>
 		<div class="blog_grid_holder column-<?php echo $list_columns; ?>">
-            
+            <?php $i = 0; ?>
             <?php foreach ($blogs as $blog) { ?>
-				<div class="blog_item">
+                <?php $i++; ?>
+                <?php if($i%2){ ?>
+		<div class="blog_item">
                 <?php if($blog['image']){ ?>
                 <div class="image zoom_image_container">
 				<a href="<?php echo $blog['href']; ?>"><img src="<?php echo $blog['image']; ?>" class="zoom_image" alt="<?php echo $blog['title']; ?>" title="<?php echo $blog['title']; ?>" /></a>
@@ -48,7 +50,34 @@
                 </div> <!-- right ends -->
                </div> <!-- summary ends -->
               </div> <!-- item ends -->
-
+              <?php }else{ ?>
+              <div class="blog_item">
+                
+                <div class="blog_summary">
+                <div class="left contrast_font">
+                <?php if($date_added_status){ ?>
+            	<div class="date_added secondary_background">
+				<span class="day"><?php echo date("d",strtotime($blog['date_added_full']));?></span>
+				<span class="month"><?php echo date("M",strtotime($blog['date_added_full']));?></span>
+				</div>
+                <?php } ?>
+                </div> <!-- left ends -->
+                <div class="right">
+                <h2 class="blog_title"><a href="<?php echo $blog['href']; ?>"><?php echo $blog['title']; ?></a></h2>
+ <!-- blog-stats ends -->
+                <p><?php echo $blog['short_description']; ?></p>
+                <p><a href="<?php echo $blog['href']; ?>" class=""><?php echo $text_read_more; ?><i class="fa fa-chevron-right"></i></a></p>
+                </div> <!-- right ends -->
+               </div> <!-- summary ends -->
+               
+               <?php if($blog['image']){ ?>
+                <div class="image zoom_image_container">
+				<a href="<?php echo $blog['href']; ?>"><img src="<?php echo $blog['image']; ?>" class="zoom_image" alt="<?php echo $blog['title']; ?>" title="<?php echo $blog['title']; ?>" /></a>
+                </div>
+				<?php } ?>
+               
+              </div> <!-- item ends -->
+              <?php } ?>
 			<?php } ?>
             
           </div>

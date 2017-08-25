@@ -4,34 +4,48 @@
   <div class="container footer__container">
     <!--
   --><div class="column">
-    <div class="box-heading heading"><?php echo $text_information; ?></div>
+    <div class="box-heading heading"><?php //echo $text_information; ?><?php echo $text_customers; ?></div>
     <ul class="contrast_font">
-    <?php if ($informations) { ?>
+    <?php if (/*$informations*/false) { ?>
       <?php foreach ($informations as $information) { ?>
       <li></i><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
       <?php } ?>
       <?php } ?>
-      <li></i><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+      <li></i><a href="<?php echo $contact; ?>"><?php echo $text_call_me; ?></a></li>
+      <li></i><a href="<?php echo $faq; ?>"><?php echo $text_faq; ?></a></li>
     </ul>
   </div><!--
   --><div class="column">
-    <div class="box-heading heading"><?php echo $text_extra; ?></div>
+    <div class="box-heading heading"><?php //echo $text_extra; ?><?php echo $text_policy; ?></div>
     <ul class="contrast_font">
+        <li><a href="<?php echo $paymant; ?>"><?php echo $text_payment; ?></a></li>
+        <li><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
+        <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
+        
+      <?php if (false) { ?>
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
       <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
       <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
       <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
       <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
+      <?php } ?>
     </ul>
   </div><!--
   --><div class="column">
-    <div class="box-heading heading"><?php echo $text_account; ?></div>
+    <div class="box-heading heading"><?php //echo $text_account; ?><?php echo $text_company; ?></div>
     <ul class="contrast_font">
+      <li></i><a href="<?php echo $all_news; ?>"><?php echo $text_news; ?></a></li>
+      <li></i><a href="<?php echo $our_production; ?>"><?php echo $text_production; ?></a></li>
+      <?php if($country_code == 'ua'){ ?>
+      <li></i><a href="<?php echo $works; ?>"><?php echo $text_works; ?></a></li>
+      <?php } ?>
+      <?php if (false) { ?>
       <li></i><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
       <li></i><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
       <li></i><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
       <li></i><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
       <li></i><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
+      <?php } ?>
     </ul>
   </div>
   <div class="column text-center">
@@ -45,8 +59,8 @@
         <a href="#"><i class="fa fa-vk"></i></a>
       </div>
       <div class="footer__phone">
-        <span>Украина (бесплатно)</span>
-        <a href="tel:0 800 210 385">0 800 210 385</a>
+        <span><?php echo $text_phone; ?></span>
+        <a href="tel:<?php echo $text_numb; ?>"><?php echo $text_numb; ?></a>
       </div>
     <?php echo $cosyone_footer_custom_block; ?>
     </div>

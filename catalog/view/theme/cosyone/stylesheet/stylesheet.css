@@ -4398,3 +4398,11 @@ a.scroll_top {
 	-moz-backface-visibility:    hidden;
 	-ms-backface-visibility:     hidden;
 }
+
+.logged #payment-address{
+    display: none;
+}
+
+input#shipping{
+    display: none;
+}

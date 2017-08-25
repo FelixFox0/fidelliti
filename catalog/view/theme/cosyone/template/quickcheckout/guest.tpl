@@ -166,7 +166,7 @@
     <?php } else { ?>
     <input type="checkbox" name="shipping_address" value="1" id="shipping" />
     <?php } ?>
-    <label for="shipping"><?php echo $entry_shipping; ?></label>
+    <label for="shipping"><?php //echo $entry_shipping; ?></label>
   <?php } else { ?>
     <input type="checkbox" name="shipping_address" value="1" id="shipping" checked="checked" class="hide" />
   <?php } ?>
