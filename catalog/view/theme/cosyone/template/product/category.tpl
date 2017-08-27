@@ -12,10 +12,12 @@
       <a href="#" class="js-filter" data-target="sort"><?php echo $text_sort; ?> <span>+</span></a>
     </div>
     <div class="sort-comp__filter">
+    <a class="button remove js-filter-close"><i class="fa fa-times" aria-hidden="true"></i></a>
       <?php echo $content_top; ?>
       </div>
     </div>
     <div class="sort-comp__sort">
+    <a class="button remove js-filter-close"><i class="fa fa-times" aria-hidden="true"></i></a>
       <?php foreach ($sorts as $sorts) { ?>
         <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
           <a href="<?php echo $sorts['href']; ?>" class="_active"><?php echo $sorts['text']; ?></a>
@@ -93,7 +95,8 @@
   </div>
   <div id="main" class="product-<?php echo $cosyone_default_view; ?>">
   <div class="grid_holder">
-    <?php foreach ($products as $product) { ?><!--
+  <div class="product-layout"></div>
+    <?php if(false) { ?><!--
     --><div class="item contrast_font product-layout">
        <div class="image">
         <?php if ($product['special'] && $cosyone_percentage_sale_badge == 'enabled') { ?>

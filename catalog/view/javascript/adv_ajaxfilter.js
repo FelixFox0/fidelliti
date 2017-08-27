@@ -109,7 +109,7 @@ $(document).ready(function () {
             $("#attribute_value_"+id+"_max").val('');
     
         });
-        delayedFilter()
+        /*delayedFilter()*/
     });
 
     $(document).on('click', '.pagination a', (function () {
@@ -278,11 +278,13 @@ function filter(b, c, status) {
         $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json", async: true,
             beforeSend: function() {
                 var cont = getContainer();
+
+                $(cont).parent().append('<div id="loader"><img src="/image/cropped-fidelitti_icon.gif" alt="icon"></div>');
                 
             },
             success:function (g) {
                 console.log(g.result_html !== "");
-                $(".loadinn").remove();
+                $("#loader").remove();
                 adv_result(g, b, status);
                 cache[h] = g;
                 var cont = getContainer();
@@ -302,7 +304,7 @@ function adv_result(g, b, status) {
     var hash = window.location.hash.substr(1);
     if (typeof(g.result_html) != "undefined") {
         if(status) {
-            $(cont).parent().append(g.result_html);
+            $(cont).parent().append(g.result_html); 
         } else {
             $(cont).parent().html(g.result_html);
         }
