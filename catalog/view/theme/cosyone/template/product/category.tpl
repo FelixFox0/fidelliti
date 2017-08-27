@@ -95,7 +95,8 @@
   </div>
   <div id="main" class="product-<?php echo $cosyone_default_view; ?>">
   <div class="grid_holder">
-    <?php foreach ($products as $product) { ?><!--
+  <div class="product-layout"></div>
+    <?php if(false) { ?><!--
     --><div class="item contrast_font product-layout">
        <div class="image">
         <?php if ($product['special'] && $cosyone_percentage_sale_badge == 'enabled') { ?>

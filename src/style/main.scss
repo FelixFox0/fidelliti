@@ -2021,7 +2021,7 @@ a {
 #quickcheckoutconfirm {
 
 	.checkout-column {
-		width: 590px;
+		width: 1000px;
 		position: relative;
 
 		& > div {
@@ -2154,7 +2154,7 @@ a {
 		&__right {
 			flex-grow: 1;
 			position: relative;
-			width: calc(100% - 580px);
+			width: calc(100% - 1000px);
 		}
 	}
 	
