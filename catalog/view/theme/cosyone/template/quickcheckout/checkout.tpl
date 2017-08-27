@@ -1285,6 +1285,8 @@ $(document).on('click', '.counter button', function() {
 					<?php } ?>
 				<?php } ?>
 			}
+
+			loadCartInfo();
 		},
 		<?php if ($debug) { ?>
 		error: function(xhr, ajaxOptions, thrownError) {
