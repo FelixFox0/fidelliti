@@ -420,6 +420,15 @@
         }
     });
 
+    $(document).ready(function() {
+        $('.js-filter-close').click(function(event) {
+        event.preventDefault();
+        console.log("qweqw");
+        $('.sort-comp__sort').removeClass('active');
+        $('.sort-comp__filter').removeClass('active');  
+    });
+    });
+
     
 
     $('#filter_categories').perfectScrollbar({

@@ -41,22 +41,9 @@
 <?php echo $analytic; ?>
 <?php } ?>
 
-<script type="text/javascript">
-    $(window).on('load', function () {
-    var $preloader = $('#loader'),
-        $spinner   = $preloader.find('.spinner');
-    $spinner.fadeOut();
-    $preloader.delay(350).fadeOut('slow');
-});
-</script> 
+
 </head>
 <body class="<?php echo $class; ?>">
-
-
-
-<div id="loader">
-  <img src="/image/cropped-fidelitti_icon.gif" alt="icon">
-</div>
 
 <div class="outer_container <?php echo $cosyone_default_product_style; ?> <?php if($cosyone_use_custom){ echo $cosyone_container_layout; } ?> <?php echo $cosyone_use_breadcrumb; ?>">
 <div class="header_wrapper 
