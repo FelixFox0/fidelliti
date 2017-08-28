@@ -1,4 +1,5 @@
-<div class="clearfix footer_margin"></div>
+
+<!-- <div class="clearfix footer_margin"></div> -->
 <?php echo $footer_modules ?>
 <div id="footer" class="footer">
   <div class="container footer__container">
@@ -98,5 +99,5 @@ Please donate via PayPal to donate@opencart.com
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/main.js"></script>
 
-    
+    </section>
 </body></html>
