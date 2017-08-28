@@ -5,9 +5,11 @@
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
-  <div class="row">
+    
+    <?php if(false){ ?>
+ 
       
-      <?php echo $left_menu; ?>
+      
       
       
       <?php echo $column_left; ?>
@@ -18,10 +20,15 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?> margin-b"><?php echo $content_top; ?>
-    
+    <?php } ?>
+    <div class="static-pages">
+        <div class="static-pages__title">
     <h1><?php echo $heading_title; ?></h1>
-      
+      </div>
+        <div class="clearfix static-pages__container">
+    <?php echo $left_menu; ?>
+    <div class="col-md-9">
+      <div class="static-pages__content">
       <?php if ($cosyone_google_map) { ?>
   <div class="contact_map">
   <?php echo html_entity_decode($cosyone_google_map, ENT_QUOTES, 'UTF-8'); ?>
@@ -148,6 +155,8 @@
         </fieldset>
       </form>
       <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    <?php echo $column_right; ?>
 </div>
+    </div>
+        </div>
 <?php echo $footer; ?>
