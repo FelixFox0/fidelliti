@@ -327,13 +327,13 @@
                 <?php if ($informations) { ?>
                 <div class="menu_drop_down">
                 <div class="wrapper">
-                    <!-- тут пихани статикой картинку -->
+                    
                 
                 <ul>
-                <li class="column level2"><a href="<?php echo $my_company; ?>">О компании</a></li>
-                <li class="column level2"><a href="<?php echo $contact; ?>">Сотрудничество</a></li>
-                <li class="column level2"><a href="<?php echo $our_production; ?>">Наше производство</a></li>
-                <li class="column level2"><a href="<?php echo $contact; ?>">Контакты</a></li>
+                <li class="column level2"><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
+                <li class="column level2"><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
+                <li class="column level2"><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
+                <li class="column level2"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
                 
                 
                 </ul>

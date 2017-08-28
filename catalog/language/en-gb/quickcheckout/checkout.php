@@ -106,3 +106,4 @@ $_['error_maximum']      		     = 'Warning: The maximum number of points that ca
 $_['error_reward']        		     = 'Warning: Please enter the amount of reward points to use!';	
 $_['error_points']           		 = 'Warning: You don\'t have %s reward points!';
 $_['error_custom_field']             = '%s required!';
+$_['text_continue']             = 'Continue shopping';

@@ -86,6 +86,11 @@ class ControllerCommonHeader extends Controller {
                 $data['text_read_faq'] = $this->language->get('text_read_faq');
                 $data['text_read_faq_but'] = $this->language->get('text_read_faq_but');
                 
+                $data['text_about'] = $this->language->get('text_about');
+                $data['text_sotr'] = $this->language->get('text_sotr');
+                $data['text_our_prod'] = $this->language->get('text_our_prod');
+                $data['text_contact'] = $this->language->get('text_contact');
+                
                 $data['text_logo_top'] = $this->language->get('text_logo_top');
                 $data['shippig'] = $this->language->get('shippig');
                 $data['text_select_country'] = $this->language->get('text_select_country');

@@ -23,7 +23,7 @@
               <?php echo $text_recurring ?>: <?php echo $product['recurring']; ?><br />
               <?php } ?>
 
-              <a title="<?php echo $button_remove; ?>" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><span class="remove">удалить</span></a>
+              <a title="<?php echo $button_remove; ?>" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><span class="remove"><?php echo $button_remove; ?></span></a>
             </div></td>
         </tr>
         <?php } ?>

@@ -53,7 +53,7 @@
           
       </select>
       <?php } ?>
-      <button class="button setCountryAndLang">Продолжить</button> 
+      <button class="button setCountryAndLang">GO</button> 
       
     </div>
       

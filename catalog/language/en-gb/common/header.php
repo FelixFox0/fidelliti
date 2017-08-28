@@ -29,3 +29,7 @@ $_['text_our_managers'] = 'Our operators<br>are currently available.';
 $_['text_asc_question'] = 'Ask a question';
 $_['text_read_faq'] = 'Read frequently <br>asked questions <br>for more information';
 $_['text_read_faq_but'] = 'Read the FAQ';
+$_['text_about'] = 'About the company';
+$_['text_sotr'] = 'Cooperation';
+$_['text_our_prod'] = 'Our production';
+$_['text_contact'] = 'Contacts';

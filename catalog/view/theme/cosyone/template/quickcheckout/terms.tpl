@@ -7,7 +7,7 @@
   <?php } ?>
 <?php } ?></label>
 <div class="confirm">
-<a href="javascript:history.back(-1); return false;"><i class="fa fa-chevron-left"></i>Продолжить шопинг</a>
+<a href="#"><i class="fa fa-chevron-left"></i><?php echo $text_continue; ?></a>
 <a id="button-payment-method" class="button"><?php echo $button_continue; ?></a>
 
 </div>

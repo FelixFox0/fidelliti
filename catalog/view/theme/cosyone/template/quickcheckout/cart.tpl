@@ -55,8 +55,8 @@
         </tr>
         <tr class='btns'>
           <td colspan="4">
-            <a href="" class="sq_icon" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="Список желаний"><i class="fa fa-heart-o"  ></i> Список желаний</a>
-            <a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa fa-times"></i>Удалить</a>
+            <a href="" class="sq_icon" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="<?php echo $text_wishlist; ?>"><i class="fa fa-heart-o"  ></i> <?php echo $text_wishlist; ?></a>
+            <a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa fa-times"></i><?php echo $text_remove_but; ?></a>
           </td>
         </tr>
         <?php } ?>
@@ -87,7 +87,7 @@
 
 <div class="cart-total-info">
   <div class="cart-total-info__title">
-    Итоговая информация о заказе
+    <?php echo $text_total_inf; ?>
   </div>
   <div class="cart-total-info__table">
     <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
@@ -102,11 +102,11 @@
     </table>
   </div>
   <div class="cart-total-info__button">
-    <button class='get-order button'>ЗАКАЗАТЬ</button>
+    <button class='get-order button'><?php echo $text_continue; ?></button>
   </div>
   <div class="cart-total-info__footer">
-    <p>Информация о доставке</p>
-    <a href="#">Нужна помощь? +</a>
+    <p><?php echo $text_text; ?> <a href="#"> <?php echo $text_policy; ?></a></p>
+    <a href="#"><?php echo $text_help; ?> +</a>
   </div>
 
 </div>
