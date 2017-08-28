@@ -21,7 +21,7 @@ gulp.task('style:build', function () {
             sourceMap: true,
             errLogToConsole: true
         }))
-       /* .pipe(prefixer({ browsers: ['last 6 versions'] }))*/
+        .pipe(prefixer({ browsers: ['last 6 versions'] }))
         .pipe(cssmin({keepSpecialComments : 0}))
         .pipe(gulp.dest("catalog/view/theme/default/css/"))
         .pipe(reload({stream: true}));

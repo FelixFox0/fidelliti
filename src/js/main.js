@@ -1,8 +1,18 @@
 //= partials/jquery.magnific-popup.min.js
+//= partials/jquery.mmenu.all.js
 
 
-
+ 
 $(document).ready(function($) {
+
+	$("#my-menu").mmenu();
+
+	var API = $("#my-menu").data( "mmenu" );
+      
+      $(".trigger-menu").click(function(e) {
+      	e.preventDefault();
+         API.open();
+      });
 	
 
 	$('.js-search').click(function(e) {

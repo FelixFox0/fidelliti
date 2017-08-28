@@ -12,6 +12,7 @@
 @import "partials/fonts";
 @import "partials/owl.carousel.scss";
 @import "partials/sv_icons.scss";
+@import "partials/menu.scss";
 @import "partials/magnific-popup.scss";
 @import "partials/sprite.scss";
 
@@ -480,7 +481,11 @@ a {
 
 	&__item {
 		background-color: #f4f4f4;
-		margin-bottom: 40px;
+
+		& + .banners__item {
+			margin-top: 40px;
+		}
+		
 
 		&-img {
 			a {
@@ -2218,6 +2223,18 @@ a {
 			font-size: 	14px;
 		}
 	}
+}
+
+
+
+//menu
+
+.mm-listview>li, .mm-listview>li .mm-next, .mm-listview>li .mm-next:before, .mm-listview>li:after {
+	border-color: rgba(3,2,1,0);
+}
+
+.mm-menu.mm-offcanvas.mm-opened {
+	z-index: 999;
 }
 
 
