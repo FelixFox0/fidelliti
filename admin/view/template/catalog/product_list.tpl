@@ -78,6 +78,7 @@
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
+                    <td></td>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                   <td class="text-center"><?php echo $column_image; ?></td>
                   <td class="text-left"><?php if ($sort == 'pd.name') { ?>
@@ -108,10 +109,13 @@
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="dd_sortable_list">
                 <?php if ($products) { ?>
                 <?php foreach ($products as $product) { ?>
                 <tr>
+                    <td style="width: 2%; text-align: center;">
+                        <img src="view/javascript/DragNDropPosition/image/ddp_drag_on.png" alt="Drag" title="Drag" class="ddp_drag ui-sortable-handle">
+                    </td>
                   <td class="text-center"><?php if (in_array($product['product_id'], $selected)) { ?>
                     <input type="checkbox" name="selected[]" value="<?php echo $product['product_id']; ?>" checked="checked" />
                     <?php } else { ?>
@@ -235,4 +239,7 @@ $('input[name=\'filter_model\']').autocomplete({
 	}
 });
 //--></script></div>
+<script type="text/javascript"><!--
+				$('.dd_sortable_list').dragNdrop_position({php_token: 'slyD3FqiMqpsdVrg3GjSuzUUqklYA4Fx', page: '3', limit: '20'});
+				//--></script>
 <?php echo $footer; ?>

@@ -31,6 +31,36 @@
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
+<link rel="stylesheet" href="view/javascript/DragNDropPosition/ui/jquery-ui.css">
+<script src="view/javascript/DragNDropPosition/ui/jquery-ui.js"></script>
+<script type="text/javascript" src="view/javascript/DragNDropPosition/dragNdrop_position.js"></script>
+<style type="text/css">
+    img.ddp_drag {
+        cursor: move;
+    }
+    .ui-sortable-placeholder td {
+        border: 1px dashed #aaa !important;
+        height: 45px;
+        width: 344px;
+        background: #999 !important;
+    }
+    .ui-sortable-helper {
+        border: 1px dashed #aaa !important;
+    }
+    tbody.ui-sortable-placeholder {
+        height: 130px;
+        display: table-row;
+    }
+    #tab-attribute tbody.ui-sortable-placeholder {
+        height: 120px;
+    }
+    #tab-option tbody.ui-sortable-placeholder {
+        height: 60px
+    }
+    #tab-image tbody.ui-sortable-placeholder {
+        height: 130px;
+    }
+</style>
 </head>
 <body>
 <div id="container">
