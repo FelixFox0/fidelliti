@@ -68,7 +68,7 @@ class ControllerCommonFileManager extends Controller {
 					'name'  => implode(' ', $name),
 					'type'  => 'directory',
 					'path'  => utf8_substr($image, utf8_strlen(DIR_IMAGE)),
-					'href'  => $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . '&directory=' . urlencode(utf8_substr($image, utf8_strlen(DIR_IMAGE . 'catalog/'))) . $url, 'SSL')
+					'href'  => $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . '&directory=' . urlencode(utf8_substr($image, utf8_strlen(DIR_IMAGE . 'catalog/'))) . $url, true)
 				);
 			} elseif (is_file($image)) {
 				// Find which protocol to use to pass the full image link back
@@ -150,7 +150,7 @@ class ControllerCommonFileManager extends Controller {
 			$url .= '&thumb=' . $this->request->get['thumb'];
 		}
 
-		$data['parent'] = $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['parent'] = $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . $url, true);
 
 		// Refresh
 		$url = '';
@@ -167,7 +167,7 @@ class ControllerCommonFileManager extends Controller {
 			$url .= '&thumb=' . $this->request->get['thumb'];
 		}
 
-		$data['refresh'] = $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['refresh'] = $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . $url, true);
 
 		$url = '';
 
@@ -191,11 +191,11 @@ class ControllerCommonFileManager extends Controller {
 		$pagination->total = $image_total;
 		$pagination->page = $page;
 		$pagination->limit = 16;
-		$pagination->url = $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+		$pagination->url = $this->url->link('common/filemanager', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
 
 		$data['pagination'] = $pagination->render();
 
-		$this->response->setOutput($this->load->view('common/filemanager.tpl', $data));
+		$this->response->setOutput($this->load->view('common/filemanager', $data));
 	}
 
 	public function upload() {
@@ -221,65 +221,51 @@ class ControllerCommonFileManager extends Controller {
 		}
 
 		if (!$json) {
-			if (!empty($this->request->files['file']['name'])) {// && is_file($this->request->files['file']['tmp_name'])) {
-                $fileNames = array();
-                foreach ($this->request->files['file']['name'] as $key => $value) {
-                    // Sanitize the filename
-                    $filename = basename(html_entity_decode($value, ENT_QUOTES, 'UTF-8'));
+			if (!empty($this->request->files['file']['name']) && is_file($this->request->files['file']['tmp_name'])) {
+				// Sanitize the filename
+				$filename = basename(html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8'));
 
-                    // Validate the filename length
-                    if ((utf8_strlen($filename) < 3) || (utf8_strlen($filename) > 255)) {
-                        $json['error'] = $this->language->get('error_filename');
-                    }
+				// Validate the filename length
+				if ((utf8_strlen($filename) < 3) || (utf8_strlen($filename) > 255)) {
+					$json['error'] = $this->language->get('error_filename');
+				}
 
-                    // Allowed file extension types
-                    $allowed = array(
-                        'jpg',
-                        'jpeg',
-                        'gif',
-                        'png'
-                    );
+				// Allowed file extension types
+				$allowed = array(
+					'jpg',
+					'jpeg',
+					'gif',
+					'png'
+				);
 
-                    if (!in_array(utf8_strtolower(utf8_substr(strrchr($filename, '.'), 1)), $allowed)) {
-                        $json['error'] = $this->language->get('error_filetype');
-                    }
+				if (!in_array(utf8_strtolower(utf8_substr(strrchr($filename, '.'), 1)), $allowed)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
 
-                    // Allowed file mime types
-                    $allowed = array(
-                        'image/jpeg',
-                        'image/pjpeg',
-                        'image/png',
-                        'image/x-png',
-                        'image/gif'
-                    );
+				// Allowed file mime types
+				$allowed = array(
+					'image/jpeg',
+					'image/pjpeg',
+					'image/png',
+					'image/x-png',
+					'image/gif'
+				);
 
-                    if (!in_array($this->request->files['file']['type'][$key], $allowed)) {
-                        $json['error'] = $this->language->get('error_filetype');
-                    }
+				if (!in_array($this->request->files['file']['type'], $allowed)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
 
-                    // Check to see if any PHP files are trying to be uploaded
-                    $content = file_get_contents($this->request->files['file']['tmp_name'][$key]);
-
-                    if (preg_match('/\<\?php/i', $content)) {
-                        $json['error'] = $this->language->get('error_filetype');
-                    }
-
-                    // Return any upload error
-                    if ($this->request->files['file']['error'][$key] != UPLOAD_ERR_OK) {
-                        $json['error'] = $this->language->get('error_upload_' . $this->request->files['file']['error'][$key]);
-                    }
-
-                    array_push($fileNames, $filename);
-                }
+				// Return any upload error
+				if ($this->request->files['file']['error'] != UPLOAD_ERR_OK) {
+					$json['error'] = $this->language->get('error_upload_' . $this->request->files['file']['error']);
+				}
 			} else {
 				$json['error'] = $this->language->get('error_upload');
 			}
 		}
 
 		if (!$json) {
-            foreach ($this->request->files['file']['name'] as $key => $value) {
-                move_uploaded_file($this->request->files['file']['tmp_name'][$key], $directory . '/' . $fileNames[$key]);
-            }
+			move_uploaded_file($this->request->files['file']['tmp_name'], $directory . '/' . $filename);
 
 			$json['success'] = $this->language->get('text_uploaded');
 		}
@@ -327,6 +313,7 @@ class ControllerCommonFileManager extends Controller {
 
 		if (!$json) {
 			mkdir($directory . '/' . $folder, 0777);
+			chmod($directory . '/' . $folder, 0777);
 
 			$json['success'] = $this->language->get('text_directory');
 		}
