@@ -1,6 +1,8 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+//            var_dump($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+//            die();
 //            var_dump($this->session->data['language_name']);
 //            var_dump($this->url->link('product/category', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 		// Analytics

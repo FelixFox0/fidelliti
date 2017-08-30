@@ -258,9 +258,12 @@ class ControllerCatalogProduct extends Controller {
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
-			$sort = 'pd.name';
+//			$sort = 'pd.name';
+                        $sort = 'p.sort_order';
 		}
 
+                
+                
 		if (isset($this->request->get['order'])) {
 			$order = $this->request->get['order'];
 		} else {
@@ -272,7 +275,7 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$page = 1;
 		}
-
+                $data['page'] = $page;
 		$url = '';
 
 		if (isset($this->request->get['filter_name'])) {
@@ -502,6 +505,7 @@ class ControllerCatalogProduct extends Controller {
 		$pagination->limit = $this->config->get('config_limit_admin');
 		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
 
+                $data['limit'] = $this->config->get('config_limit_admin');
 		$data['pagination'] = $pagination->render();
 
 		$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($product_total - $this->config->get('config_limit_admin'))) ? $product_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $product_total, ceil($product_total / $this->config->get('config_limit_admin')));

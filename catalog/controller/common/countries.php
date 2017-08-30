@@ -2,6 +2,9 @@
 class ControllerCommonCountries extends Controller {
 	public function index() {
             //$this->load->language('common/countries');
+            $data['geo_country'] = json_decode(file_get_contents('http://freegeoip.net/json/'.$this->request->server['REMOTE_ADDR']))->country_code;
+//            var_dump($data['geo_country']);
+//            die();
             $this->load->model('common/countries');
             $data['countries'] = $this->model_common_countries->getCountries();
             $data['country_s'] = $this->session->data['country_code'];
@@ -21,11 +24,13 @@ class ControllerCommonCountries extends Controller {
             }
 //            var_dump($data['countries']);
 //            die();
-            
+            $data['browser_lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+//            var_dump($data['browser_lang']);
+//            die();
             $this->load->model('localisation/language');
 
 		$data['languages'] = array();
-
+                
 		$results = $this->model_localisation_language->getLanguages();
 
 		foreach ($results as $result) {

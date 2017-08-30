@@ -42,15 +42,22 @@
     <div class="first-frame__list">
       <select name="" id="country" class="form-control">
       <?php foreach ($countries as $country) { ?>
-      <option value="/<?php echo strtolower($country['iso_code_2']) . $href; ?>"><?php echo $country['name']; ?></option>
+      <?php if($country['iso_code_2']==$geo_country){ ?>
+      <option value="/<?php echo strtolower($country['iso_code_2']) . $href; ?>" selected="selected"><?php echo $country['name']; ?></option>
+      <?php }else{ ?>
+        <option value="/<?php echo strtolower($country['iso_code_2']) . $href; ?>"><?php echo $country['name']; ?></option>
+      <?php } ?>
       <?php } ?>
       </select>
       <?php if (count($languages) > 1) { ?>
       <select id="lang" name="languages" class="form-control">
           <?php foreach ($languages as $language) { ?>
-          <option value="<?php echo $language['name']; ?>"><?php echo $language['name']; ?></option>
+          <?php if(strripos($language['code'],$browser_lang)===false){ ?>
+            <option value="<?php echo $language['name']; ?>"><?php echo $language['name']; ?></option>
+          <?php }else{ ?>
+            <option value="<?php echo $language['name']; ?>" selected="selected"><?php echo $language['name']; ?></option>
           <?php } ?>
-          
+          <?php } ?>
       </select>
       <?php } ?>
       <button class="button setCountryAndLang">GO</button> 

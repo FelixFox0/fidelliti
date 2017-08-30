@@ -240,6 +240,6 @@ $('input[name=\'filter_model\']').autocomplete({
 });
 //--></script></div>
 <script type="text/javascript"><!--
-				$('.dd_sortable_list').dragNdrop_position({php_token: 'slyD3FqiMqpsdVrg3GjSuzUUqklYA4Fx', page: '3', limit: '20'});
+				$('.dd_sortable_list').dragNdrop_position({php_token: "<?php echo $token; ?>", page: '<?php echo $page; ?>', limit: '<?php echo $limit; ?>'});
 				//--></script>
 <?php echo $footer; ?>
