@@ -17,7 +17,6 @@ $(document).ready(function($) {
 
 	$('.js-search').click(function(e) {
 		e.preventDefault()
-		console.log("asdasdas");
 		$(".search-block").show()
 	});
 

@@ -3640,7 +3640,6 @@ h3.faq_section {
 	min-height: 100px;
 	padding:35px 0 10px;
 	font-size:0;
-	margin-left:-25px;
 }
 #footer .column {
 	display:inline-block;
@@ -3785,65 +3784,8 @@ a.scroll_top {
 .header_wrapper {
 	position: relative;
 }
-.header_wrapper.sticky_menu.header_border.sticky.header1 .menu_holder, .header_wrapper.sticky_menu.header_border.sticky.header2 .menu_holder {
-	padding-bottom:2px;
-	background:#ffffff;
-}
-.header_wrapper.sticky_menu.sticky.header1 .menu_wrapper, .header_wrapper.sticky_menu.sticky.header2 .menu_wrapper {
-	position:fixed;
-	top:0;
-	left:0;
-	width:100%;
-	animation-duration:.7s;
-	-webkit-animation-duration:.7s;
-    animation-name:float-down;
-    -webkit-animation-name:float-down;
-    animation-timing-function:ease-out;
-    -webkit-animation-timing-function:ease-out;
-	background:#ffffff;
-}
-.outer_container.boxed .header_wrapper.sticky_menu.sticky.header1 .menu_wrapper, 
-.outer_container.boxed .header_wrapper.sticky_menu.sticky.header2 .menu_wrapper {
-	background:none;
-}
-.header_wrapper.sticky_menu.sticky .menu_border {
-	display:none;
-}
-.header_wrapper.header_border.sticky_menu.sticky .menu_border {
-	display:block;
-}
-/* Header 3 */
-.header_wrapper.sticky_menu.sticky.header3 .container.header {
-	height:105px;
-}
-.header_wrapper.sticky_menu.sticky.header3 .header_main {
-	position:fixed;
-	top:0;
-	left:0;
-	right:0;
-	width:100%;
-	animation-duration:.7s;
-	 -webkit-animation-duration:.7s;
-    animation-name:float-down;
-    -webkit-animation-name:float-down;
-    animation-timing-function:ease-out;
-    -webkit-animation-timing-function:ease-out;
-	background:#ffffff;
-}
-.outer_container.boxed .header_wrapper.sticky_menu.sticky.header3 .header_main {
-	background:none;
-}
-.header_wrapper.sticky_menu.sticky.header3 .header_main .logo img {
-	max-height:50px;
-}
-.header_wrapper.sticky_menu.sticky.header3 .header_right {
-	display:block;
-	margin:0 auto;
-	line-height:60px;
-	background:#ffffff;
-	min-height:60px;
-}
-}
+
+
 .tweetfeed-list-container-wrapper .tweetfeed-list-container {
   padding: 0px;
 }

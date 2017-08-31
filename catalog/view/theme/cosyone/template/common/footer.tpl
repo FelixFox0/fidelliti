@@ -4,7 +4,69 @@
 <div id="footer" class="footer">
   <div class="container footer__container">
     <!--
-  --><div class="column">
+  -->
+
+  <div class="panel-group footer-mobile visible-xs" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          <?php echo $text_customers; ?></a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <ul class="contrast_font">
+            <?php if (/*$informations*/false) { ?>
+              <?php foreach ($informations as $information) { ?>
+              <li></i><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
+              <?php } ?>
+              <?php } ?>
+              <li></i><a href="<?php echo $contact; ?>"><?php echo $text_call_me; ?></a></li>
+              <li></i><a href="<?php echo $faq; ?>"><?php echo $text_faq; ?></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          <?php echo $text_policy; ?></a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul class="contrast_font">
+              <li><a href="<?php echo $paymant; ?>"><?php echo $text_payment; ?></a></li>
+              <li><a href="<?php echo $delivery; ?>"><?php echo $text_delivery; ?></a></li>
+              <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          <?php echo $text_company; ?></a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul class="contrast_font">
+            <li></i><a href="<?php echo $all_news; ?>"><?php echo $text_news; ?></a></li>
+            <li></i><a href="<?php echo $our_production; ?>"><?php echo $text_production; ?></a></li>
+            <?php if($country_code == 'ua'){ ?>
+            <li></i><a href="<?php echo $works; ?>"><?php echo $text_works; ?></a></li>
+            <?php } ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
     <div class="box-heading heading"><?php //echo $text_information; ?><?php echo $text_customers; ?></div>
     <ul class="contrast_font">
     <?php if (/*$informations*/false) { ?>
@@ -98,8 +160,8 @@ Please donate via PayPal to donate@opencart.com
 <?php echo $cosyone_cookie; ?>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/main.js"></script>
-
-    </section>
+</section>
+    </div>
     <!-- BEGIN JIVOSITE CODE {literal} -->
 <script type='text/javascript'>
 (function(){ var widget_id = 'xUu2QBQm1M';var d=document;var w=window;function l(){

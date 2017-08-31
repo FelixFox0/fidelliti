@@ -44,7 +44,7 @@
         event.preventDefault();
 
         $("html, #cart .content").toggleClass('active');
-        $(".total-wrap").toggleClass('colapsed-reverse');
+        $(".mm-page").toggleClass('colapsed-reverse');
 
       });
 
@@ -63,14 +63,18 @@
 
 </head>
 <body class="<?php echo $class; ?>">
-<div class="mobile_menu_wrapper">
+
+
+
 
 <nav id="my-menu">
 
   <ul>
     <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
+
          <li><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?></a>
+          <div><img src="<?php echo $category_1['thumb']; ?>" alt=""></div>
           <?php if ($category_1['children']) { ?>
           <ul>
             <?php foreach ($category_1['children'] as $category_2) { ?>
@@ -112,9 +116,8 @@
 
 </nav>
 
-</div>
-
-<section class="clearfix total-wrap">
+<div class="clearfix total-wrap">
+<section>
 
 
 <div class="outer_container <?php echo $cosyone_default_product_style; ?> <?php if($cosyone_use_custom){ echo $cosyone_container_layout; } ?> <?php echo $cosyone_use_breadcrumb; ?>">
