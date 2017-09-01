@@ -60,6 +60,40 @@
     </div>
   </div>
 </div>
+
+<div class="clearfix">
+  <pre>
+  ***********************************************
+      ТУТ НАЧИНАЕТСЯ ВТОРАЯ СТРАНИЦА
+  ***********************************************
+</pre>
+</div>
+
+<div class="about-company">
+  <div class="about-company__banner">
+    <h1 class="about-company__title">FIDELITTI — УНИКАЛЬНЫЙ МОДНЫЙ БРЕНД — ПРОИЗВОДИТЕЛЬ СУМОК И АКСЕССУАРОВ,<br> 
+СОЗДАННЫЙ В ОДЕССЕ В 2015-ОМ ГОДУ.</h1>
+    <div class="about-company__text"> 
+      О КОМПАНИИ
+    </div>
+  </div>
+  <div class="about-company__bot">
+    Всего за один год у нас получилось заявить о себе, как о производителе продукции наивысшего качества. А все благодаря тому, что с самого начала нашей целью было стать самым успешным проектом на рынке кожгалантереи.
+  </div>
+  <div class="about-company__images">
+    <div class="about-company__img">
+      <img src="/image/IMG_8947-708x700.jpg" alt="">
+    </div>
+    <div class="about-company__img">
+      <img src="/image//fashion_day_odessa_fidelitti-1-708x700.jpg" alt="">
+    </div>
+    <div class="about-company__img">
+      <img src="/image/gesheft_fidelitti-708x700.jpg" alt="">
+    </div>
+  </div>
+  
+</div>
+
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
