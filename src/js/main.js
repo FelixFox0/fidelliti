@@ -1,11 +1,15 @@
 //= partials/jquery.magnific-popup.min.js
 //= partials/jquery.mmenu.all.js
-
+ 
 
  
-$(document).ready(function($) {
+$(document).ready(function($) { 
 
-	$("#my-menu").mmenu();
+	$("#my-menu").mmenu({
+		onClick: {
+			preventDefault: true
+		}
+	});
 
 	var API = $("#my-menu").data( "mmenu" );
       
@@ -24,7 +28,6 @@ $(document).ready(function($) {
 	$('.open-popup').magnificPopup({
 	  	type:'inline'
 	  });
-
 
 	//countries 
 

@@ -69,7 +69,12 @@
 
 <nav id="my-menu">
 
+
+
   <ul>
+    <li>
+      <div>qweqweqweqweqwe</div>
+    </li>
     <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
 

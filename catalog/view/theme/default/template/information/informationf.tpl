@@ -1,10 +1,65 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
+<div class="our-prod">
+  <div class="our-prod__paralax parallax-window">
+    <h1><?php echo $heading_title; ?></h1>
+    <p>СВЕЖИЙ ВЗГЛЯД ВЗГЛЯД НА ПРОИЗВОДСТВО СУМОК</p>
+  </div>
+  <div class="our-prod__new-fabric">
+    <div class="our-prod__new-fabric-inner">
+      <img src="/image/6ae3a7b044.jpg" alt="">
+      <h3>СОВРЕМЕННАЯ ФАБРИКА</h3>
+      <img src="/image/e1b9856a9b.jpg" alt="">
+      <p>На каждой ступени изготовления, наши изделия проходят жесткий
+      контроль качества. Отлаженная модель производства.
+      Своевременный выпуск готовых изделий. Современное 
+      оборудование. Вот условия нужные для передового производства.</p>
+    </div>
+  </div>
+  <div class="our-prod__row">
+    <div class="our-prod__row-text">
+      <h3>РАСКРОЙНЫЙ</h3>
+      <p>ЦЕХ №1 <br>
+      Для производства используем только лучшую лицевую кожу.
+      Используем различные методики раскроя для достижения наилучшего 
+      результата.</p>
+    </div>
+    <div class="our-prod__row-img">
+      <img src="/image/1-proizvostvo.jpg" alt="">
+    </div>
+  </div>
+  <div class="our-prod__row">
+    <div class="our-prod__row-img">
+      <img src="/image/ceh_2.jpg" alt="">
+    </div>
+    <div class="our-prod__row-text">
+      <h3>ЗАГОТОИТЕЛЬНЫЙ</h3>
+      <p>ЦЕХ №2 <br>
+      Тщательно подготавливаем каждую деталь кроя. Точность и щепетильность — главное правило.</p>
+    </div>
+  </div>
+  <div class="our-prod__row">
+    <div class="our-prod__row-text">
+      <h3>ШВЕЙНЫЙ</h3>
+      <p>ЦЕХ №3 <br>
+      Контролируем каждый стежок строчки. Нитки и фурнитуру покупаем
+      исключительно в Италии.</p>
+    </div>
+    <div class="our-prod__row-img">
+      <img src="/image/4-1.jpg" alt="">
+    </div>
+  </div>
+  <div class="our-prod__row">
+    <div class="our-prod__row-img">
+      <img src="/image/4-proizvostvo.jpg" alt="">
+    </div>
+    <div class="our-prod__row-text">
+      <h3>ОТДЕЛОЧНЫЙ</h3>
+      <p>ЦЕХ №4 <br>
+      Цех, где происходят чудеса. Наши изделия обрабатываются
+      исключительно итальянскими красками.</p>
+    </div>
+  </div>
+</div>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -14,8 +69,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
+      <h1></h1>
       <?php echo $description; ?><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
-</div>
 <?php echo $footer; ?>
