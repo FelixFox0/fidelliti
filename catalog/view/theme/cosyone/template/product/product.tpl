@@ -136,7 +136,12 @@
             <div class="product-page__tabs">
               <ul class="nav nav-tabs product-page">
                 <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
-                <li class=""><a href="#tab-detail" data-toggle="tab"><?php echo $text_detali; ?></a></li>
+                
+                
+                <?php if ($attribute_groups) { ?>
+                    <!--<li class=""><a href="#tab-detail" data-toggle="tab"><?php echo $text_detali; ?></a></li>-->
+                    <li><a href="#tab-specification" data-toggle="tab"><?php echo $text_detali; ?></a></li>
+                <?php } ?>
                 <li class=""><a href="#tab-size" data-toggle="tab"><?php echo $text_size; ?></a></li>             
               </ul>
                   
@@ -156,6 +161,30 @@
                   </div>
                   <?php } ?>
                   </div>
+                      
+                      
+                        <?php if ($attribute_groups) { ?>
+                        <div class="tab-pane" id="tab-specification">
+                          <table class="attribute">
+                            <?php foreach ($attribute_groups as $attribute_group) { ?>
+                            <thead>
+                              <tr>
+                                <td colspan="2"><?php echo $attribute_group['name']; ?></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
+                              <tr>
+                                <td><?php echo $attribute['name']; ?></td>
+                                <td><?php echo $attribute['text']; ?></td>
+                              </tr>
+                              <?php } ?>
+                            </tbody>
+                            <?php } ?>
+                          </table>
+                        </div>
+                        <?php } ?>
+                      
 
                   <div class="tab-pane" id="tab-detail">
                       <?php echo $detali; ?>
