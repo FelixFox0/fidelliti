@@ -35,24 +35,6 @@
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
 
-<script>
-  if($(window).innerWidth() < 768) {
-
-    $(document).ready(function() {
-
-      $("a.shortcut_heading").click(function(event) {
-        event.preventDefault();
-
-        $("html, #cart .content").toggleClass('active');
-        $(".mm-page").toggleClass('colapsed-reverse');
-
-      });
-
-    });
-
-
-  }
-</script>
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/ie8.css" />
 <![endif]-->
@@ -64,34 +46,49 @@
 </head>
 <body class="<?php echo $class; ?>">
 
-
-
+<nav id="cart-panel"><
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae doloremque incidunt minima quasi suscipit delectus iure asperiores in mollitia ea atque consectetur, voluptas laudantium dignissimos sit aut quae eos dolores!
+</div>
+</nav>
 
 <nav id="my-menu">
-
-  <ul>
-    <?php if ($categories) { ?>
-        <li>поиск каталога по товару
-        <i class="fa fa-search"></i>
-        </li>
-        <li>
-          <a href="tel:0 800 210 385">0 800 210 385</a>
-        </li>
+<ul class="">
+  <li><a href="#" class="mmobile-search">Поиск товара по каталогу <i class="fa fa-search"></i></a></li>
+  <li><a href="tel:0 800 210 385" class="mmobile-phone"><i class="fa fa-phone-square"></i>0 800 210 385</a></li>
+  <li class=""><a href="<?php echo $home; ?>" class=""><?php echo $text_home; ?></a></li>
+       <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
-
-         <li>
-         <a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?></a>
+        <?php if ($category_1['category_1_id'] == $category_1_id) { ?>
+    <li class="col<?php echo $category_1['column']; ?>"><span href="<?php echo $category_1['href']; ?>" class="mm-fullsubopen"><?php echo $category_1['name']; ?></span>
+         <?php } else { ?>
+         <li class="col<?php echo $category_1['column']; ?>"><span href="<?php echo $category_1['href']; ?>" class="mm-fullsubopen"><?php echo $category_1['name']; ?></span>
+         <?php } ?>
           <?php if ($category_1['children']) { ?>
+
+                        
           <ul>
-            <li><img src="<?php echo $category_1['thumb']; ?>" alt=""></li>
-            <?php foreach ($category_1['children'] as $category_2) { ?>
-            <li>
+          <?php if ($category_1['thumb']) { ?>
+
+          <li class="mmobile-image"><p><?php echo $category_1['name']; ?></p><img src="<?php echo $category_1['thumb']; ?>" alt=""></li>
+          <?php } ?>
+
+          <li><a href="<?php echo $category_1['href']; ?>">Смотреть все</a></li>
+
+          <?php foreach ($category_1['children'] as $category_2) { ?>
+          <li class="column level2">
             <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></a>
+            <?php if($cosyone_menu_mega_second_thumb == 'enabled' && $category_2['thumb']) { ?>
+<!--           <a href="<?php echo $category_2['href']; ?>" class=""><img src="<?php echo $category_2['thumb']; ?>" alt="<?php echo $category_2['name']; ?>"/></a> -->
+          <?php } ?>
               <?php if ($category_2['children']) { ?>
               <ul>
-                <?php foreach ($category_2['children'] as $category_3) { ?>
-                <li><a href="<?php echo $category_3['href']; ?>"><?php echo $category_3['name']; ?></a></li>
+              <?php if ($category_2['thumb']) { ?>
+                <li class="mmobile-image"><p><?php echo $category_2['name']; ?></p><img src="<?php echo $category_2['thumb']; ?>" alt=""></li>
                 <?php } ?>
+               <?php foreach ($category_2['children'] as $category_3) { ?>
+               <li><a href="<?php echo $category_3['href']; ?>"><?php echo $category_3['name']; ?></a></li>
+               <?php } ?>
               </ul>
               <?php } ?>
             </li>
@@ -100,30 +97,52 @@
           <?php } ?>
         </li>
         <?php } ?>
-        <li><a href="#">Обслуживание клиентов</a></li>
-        <li><a href="#">Авторизация</a></li>
-
         <?php } ?>
+        <?php if($cosyone_custom_menu_block == 'enabled'){ ?>
+    <li class=""><span><?php echo $cosyone_custom_menu_block_title; ?></span>
+        <div class="">
+        <?php echo $cosyone_menu_custom_block_content; ?>
+        </div></li>
+    <?php } ?>
         <?php if($cosyone_custom_menu_title1){ ?>
-    <li><a href="<?php echo $cosyone_custom_menu_url1; ?>"><?php echo $cosyone_custom_menu_title1; ?></a></li>
+          <li class="">
+            <span href="<?php echo $cosyone_custom_menu_url1 ?>" class=""><?php echo $cosyone_custom_menu_title1; ?></span>
+                <ul>
+                  <li><a href="<?php echo $cosyone_custom_menu_url1 ?>">Смотреть все</a></li>
+                  <li class=""><a href="<?php echo $blog ?>"><?php echo $text_blog ?></a></li>
+                  <li class=""><a href="https://www.instagram.com/fidelitti/" target="_blank">#Fidelittigirls</a></li>
+                </ul>
+          </li>
+             
         <?php } ?>
-        <?php if($cosyone_custom_menu_title2){ ?>
-    <li><a href="<?php echo $cosyone_custom_menu_url2; ?>"><?php echo $cosyone_custom_menu_title2; ?></a></li>
+        <?php if($cosyone_custom_menu_title2){ ?>      
+                <li class="">
+                    <span href="<?php echo $cosyone_custom_menu_url2 ?>"  class=""><?php echo $cosyone_custom_menu_title2; ?></span>
+                    
+                
+                
+                <?php if ($informations) { ?>
+                    
+                
+                <ul>
+                <li><a href="<?php echo $cosyone_custom_menu_url2 ?>">Смотреть все</a></li>
+                  <li class=""><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
+                  <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
+                  <li class=""><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
+                  <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+                </ul>
+
+                 <?php } ?>
+                </li>
+                
         <?php } ?>
-        <?php if($cosyone_custom_menu_title3){ ?>
-    <li><a href="<?php echo $cosyone_custom_menu_url3; ?>"><?php echo $cosyone_custom_menu_title3; ?></a></li>
-        <?php } ?>
-        <?php if($cosyone_custom_menu_title4){ ?>
-    <li><a href="<?php echo $cosyone_custom_menu_url4; ?>"><?php echo $cosyone_custom_menu_title4; ?></a></li>
-        <?php } ?>
-        <?php if($cosyone_custom_menu_title5){ ?>
-    <li><a href="<?php echo $cosyone_custom_menu_url5; ?>"><?php echo $cosyone_custom_menu_title5; ?></a></li>
-        <?php } ?>
-        <?php if($cosyone_custom_menu_title6){ ?>
-    <li><a href="<?php echo $cosyone_custom_menu_url6; ?>"><?php echo $cosyone_custom_menu_title6; ?></a></li>
-        <?php } ?>
-      </ul>
-</nav>
+
+                <li><a class="mmobile-wicon" href="#">Обслуживание клиентов <i class="fa fa-phone"></i></a></li>
+                <li><a class="mmobile-wicon" href="#">Авторизация <i class="fa fa-user"></i></a></li>
+                <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true"></i> Русский</a></li>
+                
+                </ul>
+      </nav>
 
 <div class="clearfix total-wrap">
 <section>
@@ -180,9 +199,9 @@
   </div>
 </header>
 
-<div class="container header-wrap">
+<div class="container header-wrap fixed">
 <div class="header_main">
-  <div class="header_right"> 
+  <div class="header_right " id="my-header"> 
   <div class="service-block">
     <div class="service-block__item">
       <a href="#text-popup" class="open-popup"><i class="icon-phone"></i></a>
