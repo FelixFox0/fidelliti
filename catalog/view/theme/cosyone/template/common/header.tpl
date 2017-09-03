@@ -23,7 +23,7 @@
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/stylesheet.css" />
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.css">
-
+<link href="catalog/view/theme/default/css/account.css" rel="stylesheet">
 <link href="catalog/view/theme/default/css/main.css" rel="stylesheet">
 
 
