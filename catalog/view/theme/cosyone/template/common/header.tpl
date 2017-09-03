@@ -69,19 +69,21 @@
 
 <nav id="my-menu">
 
-
-
   <ul>
-    <li>
-      <div>qweqweqweqweqwe</div>
-    </li>
     <?php if ($categories) { ?>
+        <li>поиск каталога по товару
+        <i class="fa fa-search"></i>
+        </li>
+        <li>
+          <a href="tel:0 800 210 385">0 800 210 385</a>
+        </li>
        <?php foreach ($categories as $category_1) { ?>
 
-         <li><a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?></a>
-          <div><img src="<?php echo $category_1['thumb']; ?>" alt=""></div>
+         <li>
+         <a href="<?php echo $category_1['href']; ?>" ><?php echo $category_1['name']; ?></a>
           <?php if ($category_1['children']) { ?>
           <ul>
+            <li><img src="<?php echo $category_1['thumb']; ?>" alt=""></li>
             <?php foreach ($category_1['children'] as $category_2) { ?>
             <li>
             <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></a>
@@ -98,6 +100,9 @@
           <?php } ?>
         </li>
         <?php } ?>
+        <li><a href="#">Обслуживание клиентов</a></li>
+        <li><a href="#">Авторизация</a></li>
+
         <?php } ?>
         <?php if($cosyone_custom_menu_title1){ ?>
     <li><a href="<?php echo $cosyone_custom_menu_url1; ?>"><?php echo $cosyone_custom_menu_title1; ?></a></li>
@@ -118,7 +123,6 @@
     <li><a href="<?php echo $cosyone_custom_menu_url6; ?>"><?php echo $cosyone_custom_menu_title6; ?></a></li>
         <?php } ?>
       </ul>
-
 </nav>
 
 <div class="clearfix total-wrap">

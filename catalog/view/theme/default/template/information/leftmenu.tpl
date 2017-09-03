@@ -1,5 +1,5 @@
 
-    <div class="col-sm-3">
+    <div class="col-sm-3 hidden-xs hidden-sm">
       <ul class="static-pages__sidebar">
         <li>
           <a href="#"><?php echo $text_need_help; ?></a>

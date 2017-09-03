@@ -81,10 +81,12 @@ $(document).ready(function() {
     navigation:true,
     slideSpeed:500,
     autoHeight:true,
+    itemsDesktopSmall : [768, 2],
     navigationText: [
     "<div class='slide_arrow_prev'><i class='fa fa-angle-left'></i></div>",
     "<div class='slide_arrow_next'><i class='fa fa-angle-right'></i></div>"
-    ]
+    ],
+      
   }); 
 }); 
 </script>

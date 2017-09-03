@@ -5,11 +5,7 @@
  
 $(document).ready(function($) { 
 
-	$("#my-menu").mmenu({
-		onClick: {
-			preventDefault: true
-		}
-	});
+	$("#my-menu").mmenu();
 
 	var API = $("#my-menu").data( "mmenu" );
       

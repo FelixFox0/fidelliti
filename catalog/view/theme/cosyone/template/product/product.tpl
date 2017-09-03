@@ -1,6 +1,7 @@
 <?php echo $header; ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery-all.min.js"></script>
@@ -132,8 +133,79 @@
                     
                    </div> <!-- Cart ends -->
             </div>
+
+            <div class="panel-group footer-mobile second visible-xs" id="accordion2">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapse11">
+                    <?php echo $tab_description; ?></a>
+                  </h4>
+                </div>
+                <div id="collapse11" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <?php echo $description; ?>
+                     <?php echo $text_sku; ?><?php echo $sku; ?>
+                      <?php if ($tags) { ?>
+                      <div class="tags">
+                        <?php for ($i = 0; $i < count($tags); $i++) { ?>
+                        <?php if ($i < (count($tags) - 1)) { ?>
+                        <a href="<?php echo $tags[$i]['href']; ?>"><?php echo $tags[$i]['tag']; ?></a>,
+                        <?php } else { ?>
+                        <a href="<?php echo $tags[$i]['href']; ?>"><?php echo $tags[$i]['tag']; ?></a>
+                        <?php } ?>
+                        <?php } ?>
+                      </div>
+                      <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapse22">
+                    <?php echo $text_detali; ?></a>
+                  </h4>
+                </div>
+                <div id="collapse22" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <?php echo $detali; ?>
+                    <table class="attribute">
+                      <?php foreach ($attribute_groups as $attribute_group) { ?>
+                      <thead>
+                        <tr>
+                          <td colspan="2"><?php echo $attribute_group['name']; ?></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
+                        <tr>
+                          <td><?php echo $attribute['name']; ?></td>
+                          <td><?php echo $attribute['text']; ?></td>
+                        </tr>
+                        <?php } ?>
+                      </tbody>
+                      <?php } ?>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapse33">
+                    <?php echo $text_size; ?></a>
+                  </h4>
+                </div>
+                <div id="collapse33" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <?php echo $razmer; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            <div class="product-page__tabs">
+            <div class="product-page__tabs hidden-xs">
               <ul class="nav nav-tabs product-page">
                 <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
                 
@@ -1109,6 +1181,7 @@ $('#one_click').on('click', function(e) {
 });
 
 
+if($(window).innerWidth() >= 768) {
 
 $('.product-slider').lightSlider({
           gallery:true,
@@ -1127,8 +1200,39 @@ $('.product-slider').lightSlider({
               el.lightGallery({
                   selector: '.product-slider .lslide'
               });
-          } 
-        });   
+          },
+          responsive : [
+            {
+                breakpoint:800,
+                settings: {
+                    item:1,
+                    vertical: false,
+                    pager: false
+                  }
+            },
+            {
+                breakpoint:480,
+                settings: {
+                    item:1,
+                    vertical: false,
+                    pager: false
+                  }
+            }
+        ] 
+          });  
+
+
+} else {
+  $('.product-slider').owlCarousel({
+  items : 1,
+  mouseDrag: true,
+  responsive:false,
+  pagination: true,
+  navigation:false,
+});
+
+}
+ 
 </script> 
 
 

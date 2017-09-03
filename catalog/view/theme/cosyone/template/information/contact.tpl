@@ -21,6 +21,9 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <?php } ?>
+
+
+
     <div class="static-pages">
         <div class="static-pages__title">
     <h1><?php echo $heading_title; ?></h1>
@@ -34,41 +37,147 @@
   <?php echo html_entity_decode($cosyone_google_map, ENT_QUOTES, 'UTF-8'); ?>
    </div>
   <?php } ?>
-  
-      <div class="box-heading"><?php echo $text_location; ?></div>
-          <div class="row">
-            <?php if ($image) { ?>
-            <div class="col-sm-3 margin-b">
-            <img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" />
+
+
+<div class="contact-page">
+  <div class="contact-page__form-wrap">
+    <div class="contact-page__title">
+      <?php echo $text_location; ?>
+    </div>
+    <div class="contact-page__tabs">
+      <a href="#" class="button active">E-mail</a>
+      <a href="#" class="button contrast js-toggler">Order number</a>
+    </div>
+    <div class="contact-page__form">
+      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <div class="box-heading"><?php echo $text_contact; ?></div>
+          <div class="">
+          <div class="contact-page__cont clearfix">
+            <div class="form-group col-sm-6 required">
+              <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
+                <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
+                <?php if ($error_email) { ?>
+                <div class="text-danger"><?php echo $error_email; ?></div>
+                <?php } ?>
             </div>
-            <?php } ?>
-            <div class="col-sm-3 margin-b">
-            <span class="contrast_font"><?php echo $store; ?></span><br />
-			<p><?php echo $address; ?></p>
-            <?php if ($geocode) { ?>
-  			<a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
-  			<?php } ?>
+            <div class="form-group col-sm-6 required target-toggle">
+              <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
+                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
+                <?php if ($error_name) { ?>
+                <div class="text-danger"><?php echo $error_name; ?></div>
+                <?php } ?>
             </div>
-            <div class="col-sm-3 margin-b">
-            <span class="contrast_font"><?php echo $text_telephone; ?></span><br />
-			<?php echo $telephone; ?><br />
-            <?php if ($fax) { ?>
-  			<br /><span class="contrast_font"><?php echo $text_fax; ?></span><br />
-  			<?php echo $fax; ?>
-  			<?php } ?>
+            
+          </div>
+          <div class="row clearfix mb">
+            <div class="form-group col-sm-6 required">
+              <label class="control-label" for="input-name">Ваше ім`я</label>
+                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
+                <?php if ($error_name) { ?>
+                <div class="text-danger"><?php echo $error_name; ?></div>
+                <?php } ?>
             </div>
-            <div class="col-sm-3 margin-b">
-            <?php if ($open) { ?>
-            <span class="contrast_font"><?php echo $text_open; ?></span><br />
-			<?php echo $open; ?>
-            <br />
-            <?php } ?>
-            <?php if ($comment) { ?>
-            <br /><span class="contrast_font"><?php echo $text_comment; ?></span><br />
-            <?php echo $comment; ?>
-            <?php } ?>
+            <div class="form-group col-sm-6 required" >
+              <label class="control-label" for="input-name">Lastname</label>
+                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
+                <?php if ($error_name) { ?>
+                <div class="text-danger"><?php echo $error_name; ?></div>
+                <?php } ?>
             </div>
           </div>
+          <div class="row clearfix mb">
+            <div class="form-group col-sm-6 required">
+              <label class="control-label" for="input-name">Select category:</label>
+                <select name="" id="" class="form-control">
+                  <option value="qweqw">qweqweqwe</option>
+                </select>
+                <?php if ($error_name) { ?>
+                <div class="text-danger"><?php echo $error_name; ?></div>
+                <?php } ?>
+            </div>
+            <div class="form-group col-sm-6 required">
+              <label class="control-label" for="input-name">Наше розміщення</label>
+                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
+                <?php if ($error_name) { ?>
+                <div class="text-danger"><?php echo $error_name; ?></div>
+                <?php } ?>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-10 required">
+              <label class="control-label" for="input-enquiry"><?php echo $entry_enquiry; ?></label>
+                <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"><?php echo $enquiry; ?></textarea>
+                <?php if ($error_enquiry) { ?>
+                <div class="text-danger"><?php echo $error_enquiry; ?></div>
+                <?php } ?>
+            </div>
+          
+          <div class="vertical-captcha">
+          <?php echo $captcha; ?>
+          </div>
+          
+            <div class="col-sm-10 text-left">
+            <input class="button" type="submit" value="<?php echo $button_submit; ?>" />
+          </div>
+          </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="contact-page__info text-right">
+    <div class="box-heading"><?php echo $text_location; ?></div>
+        
+        <h3>FIDELITTI</h3>
+        <p>по телефону<br>
+        <p>+38 093 170 21 16</p>
+        <p>Для клиентов интернет-магазина служба доступна с понедельника по пятницу, с 9.30 до 18.30 часа, и с 10 до 18 часа по выходным UTC+02:00</p>
+
+        <h3>Телефон</h3>
+        <p>0 800 210 385</p>
+        <p>+38 093 170 21 16</p>
+        <p>Свяжитесь с офисами</p>
+
+
+        <div class="">
+          <?php if ($image) { ?>
+          <div class="col-md-12 margin-b">
+          <img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" />
+          </div>
+          <?php } ?>
+          <div class="col-md-12 margin-b">
+          <span class="contrast_font"><?php echo $store; ?></span><br />
+    <p><?php echo $address; ?></p>
+          <?php if ($geocode) { ?>
+      <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
+      <?php } ?>
+          </div>
+          <div class="col-md-12 margin-b">
+          <span class="contrast_font"><?php echo $text_telephone; ?></span><br />
+    <?php echo $telephone; ?><br />
+          <?php if ($fax) { ?>
+      <br /><span class="contrast_font"><?php echo $text_fax; ?></span><br />
+      <?php echo $fax; ?>
+      <?php } ?>
+          </div>
+          <div class="col-sm-3 margin-b">
+          <?php if ($open) { ?>
+          <span class="contrast_font"><?php echo $text_open; ?></span><br />
+    <?php echo $open; ?>
+          <br />
+          <?php } ?>
+          <?php if ($comment) { ?>
+          <br /><span class="contrast_font"><?php echo $text_comment; ?></span><br />
+          <?php echo $comment; ?>
+          <?php } ?>
+          </div>
+        </div>
+  </div>
+  
+</div>
+  
+      
       
       <?php if ($locations) { ?>
       <div class="box-heading"><?php echo $text_store; ?></div>
@@ -119,7 +228,7 @@
       </div>
       <?php } ?>
       
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+      <!-- <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <fieldset>
           <div class="box-heading"><?php echo $text_contact; ?></div>
           <div class="row">
@@ -153,10 +262,30 @@
           </div>
           </div>
         </fieldset>
-      </form>
+      </form> -->
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?>
 </div>
-    </div>
+    </div></div>
         </div>
+
+
+<script>
+  
+  $(document).ready(function() {
+    $(".contact-page__tabs .button").click(function(event) {
+      event.preventDefault();
+      $(".contact-page__tabs .button").removeClass('active');
+      if($(this).is(".js-toggler")) {
+        $(this).addClass("active");
+        $(".target-toggle").addClass('active');
+      } else {
+        $(this).removeClass("active");
+        $(".target-toggle").removeClass('active');
+      }
+      
+
+    });
+  });
+</script>
 <?php echo $footer; ?>

@@ -6,15 +6,15 @@
     <!--
   -->
 
-  <div class="panel-group footer-mobile visible-xs" id="accordion">
+  <div class="panel-group footer-mobile visible-xs" id="accordion-footer">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          <a data-toggle="collapse" data-parent="#accordion-footer" href="#coll1">
           <?php echo $text_customers; ?></a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="coll1" class="panel-collapse collapse in">
         <div class="panel-body">
           <ul class="contrast_font">
             <?php if (/*$informations*/false) { ?>
@@ -31,11 +31,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          <a data-toggle="collapse" data-parent="#accordion-footer" href="#coll2">
           <?php echo $text_policy; ?></a>
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
+      <div id="coll2" class="panel-collapse collapse">
         <div class="panel-body">
           <ul class="contrast_font">
               <li><a href="<?php echo $paymant; ?>"><?php echo $text_payment; ?></a></li>
@@ -48,11 +48,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          <a data-toggle="collapse" data-parent="#accordion-footer" href="#coll3">
           <?php echo $text_company; ?></a>
         </h4>
       </div>
-      <div id="collapse3" class="panel-collapse collapse">
+      <div id="coll3" class="panel-collapse collapse">
         <div class="panel-body">
           <ul class="contrast_font">
             <li></i><a href="<?php echo $all_news; ?>"><?php echo $text_news; ?></a></li>

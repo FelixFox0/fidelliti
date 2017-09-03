@@ -3221,6 +3221,7 @@ a.button.remove:hover, .button.remove:hover {
 /* Shopping cart & Wishist */
 .cart-info-wrapper {
 	padding-top:8px;
+	padding-bottom: 30px;
 }
 .cart-info small {
 	display:block;
