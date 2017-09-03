@@ -46,13 +46,7 @@
 </head>
 <body class="<?php echo $class; ?>">
 
-<nav id="cart-panel"><
-<div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae doloremque incidunt minima quasi suscipit delectus iure asperiores in mollitia ea atque consectetur, voluptas laudantium dignissimos sit aut quae eos dolores!
-</div>
-</nav>
-
-<nav id="my-menu">
+<nav id="my-menu" class="visible-xs">
 <ul class="">
   <li><a href="#" class="mmobile-search">Поиск товара по каталогу <i class="fa fa-search"></i></a></li>
   <li><a href="tel:0 800 210 385" class="mmobile-phone"><i class="fa fa-phone-square"></i>0 800 210 385</a></li>
@@ -77,7 +71,12 @@
 
           <?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
+          <?php if ($category_2['children']) { ?>
             <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></a>
+          <?php } else { ?>
+            <span href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></span>
+          <?php } ?>
+
             <?php if($cosyone_menu_mega_second_thumb == 'enabled' && $category_2['thumb']) { ?>
 <!--           <a href="<?php echo $category_2['href']; ?>" class=""><img src="<?php echo $category_2['thumb']; ?>" alt="<?php echo $category_2['name']; ?>"/></a> -->
           <?php } ?>
