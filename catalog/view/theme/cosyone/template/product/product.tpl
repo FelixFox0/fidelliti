@@ -1024,7 +1024,7 @@ $('#button-cart').on('click', function() {
 			if (json['success']) {
 
 				
-				$.colorbox({
+	/*			$.colorbox({
 html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button contrast" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
 className: "notification",
 initialHeight:50,
@@ -1033,11 +1033,15 @@ width:"90%",
 maxWidth:400,
 height:"90%",
 maxHeight:200
-});
-				
+});*/ 
+			   $(".shortcut #cart-total").html(json['total']);
 				$('#cart-total').html(json['total']);
 				
 				$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+        $("#cart-panel .mm-panels").load('index.php?route=common/cart/info #cart > *');
+
+        var API2 = $("#cart-panel").data( "mmenu" );
+        API2.open();
 			}
 		}
 	});

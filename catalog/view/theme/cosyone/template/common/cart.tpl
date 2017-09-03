@@ -3,6 +3,7 @@
 
 
  <a class="shortcut_heading" href="<?php echo $cart; ?>" id="cart-total"><?php echo $text_items; ?></a>
+ <nav id="cart-panel">
   <div class="content">
     <?php if ($products || $vouchers) { ?>
     <div class="mini-cart-info">
@@ -35,6 +36,7 @@
         <?php } ?>
       </table>
     </div>
+    <div class="box-cart">
     <div class="mini-go-cart">
       <a class="" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
     </div>
@@ -55,5 +57,7 @@
     <?php } else { ?>
     <div class="empty main_font"><?php echo $text_empty; ?></div>
     <?php } ?>
+    </div>
   </div>
+  </nav>
   </div>

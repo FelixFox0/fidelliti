@@ -106,9 +106,10 @@
 
 
  
-$(document).ready(function($) { 
+$(document).ready(function($) {
 
-	$("#my-menu").mmenu();
+	if($(window).innerWidth() < 991) {
+		$("#my-menu").mmenu();
 
 	var API = $("#my-menu").data( "mmenu" );
 
@@ -116,7 +117,12 @@ $(document).ready(function($) {
 	$("#cart-panel").mmenu({
 		offCanvas: {
 	        position: "right"
-	    }}, {
+	    },
+	    navbar: {
+	    	title: 'Cart'
+	    },
+
+		}, {
 			classNames: {
 				fixedElements: { 
 					fixed: "fixed",
@@ -143,6 +149,9 @@ $(document).ready(function($) {
       	e.preventDefault();
          API2.open();
       });
+	}
+
+	
 	
 
 	$('.js-search').click(function(e) {
