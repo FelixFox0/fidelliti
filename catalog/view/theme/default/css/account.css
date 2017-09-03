@@ -21,11 +21,57 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: top center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     -moz-background-size: cover;
     background-size: cover;
+    background-color: #f4e6e6;
 }
 .page-banner-asset-cell img {
     width: 100%;
     height: auto;
     min-height: 100%;
 }
+.login-form{
+	position: relative;
+    display: table-cell;
+    width: 50%;
+    padding: 44.5px 48px 48px;
+    background: #f7f7f7;
+    text-align: left;
+    vertical-align: top;
+}
+.login-form-header{
+	color: #171717;
+}
+.login-form-header:before, .login-form-header:after {
+    content: " ";
+    display: table;
+    border-collapse: collapse;
+}
+.login-form-header .login-form-name{
+	font-weight: 700;
+    font-family: "Proxima N W08", Arial, Helvetica, Sans-serif;
+}
+.login-form-description {
+    font: 14px/21px "Proxima N W08", Arial, Helvetica, Sans-serif;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+.my-container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+
+
+
+
+
+
+@media (min-width: 1500px){
+	.my-container {
+    padding-top: 84px;
+    padding-bottom: 84px;
+}}

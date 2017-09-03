@@ -20,7 +20,7 @@
   <?php echo $content_top; ?>
   <div class="page-banner-asset-cell" id="banner-asset">
      <div class="cell-placeholder-1-5 js-asset-item asset-loaded asset-visible">
-        <div class="cell-asset-bg js-asset-container" data-type="image" data-src="//assets.burberry.com/is/image/Burberryltd/MyAccount.jpg?$BBY_V2_BASIC$&amp;wid=__WID__&amp;hei=__HEI__" style="background-image: url('//assets.burberry.com/is/image/Burberryltd/MyAccount.jpg?$BBY_V2_BASIC$&amp;wid=1900');"><img class="" src="//assets.burberry.com/is/image/Burberryltd/MyAccount.jpg?$BBY_V2_BASIC$&amp;wid=1500&amp;hei=300">
+        <div class="cell-asset-bg js-asset-container" data-type="image">
           <h1 class="page-banner-asset-title h1">Вход/Регистрация</h1>
         </div>
     </div>
@@ -28,36 +28,42 @@
 
 
 
-      <div class="row">
-        <div class="col-sm-6 margin-b">
-        <h1><?php echo $heading_title; ?></h1>
-            <div class="box-heading"><?php echo $text_returning_customer; ?></div>
-            <p><?php echo $text_i_am_returning_customer; ?></p>
-            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
-                <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password"><?php echo $entry_password; ?></label>
-                <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
-                <a href="<?php echo $forgotten; ?>" class="pull-right login-forgotten"><?php echo $text_forgotten; ?></a></div>
-              <input type="submit" value="<?php echo $button_login; ?>" class="button" />
-              <?php if ($redirect) { ?>
-              <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
-              <?php } ?>
-            </form>
-
+      <div class="row my-container">
+        <div class="col-md-6 col-lg-5 col-lg-offset-1 margin-b">
+          <div class="login-form">
+          <div class="login-form-header">
+            <h5 class="login-form-name"><?php echo $heading_title; ?></h5>
+            <div class="login-form-description"><?php echo $text_returning_customer; ?></div>
+          </div>
+          <div class="login-form-container">
+              <p><?php echo $text_i_am_returning_customer; ?></p>
+              <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
+                  <a href="<?php echo $forgotten; ?>" class="pull-right login-forgotten"><?php echo $text_forgotten; ?></a></div>
+                <input type="submit" value="<?php echo $button_login; ?>" class="button" />
+                <?php if ($redirect) { ?>
+                <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+                <?php } ?>
+              </form>
+            </div>
+          </div>
         </div>
         
-        <div class="col-sm-6">
-      <h1><?php echo $heading_title; ?></h1>
-      <p><?php echo $text_account_already; ?></p>
-      <div class="box-heading"><?php echo $text_your_details; ?></div>
+        <div class="col-md-6 col-lg-5">
+        <div class="login-form">
+        <div class="login-form-header">
+            <h5 class="login-form-name"><?php echo $heading_title; ?></h5>
+            <div class="login-form-description"><?php echo $text_account_already; ?></div>
+            <div class="login-form-description"><?php echo $text_your_details; ?></div>
+        </div>
+        <div class="login-form-container">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
             <div class="col-sm-10">
               <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />
               <?php if ($error_lastname) { ?>
@@ -66,7 +72,6 @@
             </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
             <div class="col-sm-10">
               <input type="text" name="firstname" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" />
               <?php if ($error_firstname) { ?>
@@ -75,7 +80,6 @@
             </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
             <div class="col-sm-10">
               <input type="email" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
               <?php if ($error_email) { ?>
@@ -84,7 +88,6 @@
             </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
             <div class="col-sm-10">
               <input type="tel" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
               <?php if ($error_telephone) { ?>
@@ -95,7 +98,6 @@
         </fieldset>
         <fieldset id="address">
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
             <div class="col-sm-10">
               <select name="country_id" id="input-country" class="form-control">
                 <option value=""><?php echo $text_select; ?></option>
@@ -124,9 +126,7 @@
           </div>   -->                
         </fieldset>
         <fieldset>
-          <div class="box-heading"><?php echo $text_your_password; ?></div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-password"><?php echo $entry_password; ?></label>
             <div class="col-sm-10">
               <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
               <?php if ($error_password) { ?>
@@ -135,7 +135,6 @@
             </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-confirm"><?php echo $entry_confirm; ?></label>
             <div class="col-sm-10">
               <input type="password" name="confirm" value="<?php echo $confirm; ?>" placeholder="<?php echo $entry_confirm; ?>" id="input-confirm" class="form-control" />
               <?php if ($error_confirm) { ?>
@@ -188,6 +187,8 @@
         </div>
         <?php } ?>
       </form>
+      </div>
+        </div>
         </div>
       </div>
       <?php echo $content_bottom; ?></div>
