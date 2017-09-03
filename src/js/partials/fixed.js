@@ -1,6 +1,4 @@
-//= partials/jquery.magnific-popup.min.js
-//= partials/jquery.mmenu.all.js
- 
+
 (function( $ ) {
 
 	const _PLUGIN_ = 'mmenu';
@@ -102,79 +100,3 @@
 	var _c, _d, _e, glbl;
 
 })( jQuery );
-
-
-
- 
-$(document).ready(function($) { 
-
-	$("#my-menu").mmenu();
-
-	var API = $("#my-menu").data( "mmenu" );
-
-
-	$("#cart-panel").mmenu({
-		offCanvas: {
-	        position: "right"
-	    }}, {
-			classNames: {
-				fixedElements: { 
-					fixed: "fixed",
-				}
-			}
-     	}); 
-
-
-    var API2 = $("#cart-panel").data( "mmenu" );
-
-
-
-
-
-
-	// $("#my-menu").find( ".mm-subopen" ).addClass( "mm-fullsubopen" );
-      
-      $(".trigger-menu").click(function(e) {
-      	e.preventDefault();
-         API.open();
-      });
-
-      $(".cart-mobile").click(function(e) {
-      	e.preventDefault();
-         API2.open();
-      });
-	
-
-	$('.js-search').click(function(e) {
-		e.preventDefault()
-		$(".search-block").show()
-	});
-
-
-	$('.open-popup').magnificPopup({
-	  	type:'inline'
-	  });
-
-	//countries 
-
-
-	if($("div").is(".first-frame")) {
-		$.magnificPopup.open({
-		  items: {
-		    src: '.first-frame'
-		  },
-		  type: 'inline',
-		  modal: true
-		});
-	}
-
-
-
-});
-
-$(document).mouseup(function (e) {
-    var container = $(".search-block");
-    if (container.has(e.target).length === 0){
-        container.hide();
-    }
-});

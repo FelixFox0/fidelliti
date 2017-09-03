@@ -261,3 +261,7 @@
 2017-09-03 14:46:18 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
 2017-09-03 14:46:26 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
 2017-09-03 14:46:26 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-09-03 21:12:25 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-09-03 21:12:25 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-09-03 21:12:25 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-09-03 21:12:25 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
