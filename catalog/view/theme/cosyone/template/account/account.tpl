@@ -1,10 +1,5 @@
 <?php echo $header; ?>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
   <?php if ($success) { ?>
   <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></div>
   <?php } ?>
@@ -17,7 +12,13 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $text_my_account; ?></h1>
+      <div class="page-banner-asset-cell" id="banner-asset">
+         <div class="cell-placeholder-1-5 js-asset-item asset-loaded asset-visible">
+            <div class="cell-asset-bg js-asset-container" data-type="image">
+              <h1 class="page-banner-asset-title h1"><?php echo $text_my_account; ?></h1>
+            </div>
+        </div>
+      </div>
       
       <h3><?php echo $text_my_account; ?></h3>
       <ul class="list-unstyled margin-b">
