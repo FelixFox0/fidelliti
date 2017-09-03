@@ -58,6 +58,6 @@
     <div class="empty main_font"><?php echo $text_empty; ?></div>
     <?php } ?>
     </div>
-  </div>
+
   </nav>
   </div>
