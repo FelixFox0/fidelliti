@@ -941,9 +941,13 @@ function loadCartInfo() {
 	$( "#cart-info-container" ).load( "index.php?route=quickcheckout/cart .cart-total-info", function( response, status, xhr ) {
 		console.log(response);
 
-		$(".cart-total-info").stick_in_parent({
-			offset_top: 50
-		});
+		if($(window).innerWidth() > 991) {
+			$(".cart-total-info").stick_in_parent({
+				offset_top: 50
+			});
+		}
+
+		
 
 
 	  if ( status == "error" ) {
