@@ -71,14 +71,14 @@
 
           <?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
-          <?php if ($category_2['children']) { ?>
+          <?php if (!$category_2['children']) { ?>
             <a href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></a>
           <?php } else { ?>
             <span href="<?php echo $category_2['href']; ?>"><?php echo $category_2['name']; ?></span>
           <?php } ?>
 
             <?php if($cosyone_menu_mega_second_thumb == 'enabled' && $category_2['thumb']) { ?>
-<!--           <a href="<?php echo $category_2['href']; ?>" class=""><img src="<?php echo $category_2['thumb']; ?>" alt="<?php echo $category_2['name']; ?>"/></a> -->
+
           <?php } ?>
               <?php if ($category_2['children']) { ?>
               <ul>
@@ -181,6 +181,15 @@
           <?php echo $language; ?>
         </div>
       </div>
+      <script>
+          var next = 0;
+          var textArr = ['другой текст какой то', '<?php echo $cosyone_top_promo_message; ?>'];
+          setInterval(function(){
+            $('.header__promo').hide().html(textArr[next]).fadeIn(1500);
+            next++; 
+            if(next > textArr.length) {next = 0;}
+          }, 2500);
+        </script>
       <div class="header__promo">
         <?php echo $cosyone_top_promo_message; ?>
       </div>

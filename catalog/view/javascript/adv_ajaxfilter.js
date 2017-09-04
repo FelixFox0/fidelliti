@@ -238,6 +238,21 @@ function syncImgCbs() {
     });
 }
 
+$(window).bind("pageshow", function(event) {
+    if (event.originalEvent.persisted) {
+        var b =  $("#adv_ajaxfilter_page").val();
+
+        for (i = 0; i < b; i++)
+        {
+
+          (function(i)
+            {
+              filter(false, false, true); 
+            })(i);
+        }
+    }
+});
+
 
 $(window).on('scroll', function(event) {
     event.preventDefault();
@@ -247,9 +262,15 @@ $(window).on('scroll', function(event) {
     var cont = getContainer();
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
         $(".pagination li:not(:last-child) a:contains('>')").trigger('click');
-        /*filter(false, false, true);*/
-        
+        /*filter(false, false, true);*/  
     }
+
+    if($(window).scrollTop() === 100) {
+
+        $(".pagination li:not(:first-child) a:contains('<')").trigger('click');
+        /*filter(false, false, true);*/  
+    }
+
 });
 
 function filter(b, c, status) {
@@ -291,6 +312,7 @@ function filter(b, c, status) {
                 $(cont).advUnoverlay();
                 $("#adv_ajaxfilter").advUnoverlay();
 
+                console.log(cache[h]);
             }
 		});
     }
