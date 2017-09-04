@@ -10,6 +10,6 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1></h1>
-      <?php echo $description; ?><?php echo $content_bottom; ?></div>
+      <?php //echo $description; ?><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 <?php echo $footer; ?>
