@@ -217,7 +217,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		} 
 		
 		$data['url']   = $this->url->link('product/adv_ajaxfilter', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
-
+                $data['product_total'] = $product_total;
 		return $this->load->view('module/adv_ajaxfilter', $data);
         
 	}
@@ -387,7 +387,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$this->request->get['path'] = isset($this->request->post['path']) ? $this->request->post['path'] : '';
 
 		$product_total = $this->model_module_adv_ajaxfilter->getTotalProducts($data);
-
+                
         $pagination = new Pagination();
         $pagination->total = $product_total;
         $pagination->page = $page;
