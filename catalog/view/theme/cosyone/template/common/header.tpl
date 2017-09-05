@@ -139,6 +139,7 @@
                 <li><a class="mmobile-wicon" href="#">Обслуживание клиентов <i class="fa fa-phone"></i></a></li>
                 <li><a class="mmobile-wicon" href="#">Авторизация <i class="fa fa-user"></i></a></li>
                 <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true"></i> Русский</a></li>
+                <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-globe" aria-hidden="true"></i></i> Доставка в <span>nn</span></a></li>
                 
                 </ul>
       </nav>

@@ -392,7 +392,7 @@
             <?php } ?>
         </form>
         <div class="clear_filter">
-            <a class="button remove"><i class="fa fa-refresh"></i> <?php echo $clear_filter?></a>
+            <a class=""> <?php echo $clear_filter?></a>
         </div>
     </div>
 </div>
