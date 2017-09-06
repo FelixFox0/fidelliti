@@ -163,7 +163,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 
                     $filter_data[] = array(
                         'filter_id' => $filter['filter_id'],
-                        'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($_data) . ')' : ''),
+                        'name'      => $filter['name'],
                         'color'     => $filter['color']
                     );
                 }
@@ -217,7 +217,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		} 
 		
 		$data['url']   = $this->url->link('product/adv_ajaxfilter', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
-
+                $data['product_total'] = $product_total;
 		return $this->load->view('module/adv_ajaxfilter', $data);
         
 	}
@@ -387,7 +387,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$this->request->get['path'] = isset($this->request->post['path']) ? $this->request->post['path'] : '';
 
 		$product_total = $this->model_module_adv_ajaxfilter->getTotalProducts($data);
-
+                
         $pagination = new Pagination();
         $pagination->total = $product_total;
         $pagination->page = $page;
@@ -416,7 +416,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 
 	private function getProductsTmpl($results, $product_total) {
 		$this->load->language('product/category');
-		$data['text_refine'] = $this->language->get('text_refine');
+		$data['text_refine'] = $this->language->get('text_refine'); 
 		$data['text_empty'] = $this->language->get('text_empty');
 		$data['text_quantity'] = $this->language->get('text_quantity');
 		$data['text_manufacturer'] = $this->language->get('text_manufacturer');

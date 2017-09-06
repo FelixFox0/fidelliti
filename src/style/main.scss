@@ -11,7 +11,7 @@
 @import "partials/variable";
 @import "partials/fonts";
 @import "partials/owl.carousel.scss";
-@import "partials/sv_icons.scss";
+
 @import "partials/menu.scss";
 @import "partials/magnific-popup.scss";
 @import "partials/sprite.scss"; 
@@ -471,10 +471,66 @@ a {
 		border-top: 1px solid #000;
 		text-align: center;
 		color: #000;
-		font-size: 14px;
+		font-size: 12px;
 		text-transform: uppercase;
 	}
 }
+
+.scroll_to_top {
+	right: 100px !important;
+
+	&.active {
+		a {
+			border: none;
+			background-color: transparent;
+			box-shadow: none;
+			
+		}
+	}
+}
+
+.clear_filter {
+	a {
+		border: 0;
+		background: #fff;
+		font-size: 12px;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+}
+
+
+[id^="input-option"] {
+	display: flex;
+
+	.radio {
+		margin: 0 7px 0 0;
+		label {
+			padding: 0;
+			i {
+				border: 1px solid #ccc;
+				padding: 5px 12px;
+				font-style: normal;
+			}
+
+			input {
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				pointer-events: none;
+
+				&:checked + i {
+					background: #333;
+					color: #fff;
+					border: 1px solid #333;
+				}
+			}
+		}
+	}
+}
+
+
 
 
 .banners {
@@ -683,7 +739,11 @@ a {
 	
 	#adv_ajaxfilter {
 		display: flex;
-		justify-content: center; 
+		justify-content: flex-start;
+
+		.option_name  {
+			text-transform: uppercase;
+		}
 	}
 
 	.option_name {
@@ -696,7 +756,6 @@ a {
 	.option_box {
 		margin: 0 30px;
 		width: 200px;
-		text-align: center;
 
 		input[type='checkbox'] {
 			opacity:0;
@@ -712,7 +771,7 @@ a {
 		label {
 			font-weight: normal;
 			color: #0a0a0a;
-			font-size: 10px;
+			font-size: 11px;
 			text-transform: uppercase;
 			display: block;
 			cursor: pointer;
@@ -721,14 +780,38 @@ a {
 				text-decoration: underline;
 			}
 		}
+
+		.checkk {
+			justify-content: flex-start;
+
+			i {
+				width: 14px;
+				height: 14px;
+				margin-top: 6px;
+			}
+
+			input {
+
+			&:checked ~ label {
+				color: #2a4f2a;
+				text-shadow: 0 0 7px rgba(0,0,0,0.5);
+			}
+		}
+		}
 	}
-
-
-
 }
+
+
+[class^="product-category"] {
+	.breadcrumb_wrapper {
+    	border-top: 2px solid #ededed;
+	}
+}
+
 
 .sort-comp {
 	position: relative;
+	padding-top: 20px;
 
 	&__header{
 		display: flex;
@@ -911,6 +994,25 @@ a {
 }
 
 .product-page {
+	
+
+	&__options {
+		width: 100%;
+
+		.options  {
+			width: 100%;
+			margin-top: 32px;
+		}
+
+		.form-group {
+			margin-bottom: 30px;
+		}
+
+		.control-label {
+			margin-bottom: 15px;
+			display: inline-block;
+		}
+	}
 	
 	&._top {
 		padding-bottom: 100px;
@@ -1738,15 +1840,11 @@ a {
 		}
 
 		a {
+
 			font-family: Helvetica;
 			color: #000000;
-			font-size: 12px;
+			font-size: 13px;
 			line-height: 20px;
-			text-transform: uppercase;
-
-			&:after {
-			    content: ">";
-			}
 		}
 	}
 }
