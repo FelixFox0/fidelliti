@@ -106,7 +106,7 @@
             <input type="hidden" name="path" value="<?php echo $path ?>">
             <input type="hidden" name="sort" id="adv_ajaxfilter_sort" value="">
             <input type="hidden" name="order" id="adv_ajaxfilter_order" value="">
-            <input type="hidden" name="limit" id="adv_ajaxfilter_limit" value="">
+            <input type="hidden" name="limit" id="adv_ajaxfilter_limit" value="<?php echo $product_total; ?>">
             <input type="hidden" name="old_route" value="<?php echo $old_route ?>">
             <input type="hidden" id="adv_ajaxfilter_container" value="<?php echo $adv_ajaxfilter_container?>">
             <input type="hidden" id="adv_ajaxfilter_url" value="<?php echo $url ?>">
