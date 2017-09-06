@@ -8,7 +8,8 @@ class ControllerAccountWishList extends Controller {
 		}
 
 		$this->load->language('account/wishlist');
-
+		$this->load->language('account/account');
+		
 		$this->load->model('account/wishlist');
 
 		$this->load->model('catalog/product');
@@ -44,8 +45,12 @@ class ControllerAccountWishList extends Controller {
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
-
+		$data['heading_hello'] = $this->language->get('heading_hello');
+		$data['heading_text'] = $this->language->get('heading_text');
+		$data['heading_logout'] = $this->language->get('heading_logout');
 		$data['text_empty'] = $this->language->get('text_empty');
+		$data['text_account_start'] = $this->language->get('text_account_start');
+		$data['text_my_account_sp'] = $this->language->get('text_my_account_sp');
 
 		$data['column_image'] = $this->language->get('column_image');
 		$data['column_name'] = $this->language->get('column_name');

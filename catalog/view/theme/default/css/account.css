@@ -75,7 +75,7 @@
     border-radius: 2px;
     background: #fff;
 }
-.my-container input.button.login-form-button {
+.my-container input.button.login-form-button, .acount-shop-button {
     opacity: 0.75;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
     overflow: hidden;
@@ -98,15 +98,195 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
-.my-container input.button.login-form-button:hover {
+.my-container input.button.login-form-button:hover, .acount-shop-button:hover {
     opacity: 0.999;
     border-color: #666;
+}
+.my-container.sp-container{
+	padding-bottom: 0px;
 }
 a.pull-right.login-forgotten {
     color: #000;
     text-decoration: underline;
     font-family: gotic, sans-serif;
 }
+.login-form-container label {
+    text-transform: none;
+    font-family: gotic, sans-serif;
+}
+.login-form-req {
+    position: absolute;
+    top: 61px;
+    right: 48px;
+}
+.account-welcome{
+	margin-bottom: 35.5px;
+}
+.account-header{
+	text-align: center;
+}
+.account-menu h2{
+	font-weight: 700;
+    font-family: gotic, sans-serif;
+    word-spacing: normal;
+}
+.account-logout{
+	color: #666;
+    font-family: gotic, sans-serif;
+    letter-spacing: .01em;
+    position: relative;
+    top: -1px;
+    margin-left: 36px;
+    vertical-align: middle;
+}
+.account-logout:after {
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-top: -6px;
+    border-bottom: 1px solid;
+    color: inherit;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: opacity .5s ease-in-out, -webkit-transform .5s ease-in-out;
+    transition: opacity .5s ease-in-out, -webkit-transform .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out, -o-transform .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out, transform .5s ease-in-out, -moz-transform .5s ease-in-out;
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out, -webkit-transform .5s ease-in-out, -moz-transform .5s ease-in-out, -o-transform .5s ease-in-out;
+}
+.account-logout:hover {
+	color: #171717;
+}
+.account-heading_text{
+	font-family: gotic, sans-serif;
+    letter-spacing: .01em;
+    margin-bottom: 35px;
+}
+.account-menu ul{
+	border-bottom: 1px solid #c6c6c6;
+    text-align: center;
+}
+.account-menu ul li{
+	display: inline-block;
+    margin-left: 36px;
+    padding: 0 12px 17.5px;
+}
+.account-menu ul li:first-child {
+    margin-left: 0;
+}
+.account-menu ul li a{
+	font-family: gotic, sans-serif;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.col-md-4.acount-information-col {
+    width: 32.33333%;
+}
+
+.acount-information {
+    display: flex;
+    justify-content: space-between;
+    table-layout: fixed;
+    width: 100%;
+    margin: -10px 0px 40px;
+}
+.acount-information-col {
+    display: table-row;
+    background-color: #f7f7f7;
+}
+.acount-information .acount-information-col{
+    padding-left: 24px;
+    padding-bottom: 24px;
+    padding-right: 24px;
+    position: relative;
+    display: table-cell;
+    padding-top: 41px;
+    background-color: #f7f7f7;
+    padding-left: 48px;
+    padding-bottom: 48px;
+    padding-right: 48px;
+}
+.acount-information h4{
+    font-family: gotic, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+}
+.acount-description{
+    font-family: gotic, sans-serif;
+    font-size: 12px;
+}
+.acount-shop-button {
+    bottom: 24px;
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    padding: 10px;
+}
+.empty-cell-description {
+    padding-bottom: 62.5px;
+}
+.account-header-link{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: gotic, sans-serif;
+    font-size: 11px;
+}
+.cell-header {
+    position: relative;
+}
+ul.detail-set {
+    list-style: none;
+    padding: 0;
+    font-family: gotic, sans-serif;
+    font-size: 12px;
+}
+li.detail {
+    display: flex;
+    font-size: 11px;
+    line-height: 1.7;
+}
+.detail-name.l3 {
+    font-weight: 600;
+}
+.detail-value {
+    padding-left: 5px;
+}
+.acount-information-col-wish{
+    text-align: center;
+}
+.acount-information-wishlist {
+    background-color: #f7f7f7;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
