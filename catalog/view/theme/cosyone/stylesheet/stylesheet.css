@@ -1031,7 +1031,7 @@ a.sq_tag {
 	position:relative;
 }
 #menu > ul > li.withsubs > a {
-	letter-spacing: 1.65px;
+	letter-spacing: 2px;
 }
 /* Arrow for categories that have sub categories */
 #menu > ul > li i {

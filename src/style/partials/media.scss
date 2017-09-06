@@ -926,7 +926,25 @@
 			text-align: center;
 		}
 	}
+
+	.first-frame {
+		flex-wrap: wrap;
+	}
 	
+	.first-frame__image {
+		display: none;
+	}
+
+	.first-frame__list {
+		padding: 20px;
+		flex-direction: column;
+		align-items: center;
+
+		& > * {
+			margin: 0;
+			margin-bottom: 15px;
+		}
+	}
 
 }
 
