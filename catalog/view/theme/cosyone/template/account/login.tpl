@@ -21,7 +21,7 @@
   <div class="page-banner-asset-cell" id="banner-asset">
      <div class="cell-placeholder-1-5 js-asset-item asset-loaded asset-visible">
         <div class="cell-asset-bg js-asset-container" data-type="image">
-          <h1 class="page-banner-asset-title h1">Вхід/Реєстрація</h1>
+          <h1 class="page-banner-asset-title h1"><?php echo $heading_main; ?></h1>
         </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
         <div class="col-md-6 col-lg-5 col-lg-offset-1 margin-b">
           <div class="login-form">
           <div class="login-form-header">
-            <h5 class="login-form-name"><?php echo $heading_title; ?></h5>
+            <h5 class="login-form-name"><?php echo $heading_title_log; ?></h5>
             <div class="login-form-description"><?php echo $text_returning_customer; ?></div>
           </div>
           <div class="login-form-container">
@@ -44,8 +44,8 @@
                   <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
                   </div>
                   <div class="login-form-container__bottom">
-                    <input type="submit" value="<?php echo $button_login; ?>" class="button login-form-button" />
-                    <a href="<?php echo $forgotten; ?>" class="pull-right login-forgotten"><?php echo $text_forgotten; ?></a>
+                    <a href="<?php echo $forgotten; ?>" class="pull-left login-forgotten"><?php echo $text_forgotten; ?></a>
+                    <input type="submit" value="<?php echo $button_login; ?>" class="button login-form-button pull-right" />
                   </div>                
                 <?php if ($redirect) { ?>
                 <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
@@ -58,8 +58,9 @@
         <div class="col-md-6 col-lg-5">
         <div class="login-form">
         <div class="login-form-header">
-            <h5 class="login-form-name"><?php echo $heading_title; ?></h5>
+            <h5 class="login-form-name"><?php echo $heading_title_reg; ?></h5>
             <div class="login-form-description"><?php echo $text_account_already; ?></div>
+            <div class="login-form-req"><?php echo $text_register; ?></div>
         </div>
         <div class="login-form-container">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -135,10 +136,9 @@
           </div>
         </fieldset>
         <fieldset>
-          <div class="box-heading"><?php echo $text_newsletter; ?></div>
           <div class="form-group">
-            <label class="col-sm-3 control-label"><?php echo $entry_newsletter; ?></label>
-            <div class="col-sm-9">
+            <label class="col-sm-5 control-label"><?php echo $entry_newsletter; ?></label>
+            <div class="col-sm-7">
               <?php if ($newsletter) { ?>
               <label class="radio-inline">
                 <input type="radio" name="newsletter" value="1" checked="checked" />

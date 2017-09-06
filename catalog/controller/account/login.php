@@ -111,8 +111,10 @@ class ControllerAccountLogin extends Controller {
 			'href' => $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name'])
 		);
 
-		$data['heading_title'] = $this->language->get('heading_title');
-
+		$data['heading_title_log'] = $this->language->get('heading_title_log');
+		$data['heading_title_reg'] = $this->language->get('heading_title_reg');
+		$data['heading_main'] = $this->language->get('heading_main');
+		
 		$data['text_new_customer'] = $this->language->get('text_new_customer');
 		$data['text_register'] = $this->language->get('text_register');
 		$data['text_register_account'] = $this->language->get('text_register_account');
