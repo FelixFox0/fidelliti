@@ -48,8 +48,8 @@
 
 <nav id="my-menu" class="visible-xs">
 <ul class="">
-  <li><a href="#" class="mmobile-search">Поиск товара по каталогу <i class="fa fa-search"></i></a></li>
-  <li><a href="tel:0 800 210 385" class="mmobile-phone"><i class="fa fa-phone-square"></i>0 800 210 385</a></li>
+  <li><a href="#" class="mmobile-search">Поиск товара по каталогу <i class=""><img src="/image/icon_search.png" alt=""></i></a></li>
+  <li><a href="tel:0 800 210 385" class="mmobile-phone"><i class=""><img src="/image/menu_icon_phone.png" alt=""></i>0 800 210 385</a></li>
   <li class=""><a href="<?php echo $home; ?>" class=""><?php echo $text_home; ?></a></li>
        <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
@@ -85,6 +85,7 @@
               <?php if ($category_2['thumb']) { ?>
                 <li class="mmobile-image"><p><?php echo $category_2['name']; ?></p><img src="<?php echo $category_2['thumb']; ?>" alt=""></li>
                 <?php } ?>
+                <li><a href="<?php echo $category_2['href']; ?>">Смотреть все</a></li>
                <?php foreach ($category_2['children'] as $category_3) { ?>
                <li><a href="<?php echo $category_3['href']; ?>"><?php echo $category_3['name']; ?></a></li>
                <?php } ?>
@@ -136,8 +137,8 @@
                 
         <?php } ?>
 
-                <li><a class="mmobile-wicon" href="#">Обслуживание клиентов <i class="fa fa-phone"></i></a></li>
-                <li><a class="mmobile-wicon" href="#">Авторизация <i class="fa fa-user"></i></a></li>
+                <li><a class="mmobile-wicon" href="#">Обслуживание клиентов <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
+                <li><a class="mmobile-wicon" href="#">Авторизация <i class=""></i><img src="/image/man.png" alt=""></a></li>
                 <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true"></i> Русский</a></li>
                 <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-globe" aria-hidden="true"></i></i> Доставка в <span>nn</span></a></li>
                 
