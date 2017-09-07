@@ -23,3 +23,4 @@ $_['column_model']  = 'Модель';
 $_['column_stock']  = 'На складі';
 $_['column_price']  = 'Ціна';
 $_['column_action'] = 'Дія';
+$_['button_continue_wish'] = 'Магазин';

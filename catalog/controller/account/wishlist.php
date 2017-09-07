@@ -60,6 +60,7 @@ class ControllerAccountWishList extends Controller {
 		$data['column_action'] = $this->language->get('column_action');
 
 		$data['button_continue'] = $this->language->get('button_continue');
+		$data['button_continue_wish'] = $this->language->get('button_continue_wish');
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_remove'] = $this->language->get('button_remove');
 

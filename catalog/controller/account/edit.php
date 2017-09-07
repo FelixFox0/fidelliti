@@ -9,7 +9,8 @@ class ControllerAccountEdit extends Controller {
 			$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
-		$this->load->language('account/edit');
+		$this->load->language('account/edit');				
+		$this->load->language('account/account');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -60,7 +61,11 @@ class ControllerAccountEdit extends Controller {
 		$data['text_additional'] = $this->language->get('text_additional');
 		$data['text_select'] = $this->language->get('text_select');
 		$data['text_loading'] = $this->language->get('text_loading');
-
+		$data['heading_hello'] = $this->language->get('heading_hello');
+		$data['heading_text'] = $this->language->get('heading_text');
+		$data['heading_logout'] = $this->language->get('heading_logout');
+		$data['text_my_account_sp'] = $this->language->get('text_my_account_sp');
+		
 		$data['entry_firstname'] = $this->language->get('entry_firstname');
 		$data['entry_lastname'] = $this->language->get('entry_lastname');
 		$data['entry_email'] = $this->language->get('entry_email');

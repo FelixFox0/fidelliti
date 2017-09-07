@@ -7,8 +7,9 @@ class ControllerAccountOrder extends Controller {
 			$this->response->redirect($this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']));
 		}
 
-		$this->load->language('account/order');
-
+		$this->load->language('account/order');		
+		$this->load->language('account/account');
+		
 		$this->document->setTitle($this->language->get('heading_title'));
 		
 		$url = '';
@@ -35,8 +36,14 @@ class ControllerAccountOrder extends Controller {
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
-
+		$data['heading_hello'] = $this->language->get('heading_hello');
+		$data['heading_text'] = $this->language->get('heading_text');
+		$data['heading_logout'] = $this->language->get('heading_logout');
+		$data['text_my_account_sp'] = $this->language->get('text_my_account_sp');
 		$data['text_empty'] = $this->language->get('text_empty');
+		$data['text_product_number'] = $this->language->get('text_product_number');
+		$data['heading_title_chzv'] = $this->language->get('heading_title_chzv');
+		$data['contact_text'] = $this->language->get('contact_text');
 
 		$data['column_order_id'] = $this->language->get('column_order_id');
 		$data['column_customer'] = $this->language->get('column_customer');

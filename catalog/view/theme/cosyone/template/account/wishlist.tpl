@@ -14,7 +14,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-          <div class="page-banner-asset-cell" id="banner-asset">
+      <div class="page-banner-asset-cell" id="banner-asset">
          <div class="cell-placeholder-1-5 js-asset-item asset-loaded asset-visible">
             <div class="cell-asset-bg js-asset-container" data-type="image">
               <h1 class="page-banner-asset-title h1"><?php echo $text_my_account_sp; ?></h1>
@@ -110,9 +110,11 @@
       <?php } else { ?>
       <p><?php echo $text_empty; ?></p>
       <?php } ?>
-      <!--<div class="buttons clearfix">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-      </div>-->
+      <div class="buttons clearfix">
+        <div class="pull-center">
+          <a href="<?php echo $continue; ?>" class="btn btn-primary login-form-button"><?php echo $button_continue_wish; ?></a>
+        </div>
+      </div>
 
         </div>
       </div>

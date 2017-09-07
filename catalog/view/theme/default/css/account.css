@@ -75,7 +75,7 @@
     border-radius: 2px;
     background: #fff;
 }
-.my-container input.button.login-form-button, .acount-shop-button {
+.my-container input.button.login-form-button, .acount-shop-button, a.btn.btn-primary.login-form-button {
     opacity: 0.75;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
     overflow: hidden;
@@ -98,9 +98,16 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
-.my-container input.button.login-form-button:hover, .acount-shop-button:hover {
+.my-container input.button.login-form-button:hover, .acount-shop-button:hover, a.btn.btn-primary.login-form-button:hover {
     opacity: 0.999;
     border-color: #666;
+}
+a.btn.btn-primary.login-form-button{
+    padding: 10px 12px;
+    text-transform: none;
+    font-family: gotic, sans-serif;
+    font-size: 14px;
+    margin-top: 25px;padding: 10px 12px;
 }
 .my-container.sp-container{
 	padding-bottom: 0px;
@@ -246,7 +253,7 @@ a.pull-right.login-forgotten {
 .cell-header {
     position: relative;
 }
-ul.detail-set {
+ul.detail-set, .acount-information-col-wish{
     list-style: none;
     padding: 0;
     font-family: gotic, sans-serif;
