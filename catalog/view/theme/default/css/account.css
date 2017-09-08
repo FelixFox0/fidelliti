@@ -75,7 +75,8 @@
     border-radius: 2px;
     background: #fff;
 }
-.my-container input.button.login-form-button, .acount-shop-button, a.btn.btn-primary.login-form-button {
+.my-container input.button.login-form-button, .acount-shop-button, 
+a.btn.btn-primary.login-form-button, input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button {
     opacity: 0.75;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
     overflow: hidden;
@@ -97,10 +98,26 @@
     cursor: pointer;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
+    border-radius: 0px;
 }
-.my-container input.button.login-form-button:hover, .acount-shop-button:hover, a.btn.btn-primary.login-form-button:hover {
+.my-container input.button.login-form-button:hover, .acount-shop-button:hover, .acount-information-col-edit a.login-form-button:hover,
+a.btn.btn-primary.login-form-button:hover, input.btn.btn-primary.login-form-button:hover {
     opacity: 0.999;
     border-color: #666;
+}
+.pull-right input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button{
+    margin-left: 45px;
+    color: #171717;
+    background: transparent;
+    padding: 10px 25px;
+    text-transform: none;
+}
+.pull-right input.btn.btn-primary.login-form-button:hover, .acount-information-col-edit a.login-form-button:hover{
+    background: #171717;
+    color: #fff;
+}
+.acount-information-col-edit input.btn.btn-primary.login-form-button{
+    padding: 10px 25px;
 }
 a.btn.btn-primary.login-form-button{
     padding: 10px 12px;
@@ -198,7 +215,6 @@ a.pull-right.login-forgotten {
 .col-md-4.acount-information-col {
     width: 32.33333%;
 }
-
 .acount-information {
     display: flex;
     justify-content: space-between;
@@ -211,9 +227,6 @@ a.pull-right.login-forgotten {
     background-color: #f7f7f7;
 }
 .acount-information .acount-information-col{
-    padding-left: 24px;
-    padding-bottom: 24px;
-    padding-right: 24px;
     position: relative;
     display: table-cell;
     padding-top: 41px;
@@ -277,14 +290,101 @@ li.detail {
     background-color: #f7f7f7;
     justify-content: center;
 }
+.section-edit{
+    list-style: none;
+}
+.section-edit li{
 
-
-
-
-
-
-
-
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.section-edit li a{
+    font-weight: 700;
+    font-family: gotic, sans-serif;
+    position: relative;
+    color: #666;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    font-size: 12.9px;
+}
+.section-edit li a:hover{
+    color: #171717;
+}
+.acount-information.acount-information-edit {
+    background-color: #f7f7f7;
+    justify-content: center;
+    padding-top: 41.5px;
+    padding-right: 48px;
+    padding-left: 48px;
+    background-color: #f7f7f7;
+    padding-bottom: 84px;
+}
+.edit-details{
+    font-family: gotic, sans-serif;
+    position: relative;
+    color: #666;
+    letter-spacing: .01em;
+    font-size: 12.9px;
+    margin-bottom: 15px;
+    color: #000;
+}
+.acount-information-col-edit{
+    padding-top: 0px;
+    background-color: #f7f7f7;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+.acount-information-col-edit .form-horizontal .control-label {
+    text-align: left;
+    font-family: gotic, sans-serif;
+    position: relative;
+    letter-spacing: .01em;
+    font-size: 12.9px;
+    margin-bottom: 15px;
+    text-transform: none;
+    padding: 7px 0px;
+    font-weight: 700;
+    color: #000;
+}
+.acount-information-col.acount-information-col-edit {
+    padding: 0px;
+}
+.acount-information-col-edit .form-horizontal .form-group {
+    margin-left: 0px;
+}
+.acount-information-edit .buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+input.btn.btn-primary.login-form-button{
+    font-family: gotic, sans-serif;
+    color: #fff;
+    letter-spacing: .01em;
+    font-size: 12.9px;
+    text-transform: none;
+    padding: 7px 25px;
+    min-width: 157px;
+}
+.acount-information-col-edit h5{
+    margin: 15px 0px;
+}
+.acount-information-col-edit .login-form-req{
+    top: 15px;
+    right: 0px;
+}
+.pass-container {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
 
 
 

@@ -25,30 +25,30 @@
       <div class="account-header  my-container sp-container">
         <div class="account-welcome">
           <span class="h2"><?php echo $heading_hello; ?></span>
-          <a href="#" title="<?php echo $heading_logout; ?>" class="account-logout"><?php echo $heading_logout; ?></a>
+          <a href="<?php echo $logout; ?>" title="<?php echo $heading_logout; ?>" class="account-logout"><?php echo $heading_logout; ?></a>
         </div>
         <div class="account-heading_text"><?php echo $heading_text; ?></div>
       </div>
 
       <div class="account-menu">
-         <ul>
+         <ul class="account-top-menu">
             <li>
-              <a href="http://fidelliti/au/ukr/edit-account">Обзор</a>
+              <a href="<?php echo $account; ?>"><?php echo $menu_account; ?></a>
             </li>
             <li>
-              <a href="<?php echo $wishlist; ?>">Предпочтения</a>
+              <a href="<?php echo $wishlist; ?>"><?php echo $menu_wishlist; ?></a>
             </li>
             <li>
-              <a href="<?php echo $order; ?>">Заказы</a>
+              <a href="<?php echo $order; ?>"><?php echo $menu_order; ?></a>
             </li>
             <li>
-              <a href="<?php echo $edit; ?>">Данные личного кабинета</a>
+              <a href="<?php echo $edit; ?>"><?php echo $menu_edit; ?></a>
             </li>
           </ul>
       </div>
       
       <div class="acount-information acount-information-wishlist">
-        <div class="col-md-4 acount-information-col acount-information-col-wish">          
+        <div class="col-md-6 acount-information-col acount-information-col-wish">          
           <div class="cell-header">
             <h4><?php echo $text_account_start; ?></h4>
           </div>

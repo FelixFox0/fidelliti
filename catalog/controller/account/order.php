@@ -169,7 +169,12 @@ class ControllerAccountOrder extends Controller {
 			$data['text_history'] = $this->language->get('text_history');
 			$data['text_comment'] = $this->language->get('text_comment');
 			$data['text_no_results'] = $this->language->get('text_no_results');
-
+		
+			$data['menu_account'] = $this->language->get('menu_account');
+			$data['menu_wishlist'] = $this->language->get('menu_wishlist');
+			$data['menu_order'] = $this->language->get('menu_order');
+			$data['menu_edit'] = $this->language->get('menu_edit');
+		
 			$data['column_name'] = $this->language->get('column_name');
 			$data['column_model'] = $this->language->get('column_model');
 			$data['column_quantity'] = $this->language->get('column_quantity');
@@ -373,6 +378,19 @@ class ControllerAccountOrder extends Controller {
 			}
 
 			$data['continue'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['edit'] = $this->url->link('account/edit', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['password'] = $this->url->link('account/password', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['wishlist'] = $this->url->link('account/wishlist', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['download'] = $this->url->link('account/download', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['return'] = $this->url->link('account/return', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['transaction'] = $this->url->link('account/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+	 		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');

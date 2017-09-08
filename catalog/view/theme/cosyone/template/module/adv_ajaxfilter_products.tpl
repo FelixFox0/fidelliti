@@ -2,6 +2,7 @@
 
 <?php foreach ($products as $product) { ?><!--
     --><div class="item contrast_font product-layout">
+    <a href="javascript:void(0)" class="icon-cart2 quick-buy" onclick="cart.add('<?php echo $product['product_id']; ?>')"></a>
        <div class="image">
         <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
         <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
@@ -40,6 +41,7 @@
         <?php } ?>
       </div>
       <?php } ?>
+
 
         <?php if (($product['special']) && ($product['special_date_end'] > 0) && ($cosyone_product_countdown)) { ?>
     	<div class="offer_popup">

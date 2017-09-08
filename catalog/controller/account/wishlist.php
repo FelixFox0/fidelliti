@@ -51,7 +51,12 @@ class ControllerAccountWishList extends Controller {
 		$data['text_empty'] = $this->language->get('text_empty');
 		$data['text_account_start'] = $this->language->get('text_account_start');
 		$data['text_my_account_sp'] = $this->language->get('text_my_account_sp');
-
+		
+		$data['menu_account'] = $this->language->get('menu_account');
+		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
+		$data['menu_order'] = $this->language->get('menu_order');
+		$data['menu_edit'] = $this->language->get('menu_edit');
+		
 		$data['column_image'] = $this->language->get('column_image');
 		$data['column_name'] = $this->language->get('column_name');
 		$data['column_model'] = $this->language->get('column_model');
@@ -123,6 +128,19 @@ class ControllerAccountWishList extends Controller {
 		}
 
 		$data['continue'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['edit'] = $this->url->link('account/edit', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['password'] = $this->url->link('account/password', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['wishlist'] = $this->url->link('account/wishlist', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['download'] = $this->url->link('account/download', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['return'] = $this->url->link('account/return', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['transaction'] = $this->url->link('account/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+ 		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

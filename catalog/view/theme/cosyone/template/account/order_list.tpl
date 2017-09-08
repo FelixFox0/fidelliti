@@ -20,15 +20,16 @@
       <div class="account-header  my-container sp-container">
         <div class="account-welcome">
           <span class="h2"><?php echo $heading_hello; ?></span>
-          <a href="#" title="<?php echo $heading_logout; ?>" class="account-logout"><?php echo $heading_logout; ?></a>
+          <a href="<?php echo $logout; ?>" title="<?php echo $heading_logout; ?>" class="account-logout"><?php echo $heading_logout; ?></a>
         </div>
         <div class="account-heading_text"><?php echo $heading_text; ?></div>
       </div>
 
       <div class="account-menu">
+      <!-- Ошибки в меню -->
          <ul>
             <li>
-              <a href="http://fidelliti/au/ukr/edit-account">Обзор</a>
+              <a href="<?php echo $account; ?>">Обзор</a>
             </li>
             <li>
               <a href="<?php echo $wishlist; ?>">Предпочтения</a>
@@ -87,6 +88,7 @@
         <?php } else { ?>
         <p><?php echo $text_empty; ?></p>
         <?php } ?>
+        <!-- Тут добавить количество товаров  -->
         <p><?php echo $text_product_number; ?></p>
         </div>
 <div class="col-md-4 acount-information-col acount-information-col-order">
