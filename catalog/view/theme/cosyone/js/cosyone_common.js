@@ -269,7 +269,15 @@ var cart = {
 				//ТУТ В ПОПАПЕ ПОМЕНЯЙ  ТЕКСТ НА "НАЗАД К ПОКУПКАМ"
 
 				if (json['success']) {
-					$.colorbox({
+
+					$.magnificPopup.open({
+					  items: {
+					    src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title">ДОБАВЛЕНО В КОРЗИНУ</h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+					    type: 'inline'
+					  }
+					});
+
+					/*$.colorbox({
 					html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
 					className: "notification",
 					initialHeight:50,
@@ -278,7 +286,8 @@ var cart = {
 					maxWidth:400,
 					height:"90%",
 					maxHeight:200
-					});
+					});*/
+
 					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
 				}
 			}
@@ -368,32 +377,25 @@ type: 'post',
 data: 'product_id=' + product_id,
 dataType: 'json',
 success: function(json) {
-$('.alert').remove();
 if (json['success']) {
-$.colorbox({
-html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="btn btn-primary" href="' + json['link_wishlist'] + '">' + json['text_wishlist'] + '</a></div></div>',
-className: "notification",
-initialHeight:50,
-initialWidth:50,
-width:"90%",
-maxWidth:400,
-height:"90%",
-maxHeight:200
-});
-$('.shortcut.wishlist').load('index.php?route=common/header_wishlist_compare/info #header_wishlist');
+	$.magnificPopup.open({
+	  items: {
+	    src: '<div class="white-popup _new"><div class="product"><span>' + json['success'] + '</span></div><div class="bottom"><a class="" href="' + json['link_wishlist'] + '">' + json['text_wishlist'] + '</a></div></div>',
+	    type: 'inline'
+	  }
+	});
+
+/*$('.shortcut.wishlist').load('index.php?route=common/header_wishlist_compare/info #header_wishlist');*/
 }
 
 if (json['info']) {
-$.colorbox({
-html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['info'] + '</span></div><div class="bottom"><a class="btn btn-primary" href="' + json['link_wishlist'] + '">' + json['text_wishlist'] + '</a></div></div>',
-className: "notification",
-initialHeight:50,
-initialWidth:50,
-width:"90%",
-maxWidth:400,
-height:"90%",
-maxHeight:200
-});
+	$.magnificPopup.open({
+	  items: {
+	    src: '<div class="white-popup _new"><div class="product"><span>' + json['success'] + '</span></div><div class="bottom"><a class="" href="' + json['link_wishlist'] + '">' + json['text_wishlist'] + '</a></div></div>',
+	    type: 'inline'
+	  }
+	});
+
 $('.shortcut.wishlist').load('index.php?route=common/header_wishlist_compare/info #header_wishlist');
 }}
 });
