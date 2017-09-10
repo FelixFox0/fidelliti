@@ -1,4 +1,4 @@
-<?php echo $header; ?>
+<?php echo $header; ?><?php if( ! empty( $mfilter_json ) ) { echo '<div id="mfilter-json" style="display:none">' . base64_encode( $mfilter_json ) . '</div>'; } ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -14,7 +14,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?> <?php echo $cosyone_grid_category; ?> search-page">
-    <?php echo $content_top; ?>
+    <?php echo $content_top; ?><div id="mfilter-content-container">
   <h1><?php echo $heading_title; ?></h1>
   <h3 class="margin-b"><?php echo $entry_search; ?></h3>
       <div class="row">
@@ -207,7 +207,7 @@
   <?php } else { ?>
   <p><?php echo $text_empty; ?></p>
   <?php } ?>
-  <?php echo $content_bottom; ?></div>
+  </div><?php echo $content_bottom; ?></div>
   <?php echo $column_right; ?></div>
 <script type="text/javascript"><!--
 $('#button-search').bind('click', function() {
