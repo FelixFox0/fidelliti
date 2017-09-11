@@ -10,6 +10,7 @@ class ControllerAccountPassword extends Controller {
 		}
 
 		$this->load->language('account/password');
+		$this->load->language('account/account');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -51,6 +52,22 @@ class ControllerAccountPassword extends Controller {
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_title_pass'] = $this->language->get('heading_title_pass');
+		
+		$data['menu_account'] = $this->language->get('menu_account');
+		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
+		$data['menu_order'] = $this->language->get('menu_order');
+		$data['menu_edit'] = $this->language->get('menu_edit');
+		
+		$data['heading_hello'] = $this->language->get('heading_hello');
+		$data['heading_text'] = $this->language->get('heading_text');
+		$data['heading_logout'] = $this->language->get('heading_logout');
+		$data['text_my_account'] = $this->language->get('text_my_account');
+		$data['text_my_account_sp'] = $this->language->get('text_my_account_sp');
+		$data['pass_discription'] = $this->language->get('pass_discription');
+		$data['row_require'] = $this->language->get('row_require');
+		$data['button_save'] = $this->language->get('button_save');
+		$data['button_nosave'] = $this->language->get('button_nosave');
 
 		$data['text_password'] = $this->language->get('text_password');
 
@@ -73,6 +90,20 @@ class ControllerAccountPassword extends Controller {
 		}
 
 		$data['action'] = $this->url->link('account/password', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['edit'] = $this->url->link('account/edit', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['password'] = $this->url->link('account/password', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['wishlist'] = $this->url->link('account/wishlist', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['download'] = $this->url->link('account/download', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['return'] = $this->url->link('account/return', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['transaction'] = $this->url->link('account/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+
 
 		if (isset($this->request->post['password'])) {
 			$data['password'] = $this->request->post['password'];

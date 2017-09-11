@@ -204,7 +204,7 @@
         <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
         <a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
         <?php }else{ ?>
-        <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
+        <a href="<?php echo $login; ?>"><?php echo $text_register; ?></a>
         <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a>
         <?php } ?>
       </div>
@@ -264,7 +264,7 @@
 
 <div class="menu_wrapper">
 <div class="search-block">
-  <div class="container"> 
+  <div class="container">
     <?php if($cosyone_header_search == 'enabled') { ?>
    <?php echo $search; ?>
    <?php } ?>
@@ -392,7 +392,7 @@
                       <a href="#text-popup" class="open-popup"><i class="icon-phone"></i></a>
                     </div>
                     <div class="service-block__item">
-                      <a href="#"><i class="icon-man"></i></a>
+                      <a href="<?php echo $login; ?>"><i class="icon-man"></i></a>
                     </div>
                     <div class="service-block__item">
                       <?php if ($cosyone_header_cart) { echo $cart; } ?>

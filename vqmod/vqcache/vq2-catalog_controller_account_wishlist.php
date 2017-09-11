@@ -168,7 +168,20 @@ class ControllerAccountWishList extends Controller {
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
 		if ($product_info) {
+
+			$this->load->model('tool/image');
+			if ($product_info['image'])	{
+			$json['image'] = $this->model_tool_image->resize($product_info['image'], 80, 80);
+			} else {
+			$json['image'] = $this->model_tool_image->resize('placeholder.png', 80, 80);
+			}
+			$json['text_wishlist'] = $this->language->get('button_login');
+			$json['link_wishlist'] = $this->url->link('account/wishlist', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			
 			if ($this->customer->isLogged()) {
+
+			$json['text_wishlist'] = $this->language->get('heading_title');
+			
 				// Edit customers cart
 				$this->load->model('account/wishlist');
 
@@ -189,6 +202,9 @@ class ControllerAccountWishList extends Controller {
 				$json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->url->link('account/register', '', true, $this->session->data['country_code'], $this->session->data['language_name']), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id'],false, $this->session->data['country_code'], $this->session->data['language_name']), $product_info['name'], $this->url->link('account/wishlist', '',false, $this->session->data['country_code'], $this->session->data['language_name']));
 
 				$json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+
+	$json['wishlist_total'] = sprintf($this->language->get('text_header_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+			
 			}
 		}
 

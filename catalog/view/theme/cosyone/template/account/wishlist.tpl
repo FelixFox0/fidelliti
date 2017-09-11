@@ -14,7 +14,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-          <div class="page-banner-asset-cell" id="banner-asset">
+      <div class="page-banner-asset-cell" id="banner-asset">
          <div class="cell-placeholder-1-5 js-asset-item asset-loaded asset-visible">
             <div class="cell-asset-bg js-asset-container" data-type="image">
               <h1 class="page-banner-asset-title h1"><?php echo $text_my_account_sp; ?></h1>
@@ -25,30 +25,30 @@
       <div class="account-header  my-container sp-container">
         <div class="account-welcome">
           <span class="h2"><?php echo $heading_hello; ?></span>
-          <a href="#" title="<?php echo $heading_logout; ?>" class="account-logout"><?php echo $heading_logout; ?></a>
+          <a href="<?php echo $logout; ?>" title="<?php echo $heading_logout; ?>" class="account-logout"><?php echo $heading_logout; ?></a>
         </div>
         <div class="account-heading_text"><?php echo $heading_text; ?></div>
       </div>
 
       <div class="account-menu">
-         <ul>
+         <ul class="account-top-menu">
             <li>
-              <a href="http://fidelliti/au/ukr/edit-account">Обзор</a>
+              <a href="<?php echo $account; ?>"><?php echo $menu_account; ?></a>
             </li>
             <li>
-              <a href="<?php echo $wishlist; ?>">Предпочтения</a>
+              <a href="<?php echo $wishlist; ?>"><?php echo $menu_wishlist; ?></a>
             </li>
             <li>
-              <a href="<?php echo $order; ?>">Заказы</a>
+              <a href="<?php echo $order; ?>"><?php echo $menu_order; ?></a>
             </li>
             <li>
-              <a href="<?php echo $edit; ?>">Данные личного кабинета</a>
+              <a href="<?php echo $edit; ?>"><?php echo $menu_edit; ?></a>
             </li>
           </ul>
       </div>
       
       <div class="acount-information acount-information-wishlist">
-        <div class="col-md-4 acount-information-col acount-information-col-wish">          
+        <div class="col-md-6 acount-information-col acount-information-col-wish">          
           <div class="cell-header">
             <h4><?php echo $text_account_start; ?></h4>
           </div>
@@ -110,9 +110,11 @@
       <?php } else { ?>
       <p><?php echo $text_empty; ?></p>
       <?php } ?>
-      <!--<div class="buttons clearfix">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-      </div>-->
+      <div class="buttons clearfix">
+        <div class="pull-center">
+          <a href="<?php echo $continue; ?>" class="btn btn-primary login-form-button"><?php echo $button_continue_wish; ?></a>
+        </div>
+      </div>
 
         </div>
       </div>
