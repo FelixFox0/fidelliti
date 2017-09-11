@@ -215,9 +215,9 @@ class ControllerProductSearch extends Controller {
 
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+					$image = $this->model_tool_image->resize($result['image'], 417, 706);
 				} else {
-					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+					$image = $this->model_tool_image->resize($result['image'], 417, 706);
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {

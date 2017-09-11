@@ -44,6 +44,7 @@ a {
 
 .footer a {
 	transform: translateX(0);
+	font-size: 14px;
 
 	&:hover {
 		transform: translateX(6px);
@@ -104,9 +105,14 @@ a {
 	width: 100%;
 	background-color: #fff;
 
+	&__image {
+		width: 50%;
+	}
+
 	img {
 		height: 100vh;
-		width: auto;
+		width: 100%;
+		object-fit: cover;
 	}
 
 	&__countries {
@@ -177,11 +183,16 @@ a {
 .header {
 	background-color: #ededed;
 
+	&__promo {
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
 	&__top {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 5px 0;
+		padding: 7px 0;
 		font-family: "gotic";
 		font-size: 13px;
 
@@ -440,6 +451,7 @@ a {
 		font-size: 12px;
 		color: #000;
 		font-weight: bold;
+		font-family: "Century Gothic";
 	}
 
 	&__icons {
@@ -557,6 +569,10 @@ a {
 
 		& + .banners__item {
 			margin-top: 40px;
+		}
+
+		&:last-child {
+			margin-bottom: 30px;
 		}
 		
 
@@ -711,6 +727,7 @@ a {
 			left: 15px;
 			top: 15px;
 			opacity: 0;
+			z-index: 99;
 		}
 	}
 
@@ -836,6 +853,10 @@ a {
     	border-top: 2px solid #ededed;
 	}
 }
+
+
+
+
 
 
 .sort-comp {
@@ -2041,8 +2062,15 @@ a {
 
 		width: 290px;
 	}
+
+	.mini-cart-info {
+		max-height: 237px; 
+		overflow-y: auto; 
+	}
 	
 	.mini-cart-total {
+		
+
 		table {
 			display: table;
 			width: 100%;
@@ -2962,6 +2990,48 @@ a {
 
 		&:hover {
 			color: #797777;
+		}
+	}
+}
+
+.product-search {
+	h1 {
+		font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		color: inherit;
+		text-transform: none;
+		text-rendering: optimizeLegibility;
+	}
+
+	#input-search {
+		width: 100%;
+	    border: 0;
+	    border-radius: 0;
+	    border-bottom: 1px solid #000;
+	    letter-spacing: 0;
+	    padding: 0 0 10px 0;
+	    box-shadow: none;
+	    font-size: 35px;
+	    background-color: #fefefe;
+	}
+
+	select {
+		border: 1px solid #000;
+		border-radius: 0;
+	}
+
+	label {
+		color: gray;
+	    text-transform: uppercase;
+	    font-size: 11px;
+	    padding-top: 12px;
+	}
+
+	.grid_holder {
+
+		.item {
+			width: 24.8%;
 		}
 	}
 }
