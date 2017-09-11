@@ -1,8 +1,25 @@
-.page-banner-asset-cell {
+﻿.page-banner-asset-cell {
     position: relative;
     overflow: hidden;
     max-width: 1500px;
     margin: 0 auto;
+}
+h1.page-banner-asset-title {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-family: gotic, sans-serif;
 }
 .page-banner-asset-cell .cell-placeholder-1-5 {
     position: relative;
@@ -27,6 +44,7 @@
     -moz-background-size: cover;
     background-size: cover;
     background-color: #f4e6e6;
+    background-image: url(/image/account.png);
 }
 .page-banner-asset-cell img {
     width: 100%;
@@ -75,7 +93,8 @@
     border-radius: 2px;
     background: #fff;
 }
-.my-container input.button.login-form-button, .acount-shop-button {
+.my-container input.button.login-form-button, .acount-shop-button, 
+a.btn.btn-primary.login-form-button, input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button {
     opacity: 0.75;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
     overflow: hidden;
@@ -97,10 +116,33 @@
     cursor: pointer;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
+    border-radius: 0px;
 }
-.my-container input.button.login-form-button:hover, .acount-shop-button:hover {
+.my-container input.button.login-form-button:hover, .acount-shop-button:hover, .acount-information-col-edit a.login-form-button:hover,
+a.btn.btn-primary.login-form-button:hover, input.btn.btn-primary.login-form-button:hover {
     opacity: 0.999;
     border-color: #666;
+}
+.pull-right input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button{
+    margin-left: 45px;
+    color: #171717;
+    background: transparent;
+    padding: 10px 25px;
+    text-transform: none;
+}
+.pull-right input.btn.btn-primary.login-form-button:hover, .acount-information-col-edit a.login-form-button:hover{
+    background: #171717;
+    color: #fff;
+}
+.acount-information-col-edit input.btn.btn-primary.login-form-button{
+    padding: 10px 25px;
+}
+a.btn.btn-primary.login-form-button{
+    padding: 10px 12px;
+    text-transform: none;
+    font-family: gotic, sans-serif;
+    font-size: 14px;
+    margin-top: 25px;padding: 10px 12px;
 }
 .my-container.sp-container{
 	padding-bottom: 0px;
@@ -191,7 +233,6 @@ a.pull-right.login-forgotten {
 .col-md-4.acount-information-col {
     width: 32.33333%;
 }
-
 .acount-information {
     display: flex;
     justify-content: space-between;
@@ -204,9 +245,6 @@ a.pull-right.login-forgotten {
     background-color: #f7f7f7;
 }
 .acount-information .acount-information-col{
-    padding-left: 24px;
-    padding-bottom: 24px;
-    padding-right: 24px;
     position: relative;
     display: table-cell;
     padding-top: 41px;
@@ -246,7 +284,7 @@ a.pull-right.login-forgotten {
 .cell-header {
     position: relative;
 }
-ul.detail-set {
+ul.detail-set, .acount-information-col-wish{
     list-style: none;
     padding: 0;
     font-family: gotic, sans-serif;
@@ -270,17 +308,101 @@ li.detail {
     background-color: #f7f7f7;
     justify-content: center;
 }
+.section-edit{
+    list-style: none;
+}
+.section-edit li{
 
-
-
-
-
-
-
-
-
-
-
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.section-edit li a{
+    font-weight: 700;
+    font-family: gotic, sans-serif;
+    position: relative;
+    color: #666;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    font-size: 12.9px;
+}
+.section-edit li a:hover{
+    color: #171717;
+}
+.acount-information.acount-information-edit {
+    background-color: #f7f7f7;
+    justify-content: center;
+    padding-top: 41.5px;
+    padding-right: 48px;
+    padding-left: 48px;
+    background-color: #f7f7f7;
+    padding-bottom: 84px;
+}
+.edit-details{
+    font-family: gotic, sans-serif;
+    position: relative;
+    color: #666;
+    letter-spacing: .01em;
+    font-size: 12.9px;
+    margin-bottom: 15px;
+    color: #000;
+}
+.acount-information-col-edit{
+    padding-top: 0px;
+    background-color: #f7f7f7;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+.acount-information-col-edit .form-horizontal .control-label {
+    text-align: left;
+    font-family: gotic, sans-serif;
+    position: relative;
+    letter-spacing: .01em;
+    font-size: 12.9px;
+    margin-bottom: 15px;
+    text-transform: none;
+    padding: 7px 0px;
+    font-weight: 700;
+    color: #000;
+}
+.acount-information-col.acount-information-col-edit {
+    padding: 0px;
+}
+.acount-information-col-edit .form-horizontal .form-group {
+    margin-left: 0px;
+}
+.acount-information-edit .buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+input.btn.btn-primary.login-form-button{
+    font-family: gotic, sans-serif;
+    color: #fff;
+    letter-spacing: .01em;
+    font-size: 12.9px;
+    text-transform: none;
+    padding: 7px 25px;
+    min-width: 157px;
+}
+.acount-information-col-edit h5{
+    margin: 15px 0px;
+}
+.acount-information-col-edit .login-form-req{
+    top: 15px;
+    right: 0px;
+}
+.pass-container {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
 
 
 
@@ -296,3 +418,152 @@ li.detail {
     padding-top: 84px;
     padding-bottom: 84px;
 }}
+@media screen and (min-width:319px) and (max-width: 480px){
+    .page-banner-asset-cell {
+        margin: 25px auto;
+        min-height: 110px;
+    }
+    .cell-asset-bg{
+        background-position: left center;
+        min-height: 110px
+    }
+    h1.page-banner-asset-title{
+        font-size: 25px;
+        top: 30%;
+    }
+    .my-container {
+    padding-top: 25px;
+    }
+    .login-form-container__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pull-left.login-forgotten{
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .login-form-req {
+        position: relative;
+        top: 0px;
+        right: auto;
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .login-form-description {
+        margin: 5px 0px;
+        font-size: 12px;
+    }
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+
+}
+@media screen and (min-width:481px ) and (max-width: 600px) {
+        .page-banner-asset-cell {
+        margin: 25px auto;
+        min-height: 110px;
+    }
+    .cell-asset-bg{
+        background-position: left center;
+        min-height: 110px
+    }
+    h1.page-banner-asset-title{
+        font-size: 25px;
+        top: 30%;
+    }
+    .my-container {
+    padding-top: 25px;
+    }
+    .login-form-container__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pull-left.login-forgotten{
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .login-form-req {
+        position: relative;
+        top: 0px;
+        right: auto;
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .login-form-description {
+        margin: 5px 0px;
+        font-size: 12px;
+    }
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+}
+@media screen and (min-width:601px ) and (max-width: 767px) {
+        .page-banner-asset-cell {
+        margin: 25px auto;
+        min-height: 110px;
+    }
+    .cell-asset-bg{
+        background-position: left center;
+        min-height: 110px
+    }
+    h1.page-banner-asset-title{
+        font-size: 25px;
+        top: 30%;
+    }
+    .my-container {
+    padding-top: 25px;
+    }
+    .login-form-container__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pull-left.login-forgotten{
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .login-form-req {
+        position: relative;
+        top: 0px;
+        right: auto;
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .login-form-description {
+        margin: 5px 0px;
+        font-size: 12px;
+    }
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width : 992px) {}
+@media screen and (min-width: 993px) and (max-width : 1024px) {}
+@media screen and (min-width : 1025px) and (max-width : 1200px) {}
+@media screen and (min-width : 1201px) and (max-width : 1499px) {}
