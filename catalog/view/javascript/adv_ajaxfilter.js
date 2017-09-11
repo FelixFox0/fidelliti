@@ -331,7 +331,8 @@ function adv_result(g, b, status) {
     var hash = window.location.hash.substr(1);
     if (typeof(g.result_html) != "undefined") {
         if(status) {
-            $(cont).parent().append(g.result_html); 
+            /*$(cont).parent().append(g.result_html); */
+            $(cont).parent().html(g.result_html); 
         } else {
             $(cont).parent().html(g.result_html);
         }
