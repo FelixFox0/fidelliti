@@ -80,9 +80,9 @@
             </div>
             <div class="form-group col-sm-6 required" >
               <label class="control-label" for="input-name">Lastname</label>
-                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-                <?php if ($error_name) { ?>
-                <div class="text-danger"><?php echo $error_name; ?></div>
+                <input type="text" name="name" value="<?php echo $last_name; ?>" id="input-last_name" class="form-control" />
+                <?php if ($error_last_name) { ?>
+                <div class="text-danger"><?php echo $error_last_name; ?></div>
                 <?php } ?>
             </div>
           </div>

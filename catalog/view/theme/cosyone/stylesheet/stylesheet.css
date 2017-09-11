@@ -1031,7 +1031,7 @@ a.sq_tag {
 	position:relative;
 }
 #menu > ul > li.withsubs > a {
-	letter-spacing: 1.65px;
+	letter-spacing: 2px;
 }
 /* Arrow for categories that have sub categories */
 #menu > ul > li i {
@@ -1587,7 +1587,7 @@ table.radio tr.highlight td {
 }
 /* buttons */
 /* default button */
-a.button, input.button, button.button, .btn { 
+a.button, input.button, button.button, .btn, a.btn.btn-primary, input.btn.btn-primary { 
 	text-transform:uppercase;
 	padding:9px 20px;
 	display:inline-block;
@@ -1605,7 +1605,7 @@ input.button, button.button {
 	margin: 0;
 	padding:8px 20px;
 }
-a.button:hover, input.button:hover, button.button:hover, .btn:hover, .btn:focus, a.button:focus, a.button:active { 
+a.button:hover, input.button:hover, button.button:hover, input.btn.btn-primary:hover,  .btn:hover, a.btn.btn-primary:hover, a.btn.btn-primary:focus, .btn:focus, a.button:focus, a.button:active { 
 	background-color: transparent;
 	color:#222222;
 	border-color:#222222;
@@ -2320,7 +2320,7 @@ a.button.remove:hover, .button.remove:hover {
 	transition:border-color 500ms;
 }
 .grid2 .product-grid .item {width:50%;}
-.grid3 .product-grid .item {width:33.32%;}
+.grid3 .product-grid .item {width:33.2%;}
 .grid4 .product-grid .item {width:25%;}
 .grid5 .product-grid .item {width:20%;}
 

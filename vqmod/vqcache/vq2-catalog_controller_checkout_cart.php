@@ -343,6 +343,19 @@ class ControllerCheckoutCart extends Controller {
 			if (!$json) {
 				$this->cart->add($this->request->post['product_id'], $quantity, $option, $recurring_id);
 
+
+				$this->load->model('tool/image');
+				if ($product_info['image'])	{
+				$json['image'] = $this->model_tool_image->resize($product_info['image'], 80, 80);
+				} else {
+				$json['image'] = $this->model_tool_image->resize('placeholder.png', 80, 80);
+				}
+				$this->load->language('common/cart');
+				$json['text_checkout'] = $this->language->get('text_checkout');
+				$json['text_cart'] = $this->language->get('text_cart');
+				$json['link_checkout'] = $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+				$json['link_cart'] = $this->url->link('checkout/cart', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']), $product_info['name'], $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 
 				// Unset all shipping and payment methods
@@ -467,6 +480,19 @@ class ControllerCheckoutCart extends Controller {
                                 $json['product_info'] = $product_info;
 //				$this->cart->add($this->request->post['product_id'], $quantity, $option, $recurring_id);
 
+
+				$this->load->model('tool/image');
+				if ($product_info['image'])	{
+				$json['image'] = $this->model_tool_image->resize($product_info['image'], 80, 80);
+				} else {
+				$json['image'] = $this->model_tool_image->resize('placeholder.png', 80, 80);
+				}
+				$this->load->language('common/cart');
+				$json['text_checkout'] = $this->language->get('text_checkout');
+				$json['text_cart'] = $this->language->get('text_cart');
+				$json['link_checkout'] = $this->url->link('checkout/checkout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+				$json['link_cart'] = $this->url->link('checkout/cart', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+			
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']), $product_info['name'], $this->url->link('checkout/cart', '', false, $this->session->data['country_code'], $this->session->data['language_name']));
 
 				// Unset all shipping and payment methods

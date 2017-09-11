@@ -67,9 +67,14 @@ $(function () {
 $(document).ready(function () {
     container = getContainer();
 
+    if($(window).innerWidth() < 991) {
+        $(".option_box .option_name").siblings(".collapsible").toggle();
+        $(".option_box .option_name").toggleClass("hided");
+    }
+
     $(".option_box .option_name").click(function () {
         $(this).siblings(".collapsible").toggle();
-        $(this).toggleClass("hided")
+        $(this).toggleClass("hided");
     });
     
     $(".option_box .attribute_group_name").click(function () {
