@@ -54,13 +54,13 @@
 </head>
 <body class="<?php echo $class; ?>">
 
-<div class="loader">
+<div class="loader"> 
   <img src="/image/cropped-fidelitti_icon.gif" alt="cropped-fidelitti_icon">
 </div>
 
-<nav id="my-menu" class="visible-xs visible-sm">
+<nav id="my-menu" class="visible-xs visible-sm"> 
 <ul class="">
-  <li><a href="#" class="mmobile-search"><?php echo $text_search2; ?> <i class=""><img src="/image/icon_search.png" alt=""></i></a></li>
+  <li><a href="/index.php?route=product/search" class="mmobile-search"><?php echo $text_search2; ?> <i class=""><img src="/image/icon_search.png" alt=""></i></a></li>
   <li><a href="tel:<?php echo $text_phone; ?>" class="mmobile-phone"><i class=""><img src="/image/menu_icon_phone.png" alt=""></i><?php echo $text_phone; ?></a></li>
   <li class=""><a href="<?php echo $home; ?>" class=""><?php echo $text_home; ?></a></li>
        <?php if ($categories) { ?>
@@ -157,7 +157,7 @@
                         <?php echo $llanguage['name']; ?>
                     <?php } ?>
                 <?php } ?></a></li>
-                <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span>nn</span></a></li>
+                <li><a class="mmobile-lang open-popup" href=".popup-countries"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span>nn</span></a></li>
                 
                 </ul>
       </nav>
