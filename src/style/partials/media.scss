@@ -129,10 +129,14 @@
 		}
 	}
 
+	.popup-countries__item {
+		width: 50%;
+	}
+
 
 }
  
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 992px) {
 	.header {
 		display: none;
 	}

@@ -42,11 +42,23 @@
 <?php echo $analytic; ?>
 <?php } ?>
 
+<script>
+  jQuery(document).ready(function($) {
+    setTimeout(function(){
+      $(".loader").fadeOut();
+    }, 1200);
+  });
+</script>
+
 
 </head>
 <body class="<?php echo $class; ?>">
 
-<nav id="my-menu" class="visible-xs">
+<div class="loader">
+  <img src="/image/cropped-fidelitti_icon.gif" alt="cropped-fidelitti_icon">
+</div>
+
+<nav id="my-menu" class="visible-xs visible-sm">
 <ul class="">
   <li><a href="#" class="mmobile-search"><?php echo $text_search2; ?> <i class=""><img src="/image/icon_search.png" alt=""></i></a></li>
   <li><a href="tel:<?php echo $text_phone; ?>" class="mmobile-phone"><i class=""><img src="/image/menu_icon_phone.png" alt=""></i><?php echo $text_phone; ?></a></li>

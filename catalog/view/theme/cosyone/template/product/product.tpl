@@ -1327,7 +1327,7 @@ $('#button-cart').on('click', function() {
         $('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
         $("#cart-panel .mm-panels").load('index.php?route=common/cart/info #cart > *');
 
-				if($(window).innerWidth() > 768) {
+				if($(window).innerWidth() > 991) {
           /*$.colorbox({
             html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button contrast" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
             className: "notification",
@@ -1497,7 +1497,7 @@ $('#one_click').on('click', function(e) {
 });
 
 
-if($(window).innerWidth() >= 768) {
+if($(window).innerWidth() >= 991) {
 
 $('.product-slider').lightSlider({
           gallery:true,
