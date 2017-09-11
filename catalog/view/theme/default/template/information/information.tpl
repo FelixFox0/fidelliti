@@ -1,4 +1,4 @@
-<?php echo $header; ?>aadasds
+<?php echo $header; ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
