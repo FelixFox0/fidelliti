@@ -1,8 +1,25 @@
-.page-banner-asset-cell {
+﻿.page-banner-asset-cell {
     position: relative;
     overflow: hidden;
     max-width: 1500px;
     margin: 0 auto;
+}
+h1.page-banner-asset-title {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-family: gotic, sans-serif;
 }
 .page-banner-asset-cell .cell-placeholder-1-5 {
     position: relative;
@@ -27,6 +44,7 @@
     -moz-background-size: cover;
     background-size: cover;
     background-color: #f4e6e6;
+    background-image: url(/image/account.png);
 }
 .page-banner-asset-cell img {
     width: 100%;
@@ -395,11 +413,157 @@ input.btn.btn-primary.login-form-button{
 
 
 
-
-
-
 @media (min-width: 1500px){
 	.my-container {
     padding-top: 84px;
     padding-bottom: 84px;
 }}
+@media screen and (min-width:319px) and (max-width: 480px){
+    .page-banner-asset-cell {
+        margin: 25px auto;
+        min-height: 110px;
+    }
+    .cell-asset-bg{
+        background-position: left center;
+        min-height: 110px
+    }
+    h1.page-banner-asset-title{
+        font-size: 25px;
+        top: 30%;
+    }
+    .my-container {
+    padding-top: 25px;
+    }
+    .login-form-container__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pull-left.login-forgotten{
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .login-form-req {
+        position: relative;
+        top: 0px;
+        right: auto;
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .login-form-description {
+        margin: 5px 0px;
+        font-size: 12px;
+    }
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+
+}
+@media screen and (min-width:481px ) and (max-width: 600px) {
+        .page-banner-asset-cell {
+        margin: 25px auto;
+        min-height: 110px;
+    }
+    .cell-asset-bg{
+        background-position: left center;
+        min-height: 110px
+    }
+    h1.page-banner-asset-title{
+        font-size: 25px;
+        top: 30%;
+    }
+    .my-container {
+    padding-top: 25px;
+    }
+    .login-form-container__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pull-left.login-forgotten{
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .login-form-req {
+        position: relative;
+        top: 0px;
+        right: auto;
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .login-form-description {
+        margin: 5px 0px;
+        font-size: 12px;
+    }
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+}
+@media screen and (min-width:601px ) and (max-width: 767px) {
+        .page-banner-asset-cell {
+        margin: 25px auto;
+        min-height: 110px;
+    }
+    .cell-asset-bg{
+        background-position: left center;
+        min-height: 110px
+    }
+    h1.page-banner-asset-title{
+        font-size: 25px;
+        top: 30%;
+    }
+    .my-container {
+    padding-top: 25px;
+    }
+    .login-form-container__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .pull-left.login-forgotten{
+        margin-top: 0px;
+        font-size: 11px;
+    }
+    .login-form-req {
+        position: relative;
+        top: 0px;
+        right: auto;
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .login-form-description {
+        margin: 5px 0px;
+        font-size: 12px;
+    }
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width : 992px) {}
+@media screen and (min-width: 993px) and (max-width : 1024px) {}
+@media screen and (min-width : 1025px) and (max-width : 1200px) {}
+@media screen and (min-width : 1201px) and (max-width : 1499px) {}

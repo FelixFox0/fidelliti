@@ -1507,6 +1507,7 @@ a {
     width: auto;
     max-width: 604px;
     margin: 20px auto;
+    text-align: center;
 
     &__items {
     	display: flex;
@@ -1515,6 +1516,35 @@ a {
     	.large-6 {
     		width: 50%;
     	}
+    }
+
+    &__title {
+    	font-size: 18px;
+	    width: 220px; 
+	    letter-spacing: 2.5px;
+	    margin: 0 auto;
+	    margin-bottom: 25px;
+
+	    & + span {
+			font-size: 13px;
+			line-height: 14px;
+			text-align: center;
+			margin-bottom: 20px;
+			display: inline-block;
+	    }
+    }
+
+    &._new {
+		box-shadow: 0 0 10px rgba(0,0,0,.15);
+		margin: 0 auto;
+		text-align: center;
+		padding: 35px;
+		font-size: 16px;
+		line-height: 2;
+		color: #010101;
+		a {
+			font-weight: bold;
+		}
     }
 }
 .mfp-with-zoom .mfp-container,
@@ -2853,6 +2883,90 @@ a {
 .mfp-content {
 	position: static;
 }
+
+
+.product-popup {
+	max-width: 750px;
+	margin: 0 auto;
+	display: flex;
+	background-color: #fff;
+	justify-content: space-between;
+	position: relative;
+
+	&__img {
+		height: 440px;
+		overflow: hidden;
+		padding: 52px;
+
+		img {
+			position: relative;
+			top: -113px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 22px;
+		line-height: 22px;
+		color: #000000;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__price {
+		font-family: "Helvetica";
+	    font-size: 22px;
+	    font-weight: 500;
+	    line-height: 30px;
+	    padding-top: 8px;
+	    text-align: center;
+	    margin-bottom: 30px;
+	}
+
+	&__info {
+		padding: 60px 52px 30px 52px;
+		width: 50%;
+		max-width: 50%;
+		text-align: center;
+	}
+
+	&__buy {
+		margin-bottom: 25px;
+		a {
+			width: 100%;
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+	}
+
+	&__list {
+		margin-bottom: 25px;
+		a {
+			width: 100%;
+			background-color: #999;
+			border-color: #999;
+			padding-top: 14px;
+			padding-bottom: 14px;
+
+			&:hover {
+				background-color: #808080;
+				border-color: #808080;
+				color: #fff;
+			}
+		}
+	}
+
+	&__more {
+		font-size: 12px;
+		text-transform: uppercase;
+
+		&:hover {
+			color: #797777;
+		}
+	}
+}
+
+
 
 @import "partials/media.scss";
 

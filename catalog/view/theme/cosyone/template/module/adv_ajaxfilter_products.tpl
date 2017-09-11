@@ -1,8 +1,13 @@
-
+<script>
+  $('.open-popup').magnificPopup({
+      type:'inline'
+    });
+</script>
 
 <?php foreach ($products as $product) { ?><!--
     --><div class="item contrast_font product-layout">
-    <a href="javascript:void(0)" class="icon-cart2 quick-buy" onclick="cart.add('<?php echo $product['product_id']; ?>')"></a>
+    <!-- <a href="javascript:void(0)" class="icon-cart2 quick-buy" onclick="cart.add('<?php echo $product['product_id']; ?>')"></a> -->
+    <a href=".pop-prod<?php echo $product['product_id']; ?>" class="icon-cart2 quick-buy open-popup"></a> 
        <div class="image">
         <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
         <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
@@ -60,5 +65,37 @@
 		</script>
     	<?php } ?>
     	</div>
+
+
+      <div class="product-popup pop-prod<?php echo $product['product_id']; ?> mfp-hide">
+        <div class="product-popup__img">
+            <?php if($product['thumb']) { ?>
+              <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+            <?php } ?>
+        </div>
+        <div class="product-popup__info">
+          <div class="product-popup__title">
+            <?php echo $product['name']; ?>
+          </div>
+          <div class="product-popup__price">
+            <?php if ($product['price']) { ?>
+              <div class="">
+                <?php if (!$product['special']) { ?>
+                <?php echo $product['price']; ?>
+                <?php } else { ?>
+                <span class=""><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
+                <?php } ?>
+              </div>
+              <?php } ?>
+          </div>
+          <div class="product-popup__buy">
+            <a href="javascript:void(0)" class="button" onclick="cart.add('<?php echo $product['product_id']; ?>')">Купить</a>
+          </div>
+          <div class="product-popup__list">
+            <a href="javascript:void(0)" class="button" onclick="wishlist.add('<?php echo $product['product_id']; ?>')">Список желаний</a>
+          </div>
+          <div class="product-popup__more"><a href="#">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</a></div> 
+        </div>
+      </div>
     </div><!--
     --><?php } ?>
