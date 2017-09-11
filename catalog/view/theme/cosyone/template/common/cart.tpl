@@ -1,8 +1,5 @@
 <div id="cart" class="shortcut">
-
-
-
- <a class="shortcut_heading" href="<?php echo $cart; ?>" id="cart-total"><?php echo $text_items; ?></a>
+<a class="shortcut_heading" href="<?php echo $cart; ?>" id="cart-total"><?php echo $text_items; ?></a>
  <nav id="cart-panel">
   <div class="content">
     <?php if ($products || $vouchers) { ?>
@@ -38,7 +35,7 @@
     </div>
     <div class="box-cart">
     <div class="mini-go-cart">
-      <a class="" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
+      <a class="" href="<?php echo $cart; ?>"><?php echo $text_cart; ?></a>
     </div>
     <div class="mini-cart-total">
       <table>
@@ -51,7 +48,7 @@
       </table>
     </div>
     <div class="checkoutbuttons">
-    <a class="" href="<?php echo $cart; ?>"><?php echo $text_cart; ?></a>
+    <a class="" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
     
     </div>
     <?php } else { ?>

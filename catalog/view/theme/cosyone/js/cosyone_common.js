@@ -223,6 +223,7 @@ var cart = {
 				$('#cart > button').button('loading');
 			},
 			success: function(json) {
+				console.log(json);
 				$('.alert, .text-danger').remove();
 			
 				$('#cart > button').button('reset');
@@ -233,16 +234,6 @@ var cart = {
 
 
 				if (json['success']) {
-					$.colorbox({
-					html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
-					className: "notification",
-					initialHeight:50,
-					initialWidth:50,
-					width:"90%",
-					maxWidth:400,
-					height:"90%",
-					maxHeight:200
-					});
 					
 				}
 			}
