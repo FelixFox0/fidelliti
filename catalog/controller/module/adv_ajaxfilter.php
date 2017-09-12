@@ -17,7 +17,10 @@ class ControllerModuleAdvajaxfilter extends Controller {
         $data['text_all'] = $this->language->get('text_all');
         $data['clear_filter'] = $this->language->get('clear_filter');
         $data['text_instock'] = $this->language->get('text_instock');
-		$data['text_range'] = $this->language->get('text_range');
+        $data['text_range'] = $this->language->get('text_range');
+        $data['text_bye'] = $this->language->get('text_bye');
+        $data['text_wish'] = $this->language->get('text_wish');
+        $data['text_dop'] = $this->language->get('text_dop');
 
         $data['heading_title'] = $this->language->get('heading_title');
 

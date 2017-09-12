@@ -143,6 +143,9 @@ class ControllerProductSearch extends Controller {
 		$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
 		$data['text_sort'] = $this->language->get('text_sort');
 		$data['text_limit'] = $this->language->get('text_limit');
+                $data['text_bye'] = $this->language->get('text_bye');
+                $data['text_wish'] = $this->language->get('text_wish');
+                $data['text_dop'] = $this->language->get('text_dop');
 
 		$data['entry_search'] = $this->language->get('entry_search');
 		$data['entry_description'] = $this->language->get('entry_description');
