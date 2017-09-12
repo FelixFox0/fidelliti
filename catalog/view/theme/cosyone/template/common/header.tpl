@@ -202,7 +202,7 @@
       </div>
       <script>
           var next = 0;
-          var textArr = ['<?php echo $text2; ?>', '<?php echo $text_free_call . $text; ?>'];
+          var textArr = ['<?php echo $text2; ?>', '<?php echo $text_free_call . $text_phone; ?>'];
           setInterval(function(){
             $('.header__promo').hide().html(textArr[next]).fadeIn(1500);
             next++; 

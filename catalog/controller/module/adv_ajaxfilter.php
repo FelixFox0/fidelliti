@@ -17,7 +17,11 @@ class ControllerModuleAdvajaxfilter extends Controller {
         $data['text_all'] = $this->language->get('text_all');
         $data['clear_filter'] = $this->language->get('clear_filter');
         $data['text_instock'] = $this->language->get('text_instock');
-		$data['text_range'] = $this->language->get('text_range');
+        $data['text_range'] = $this->language->get('text_range');
+        
+        $data['text_bye'] = $this->language->get('text_bye');
+        $data['text_wish'] = $this->language->get('text_wish');
+        $data['text_dop'] = $this->language->get('text_dop');
 
         $data['heading_title'] = $this->language->get('heading_title');
 
@@ -218,6 +222,8 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		
 		$data['url']   = $this->url->link('product/adv_ajaxfilter', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
                 $data['product_total'] = $product_total;
+//                var_dump($data);
+//                die();
 		return $this->load->view('module/adv_ajaxfilter', $data);
         
 	}
@@ -430,6 +436,9 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$data['text_grid'] = $this->language->get('text_grid');
 		$data['text_sort'] = $this->language->get('text_sort');
 		$data['text_limit'] = $this->language->get('text_limit');
+                $data['text_bye'] = $this->language->get('text_bye');
+                $data['text_wish'] = $this->language->get('text_wish');
+                $data['text_dop'] = $this->language->get('text_dop');
 
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');

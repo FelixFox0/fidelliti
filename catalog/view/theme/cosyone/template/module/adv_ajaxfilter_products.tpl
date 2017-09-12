@@ -89,12 +89,12 @@
               <?php } ?>
           </div>
           <div class="product-popup__buy">
-            <a href="javascript:void(0)" class="button" onclick="cart.add('<?php echo $product['product_id']; ?>')">Купить</a>
+            <a href="javascript:void(0)" class="button" onclick="cart.add('<?php echo $product['product_id']; ?>')"><?php echo $text_bye; ?></a>
           </div>
           <div class="product-popup__list">
-            <a href="javascript:void(0)" class="button" onclick="wishlist.add('<?php echo $product['product_id']; ?>')">Список желаний</a>
+            <a href="javascript:void(0)" class="button" onclick="wishlist.add('<?php echo $product['product_id']; ?>')"><?php echo $text_wish; ?></a>
           </div>
-          <div class="product-popup__more"><a href="#">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</a></div> 
+          <div class="product-popup__more"><a href="#"><?php echo $text_dop; ?></a></div> 
         </div>
       </div>
     </div><!--

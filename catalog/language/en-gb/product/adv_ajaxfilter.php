@@ -18,5 +18,7 @@ $_['text_model_asc']    = 'Model (A - Z)';
 $_['text_model_desc']   = 'Model (Z - A)';
 $_['text_limit']        = 'Show:';
 $_['text_compare']      = 'Product Compare (%s)';
-
+$_['text_bye'] = 'Buy';
+$_['text_wish'] = 'Wish List';
+$_['text_dop'] = 'ADDITIONAL INFORMATION';
 ?>

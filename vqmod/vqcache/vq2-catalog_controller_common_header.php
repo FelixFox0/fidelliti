@@ -211,9 +211,16 @@ class ControllerCommonHeader extends Controller {
                 
                 $data['text_free_call'] = $this->language->get('text_read_faq_but');
                 
-                $data['text_phone'] = $this->language->get('text_phone_'. $this->session->data['country_code']);
+                if(($this->session->data['country_code']=='ua')||($this->session->data['country_code']=='ru')){
+                    $country_code = $this->session->data['country_code'];
+                }else{
+                    $country_code = 'en';
+                }
                 
-                $data['text2'] = $this->language->get('text2_'. $this->session->data['country_code']);
+                $data['text_phone'] = $this->language->get('text_phone_'. $country_code);
+                $data['text_free_call'] = $this->language->get('text_free_call');
+                
+                $data['text2'] = $this->language->get('text2_'. $country_code);
                 
                 $data['text_search2'] = $this->language->get('text_search2');
                 $data['text_see_all'] = $this->language->get('text_see_all');

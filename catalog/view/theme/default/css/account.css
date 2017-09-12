@@ -532,8 +532,16 @@ input.btn.btn-primary.login-form-button{
         padding: 15px 0;
     }
     .section-edit {
-    list-style: none;
-    padding: 0 10px;
+        list-style: none;
+        padding: 0 10px;
+    }
+    .acount-information-edit .buttons {
+        display: block;
+        text-align: center;
+        float: left;
+    }
+    .acount-information-edit .buttons .pull-left, .acount-information-edit .buttons .pull-right{
+        float: left!important;
     }
 
 }
