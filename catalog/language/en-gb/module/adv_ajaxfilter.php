@@ -22,5 +22,5 @@ $_['pds_weight']     = 'Weight:';
 $_['text_instock']          = 'In Stock';
 
 $_['text_bye'] = 'Buy';
-$_['text_whith'] = 'Wish List';
+$_['text_wish'] = 'Wish List';
 $_['text_dop'] = 'ADDITIONAL INFORMATION';

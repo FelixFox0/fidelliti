@@ -28,12 +28,19 @@ class ControllerProductAdvajaxfilter extends Controller {
 		$data['text_grid'] = $this->language->get('text_grid');
 		$data['text_sort'] = $this->language->get('text_sort');
 		$data['text_limit'] = $this->language->get('text_limit');
+                
+        
         $data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
 
         $data['button_compare'] = $this->language->get('button_compare');
 
         $data['compare'] = $this->url->link('product/compare', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
+        $data['text_bye'] = $this->language->get('text_bye');
+        $data['text_wish'] = $this->language->get('text_wish');
+        $data['text_dop'] = $this->language->get('text_dop');
+        
+        
         $url = '';
 
 		if(isset($this->request->get['limit'])) {

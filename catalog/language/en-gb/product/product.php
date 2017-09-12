@@ -61,3 +61,8 @@ $_['text_delivery'] = 'Delivery and payment';
 $_['text_sku'] = 'Article:';
 $_['text_detali'] = 'Detail';
 $_['text_size'] = 'Size';
+$_['text_add_cart'] = 'ADDED TO CART';
+
+$_['text_bye'] = 'Buy';
+$_['text_wish'] = 'Wish List';
+$_['text_dop'] = 'ADDITIONAL INFORMATION';
