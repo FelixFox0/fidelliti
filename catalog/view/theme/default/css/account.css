@@ -230,9 +230,6 @@ a.pull-right.login-forgotten {
 	text-transform: uppercase;
 	font-weight: 600;
 }
-.col-md-4.acount-information-col {
-    width: 32.33333%;
-}
 .acount-information {
     display: flex;
     justify-content: space-between;
@@ -415,9 +412,13 @@ input.btn.btn-primary.login-form-button{
 
 @media (min-width: 1500px){
 	.my-container {
-    padding-top: 84px;
-    padding-bottom: 84px;
-}}
+        padding-top: 84px;
+        padding-bottom: 84px;
+    }
+    .col-md-4.acount-information-col {
+        width: 32.33333%;
+    }
+}
 @media screen and (min-width:319px) and (max-width: 480px){
     .page-banner-asset-cell {
         margin: 25px auto;
@@ -464,6 +465,83 @@ input.btn.btn-primary.login-form-button{
     }
     .login-form {
         padding: 20.5px 15px 18px;
+    }
+
+
+
+
+
+
+
+
+    .account-menu ul {
+        display: block;
+        margin: 0;
+        padding: 0 10px;
+        float: left;
+        text-align: center;
+        width: 100%;
+    }
+    .account-menu ul li:first-child {
+        margin-left: 7px;
+    }
+    .account-menu ul li {
+        display: block;
+        margin-left: 7px;
+        padding: 0 0px 5.5px;
+    }
+    .account-menu ul li a {
+        font-size: 11px;
+    }
+    .acount-information {
+        display: block;
+        margin: 0px 0px 40px;
+    }
+    .acount-information .acount-information-col {
+        display: block;
+        padding: 10px 20px;
+        float: left;
+        margin: 0;
+        background-color: #f7f7f7;
+        margin: 0px 0px 5px;
+    }
+    .acount-shop-button {
+        bottom: 11px;
+    }
+    .account-header-link {
+        position: relative;
+        margin: 0px 0px 5px;
+        text-decoration: underline!important;
+    }
+    .account-logout {
+        position: relative;
+        top: 5px;
+        margin-left: 0px;
+        display: block;
+    }
+    .acount-information {
+        display: block;
+        margin: 0px 0px 40px;
+        top: 0;
+        width: 100%;
+        background: #f7f7f7;
+        padding: 0 !important;
+    }
+    .edit-col-menu {
+        background: #f7f7f7;
+        padding: 15px 0;
+    }
+    .section-edit {
+        list-style: none;
+        padding: 0 10px;
+    }
+    .acount-information-edit .buttons {
+        display: block;
+        text-align: center;
+        float: left;
+    }
+    .acount-information-edit .buttons .pull-left, .acount-information-edit .buttons .pull-right{
+        float: left!important;
     }
 
 }
@@ -514,6 +592,51 @@ input.btn.btn-primary.login-form-button{
     .login-form {
         padding: 20.5px 15px 18px;
     }
+        .account-menu ul {
+        display: block;
+        margin: 0;
+        padding: 0 10px;
+        float: left;
+        text-align: center;
+        width: 100%;
+    }
+    .account-menu ul li:first-child {
+        margin-left: 7px;
+    }
+    .account-menu ul li {
+        display: block;
+        margin-left: 7px;
+        padding: 0 0px 5.5px;
+    }
+    .account-menu ul li a {
+        font-size: 11px;
+    }
+    .acount-information {
+        display: block;
+        margin: 0px 0px 40px;
+    }
+    .acount-information .acount-information-col {
+        display: block;
+        padding: 10px 20px;
+        float: left;
+        margin: 0;
+        background-color: #f7f7f7;
+        margin: 0px 0px 5px;
+    }
+    .acount-shop-button {
+        bottom: 11px;
+    }
+    .account-header-link {
+        position: relative;
+        margin: 0px 0px 5px;
+        text-decoration: underline!important;
+    }
+    .account-logout {
+        position: relative;
+        top: 5px;
+        margin-left: 0px;
+        display: block;
+    }
 }
 @media screen and (min-width:601px ) and (max-width: 767px) {
         .page-banner-asset-cell {
@@ -562,8 +685,98 @@ input.btn.btn-primary.login-form-button{
     .login-form {
         padding: 20.5px 15px 18px;
     }
+        .account-menu ul {
+        display: block;
+        margin: 0;
+        padding: 0 10px;
+        float: left;
+        text-align: center;
+        width: 100%;
+    }
+    .account-menu ul li:first-child {
+        margin-left: 7px;
+    }
+    .account-menu ul li {
+        display: block;
+        margin-left: 7px;
+        padding: 0 0px 5.5px;
+    }
+    .account-menu ul li a {
+        font-size: 11px;
+    }
+    .acount-information {
+        display: block;
+        margin: 0px 0px 40px;
+    }
+    .acount-information .acount-information-col {
+        display: block;
+        padding: 10px 20px;
+        float: left;
+        margin: 0;
+        background-color: #f7f7f7;
+        margin: 0px 0px 5px;
+    }
+    .acount-shop-button {
+        bottom: 11px;
+    }
+    .account-header-link {
+        position: relative;
+        margin: 0px 0px 5px;
+        text-decoration: underline!important;
+    }
+    .account-logout {
+        position: relative;
+        top: 5px;
+        margin-left: 0px;
+        display: block;
+    }
 }
-@media screen and (min-width: 768px) and (max-width : 992px) {}
-@media screen and (min-width: 993px) and (max-width : 1024px) {}
-@media screen and (min-width : 1025px) and (max-width : 1200px) {}
-@media screen and (min-width : 1201px) and (max-width : 1499px) {}
+@media screen and (min-width: 768px) and (max-width : 992px) {
+    .login-form-container .buttons .pull-right{
+        float: left!important;
+    }
+    .login-form-container .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .login-form {
+        padding: 20.5px 15px 18px;
+    }
+    .acount-information .acount-information-col {
+        padding: 15px;
+        margin-right: 3px;
+    }
+    .account-header-link {
+        display: block;
+        position: relative;
+        text-decoration: underline !important;
+        margin-bottom: 5px;
+    }
+}
+@media screen and (min-width: 993px) and (max-width : 1024px) {    
+    .col-md-4.acount-information-col {
+        width: 32.33333%;
+    }
+    .account-header-link {
+        display: block;
+        position: relative;
+        text-decoration: underline !important;
+        margin-bottom: 5px;
+    }
+}
+@media screen and (min-width : 1025px) and (max-width : 1200px) {
+        .col-md-4.acount-information-col {
+        width: 32.33333%;
+    }
+    .account-header-link {
+        display: block;
+        position: relative;
+        text-decoration: underline !important;
+        margin-bottom: 5px;
+    }
+}
+@media screen and (min-width : 1201px) and (max-width : 1499px) {
+        .col-md-4.acount-information-col {
+        width: 32.33333%;
+    }
+}

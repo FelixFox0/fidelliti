@@ -46,7 +46,7 @@
       </div>
       
       <div class="acount-information">
-        <div class="col-md-4 acount-information-col">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 acount-information-col">
           <div class="cell-header">
             <h4>Предпочтения</h4>
           </div>
@@ -56,7 +56,7 @@
             <a class="acount-shop-button" href="/" title="Магазин">Магазин</a>
           </div>
         </div>
-        <div class="col-md-4 acount-information-col">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 acount-information-col">
           <div class="cell-header">
             <h4>Заказы</h4>
             <a href="<?php echo $order; ?>" class="account-header-link" title="Посмотреть все">Посмотреть все</a>
@@ -66,7 +66,7 @@
             <a class="acount-shop-button" href="/" title="Магазин">Магазин</a>
           </div>
         </div>
-        <div class="col-md-4 acount-information-col">          
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 acount-information-col">          
           <div class="cell-header">
             <h4>Данные Личного кабинета</h4>
             <a href="<?php echo $edit; ?>" class="account-header-link" title="Изменить">Изменить</a>

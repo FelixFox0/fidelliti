@@ -46,7 +46,7 @@
       </div>
       
       <div class="acount-information acount-information-edit">
-        <div class="col-md-4 edit-col-menu">          
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  edit-col-menu">          
           <ul class="section-edit">
             <li class="section">
               <a href="<?php echo $edit; ?>" class="cta3 add-smooth-underline">
@@ -66,7 +66,7 @@
       </div>
 
 
-        <div class="col-md-8 acount-information-col acount-information-col-edit">          
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12  acount-information-col acount-information-col-edit">          
           <div class="cell-header">
             <div class="edit-details"><?php echo $text_your_details; ?></div>
           </div>

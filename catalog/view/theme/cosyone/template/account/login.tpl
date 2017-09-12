@@ -29,7 +29,7 @@
 
 
       <div class="row my-container">
-        <div class="col-md-6 col-lg-5 col-lg-offset-1 margin-b">
+        <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12 col-lg-offset-1 margin-b">
           <div class="login-form">
           <div class="login-form-header">
             <h5 class="login-form-name"><?php echo $heading_title_log; ?></h5>
@@ -55,7 +55,7 @@
           </div>
         </div>
         
-        <div class="col-md-6 col-lg-5">
+        <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12">
         <div class="login-form">
         <div class="login-form-header">
             <h5 class="login-form-name"><?php echo $heading_title_reg; ?></h5>
