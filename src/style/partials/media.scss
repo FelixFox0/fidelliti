@@ -1142,9 +1142,55 @@
 	}
 
 	.product-search #input-search {
-		    padding: 0 0 0px 0;
-    box-shadow: none;
-    font-size: 19px;
+		padding: 0 0 0px 0;
+		box-shadow: none;
+		font-size: 19px;
+	}
+
+	.quickcheckout-checkout h1 {
+		margin-top: 20px;
+		margin-bottom: 15px;
+		font-size: 16px;
+	}
+
+	#quickcheckoutconfirm #login .login-row input {
+		width: 200px;
+	}
+
+	.quickcheckout-checkout #quickcheckoutconfirm table td {
+		padding: 0;
+		border-top: none;
+	}
+
+	#quickcheckoutconfirm #coupon-content {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#quickcheckoutconfirm #coupon-content button {
+		margin-left: 0;
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	.quickcheckout-content {
+		.col-sm-6, .col-xs-12 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	#terms .quickcheckout-content {
+		padding: 0 !important;
+	}
+
+	.cart-total-info {
+		margin-right: 0;
+		width: 100%;
+	}
+
+	#quickcheckoutconfirm .checkout-column>div {
+		border-bottom: none !important;
 	}
 
 }
