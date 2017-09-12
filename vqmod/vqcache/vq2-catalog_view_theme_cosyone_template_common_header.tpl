@@ -51,8 +51,8 @@
 
 <nav id="my-menu" class="visible-xs">
 <ul class="">
-  <li><a href="#" class="mmobile-search">Поиск товара по каталогу <i class=""><img src="/image/icon_search.png" alt=""></i></a></li>
-  <li><a href="tel:0 800 210 385" class="mmobile-phone"><i class=""><img src="/image/menu_icon_phone.png" alt=""></i>0 800 210 385</a></li>
+  <li><a href="#" class="mmobile-search"><?php echo $text_search2; ?> <i class=""><img src="/image/icon_search.png" alt=""></i></a></li>
+  <li><a href="tel:<?php echo $text_phone; ?>" class="mmobile-phone"><i class=""><img src="/image/menu_icon_phone.png" alt=""></i><?php echo $text_phone; ?></a></li>
   <li class=""><a href="<?php echo $home; ?>" class=""><?php echo $text_home; ?></a></li>
        <?php if ($categories) { ?>
        <?php foreach ($categories as $category_1) { ?>
@@ -70,7 +70,7 @@
           <li class="mmobile-image"><p><?php echo $category_1['name']; ?></p><img src="<?php echo $category_1['thumb']; ?>" alt=""></li>
           <?php } ?>
 
-          <li><a href="<?php echo $category_1['href']; ?>">Смотреть все</a></li>
+          <li><a href="<?php echo $category_1['href']; ?>"><?php echo $text_see_all; ?></a></li>
 
           <?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
@@ -88,7 +88,7 @@
               <?php if ($category_2['thumb']) { ?>
                 <li class="mmobile-image"><p><?php echo $category_2['name']; ?></p><img src="<?php echo $category_2['thumb']; ?>" alt=""></li>
                 <?php } ?>
-                <li><a href="<?php echo $category_2['href']; ?>">Смотреть все</a></li>
+                <li><a href="<?php echo $category_2['href']; ?>"><?php echo $text_see_all; ?></a></li>
                <?php foreach ($category_2['children'] as $category_3) { ?>
                <li><a href="<?php echo $category_3['href']; ?>"><?php echo $category_3['name']; ?></a></li>
                <?php } ?>
@@ -111,7 +111,7 @@
           <li class="">
             <span href="<?php echo $cosyone_custom_menu_url1 ?>" class=""><?php echo $cosyone_custom_menu_title1; ?></span>
                 <ul>
-                  <li><a href="<?php echo $cosyone_custom_menu_url1 ?>">Смотреть все</a></li>
+                  <li><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $text_see_all; ?></a></li>
                   <li class=""><a href="<?php echo $blog ?>"><?php echo $text_blog ?></a></li>
                   <li class=""><a href="https://www.instagram.com/fidelitti/" target="_blank">#Fidelittigirls</a></li>
                 </ul>
@@ -128,7 +128,7 @@
                     
                 
                 <ul>
-                <li><a href="<?php echo $cosyone_custom_menu_url2 ?>">Смотреть все</a></li>
+                <li><a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $text_see_all; ?></a></li>
                   <li class=""><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
                   <li class=""><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
@@ -140,10 +140,15 @@
                 
         <?php } ?>
 
-                <li><a class="mmobile-wicon" href="#">Обслуживание клиентов <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
-                <li><a class="mmobile-wicon" href="#">Авторизация <i class=""></i><img src="/image/man.png" alt=""></a></li>
-                <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true"></i> Русский</a></li>
-                <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-globe" aria-hidden="true"></i></i> Доставка в <span>nn</span></a></li>
+                <li><a class="mmobile-wicon" href="#"><?php echo $text_customer; ?> <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
+                <li><a class="mmobile-wicon" href="<?php echo $login; ?>"><?php echo $text_login; ?> <i class=""></i><img src="/image/man.png" alt=""></a></li>
+                            <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true">
+                </i><?php foreach ($llanguages as $llanguage) { ?>
+                    <?php if ($llanguage['code'] == $code) { ?>
+                        <?php echo $llanguage['name']; ?>
+                    <?php } ?>
+                <?php } ?></a></li>
+                <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span>nn</span></a></li>
                 
                 </ul>
       </nav>
@@ -188,7 +193,7 @@
       </div>
       <script>
           var next = 0;
-          var textArr = ['другой текст какой то', '<?php echo $cosyone_top_promo_message; ?>'];
+          var textArr = ['<?php echo $text2; ?>', '<?php echo $text_free_call . $text; ?>'];
           setInterval(function(){
             $('.header__promo').hide().html(textArr[next]).fadeIn(1500);
             next++; 
@@ -455,7 +460,7 @@ if($countries){
     <div class="large-6 medium-6 small-6 columns modal__phone">
         <div><img src="/image/call-answer1.png" alt=""></div>
         <div><?php echo $text_phone; ?></div>
-        <div><span class="prmn-cmngr-message">8 800 505 72 13</span></div>
+        <div><span class="prmn-cmngr-message"><?php echo $text_phone; ?></span></div>
 
         <div><?php echo $text_work_week; ?></div> 
         <div><?php echo $text_work_time; ?></div>

@@ -209,6 +209,14 @@ class ControllerCommonHeader extends Controller {
                 $data['my_company'] = $this->url->link('information/informationf','information_id=7', false, $this->session->data['country_code'], $this->session->data['language_name']);
                 $data['our_production'] = $this->url->link('information/informationf','information_id=8', false, $this->session->data['country_code'], $this->session->data['language_name']);
                 
+                $data['text_free_call'] = $this->language->get('text_read_faq_but');
+                
+                $data['text_phone'] = $this->language->get('text_phone_'. $this->session->data['country_code']);
+                
+                $data['text2'] = $this->language->get('text2_'. $this->session->data['country_code']);
+                
+                $data['text_search2'] = $this->language->get('text_search2');
+                $data['text_see_all'] = $this->language->get('text_see_all');
 
                 $data['blog'] = $this->url->link('blog/home', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
                 
@@ -334,6 +342,22 @@ class ControllerCommonHeader extends Controller {
                 }
                 
                 
+                $this->load->model('localisation/language');
+
+		$data['llanguages'] = array();
+
+		$results = $this->model_localisation_language->getLanguages();
+//                var_dump($results);
+//                die();
+		foreach ($results as $result) {
+			if ($result['status']) {
+				$data['llanguages'][] = array(
+					'name' => $result['name'],
+					'code' => $result['code'],
+				);
+			}
+		}
+                $data['code'] = $this->session->data['language'];
                 
                 
                 $this->load->model('common/countries');
