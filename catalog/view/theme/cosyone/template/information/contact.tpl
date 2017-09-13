@@ -46,7 +46,7 @@
     </div>
     <div class="contact-page__tabs">
       <a href="#" class="button active">E-mail</a>
-      <a href="#" class="button contrast js-toggler">Order number</a>
+      <a href="#" class="button contrast js-toggler">Номер заказа</a>
     </div>
     <div class="contact-page__form">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
@@ -62,24 +62,22 @@
                 <?php } ?>
             </div>
             <div class="form-group col-sm-6 required target-toggle">
+              <label class="control-label" for="input-name">Номер заказа</label>
+                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
+
+            </div>
+            
+          </div>
+          <div class="row clearfix mb">
+            <div class="form-group col-sm-6 required">
               <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
                 <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
                 <?php if ($error_name) { ?>
                 <div class="text-danger"><?php echo $error_name; ?></div>
                 <?php } ?>
             </div>
-            
-          </div>
-          <div class="row clearfix mb">
-            <div class="form-group col-sm-6 required">
-              <label class="control-label" for="input-name">Ваше ім`я</label>
-                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-                <?php if ($error_name) { ?>
-                <div class="text-danger"><?php echo $error_name; ?></div>
-                <?php } ?>
-            </div>
             <div class="form-group col-sm-6 required" >
-              <label class="control-label" for="input-name">Lastname</label>
+              <label class="control-label" for="input-name">Фамилия</label>
                 <input type="text" name="name" value="<?php echo $last_name; ?>" id="input-last_name" class="form-control" />
                 <?php if ($error_last_name) { ?>
                 <div class="text-danger"><?php echo $error_last_name; ?></div>
