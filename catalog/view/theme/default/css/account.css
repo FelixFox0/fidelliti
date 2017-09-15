@@ -52,7 +52,7 @@ h1.page-banner-asset-title {
     min-height: 100%;
 }
 .login-form{
-	position: relative;
+    position: relative;
     display: table-cell;
     width: 50%;
     padding: 44.5px 48px 48px;
@@ -61,7 +61,7 @@ h1.page-banner-asset-title {
     vertical-align: top;
 }
 .login-form-header{
-	color: #171717;
+    color: #171717;
 }
 .login-form-header:before, .login-form-header:after {
     content: " ";
@@ -69,13 +69,13 @@ h1.page-banner-asset-title {
     border-collapse: collapse;
 }
 .login-form-header .login-form-name{
-	font-weight: 700;
+    font-weight: 700;
     font-size: 14px;
-	font-family: gotic, Sans-serif;
+    font-family: gotic, Sans-serif;
 }
 .login-form-description {
     font-size: 14px;
-	font-family: gotic, Sans-serif;
+    font-family: gotic, Sans-serif;
     letter-spacing: normal;
     word-spacing: normal;
     margin-top: 27px;
@@ -145,7 +145,7 @@ a.btn.btn-primary.login-form-button{
     margin-top: 25px;padding: 10px 12px;
 }
 .my-container.sp-container{
-	padding-bottom: 0px;
+    padding-bottom: 0px;
 }
 a.pull-right.login-forgotten {
     color: #000;
@@ -162,18 +162,18 @@ a.pull-right.login-forgotten {
     right: 48px;
 }
 .account-welcome{
-	margin-bottom: 35.5px;
+    margin-bottom: 35.5px;
 }
 .account-header{
-	text-align: center;
+    text-align: center;
 }
 .account-menu h2{
-	font-weight: 700;
+    font-weight: 700;
     font-family: gotic, sans-serif;
     word-spacing: normal;
 }
 .account-logout{
-	color: #666;
+    color: #666;
     font-family: gotic, sans-serif;
     letter-spacing: .01em;
     position: relative;
@@ -206,19 +206,19 @@ a.pull-right.login-forgotten {
     transition: opacity .5s ease-in-out, transform .5s ease-in-out, -webkit-transform .5s ease-in-out, -moz-transform .5s ease-in-out, -o-transform .5s ease-in-out;
 }
 .account-logout:hover {
-	color: #171717;
+    color: #171717;
 }
 .account-heading_text{
-	font-family: gotic, sans-serif;
+    font-family: gotic, sans-serif;
     letter-spacing: .01em;
     margin-bottom: 35px;
 }
 .account-menu ul{
-	border-bottom: 1px solid #c6c6c6;
+    border-bottom: 1px solid #c6c6c6;
     text-align: center;
 }
 .account-menu ul li{
-	display: inline-block;
+    display: inline-block;
     margin-left: 36px;
     padding: 0 12px 17.5px;
 }
@@ -226,9 +226,9 @@ a.pull-right.login-forgotten {
     margin-left: 0;
 }
 .account-menu ul li a{
-	font-family: gotic, sans-serif;
-	text-transform: uppercase;
-	font-weight: 600;
+    font-family: gotic, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 .acount-information {
     display: flex;
@@ -411,7 +411,7 @@ input.btn.btn-primary.login-form-button{
 
 
 @media (min-width: 1500px){
-	.my-container {
+    .my-container {
         padding-top: 84px;
         padding-bottom: 84px;
     }
@@ -429,11 +429,11 @@ input.btn.btn-primary.login-form-button{
         min-height: 110px
     }
     h1.page-banner-asset-title{
-        font-size: 25px;
+        font-size: 19px;
         top: 30%;
     }
     .my-container {
-    padding-top: 25px;
+    padding-top: 5px;
     }
     .login-form-container__bottom {
         display: flex;
@@ -466,14 +466,6 @@ input.btn.btn-primary.login-form-button{
     .login-form {
         padding: 20.5px 15px 18px;
     }
-
-
-
-
-
-
-
-
     .account-menu ul {
         display: block;
         margin: 0;
@@ -539,11 +531,60 @@ input.btn.btn-primary.login-form-button{
         display: block;
         text-align: center;
         float: left;
+        width: 100%;
     }
     .acount-information-edit .buttons .pull-left, .acount-information-edit .buttons .pull-right{
-        float: left!important;
+        float: left !important;
+        margin: 5px 0;
+        text-align: center;
+        display: block;
+        width: 100%;
     }
-
+    .pull-right input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button {
+        margin-left: 0px;
+    }
+    .acount-information-col-edit input.btn.btn-primary.login-form-button {
+        padding: 10px 0px;
+        margin: 0;
+    }
+    .account-welcome .h2 {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .account-welcome .h2 {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .section-edit li a{
+        font-size: 10.9px;
+    }
+    .section-edit li {
+        margin-bottom: 5px;
+    }    
+    .login-form-header .login-form-name {
+        font-size: 12.9px;
+    }
+    .acount-information-col-edit .login-form-req {
+        font-size: 11px;
+    }
+    .account-logout .buttons .pull-right{
+        float: left !important;
+    }
+    .account-logout h1 {
+        font-size: 22px;
+    }
+    .account-order .acount-information {
+        display: block;
+        justify-content: space-between;
+        background: transparent;
+        min-height: 140px;
+    }
+    .account-order .acount-information .acount-information-col-order{
+        margin: 0px 2px 5px 0px;
+    }
+    .acount-information-col-edit .form-horizontal .control-label{
+        font-size: 10.9px;
+    }
 }
 @media screen and (min-width:481px ) and (max-width: 600px) {
         .page-banner-asset-cell {
@@ -636,6 +677,75 @@ input.btn.btn-primary.login-form-button{
         top: 5px;
         margin-left: 0px;
         display: block;
+    }
+    .acount-information {
+        display: block;
+        margin: 0px 0px 40px;
+        top: 0;
+        width: 100%;
+        background: #f7f7f7;
+        padding: 0 !important;
+    }
+    .edit-col-menu {
+        background: #f7f7f7;
+        padding: 15px 0;
+    }
+    .section-edit {
+        list-style: none;
+        padding: 0 10px;
+    }
+    .acount-information-edit .buttons {
+        display: block;
+        text-align: center;
+        float: left;
+        width: 100%;
+    }
+    .acount-information-edit .buttons .pull-left, .acount-information-edit .buttons .pull-right{
+        float: left !important;
+        margin: 5px 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    .pull-right input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button {
+        margin-left: 0px;
+    }
+    .acount-information-col-edit input.btn.btn-primary.login-form-button {
+        padding: 10px 0px;
+        margin: 0;
+    }
+    .account-welcome .h2 {
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .section-edit li a{
+        font-size: 10.9px;
+    }
+    .section-edit li {
+        margin-bottom: 5px;
+    }
+    .login-form-header .login-form-name {
+        font-size: 12.9px;
+    }
+    .acount-information-col-edit .login-form-req {
+        font-size: 11px;
+        top: 5px;
+        position: absolute;
+    }
+    .account-logout .buttons .pull-right{
+        float: left !important;
+    }
+    .account-logout h1 {
+        font-size: 22px;
+    }
+    .account-order .acount-information {
+        display: flex;
+        justify-content: space-between;
+        background: transparent;
+        min-height: 140px;
+    }
+    .account-order .acount-information .acount-information-col-order{
+        margin: 0px 2px 5px 0px;
     }
 }
 @media screen and (min-width:601px ) and (max-width: 767px) {
@@ -730,6 +840,73 @@ input.btn.btn-primary.login-form-button{
         margin-left: 0px;
         display: block;
     }
+    .acount-information {
+        display: block;
+        margin: 0px 0px 40px;
+        top: 0;
+        width: 100%;
+        background: #f7f7f7;
+        padding: 0 !important;
+    }
+    .edit-col-menu {
+        background: #f7f7f7;
+        padding: 15px 0;
+    }
+    .section-edit {
+        list-style: none;
+        padding: 0 10px;
+    }
+    .acount-information-edit .buttons {
+        display: block;
+        text-align: center;
+        float: left;
+        width: 100%;    
+    }
+    .acount-information-edit .buttons .pull-left, .acount-information-edit .buttons .pull-right{
+        float: left !important;
+        margin: 5px 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    .pull-right input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button {
+        margin-left: 0px;
+    }
+    .acount-information-col-edit input.btn.btn-primary.login-form-button {
+        padding: 10px 0px;
+        margin: 0;
+    }
+    .account-welcome .h2 {
+        font-size: 17px;
+        font-weight: 600;
+    }    
+    .section-edit li a{
+        font-size: 10.9px;
+    }
+    .section-edit li {
+        margin-bottom: 5px;
+    }
+    .login-form-header .login-form-name {
+        font-size: 12.9px;
+    }
+    .acount-information-col-edit .login-form-req {
+        font-size: 11px;
+    }
+    .account-logout .buttons .pull-right{
+        float: left !important;
+    }
+    .account-logout h1 {
+        font-size: 22px;
+    }
+    .account-order .acount-information {
+        display: flex;
+        justify-content: space-between;
+        background: transparent;
+        min-height: 140px;
+    }
+    .account-order .acount-information .acount-information-col-order{
+        margin: 0px 2px 5px 0px;
+    }    
 }
 @media screen and (min-width: 768px) and (max-width : 992px) {
     .login-form-container .buttons .pull-right{
@@ -745,6 +922,7 @@ input.btn.btn-primary.login-form-button{
     .acount-information .acount-information-col {
         padding: 15px;
         margin-right: 3px;
+        padding-top: 0px;
     }
     .account-header-link {
         display: block;
@@ -752,6 +930,27 @@ input.btn.btn-primary.login-form-button{
         text-decoration: underline !important;
         margin-bottom: 5px;
     }
+
+    .login-form-header .login-form-name {
+        font-size: 12.9px;
+        margin-top: 0px;
+    }
+    .acount-information-col-edit .login-form-req {
+        font-size: 11px;
+        margin-top: 0px;
+    }
+    .acount-information-col-edit .login-form-req {
+        top: 0px;
+    }
+    .acount-information.acount-information-edit {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .section-edit {
+        padding-left: 0px;
+    }
+}
+
 }
 @media screen and (min-width: 993px) and (max-width : 1024px) {    
     .col-md-4.acount-information-col {
