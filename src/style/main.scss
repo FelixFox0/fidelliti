@@ -2852,9 +2852,16 @@ a {
 	border-radius: 4px;
 	width: 80%;
 	margin: 0 auto !important;
-	padding: 0 !important;
+	padding: 5px 5px 5px 37px !important;
 	font-size: 14px;
 	margin-top: 30px !important;
+	text-align: center;
+	position: relative;
+
+	&.text-center {
+		text-align: center;
+		justify-content: center;
+	}
 
 	i {
 		border-right: 1px solid #666;
@@ -2863,7 +2870,9 @@ a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-right: 50px;
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 }
 

@@ -109,7 +109,11 @@
 $(document).ready(function($) {
 
 	if($(window).innerWidth() < 991) {
-		$("#my-menu").mmenu();
+		$("#my-menu").mmenu({
+			navbar: {
+		    	title: null
+		    },
+		});
 
 	var API = $("#my-menu").data( "mmenu" );
 
