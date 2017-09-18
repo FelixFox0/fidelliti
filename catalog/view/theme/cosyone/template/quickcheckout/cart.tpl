@@ -21,11 +21,11 @@
           <div class="checkout-cartt__footer">
             <div class="checkout-cartt__price">
               <span><?php echo $product['price']; ?></span>
-              <select name="" id="">
+              <select name="cart_quantity" id="cart_quantity">
                 <option value="1">1</option>
-                <option value="1">2</option>
-                <option value="1">3</option>
-                <option value="1">4</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select>
             </div>
             <div class="checkout-cartt__delete">
