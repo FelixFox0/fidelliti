@@ -1349,7 +1349,7 @@ $('#button-cart').on('click', function() {
         $('#cart-total').html(json['total']);
         
         $('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
-        $("#cart-panel .mm-panels").load('index.php?route=common/cart/info #cart > *');
+        $("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 
 				if($(window).innerWidth() > 991) {
           /*$.colorbox({

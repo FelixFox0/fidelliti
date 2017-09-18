@@ -16,4 +16,7 @@
 @include font-face("Rob-b", "fonts/Roboto-Bold", normal, $file-formats: woff);
 @include font-face("Rob-b", "fonts/Roboto-Bold", normal, $file-formats: ttf);
 
-@include font-face("gotic", "fonts/GOTHIC", normal, $file-formats: woff); 
+@include font-face("gotic", "fonts/GOTHIC", normal, $file-formats: woff);
+
+@include font-face("Icons", "fonts/dg-desktop-icons", normal, $file-formats: woff);
+

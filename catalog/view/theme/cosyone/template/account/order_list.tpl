@@ -44,7 +44,7 @@
       </div>
       
       <div class="acount-information">
-        <div class="col-md-8 acount-information-col acount-information-col-order">          
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 acount-information-col acount-information-col-order">          
           <div class="cell-header">
             <h4><?php echo $heading_title; ?></h4>
           </div>
@@ -91,7 +91,7 @@
         <!-- Тут добавить количество товаров  -->
         <p><?php echo $text_product_number; ?></p>
         </div>
-<div class="col-md-4 acount-information-col acount-information-col-order">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  acount-information-col acount-information-col-order">
           <div class="cell-header">
             <h4><?php echo $heading_title_chzv; ?></h4>
           </div>
@@ -104,9 +104,9 @@
       </div>
 
 
-      <div class="buttons clearfix">
+      <!--<div class="buttons clearfix">
         <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-      </div>
+      </div>-->
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>

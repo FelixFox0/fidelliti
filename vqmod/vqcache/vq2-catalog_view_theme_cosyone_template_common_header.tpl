@@ -153,7 +153,7 @@
         <?php } ?>
 
                 <li><a class="mmobile-wicon" href="#"><?php echo $text_customer; ?> <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
-                <li><a class="mmobile-wicon" href="<?php echo $login; ?>"><?php echo $text_login; ?> <i class=""></i><img src="/image/man.png" alt=""></a></li>
+                <li><a class="mmobile-wicon" href="<?php echo $login; ?>"><?php echo $text_login; ?> <i class="icon-maaan"></i></li>
                 <li><a class="mmobile-lang open-popup" href=".popup-countries"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span>nn</span></a></li>
                             <li><a class="mmobile-lang text-center open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true">
                 </i><?php foreach ($llanguages as $llanguage) { ?>

@@ -123,7 +123,7 @@ $(document).ready(function($) {
 	        position: "right"
 	    },
 	    navbar: {
-	    	title: 'Cart'
+	    	title: null
 	    },
 
 		}, {
