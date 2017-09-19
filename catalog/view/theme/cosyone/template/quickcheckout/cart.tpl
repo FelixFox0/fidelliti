@@ -4,7 +4,7 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   <?php } ?>
-  <div class="checkout-cartt">
+  <div class="checkout-cartt visible-xs visible-sm">
     <?php foreach ($products as $product) { ?>
         <div class="checkout-cartt__img">
           <?php if ($product['thumb']) { ?>
@@ -36,7 +36,7 @@
         </div>
     <?php } ?>
   </div>
-  <div class="cart-tot">
+  <div class="cart-tot visible-xs visible-sm">
     <?php foreach ($totals as $total) { ?>
           <div>
             <div><?php echo $total['title']; ?>:</div>
@@ -44,7 +44,7 @@
           </div>
     <?php } ?>
   </div>
- <!--  <table class="quickcheckout-cart contrast_font">
+ <table class="quickcheckout-cart contrast_font hidden-xs hidden-sm">
    <thead>
      <tr>
        <td class="image mobile_hide"><?php echo $text_image; ?></td>
@@ -86,7 +86,7 @@
              <button class="plus">+</button>
            </div>
  
-           <a data-tooltip="<?php echo $button_update; ?>" class="button-update sq_icon"><i class="fa fa-refresh"></i></a>
+           <!-- <a data-tooltip="<?php echo $button_update; ?>" class="button-update sq_icon"><i class="fa fa-refresh"></i></a> -->
            <?php } else { ?>
        x&nbsp;<?php echo $product['quantity']; ?>
        <?php } ?></td>
@@ -110,8 +110,8 @@
        </tr>
        </tbody>
        <?php } ?>
-       </table> -->
-        <!-- <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
+       </table>
+        <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
         <tbody>
             <?php foreach ($totals as $total) { ?>
               <tr>
@@ -120,7 +120,7 @@
               </tr>
         <?php } ?>
           </tbody>
-            </table> -->
+            </table>
     <?php } ?>
 </table>
 
