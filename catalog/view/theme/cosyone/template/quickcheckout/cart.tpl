@@ -4,7 +4,7 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   <?php } ?>
-  <div class="checkout-cartt visible-xs visible-sm">
+  <div class="checkout-cartt">
     <?php foreach ($products as $product) { ?>
         <div class="checkout-cartt__img">
           <?php if ($product['thumb']) { ?>
@@ -111,7 +111,7 @@
        </tbody>
        <?php } ?>
        </table>
-        <table class="quickcheckout-cart contrast_font" style="margin-top:-1px">
+        <table class="quickcheckout-cart contrast_font hidden-sm hidden-xs" style="margin-top:-1px">
         <tbody>
             <?php foreach ($totals as $total) { ?>
               <tr>
