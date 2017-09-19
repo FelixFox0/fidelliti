@@ -1,4 +1,4 @@
 <?php
 // Text
-$_['text_title']       = 'Flat Rate3';
-$_['text_description'] = 'Flat Shipping Rate';
+$_['text_title']       = 'New mail - Delivery at our expense';
+$_['text_description'] = 'New mail - Delivery at our expense';

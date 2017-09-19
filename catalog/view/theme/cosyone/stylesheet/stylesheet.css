@@ -4408,3 +4408,7 @@ a.scroll_top {
 input#shipping{
     display: none;
 }
+
+.attribute thead{
+    display: none !important;
+}

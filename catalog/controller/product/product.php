@@ -157,7 +157,7 @@ class ControllerProductProduct extends Controller {
 		$this->load->model('catalog/product');
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-
+//var_dump($product_info);
 		if ($product_info) {
 			$url = '';
 
@@ -484,6 +484,8 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 //                        var_dump($data);
+                        $data['size'] = (float)$product_info['length'] . ' ' . $product_info['unit'] . " x " . (float)$product_info['width'] . ' ' . $product_info['unit'] . " x " . (float)$product_info['height'] . ' ' . $product_info['unit'];
+//                        var_dump($data['size']);
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
@@ -679,6 +681,7 @@ class ControllerProductProduct extends Controller {
 		}
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
+                
 		$recurring_info = $this->model_catalog_product->getProfile($product_id, $recurring_id);
 
 		$json = array();

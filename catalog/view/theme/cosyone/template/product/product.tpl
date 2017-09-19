@@ -412,7 +412,8 @@
                   </div>
 
                   <div class="tab-pane" id="tab-size">
-                      <?php echo $razmer; ?>
+                      <?php //echo $razmer; ?>
+                      <?php echo $text_size; ?>: <?php echo $size; ?></a>
                   </div>
                 </div>
             </div>

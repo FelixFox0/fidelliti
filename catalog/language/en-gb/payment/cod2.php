@@ -1,3 +1,3 @@
 <?php
 // Text
-$_['text_title'] = 'Cash On Delivery2';
+$_['text_title'] = 'Transfer to Sberbank card';
