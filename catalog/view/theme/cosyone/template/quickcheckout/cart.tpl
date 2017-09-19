@@ -22,6 +22,7 @@
             <div class="checkout-cartt__price">
               <span><?php echo $product['price']; ?></span>
               <select name="cart_quantity" id="cart_quantity">
+                <option value="<?php echo $product['quantity']; ?>" style="background-color: #ddd;"><?php echo $product['quantity']; ?></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
