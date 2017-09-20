@@ -79,7 +79,7 @@ class ControllerQuickCheckoutPaymentMethod extends Controller {
 			$sort_order = array();
 
 			$results = $this->model_extension_extension->getExtensions('total');
-
+//                        var_dump($results);
 			foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 			}
@@ -105,14 +105,27 @@ class ControllerQuickCheckoutPaymentMethod extends Controller {
 			$results = $this->model_extension_extension->getExtensions('payment');
 
 			$recurring = $this->cart->hasRecurringProducts();
-
+//var_dump($results);
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
 					$this->load->model('payment/' . $result['code']);
 
 					$method = $this->{'model_payment_' . $result['code']}->getMethod($payment_address, $total);
-
-					if ($method) {
+                                        
+                                        
+                                        $switch = false;
+                                        if(($this->session->data['country_code']=='ru')&&($result['code'] == 'cod2')){
+                                            $switch = true;
+                                        }elseif(($this->session->data['country_code']=='ua')&&($result['code'] == 'cod3')){
+                                            $switch = true;
+                                        }elseif($result['code'] == 'cod'){
+                                            $switch = true;
+                                        }
+                                        
+                                        
+                                        
+					if ($method && $switch) {
+//                                            var_dump($result['code']);
 						if ($recurring) {
 							if (property_exists($this->{'model_payment_' . $result['code']}, 'recurringPayments') && $this->{'model_payment_' . $result['code']}->recurringPayments()) {
 								$method_data[$result['code']] = $method;

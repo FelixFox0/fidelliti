@@ -16,6 +16,8 @@ class ModelCatalogProduct extends Model {
 //                var_dump($query->row['length_class_id']);
                 if ($query->num_rows) {
                     $query1 = $this->db->query("SELECT * FROM " . DB_PREFIX . "length_class_description WHERE language_id = '" . (int)$this->config->get('config_language_id') . "' AND length_class_id = '" . $query->row['length_class_id'] . "'");
+                } else {
+                    $query1->row['unit'] = '';
                 }
 //                 $query1->row['unit'];
 //                var_dump($query1->row['unit']);
@@ -63,7 +65,7 @@ class ModelCatalogProduct extends Model {
 				'width'            => $query->row['width'],
 				'height'           => $query->row['height'],
 				'length_class_id'  => $query->row['length_class_id'],
-                                'unit'             => $query1->row['unit'],
+                                'unit'             => isset($query1->row['unit']) ? $query1->row['unit'] : '',
 				'subtract'         => $query->row['subtract'],
 				'rating'           => round($query->row['rating']),
 				'reviews'          => $query->row['reviews'] ? $query->row['reviews'] : 0,
