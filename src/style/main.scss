@@ -2398,11 +2398,16 @@ a {
 	}
 
 	&__table {
-		padding: 20px;
+		padding: 10px 20px;
 
 		td {
 			font-size: 12px;
 			vertical-align: middle !important;
+			padding: 10px 0;
+		}
+
+		tr:last-child td {
+			border-top: 1px solid #ababab;
 		}
 	}
 
@@ -2412,6 +2417,7 @@ a {
 		button {
 			width: 100%;
 			height: 45px;
+			font-size: 16px;
 		}
 	}
 
@@ -2421,9 +2427,12 @@ a {
 		border-top: 0;
 		background-color: #fff;
 		border-radius: 0 0 4px 4px;
+		p {
+			font-size: 12px;
+		}
 
 		a {
-			font-size: 	14px;
+			font-size: 	12px;
 		}
 	}
 }
