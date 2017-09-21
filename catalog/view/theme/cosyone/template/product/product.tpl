@@ -348,7 +348,8 @@
                 </div>
                 <div id="collapse33" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <?php echo $razmer; ?>
+                    <?php //echo $razmer; ?>
+                    <?php echo $text_size; ?>: <?php echo $size; ?></a>
                   </div>
                 </div>
               </div>

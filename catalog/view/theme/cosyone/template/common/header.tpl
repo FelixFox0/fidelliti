@@ -79,7 +79,7 @@
           <li class="mmobile-image"><p><?php echo $category_1['name']; ?></p><img src="<?php echo $category_1['thumb']; ?>" alt=""></li>
           <?php } ?>
 
-          <li><a href="<?php echo $category_1['href']; ?>"><?php echo $text_see_all; ?></a></li>
+          <!--<li><a href="<?php echo $category_1['href']; ?>"><?php echo $text_see_all; ?></a></li>-->
 
           <?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
@@ -120,7 +120,7 @@
           <li class="">
             <span href="<?php echo $cosyone_custom_menu_url1 ?>" class=""><?php echo $cosyone_custom_menu_title1; ?></span>
                 <ul>
-                  <li><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $text_see_all; ?></a></li>
+                  <!--<li><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $text_see_all; ?></a></li>-->
                   <li class=""><a href="<?php echo $blog ?>"><?php echo $text_blog ?></a></li>
                   <li class=""><a href="https://www.instagram.com/fidelitti/" target="_blank">#Fidelittigirls</a></li>
                 </ul>
@@ -137,7 +137,7 @@
                     
                 
                 <ul>
-                <li><a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $text_see_all; ?></a></li>
+                <!--<li><a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $text_see_all; ?></a></li-->
                   <li class=""><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
                   <li class=""><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>

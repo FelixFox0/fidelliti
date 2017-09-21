@@ -17,9 +17,9 @@ foreach ($shipping_methods as $shipping_method) {
 <?php if ($shipping) { ?>
 <table class="table">
   <?php foreach ($shipping_methods as $shipping_method) { ?>
-  <tr>
+  <!--<tr>
     <td colspan="3"><b><?php echo $shipping_method['title']; ?></b></td>
-  </tr>
+  </tr>-->
   <?php if (!$shipping_method['error']) { ?>
   <?php foreach ($shipping_method['quote'] as $quote) { ?>
   <tr class="options-list">

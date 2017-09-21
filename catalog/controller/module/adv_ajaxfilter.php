@@ -343,12 +343,16 @@ class ControllerModuleAdvajaxfilter extends Controller {
 			'categories' => $cats,
 			'attr_slider' => $attr_slider,
 			'filter' => $filter,
-			'min_price' => $this->request->post['min_price'] / $this->k,
-			'max_price' => $this->request->post['max_price'] / $this->k,
-			'start' => ($page - 1) * $limit,
+//			'min_price' => $this->request->post['min_price'] / $this->k,
+//			'max_price' => $this->request->post['max_price'] / $this->k,
+//			'start' => ($page - 1) * $limit,
 			'limit' => $limit,
 			'sort' => $sort,
-			'order' => $order
+			'order' => $order,
+                        'min_price' => 0,
+			'max_price' => 999999999,
+			'start' => 0,
+                        
 		);
 
 		if(isset($this->request->post['manufacturer_id']) || ($adv_ajaxfilter_setting['display_manufacturer'] == 'none')) {
