@@ -3067,6 +3067,78 @@ a {
 	}
 }
 
+.contact-service {
+	display: none;
+	h3 {
+		font-weight: normal;
+		font-size: 14px;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 25px;
+		margin: 0;
+		padding: 20px 0 5px 0;
+
+		& + h3 {
+			border-top: 1px solid #e4e4e4;
+			padding: 20px 0;
+		}
+	}
+
+	&__item {
+		padding: 15px;
+
+		& + div {
+			border-top: 1px solid #e4e4e4;
+		}
+
+		h4 {
+			margin: 0;
+			a {
+				color: #1a1919;
+				text-transform: uppercase;
+				font-size: 14px;
+				line-height: 26px;
+				font-weight: bold;
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				span {
+					text-decoration: underline;
+				}
+
+				i {
+					font-size: 20px;
+					right: 50%;
+					margin-left: auto;
+					text-decoration: none;
+				}
+			}
+		}
+
+		p {
+			line-height: 24px;
+
+			a {
+				font-weight: bold;
+				margin-top: 10px;
+			}
+		}
+
+		&-info {
+			margin-top: 6px;
+		}
+
+
+		img {
+			max-width: 18px;
+			margin-right: 20px;
+		}
+
+
+	}
+}
+
 
 
 @import "partials/media.scss";

@@ -311,6 +311,7 @@ class ControllerProductProduct extends Controller {
 
 			if ($product_info['image']) {
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 417, 706);
+				$data['popup_big'] = $this->model_tool_image->resize($product_info['image'], 283, 513);
 			} else {
 				$data['popup'] = '';
 			}
@@ -336,6 +337,7 @@ $data['small'] = '';
 			foreach ($results as $result) {
 				$data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], 417, 706),
+					'popup_big' => $this->model_tool_image->resize($result['image'], 283, 513),
 					// Cloud zoom thumb start
 'small' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_default_image_additional_width'), $this->config->get('theme_default_image_additional_height')),
 //Cloud zoom thumb ends
@@ -511,8 +513,11 @@ for( $i=1; $i< 6; $i++) {
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
+
+					$image_hover = $this->model_tool_image->resize($result['image'], 417, 706);
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
+					$image_hover = $this->model_tool_image->resize($result['image'], 417, 706);
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
@@ -550,6 +555,7 @@ for( $i=1; $i< 6; $i++) {
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
+					'img_hover'   => $$image_hover,
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,

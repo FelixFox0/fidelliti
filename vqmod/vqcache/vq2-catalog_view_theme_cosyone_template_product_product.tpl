@@ -76,15 +76,20 @@
             <?php if ($thumb) { ?>
               <?php if ($cosyone_product_zoom) { ?>
               <li data-thumb="<?php echo $thumb; ?>" data-src="<?php echo $popup; ?>">
-              <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></li>
+                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+
+              </li>
 
               <?php } else { ?>
               <li data-thumb="<?php echo $popup; ?>" data-src="<?php echo $popup; ?>">
-              <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></li>
+                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+
+              </li>
               <?php } ?>
             <?php } ?>
             <?php foreach ($images as $image) { ?>
                 <li data-thumb="<?php echo $image['thumb']; ?>" data-src="<?php echo $image['popup']; ?>">
+
                   <img src="<?php echo $image['popup']; ?>" />
                 </li>
                 <?php } ?>
@@ -1546,7 +1551,7 @@ $('.product-slider').lightSlider({
             {
                 breakpoint:800,
                 settings: {
-                    item:1,
+                    item:2,
                     vertical: false,
                     pager: false
                   }
@@ -1554,7 +1559,7 @@ $('.product-slider').lightSlider({
             {
                 breakpoint:480,
                 settings: {
-                    item:1,
+                    item:2,
                     vertical: false,
                     pager: false
                   }

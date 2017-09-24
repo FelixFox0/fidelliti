@@ -47,6 +47,7 @@
     setTimeout(function(){
       $(".loader").fadeOut();
     }, 1200);
+
   });
 </script>
 
