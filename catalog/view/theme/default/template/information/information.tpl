@@ -25,6 +25,48 @@
     
     <?php } ?>
     
+<div class="contact-service">
+  <h3>Свяжитесь с нашим клиентским сервисом</h3>
+  <h3>Наши консультанты помогут Вам с любым вопросом</h3>
+  <div class="contact-service__items">
+    <div class="contact-service__item">
+      <h4><a href="#"><img src="/image/phone.png" class="phone" alt=""><span>Телефон</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></h4>
+      <div class="contact-service__item-info">
+        <p>Звоните нам бесплатно 7 <br>дней в неделю<br>с 9:30 до 18:30 <br>
+        В субботу с 10:00 до 18:00 <br>
+        <a href="tel:0 800 210 385">0 800 210 385</a>              
+        </p>
+      </div>
+    </div>
+    <div class="contact-service__item">
+      <h4><a href="#"><img src="/image/mail.png" class="mail" alt=""><span>Email</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></h4>
+      <div class="contact-service__item-info">
+        <p>
+        Мы ответим на каждое письмо в течении 24 рабочих часов с понедельника по пятницу             
+        </p>
+      </div>
+    </div>
+    <div class="contact-service__item">
+      <h4><a href="#"><img src="/image/questionmark.png" alt=""><span>FAQ </span><i class="fa fa-angle-right" aria-hidden="true"></i></a></h4>
+      <div class="contact-service__item-info">
+        <p>
+        Ответы на вопросы            
+        </p>
+      </div>
+    </div>
+    <div class="contact-service__item">
+      <h4><a href="#"><img src="/image/shopper3.png"" alt=""><span>Доставка</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></h4>
+    </div>
+    <div class="contact-service__item">
+      <h4><a href="#"><img src="/image/ccard3.png" alt=""><span>Оплата</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></h4>
+    </div>
+    <div class="contact-service__item">
+      <h4><a href="#"><img src="/image/exchange2.png" alt=""><span>Возврат и обмен</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a></h4>
+    </div>
+  </div>
+</div>
+
+
 <div class="static-pages">
   <div class="static-pages__title">
     <?php echo $heading_title; ?>

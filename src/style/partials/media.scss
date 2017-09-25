@@ -14,7 +14,7 @@
 
 			.owl-item {
 				img {
-					width: 70%;
+					width: 100%;
 				}
 
 				li {
@@ -1401,6 +1401,15 @@
 				text-align: left;
 			}
 		}
+	}
+
+	.grid_holder .owl-carousel .owl-item img {
+		max-width: 70% !important;
+		margin: 0 auto !important;
+	}
+
+	.contact-service {
+		display: block !important;
 	}
 
 }

@@ -163,9 +163,21 @@ $(document).ready(function($) {
 		$(".search-block").show()
 	});
 
+	if($(window).innerWidth() < 991) {
+      var fixed = true;
+    }
+
 
 	$('.open-popup').magnificPopup({
-	  	type:'inline'
+	  	type:'inline',
+	  	callbacks: {
+    		open: function() {
+    			API2.close();
+    			API.close();
+    		}
+    	},
+    	overflowY : 'hidden', 
+    	fixedBgPos: true
 	  });
 
 	//countries 
