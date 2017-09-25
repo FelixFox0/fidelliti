@@ -49,7 +49,6 @@
    <thead>
      <tr>
        <td class="image mobile_hide"><?php echo $text_image; ?></td>
-       <td class="name"><?php echo $text_name; ?></td>
        <td class="quantity"><?php echo $text_quantity; ?></td>
        <td class="unit-price mobile_hide"><?php echo $text_price; ?></td>
        <td class="total"><?php echo $text_total; ?></td>
@@ -96,8 +95,8 @@
        </tr>
        <tr class='btns'>
          <td colspan="4">
-           <a href="" class="sq_icon" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="<?php echo $text_wishlist; ?>"><i class="fa fa-heart-o"  ></i> <?php echo $text_wishlist; ?></a>
-           <a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa fa-times"></i><?php echo $text_remove_but; ?></a>
+           <a href="" class="sq_icon wishlist_add" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="<?php echo $text_wishlist; ?>"><i class="fa fa-heart-o"  ></i> <?php echo $text_wishlist; ?></a>
+           <a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa "></i><?php echo $text_remove_but; ?></a>
          </td>
        </tr>
        <?php } ?>
@@ -112,7 +111,7 @@
        </tbody>
        <?php } ?>
        </table>
-        <table class="quickcheckout-cart contrast_font hidden-sm hidden-xs" style="margin-top:-1px">
+        <table class="quickcheckout-cart contrast_font hidden" style="margin-top:-1px">
         <tbody>
             <?php foreach ($totals as $total) { ?>
               <tr>

@@ -1004,7 +1004,6 @@
 			}
 
 			td {
-				display: block;
 
 				&.total {
 					font-weight: bold !important;
@@ -1014,7 +1013,7 @@
 
 		#quickcheckoutconfirm .quickcheckout-cart tbody .quantity .counter {
 			justify-content: center;
-			margin-bottom: 30px;
+			margin-bottom: 15px;
 		}
 
 		.quickcheckout-checkout #quickcheckoutconfirm table td {
@@ -1037,7 +1036,7 @@
 		border-bottom: 1px solid #dedede;
 		padding-bottom: 10px;
 		border-top: 1px solid #dedede;
-		padding-top: 25px;
+		padding-top: 10px;
 	}
 
 	#terms .quickcheckout-content .confirm {
@@ -1380,7 +1379,7 @@
 				border-radius: 3px;
 				background-color: #fefefe;
 				font-family: inherit;
-				font-size: 1rem;
+				font-size: 14px;
 				line-height: normal;
 				color: #0a0a0a;
 				height: 32px !important;
@@ -1410,6 +1409,21 @@
 
 	.contact-service {
 		display: block !important;
+	}
+
+	#quickcheckoutconfirm .quickcheckout-content .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.quickcheckout-checkout .quickcheckout-heading {
+		padding: 15px 0 14px 0;
+		margin-bottom: 10px;
+	}
+
+	label[for="create"],
+	label[for="cod"] {
+		display: inline;
 	}
 
 }

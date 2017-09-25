@@ -2167,14 +2167,26 @@ a {
 
 	.quickcheckout-heading,
 	.checkout-heading {
-		text-transform: uppercase;
-		font-size: 14px;
-		text-decoration: underline;
+		text-transform: none;
 		margin-bottom: 20px;
+		font-size: 18px;
+		padding: 45px 0 24px 0;
 	}
 
 	h1 {
 		margin-bottom: 35px;
+	}
+
+	#terms {
+		
+		.quickcheckout-content {
+			padding: 0;
+			 .confirm {
+				padding-top: 0;
+				margin-top: 0;
+				border-top: none;
+			}
+		}
 	}
 
 	.confirm {
@@ -2208,7 +2220,7 @@ a {
 		.sq_icon {
 			border: none;
 			width: auto;
-			margin-right: 25px;
+			margin-right: 12px;
 			height: auto;
 			display: inline-block;
 
@@ -2232,9 +2244,12 @@ a {
 		position: relative;
 
 		& > div {
-			margin-bottom: 30px;
 			border-bottom: 1px solid #666;
-			padding-bottom: 30px;
+			padding-bottom: 45px;
+
+			&#cart1{
+				border-bottom: 2px solid #666;
+			}
 		}
 	}
 
@@ -2242,11 +2257,19 @@ a {
 
 
 		thead {
-			border-bottom: 1px solid #e5e5e5;
+			border-bottom: 2px solid #e5e5e5;
 			td {
 				text-transform: uppercase;
 				font-size: 15px;
-				padding: 20px 10px;
+				padding: 20px 0;
+
+				&.total {
+					text-align: right;
+				}
+
+				&.unit-price {
+					text-align: center;
+				}
 			}
 		}
 
@@ -2254,6 +2277,20 @@ a {
 			td {
 				text-transform: uppercase;
 				vertical-align: bottom;
+
+				&.name {
+					width: 	213px;
+				}
+
+				&.unit-price {
+					text-align: center;
+				}
+
+				&.total {
+					text-align: right;
+				}
+
+
 			}
 
 			.name {
@@ -2261,7 +2298,8 @@ a {
 				& > div {
 					display: flex;
 					flex-direction: column;
-					align-items: center;
+					align-items: flex-start;
+					text-align: left;
 				}
 			}
 
@@ -2301,6 +2339,23 @@ a {
 
 	select {
 		 background: rgb(221, 221, 221);
+		 background-image: url("/image/arprev.png");
+		 background-position: right 5px center;
+		 background-repeat: no-repeat;
+		 background-size: 27px;
+		 appearance: none;
+
+		 &#cart_quantity {
+		 	 background-size: 16px;
+		 }
+
+		 &:focus {
+			outline: none;
+			border: 1px solid #8a8a8a;
+			background-color: #fefefe;
+			box-shadow: 0 0 5px #cacaca;
+			transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+		 }
 	}
 
 	input[type='text'],
@@ -2350,8 +2405,33 @@ a {
 
 	.quickcheckout-content {
 
+		input + label {
+			font-weight: normal;
+		}
+
+		.options-list,
+		.highlight {
+			label {
+				font-weight: normal;
+			}
+		}
+
+		table {
+			td {
+				border-top: none;
+			}
+		}
+
+		.row {
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+
 		.col-sm-6 {
 			margin-bottom: 10px;
+			.control-label {
+				font-size: 12px;
+			}
 		}
 	}
 	.grid_holder{
@@ -2377,6 +2457,14 @@ a {
 		}
 	}
 
+}
+
+#coupon-heading,
+.contrast_font.input_heading {
+	display: inline-block;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 3px;
 }
 
 #cart-info-container {
@@ -2887,6 +2975,38 @@ a {
 		position: absolute;
 		left: 0;
 		top: 0;
+	}
+}
+
+.sq_icon {
+	&.wishlist_add {
+		font-size: 13px;
+		text-transform: lowercase;
+		display: flex;
+		align-items: center;
+
+		i {
+			font-size: 17px;
+		}
+	}
+
+	&.button-remove {
+		display: inline-block;
+		font-size: 13px;
+		i {
+			&:before {
+				display: inline-block;
+				position: relative;
+				top: 4px;
+				content: "";
+				padding-right: 10px;
+				vertical-align: bottom;
+				font-size: 20px;
+				font-family: Icons;
+				left: 12px;
+				margin-right: 11px;
+			}
+		}
 	}
 }
 
