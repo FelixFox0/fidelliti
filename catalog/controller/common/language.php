@@ -47,6 +47,8 @@ class ControllerCommonLanguage extends Controller {
 	}
 
 	public function language() {
+//            var_dump($this->request->post['code']);
+//            die();
 		if (isset($this->request->post['code'])) {
 			$this->session->data['language'] = $this->request->post['code'];
                         $this->load->model('startup/url');

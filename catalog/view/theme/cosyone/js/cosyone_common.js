@@ -54,9 +54,11 @@ $(document).ready(function() {
 	// Language
 	$('#language a').on('click', function(e) {
 		e.preventDefault();
-
+                console.log($(this).attr('href'));
+                $('#language').append('<input name="code" type="hidden">');
+            
 		$('#language input[name=\'code\']').attr('value', $(this).attr('href'));
-
+//                console.log($('#language input[name=\'code\']').val());
 		$('#language').submit();
 	});
 

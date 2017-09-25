@@ -11,7 +11,7 @@
   <div class="top_header_drop_down">
     <?php foreach ($languages as $language) { ?>
     <?php if ($language['code'] == $code) { ?>
-    <a class="current"><?php echo $language['name']; ?></a>
+    <a href="<?php echo $language['code']; ?>" class="current"><?php echo $language['name']; ?></a>
     <?php } else { ?>
     <a href="<?php echo $language['code']; ?>">
     <?php echo $language['name']; ?></a>

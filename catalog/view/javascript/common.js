@@ -42,6 +42,7 @@ $(document).ready(function() {
 	});
 
 	// Language
+        
 	$('#form-language .language-select').on('click', function(e) {
 		e.preventDefault();
 

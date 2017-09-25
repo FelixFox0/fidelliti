@@ -11,6 +11,19 @@ class ControllerCommonHeader extends Controller {
 		$data['analytics'] = array();
 
 		$analytics = $this->model_extension_extension->getExtensions('analytics');
+                
+                $data['country_code'] = $this->session->data['country_code'];
+        
+          
+                
+        if($this->session->data['country_code']=='ua'){
+            $data['customer_service'] = $this->url->link('information/information','information_id=20', false, $this->session->data['country_code'], $this->session->data['language_name']);  
+        }elseif($this->session->data['country_code']=='ru'){
+            $data['customer_service'] = $this->url->link('information/information','information_id=21', false, $this->session->data['country_code'], $this->session->data['language_name']);
+        }else{
+            $data['customer_service'] = $this->url->link('information/information','information_id=22', false, $this->session->data['country_code'], $this->session->data['language_name']);
+        }
+                
 
 		foreach ($analytics as $analytic) {
 			if ($this->config->get($analytic['code'] . '_status')) {
