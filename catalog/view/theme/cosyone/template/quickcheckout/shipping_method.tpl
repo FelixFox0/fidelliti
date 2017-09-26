@@ -13,7 +13,7 @@ foreach ($shipping_methods as $shipping_method) {
 	}
 }
 ?>
-<p><?php echo $text_shipping_method; ?></p>
+<!-- <p><?php echo $text_shipping_method; ?></p> -->
 <?php if ($shipping) { ?>
 <table class="table">
   <?php foreach ($shipping_methods as $shipping_method) { ?>

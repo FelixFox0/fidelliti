@@ -1240,6 +1240,7 @@
 	.quickcheckout-checkout #quickcheckoutconfirm table td {
 		padding: 0;
 		border-top: none;
+		font-size: 10px !important;
 	}
 
 	#quickcheckoutconfirm #coupon-content {
@@ -1425,6 +1426,8 @@
 	label[for="cod"] {
 		display: inline;
 	}
+	
+
 
 }
 

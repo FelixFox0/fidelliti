@@ -1423,7 +1423,7 @@ a {
 
 	&__title {
 		color: #000000;
-		font-family: "Century Gothic";
+		font-family: "gotic";
 		font-size: 36px;
 		font-weight: 400;
 		line-height: 30px;
@@ -2168,7 +2168,7 @@ a {
 	.quickcheckout-heading,
 	.checkout-heading {
 		text-transform: none;
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 		font-size: 18px;
 		padding: 45px 0 24px 0;
 	}
@@ -2245,7 +2245,7 @@ a {
 
 		& > div {
 			border-bottom: 1px solid #666;
-			padding-bottom: 45px;
+			padding-bottom: 25px;
 
 			&#cart1{
 				border-bottom: 2px solid #666;
