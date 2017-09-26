@@ -78,7 +78,7 @@
         </tr>
         <tr>
          <td colspan="2" class="white_back">
-         <a class="button contrast" href="<?php echo $order['href']; ?>"><?php echo $button_view; ?></a>
+         <a class="button contrast" href="<?php echo $order['view']; ?>"><?php echo $button_view; ?></a>
       </td>
         </tr>
       </tbody>

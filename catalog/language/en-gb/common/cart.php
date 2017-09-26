@@ -6,3 +6,4 @@ $_['text_cart']      = 'View Cart';
 $_['text_checkout']  = 'Checkout';
 $_['text_recurring'] = 'Payment Profile';
 $_['text_back']     = 'BACK TO SHOPPING';
+$_['text_cart2']     = 'Cart';
