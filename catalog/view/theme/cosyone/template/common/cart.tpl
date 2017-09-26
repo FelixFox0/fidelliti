@@ -35,7 +35,7 @@
       
       <?php if ($products || $vouchers) { ?>
         <div class="cart-products visible-sm visible-xs">
-          <div class="cart-products__title">Cart</div>
+          <div class="cart-products__title"><?php echo $text_cart2; ?></div>
           <?php foreach ($products as $product) { ?>
             <div class="cart-products__item">
               <div class="cart-products__item-img">

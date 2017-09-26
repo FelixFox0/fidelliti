@@ -8,7 +8,7 @@ $_['heading_logout']     = 'Вихід';
 
 // Text
 $_['text_my_account_sp']    = 'Мій обліковий запис';
-$_['text_account_start']  = 'С ЧЕГО НАЧАТЬ';
+$_['text_account_start']  = 'З ЧОГО ПОЧАТИ';
 $_['text_instock']  = 'В наявності';
 $_['text_wishlist'] = 'Закладки (%s)';
 $_['text_login']    = 'Необхідно увійти в <a href="%s"> Особистий Кабінет </a> або <a href="%s"> створити обліковий запис </a>, щоб додати товар <a href="%s">%s </a> в свої <a href="%s"> закладки </a>!';
