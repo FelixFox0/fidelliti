@@ -161,6 +161,7 @@
 
 	.mm-page {
 		padding-top: 44px;
+		overflow-x: hidden;
 
 		&.colapsed-reverse {
 			transform: translate3d(-80%,0,0)
