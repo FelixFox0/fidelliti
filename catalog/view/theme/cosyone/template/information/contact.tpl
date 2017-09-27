@@ -51,7 +51,7 @@
     <div class="contact-page__form">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <fieldset>
-          <div class="box-heading"><?php echo $text_contact; ?></div>
+          <!--<div class="box-heading"><?php echo $text_contact; ?></div>-->
           <div class="">
           <div class="contact-page__cont clearfix">
             <div class="form-group col-sm-6 required">
@@ -124,7 +124,7 @@
     </div>
   </div>
   <div class="contact-page__info text-right">
-    <div class="box-heading"><?php echo $text_location; ?></div>
+    <!--<div class="box-heading"><?php echo $text_location; ?></div>-->
         
     <?php echo $text_text; ?>
         
@@ -169,7 +169,7 @@
       
       
       <?php if ($locations) { ?>
-      <div class="box-heading"><?php echo $text_store; ?></div>
+      <!--<div class="box-heading"><?php echo $text_store; ?></div>-->
       <div class="panel-group" id="accordion">
         <?php foreach ($locations as $location) { ?>
         <div class="panel panel-cosyone">

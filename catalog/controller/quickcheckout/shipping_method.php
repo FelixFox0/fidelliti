@@ -89,9 +89,15 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
                                             $switch = true;
                                         }elseif(($this->session->data['country_code']=='ua')&&($result['code'] == 'flat4')){
                                             $switch = true;
-                                        }elseif(($result['code'] == 'free')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
-                                            $switch = true;
+//                                        }elseif(($result['code'] == 'free')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+//                                            $switch = true;
                                         }elseif(($result['code'] == 'flat5')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat6')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat7')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat8')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
                                             $switch = true;
                                         }
                                         
