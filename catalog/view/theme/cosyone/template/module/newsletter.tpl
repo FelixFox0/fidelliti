@@ -18,7 +18,7 @@
   <p class="contrast_font intro"><?php echo $entry_email; ?></p>
              <input type="text" value="" placeholder="<?php echo $text_email; ?>" name="email" id="newsletter_email<?php echo $module; ?>" class="form-control" />
              <a class="button" id="button-newsletter<?php echo $module; ?>"><span><?php echo $button_join; ?></span></a>
-             <span>Ваши персональные данные будут использованы компанией Fidelitti для оформления подписки на рассылку новостей, которая была запрошена вами в явной форме. Более подробные сведения можно посмотреть в разделе <a href="#">политика конфиденциальности</a></span>
+             <span><?php echo $text_info; ?></span>
 	</div>
 </div>
 

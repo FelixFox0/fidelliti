@@ -137,7 +137,7 @@ class ControllerCommonHeader extends Controller {
                 }
                 
                 $data['text_phone'] = $this->language->get('text_phone_'. $country_code);
-                $data['text_free_call'] = $this->language->get('text_free_call');
+                $data['text_free_call'] = $this->language->get('text_free_call_'. $country_code);
                 
                 $data['text2'] = $this->language->get('text2_'. $country_code);
                 

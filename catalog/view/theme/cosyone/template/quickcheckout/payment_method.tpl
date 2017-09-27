@@ -11,7 +11,7 @@ foreach ($payment_methods as $payment_method) {
 	}
 }
 ?>
-<p><?php echo $text_payment_method; ?></p>
+<!--<p><?php echo $text_payment_method; ?></p>-->
 <?php if ($payment) { ?>
 <table class="table payment">
   <?php foreach ($payment_methods as $payment_method) { ?>

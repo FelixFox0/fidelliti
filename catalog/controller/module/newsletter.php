@@ -7,6 +7,7 @@ class ControllerModuleNewsletter extends Controller {
 		
     	$data['heading_title'] = $this->language->get('heading_title');
 		$data['text_email'] = $this->language->get('text_email');
+                $data['text_info'] = $this->language->get('text_info');
 		$data['entry_email'] = $this->language->get('entry_email');
 		$data['button_join'] = $this->language->get('button_join');
 		$data['style'] = $setting['style'];
