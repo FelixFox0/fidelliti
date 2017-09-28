@@ -5,7 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery-all.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
 <div class="one-click mfp-hide">
   <div class="one-click__inner">
@@ -13,21 +13,50 @@
       <?php echo $text_by1click; ?>
     </div>
     <div class="one-click__body">
-      <form id='one_click_form' action="" class="one-click__form">
+      <form id='one_click_form' method="get" action="" class="one-click__form">
         <div class="one-click__input" >
-          <input name='name' type="text" placeholder="<?php echo $text_name; ?>">
+          <input name='name' type="text" placeholder="<?php echo $text_name; ?>" required>
         </div>
         <div class="one-click__input">
-          <input name='phone' type="text" placeholder="<?php echo $text_phone; ?>">
+          <input name='phone' type="phone" placeholder="<?php echo $text_phone; ?>" required>
         </div>
         <div class="one-click__input" >
-          <input name='mail' type="text" placeholder="<?php echo $text_mail; ?>">
+          <input name='mail' type="email" placeholder="<?php echo $text_mail; ?>" required>
         </div>
         <div class="one-click__submit">
-          <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button>
+          <!-- <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button> -->
+          <input id="one_click" class="button" type="submit" data-loading-text="<?php echo $text_loading; ?>" value="<?php echo $button_cart; ?>">
         </div>
       </form>
     </div>
+
+    <!-- Тут можно найти как добавить переводы, https://jqueryvalidation.org/documentation/ -->
+    <script>
+      $("#one_click_form").validate({
+        submitHandler: function(form) {
+          $.ajax({
+            url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
+            type: 'post',
+            data: $('#one_click_form').serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+              
+            },
+            complete: function() {
+              
+            },
+            success: function(json) {     
+              if (json['success']) {
+                location = json['success'];
+                //alert("Ваш заказ получен"); 
+              }else{
+                  alert("Ваш заказ не получен");
+              }
+            }
+          });
+        }
+       });
+    </script>
     <div class="one-click__footer">
       <div><?php echo $text_prod; ?><b><?php echo $heading_title; ?></b></div>
               <div><?php echo $text_price; ?><b>
@@ -1479,7 +1508,7 @@ $('#button-review').on('click', function() {
 
 
 <script type="text/javascript">
-$('#one_click').on('click', function(e) {
+/*$('#one_click').on('click', function(e) {
         e.preventDefault();
 	$.ajax({
 		url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
@@ -1501,7 +1530,7 @@ $('#one_click').on('click', function(e) {
                         }
 		}
 	});
-});
+});*/
 
 
 if($(window).innerWidth() >= 991) {

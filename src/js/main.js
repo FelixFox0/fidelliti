@@ -172,8 +172,10 @@ $(document).ready(function($) {
 	  	type:'inline',
 	  	callbacks: {
     		open: function() {
-    			API2.close();
-    			API.close();
+    			if($(window).innerWidth() < 991) {
+    				API2.close();
+    				API.close();
+    			}
     		}
     	},
     	overflowY : 'hidden', 

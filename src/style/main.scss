@@ -3259,6 +3259,18 @@ a {
 	}
 }
 
+.error {
+	font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+input.error {
+	border-color: red;
+
+	&:focus {
+		border-color: red;
+	}
+}
 
 
 @import "partials/media.scss";
