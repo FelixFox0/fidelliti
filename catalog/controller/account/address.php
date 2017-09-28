@@ -177,6 +177,22 @@ class ControllerAccountAddress extends Controller {
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
+                
+                
+                $data['heading_hello'] = $this->language->get('heading_hello');
+		$data['heading_text'] = $this->language->get('heading_text');
+		$data['heading_logout'] = $this->language->get('heading_logout');
+		$data['text_my_account_sp'] = $this->language->get('text_my_account_sp');
+		$data['button_next'] = $this->language->get('button_next');
+		$data['button_back'] = $this->language->get('button_back');
+		$data['adress_discription'] = $this->language->get('adress_discription');
+		$data['row_require'] = $this->language->get('row_require');
+		
+		$data['menu_account'] = $this->language->get('menu_account');
+		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
+		$data['menu_order'] = $this->language->get('menu_order');
+		$data['menu_edit'] = $this->language->get('menu_edit');
+                
 
 		$data['text_address_book'] = $this->language->get('text_address_book');
 		$data['text_empty'] = $this->language->get('text_empty');

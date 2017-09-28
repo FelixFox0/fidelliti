@@ -70,7 +70,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 
 		$this->load->model('catalog/product');
 		$product_total = $this->model_catalog_product->getTotalProducts($_data);
-		if($product_total < 2) {
+		if($product_total < 1) {
 			return;
 		}
 

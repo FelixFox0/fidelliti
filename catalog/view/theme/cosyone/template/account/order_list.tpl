@@ -26,7 +26,7 @@
       </div>
 
       <div class="account-menu">
-      <!-- Ошибки в меню -->
+
          <ul class="account-top-menu">
             <li>
               <a href="<?php echo $account; ?>">Обзор</a>
