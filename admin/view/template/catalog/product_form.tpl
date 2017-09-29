@@ -1384,7 +1384,7 @@ function addSpecial() {
 	html += '  <td class="text-left" style="width: 20%;"><div class="input-group date"><input type="text" name="product_special[' + special_row + '][date_end]" value="" placeholder="<?php echo $entry_date_end; ?>" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
 
 
-        html += '<td class="text-right"><select name="product_special[<?php echo $special_row; ?>][country_code]" class="form-control">';
+        html += '<td class="text-right"><select name="product_special[' + special_row + '][country_code]" class="form-control">';
         html += '<option selected disabled>Выберите регион</option>';
         html += '<option value="ua">UA</option>';
         html += '<option value="ru">RU</option>';

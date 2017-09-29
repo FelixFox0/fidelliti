@@ -31,9 +31,11 @@
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
+<?php if($route == 'catalog/product'){ ?>
 <link rel="stylesheet" href="view/javascript/DragNDropPosition/ui/jquery-ui.css">
 <script src="view/javascript/DragNDropPosition/ui/jquery-ui.js"></script>
 <script type="text/javascript" src="view/javascript/DragNDropPosition/dragNdrop_position.js"></script>
+<?php } ?>
 <style type="text/css">
     img.ddp_drag {
         cursor: move;
