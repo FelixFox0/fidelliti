@@ -1,7 +1,7 @@
 <?php
 // Heading
-$_['heading_title']                = 'Авторизация';
-
+$_['heading_title_log']                = 'Авторизация';
+$_['heading_main']                = 'Вход/Регистрация';
 // Text
 $_['text_account']                 = 'Личный Кабинет';
 $_['text_login']                   = 'Авторизация';

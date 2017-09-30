@@ -747,3 +747,9 @@ h2.price {
     background-image: none;
     background-color: #df5c39;
 }
+
+@media (max-width: 992px) {
+    .product-layout a.quick-buy {
+        display: none;
+    }
+}
