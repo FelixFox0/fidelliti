@@ -108,7 +108,7 @@
  
 $(document).ready(function($) {
 
-	if($(window).innerWidth() < 991) {
+	if($(window).innerWidth() < 1100) {
 		$("#my-menu").mmenu({
 			navbar: {
 		    	title: null
@@ -163,7 +163,7 @@ $(document).ready(function($) {
 		$(".search-block").show()
 	});
 
-	if($(window).innerWidth() < 991) {
+	if($(window).innerWidth() < 1100) {
       var fixed = true;
     }
 
@@ -172,7 +172,7 @@ $(document).ready(function($) {
 	  	type:'inline',
 	  	callbacks: {
     		open: function() {
-    			if($(window).innerWidth() < 991) {
+    			if($(window).innerWidth() < 1100) {
     				API2.close();
     				API.close();
     			}
