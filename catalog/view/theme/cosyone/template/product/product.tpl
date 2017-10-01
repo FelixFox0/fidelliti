@@ -137,9 +137,9 @@
                     <?php if (!$special) { ?>
                     <span itemprop="price"><?php echo $price; ?></span>
                     <?php } else { ?>
-                    <?php if (!$cosyone_product_yousave) { ?>
-                    <span class="price-old"><?php echo $price; ?></span> <span class="price-new" itemprop="price"><?php echo $special; ?></span>
-                    <?php } ?>
+                        <?php //if (!$cosyone_product_yousave) { ?>
+                        <span class="price-old"><?php echo $price; ?></span> <span class="price-new" itemprop="price"><?php echo $special; ?></span>
+                        <?php //} ?>
                     <?php } ?>
                       
                   </div> 

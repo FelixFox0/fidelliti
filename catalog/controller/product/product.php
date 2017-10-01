@@ -759,7 +759,7 @@ class ControllerProductProduct extends Controller {
             $data['payment_zone'] = '';//
             $data['payment_zone_id'] = '';//
             $data['payment_address_format'] = '';
-            $data['payment_method'] = 'Оплата при доставке';//
+            $data['payment_method'] = 'Покупка в 1 клик';//
             $data['payment_code'] = 'cod';//
             
             $data['shipping_lastname'] = '';
@@ -773,7 +773,7 @@ class ControllerProductProduct extends Controller {
             $data['shipping_zone'] = '';//
             $data['shipping_zone_id'] = '';//
             $data['shipping_address_format'] = '';
-            $data['shipping_method'] = 'Доставка с фиксированной стоимостью доставки';//
+            $data['shipping_method'] = 'Покупка в 1 клик';//
             $data['shipping_code'] = 'flat.flat';//
             $data['comment'] = '';
             
@@ -826,6 +826,9 @@ class ControllerProductProduct extends Controller {
             $order_id = $this->model_checkout_order->addOrder($data);
             $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('cod_order_status_id'));
             $this->session->data['order_id'] = $order_id;
+            $this->session->data['guest']['firstname'] = $product_info['name'];
+            $this->session->data['guest']['lastname'] = '';
+            
             $json['success'] = $this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 	
 //            $json['success'] = $order_id;

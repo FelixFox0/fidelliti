@@ -105,13 +105,13 @@ class ControllerModuleCosyoneRecently extends Controller {
 					'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']),
 					'quickview'   => $this->url->link('product/quickview', 'product_id=' . $product_info['product_id'], '', true, $this->session->data['country_code'], $this->session->data['language_name']),
 					'sales_percantage' => number_format($sales_percantage, 0, ',', '.'),
-			 		'brand_name' 	 => $product_info['manufacturer']
+			 		'brand_name' 	 => $product_info['manufacturer'],
+                                        'special_date_end' => 0,
 				);
 			}
 		}
 
 		if ($data['products']) {
-			
 			return $this->load->view('module/cosyone_recently', $data);
 			
 		}

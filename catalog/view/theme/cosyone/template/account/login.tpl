@@ -29,6 +29,8 @@
 
 
       <div class="row my-container">
+          <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 col-lg-offset-1 margin-b"></div>
+          
         <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12 col-lg-offset-1 margin-b">
           <div class="login-form">
           <div class="login-form-header">
@@ -55,6 +57,8 @@
           </div>
         </div>
         
+          <?php if(false){ ?>
+          
         <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12">
         <div class="login-form">
         <div class="login-form-header">
@@ -181,6 +185,9 @@
       </div>
         </div>
         </div>
+          
+          
+          <?php } ?>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
