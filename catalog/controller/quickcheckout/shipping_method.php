@@ -79,10 +79,31 @@ class ControllerQuickCheckoutShippingMethod extends Controller {
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
 					$this->load->model('shipping/' . $result['code']);
-//                                        var_dump($this->session->data['country_code']);
+//                                        var_dump($this->session->data['country_code']);s
+                                        
+                                        
+                                        $switch = false;
+                                        if(($this->session->data['country_code']=='ru')&&($result['code'] == 'flat2')){
+                                            $switch = true;
+                                        }elseif(($this->session->data['country_code']=='ua')&&($result['code'] == 'flat3')){
+                                            $switch = true;
+                                        }elseif(($this->session->data['country_code']=='ua')&&($result['code'] == 'flat4')){
+                                            $switch = true;
+//                                        }elseif(($result['code'] == 'free')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+//                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat5')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat6')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat7')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }elseif(($result['code'] == 'flat8')&&($this->session->data['country_code']!='ru')&&($this->session->data['country_code']!='ua')){
+                                            $switch = true;
+                                        }
+                                        
 					$quote = $this->{'model_shipping_' . $result['code']}->getQuote($shipping_address);
-//                                        var_dump($quote);
-					if ($quote) {
+                                        //var_dump($result['code']);
+					if ($quote && $switch) {
 						$method_data[$result['code']] = array(
 							'title'      => $quote['title'],
 							'quote'      => $quote['quote'],

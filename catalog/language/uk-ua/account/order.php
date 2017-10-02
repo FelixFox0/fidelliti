@@ -4,6 +4,11 @@
 $_['heading_title']         = 'Історія замовлень';
 $_['text_my_account_sp']    = 'Мій обліковий запис';
 // Text
+$_['text_account']       = 'Особистий кабінет';
+$_['text_my_orders']     = 'Мої замовлення';
+$_['text_my_newsletter'] = 'Підписка';
+$_['text_edit']          = 'Основні дані';
+
 $_['text_account']          = 'МОЇ ЗАМОВЛЕННЯ';
 $_['text_order']            = 'Замовлення';
 $_['text_order_detail']     = 'Деталі замовлення';

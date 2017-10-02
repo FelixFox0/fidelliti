@@ -46,12 +46,12 @@
     </div>
     <div class="contact-page__tabs">
       <a href="#" class="button active">E-mail</a>
-      <a href="#" class="button contrast js-toggler">Order number</a>
+      <a href="#" class="button contrast js-toggler"><?php echo $text_number; ?></a>
     </div>
     <div class="contact-page__form">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <fieldset>
-          <div class="box-heading"><?php echo $text_contact; ?></div>
+          <!--<div class="box-heading"><?php echo $text_contact; ?></div>-->
           <div class="">
           <div class="contact-page__cont clearfix">
             <div class="form-group col-sm-6 required">
@@ -62,25 +62,23 @@
                 <?php } ?>
             </div>
             <div class="form-group col-sm-6 required target-toggle">
-              <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
-                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-                <?php if ($error_name) { ?>
-                <div class="text-danger"><?php echo $error_name; ?></div>
-                <?php } ?>
+              <label class="control-label" for="input-number"><?php echo $text_number; ?></label>
+                <input type="text" name="number" value="" id="input-number" class="form-control" />
+
             </div>
             
           </div>
           <div class="row clearfix mb">
             <div class="form-group col-sm-6 required">
-              <label class="control-label" for="input-name">Ваше ім`я</label>
-                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
+              <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
+                <input type="text" name="name" value="<?php //echo $name; ?>" id="input-name" class="form-control" />
                 <?php if ($error_name) { ?>
                 <div class="text-danger"><?php echo $error_name; ?></div>
                 <?php } ?>
             </div>
             <div class="form-group col-sm-6 required" >
-              <label class="control-label" for="input-name">Lastname</label>
-                <input type="text" name="name" value="<?php echo $last_name; ?>" id="input-last_name" class="form-control" />
+              <label class="control-label" for="input-lastname"><?php echo $text_lastname; ?></label>
+                <input type="text" name="last_name" value="<?php //echo $last_name; ?>" id="input-last_name" class="form-control" />
                 <?php if ($error_last_name) { ?>
                 <div class="text-danger"><?php echo $error_last_name; ?></div>
                 <?php } ?>
@@ -88,20 +86,19 @@
           </div>
           <div class="row clearfix mb">
             <div class="form-group col-sm-6 required">
-              <label class="control-label" for="input-name">Select category:</label>
+              <label class="control-label" for="input-name"><?php echo $text_category; ?></label>
                 <select name="" id="" class="form-control">
-                  <option value="qweqw">qweqweqwe</option>
+                    <option disabled><?php echo $text_select; ?></option>
+                    <?php foreach($text_options as $option){ ?>
+                        <option value="<?php echo $option; ?>"><?php echo $option; ?></option>
+                    <?php } ?>
                 </select>
-                <?php if ($error_name) { ?>
-                <div class="text-danger"><?php echo $error_name; ?></div>
-                <?php } ?>
+
             </div>
             <div class="form-group col-sm-6 required">
-              <label class="control-label" for="input-name">Наше розміщення</label>
-                <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-                <?php if ($error_name) { ?>
-                <div class="text-danger"><?php echo $error_name; ?></div>
-                <?php } ?>
+              <label class="control-label" for="input-position"><?php echo $text_position; ?></label>
+                <input type="text" name="position" value="" id="input-name" class="form-control" />
+
             </div>
           </div>
           <div class="row">
@@ -127,18 +124,10 @@
     </div>
   </div>
   <div class="contact-page__info text-right">
-    <div class="box-heading"><?php echo $text_location; ?></div>
+    <!--<div class="box-heading"><?php echo $text_location; ?></div>-->
         
-        <h3>FIDELITTI</h3>
-        <p>по телефону<br>
-        <p>+38 093 170 21 16</p>
-        <p>Для клиентов интернет-магазина служба доступна с понедельника по пятницу, с 9.30 до 18.30 часа, и с 10 до 18 часа по выходным UTC+02:00</p>
-
-        <h3>Телефон</h3>
-        <p>0 800 210 385</p>
-        <p>+38 093 170 21 16</p>
-        <p>Свяжитесь с офисами</p>
-
+    <?php echo $text_text; ?>
+        
 
         <div class="">
           <?php if ($image) { ?>
@@ -147,15 +136,15 @@
           </div>
           <?php } ?>
           <div class="col-md-12 margin-b">
-          <span class="contrast_font"><?php echo $store; ?></span><br />
-    <p><?php echo $address; ?></p>
+          <span class="contrast_font"><?php //echo $store; ?></span><br />
+    <p><?php //echo $address; ?></p>
           <?php if ($geocode) { ?>
       <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
       <?php } ?>
           </div>
           <div class="col-md-12 margin-b">
-          <span class="contrast_font"><?php echo $text_telephone; ?></span><br />
-    <?php echo $telephone; ?><br />
+          <span class="contrast_font"><?php //echo $text_telephone; ?></span><br />
+    <?php //echo $telephone; ?><br />
           <?php if ($fax) { ?>
       <br /><span class="contrast_font"><?php echo $text_fax; ?></span><br />
       <?php echo $fax; ?>
@@ -180,7 +169,7 @@
       
       
       <?php if ($locations) { ?>
-      <div class="box-heading"><?php echo $text_store; ?></div>
+      <!--<div class="box-heading"><?php echo $text_store; ?></div>-->
       <div class="panel-group" id="accordion">
         <?php foreach ($locations as $location) { ?>
         <div class="panel panel-cosyone">

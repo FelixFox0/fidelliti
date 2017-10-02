@@ -452,7 +452,7 @@ function validateGuestShippingAddress() {
 }
 
 // Confirm Payment
-$(document).on('click', '#button-payment-method', function() {
+$(document).on('click', '#button-payment-method, .get-order', function() {
 	$('#button-payment-method').prop('disabled', true);
 	$('#button-payment-method').button('loading');
 	
@@ -625,6 +625,7 @@ function validateShippingAddress() {
 
 // Confirm payment
 $(document).on('click', '#button-payment-method, .get-order', function() {
+
 	$('#button-payment-method').prop('disabled', true);
 	$('#button-payment-method').button('loading');
 	
@@ -939,9 +940,8 @@ function loadCart() {
 
 function loadCartInfo() {
 	$( "#cart-info-container" ).load( "index.php?route=quickcheckout/cart .cart-total-info", function( response, status, xhr ) {
-		console.log(response);
 
-		if($(window).innerWidth() > 991) {
+		if($(window).innerWidth() > 1100) {
 			$(".cart-total-info").stick_in_parent({
 				offset_top: 50
 			});
@@ -1220,7 +1220,64 @@ $(document).on('focusout', 'input[name=\'postcode\']', function(){
 <?php if ($edit_cart) { ?>
 
 
+$(document).on('change', '#cart_quantity', function(event) {
+	$('#cart1 :input').val($(this).val())
+	console.log('qqqqqq',$('#cart1 :input').val());
 
+	$.ajax({
+		url: 'index.php?route=quickcheckout/cart/update',
+		type: 'post',
+		data: $('#cart1 :input'),
+		dataType: 'json',
+		cache: false,
+		beforeSend: function() {
+
+		},
+		success: function(json) {
+			if (json['redirect']) {
+				location = json['redirect'];
+			} else {
+				<?php if (!$logged) { ?>
+					if ($('#payment-address input[name=\'shipping_address\']:checked').val()) {
+						reloadPaymentMethod();
+						
+						
+						<?php if ($shipping_required) { ?>
+						reloadShippingMethod('payment');
+						<?php } ?>
+					} else {
+						reloadPaymentMethod();
+						
+						<?php if ($shipping_required) { ?>
+						reloadShippingMethod('shipping');
+						<?php } ?>
+					}
+				<?php } else { ?>
+					if ($('#payment-address input[name=\'payment_address\']:checked').val() == 'new') {
+						reloadPaymentMethod();
+					} else {
+						reloadPaymentMethodById($('#payment-address select[name=\'address_id\']').val());
+					}
+					
+					<?php if ($shipping_required) { ?>
+					if ($('#shipping-address input[name=\'shipping_address\']:checked').val() == 'new') {
+						reloadShippingMethod('shipping');
+					} else {
+						reloadShippingMethodById($('#shipping-address select[name=\'address_id\']').val());
+					}
+					<?php } ?>
+				<?php } ?>
+			}
+
+			loadCartInfo();
+		},
+		<?php if ($debug) { ?>
+		error: function(xhr, ajaxOptions, thrownError) {
+			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		}
+		<?php } ?>
+	});
+});
 
 
 

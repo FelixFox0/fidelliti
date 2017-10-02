@@ -1,7 +1,14 @@
 <?php
 // Heading
 $_['heading_title']					= 'Личный Кабинет';
-
+$_['heading_hello'] = 'Добро пожаловать';
+$_['heading_text'] = 'Если у Вас возникли вопросы или нужна помощь, пожалуйста, свяжитесь с нами ';
+$_['text_my_account_sp'] = 'Мой аккаунт';
+$_['heading_logout'] = 'Выход';
+$_['menu_account'] = 'Обзор';
+$_['menu_wishlist'] = 'Закладки';
+$_['menu_order'] = 'Заказ';
+$_['menu_edit'] = 'Данные личного кабинета';
 // Text
 $_['text_account']					= 'Личный Кабинет';
 $_['text_my_account']			= 'Моя учетная запись';

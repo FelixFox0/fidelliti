@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']    = 'Фиксированная стоимость доставки2';
+$_['heading_title']    = 'DPD - Доставка за наш счет';
 
 // Text
 $_['text_shipping']    = 'Доставка';

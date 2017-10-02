@@ -5,7 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery-all.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
 <div class="one-click mfp-hide">
   <div class="one-click__inner">
@@ -13,21 +13,50 @@
       <?php echo $text_by1click; ?>
     </div>
     <div class="one-click__body">
-      <form id='one_click_form' action="" class="one-click__form">
+      <form id='one_click_form' method="get" action="" class="one-click__form">
         <div class="one-click__input" >
-          <input name='name' type="text" placeholder="<?php echo $text_name; ?>">
+          <input name='name' type="text" placeholder="<?php echo $text_name; ?>" required>
         </div>
         <div class="one-click__input">
-          <input name='phone' type="text" placeholder="<?php echo $text_phone; ?>">
+          <input name='phone' type="phone" placeholder="<?php echo $text_phone; ?>" required>
         </div>
         <div class="one-click__input" >
-          <input name='mail' type="text" placeholder="<?php echo $text_mail; ?>">
+          <input name='mail' type="email" placeholder="<?php echo $text_mail; ?>" required>
         </div>
         <div class="one-click__submit">
-          <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button>
+          <!-- <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button"><?php echo $button_cart; ?></button> -->
+          <input id="one_click" class="button" type="submit" data-loading-text="<?php echo $text_loading; ?>" value="<?php echo $button_cart; ?>">
         </div>
       </form>
     </div>
+
+    <!-- Тут можно найти как добавить переводы, https://jqueryvalidation.org/documentation/ -->
+    <script>
+      $("#one_click_form").validate({
+        submitHandler: function(form) {
+          $.ajax({
+            url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
+            type: 'post',
+            data: $('#one_click_form').serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+              
+            },
+            complete: function() {
+              
+            },
+            success: function(json) {     
+              if (json['success']) {
+                location = json['success'];
+                //alert("Ваш заказ получен"); 
+              }else{
+                  alert("Ваш заказ не получен");
+              }
+            }
+          });
+        }
+       });
+    </script>
     <div class="one-click__footer">
       <div><?php echo $text_prod; ?><b><?php echo $heading_title; ?></b></div>
               <div><?php echo $text_price; ?><b>
@@ -76,15 +105,20 @@
             <?php if ($thumb) { ?>
               <?php if ($cosyone_product_zoom) { ?>
               <li data-thumb="<?php echo $thumb; ?>" data-src="<?php echo $popup; ?>">
-              <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></li>
+                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+
+              </li>
 
               <?php } else { ?>
               <li data-thumb="<?php echo $popup; ?>" data-src="<?php echo $popup; ?>">
-              <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></li>
+                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+
+              </li>
               <?php } ?>
             <?php } ?>
             <?php foreach ($images as $image) { ?>
                 <li data-thumb="<?php echo $image['thumb']; ?>" data-src="<?php echo $image['popup']; ?>">
+
                   <img src="<?php echo $image['popup']; ?>" />
                 </li>
                 <?php } ?>
@@ -103,9 +137,9 @@
                     <?php if (!$special) { ?>
                     <span itemprop="price"><?php echo $price; ?></span>
                     <?php } else { ?>
-                    <?php if (!$cosyone_product_yousave) { ?>
-                    <span class="price-old"><?php echo $price; ?></span> <span class="price-new" itemprop="price"><?php echo $special; ?></span>
-                    <?php } ?>
+                        <?php //if (!$cosyone_product_yousave) { ?>
+                        <span class="price-old"><?php echo $price; ?></span> <span class="price-new" itemprop="price"><?php echo $special; ?></span>
+                        <?php //} ?>
                     <?php } ?>
                       
                   </div> 
@@ -348,7 +382,8 @@
                 </div>
                 <div id="collapse33" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <?php echo $razmer; ?>
+                    <?php //echo $razmer; ?>
+                    <?php echo $text_size; ?>: <?php echo $size; ?></a>
                   </div>
                 </div>
               </div>
@@ -412,7 +447,8 @@
                   </div>
 
                   <div class="tab-pane" id="tab-size">
-                      <?php echo $razmer; ?>
+                      <?php //echo $razmer; ?>
+                      <?php echo $text_size; ?>: <?php echo $size; ?></a>
                   </div>
                 </div>
             </div>
@@ -1325,9 +1361,9 @@ $('#button-cart').on('click', function() {
         $('#cart-total').html(json['total']);
         
         $('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
-        $("#cart-panel .mm-panels").load('index.php?route=common/cart/info #cart > *');
+        $("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 
-				if($(window).innerWidth() > 991) {
+				if($(window).innerWidth() > 110) {
           /*$.colorbox({
             html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button contrast" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
             className: "notification",
@@ -1340,7 +1376,7 @@ $('#button-cart').on('click', function() {
             });*/
             $.magnificPopup.open({
             items: {
-              src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title">ДОБАВЛЕНО В КОРЗИНУ</h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+              src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title"><?php echo $text_add_cart; ?></h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
               type: 'inline'
             }
           });
@@ -1472,7 +1508,7 @@ $('#button-review').on('click', function() {
 
 
 <script type="text/javascript">
-$('#one_click').on('click', function(e) {
+/*$('#one_click').on('click', function(e) {
         e.preventDefault();
 	$.ajax({
 		url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
@@ -1494,10 +1530,10 @@ $('#one_click').on('click', function(e) {
                         }
 		}
 	});
-});
+});*/
 
 
-if($(window).innerWidth() >= 991) {
+if($(window).innerWidth() >= 1100) {
 
 $('.product-slider').lightSlider({
           gallery:true,
@@ -1521,7 +1557,7 @@ $('.product-slider').lightSlider({
             {
                 breakpoint:800,
                 settings: {
-                    item:1,
+                    item:2,
                     vertical: false,
                     pager: false
                   }
@@ -1529,7 +1565,7 @@ $('.product-slider').lightSlider({
             {
                 breakpoint:480,
                 settings: {
-                    item:1,
+                    item:2,
                     vertical: false,
                     pager: false
                   }

@@ -8,6 +8,8 @@ class ControllerInformationContact extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+//                    var_dump($this->request->post);
+//                    die();
 			$mail = new Mail();
 			$mail->protocol = $this->config->get('config_mail_protocol');
 			$mail->parameter = $this->config->get('config_mail_parameter');
@@ -19,9 +21,17 @@ class ControllerInformationContact extends Controller {
 
 			$mail->setTo($this->config->get('config_email'));
 			$mail->setFrom($this->request->post['email']);
-			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-			$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
-			$mail->setText($this->request->post['enquiry']);
+			$mail->setSender(html_entity_decode($this->request->post['name'] . ' ' . $this->request->post['last_name'], ENT_QUOTES, 'UTF-8'));
+			$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name'] . ' ' . $this->request->post['last_name']), ENT_QUOTES, 'UTF-8'));
+			$text = '';
+                        if($this->request->post['number']){
+                            $text .= 'Номер заказа: ' . $this->request->post['number'] . "\r\n";
+                        }
+                        if($this->request->post['position']){
+                            $text .= 'Адрес: ' . $this->request->post['position'] . "\r\n";
+                        }
+                        $text .= $this->request->post['enquiry'];
+                        $mail->setText($text);
 			$mail->send();
 
 			$this->response->redirect($this->url->link('information/contact/success','',false, $this->session->data['country_code'], $this->session->data['language_name']));
@@ -49,6 +59,21 @@ class ControllerInformationContact extends Controller {
 		$data['text_fax'] = $this->language->get('text_fax');
 		$data['text_open'] = $this->language->get('text_open');
 		$data['text_comment'] = $this->language->get('text_comment');
+                
+                if(($this->session->data['country_code']=='ua')||($this->session->data['country_code']=='ru')){
+                    $country = $this->session->data['country_code'];
+                }else{
+                    $country = 'en';
+                }
+                
+                $data['text_number'] = $this->language->get('text_number');
+                $data['text_lastname'] = $this->language->get('text_lastname');
+                $data['text_category'] = $this->language->get('text_category');
+                $data['text_position'] = $this->language->get('text_position');
+                $data['text_select'] = $this->language->get('text_select');
+                $data['text_options'] = $this->language->get('text_options');
+                $data['text_text'] = $this->language->get('text_text_'.$country);
+                
 
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_email'] = $this->language->get('entry_email');
@@ -60,6 +85,12 @@ class ControllerInformationContact extends Controller {
 			$data['error_name'] = $this->error['name'];
 		} else {
 			$data['error_name'] = '';
+		}
+                
+                if (isset($this->error['last_name'])) {
+			$data['error_last_name'] = $this->error['last_name'];
+		} else {
+			$data['error_last_name'] = '';
 		}
 
 		if (isset($this->error['email'])) {
@@ -147,7 +178,7 @@ class ControllerInformationContact extends Controller {
 		} else {
 			$data['captcha'] = '';
 		}
-
+//                var_dump($data);
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -163,6 +194,10 @@ class ControllerInformationContact extends Controller {
 	protected function validate() {
 		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 32)) {
 			$this->error['name'] = $this->language->get('error_name');
+		}
+                
+                if ((utf8_strlen($this->request->post['last_name']) < 3) || (utf8_strlen($this->request->post['last_name']) > 32)) {
+			$this->error['last_name'] = $this->language->get('error_last_name');
 		}
 
 		if (!filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {

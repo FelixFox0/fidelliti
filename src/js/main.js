@@ -108,8 +108,12 @@
  
 $(document).ready(function($) {
 
-	if($(window).innerWidth() < 991) {
-		$("#my-menu").mmenu();
+	if($(window).innerWidth() < 1100) {
+		$("#my-menu").mmenu({
+			navbar: {
+		    	title: null
+		    },
+		});
 
 	var API = $("#my-menu").data( "mmenu" );
 
@@ -119,7 +123,7 @@ $(document).ready(function($) {
 	        position: "right"
 	    },
 	    navbar: {
-	    	title: 'Cart'
+	    	title: null
 	    },
 
 		}, {
@@ -159,9 +163,23 @@ $(document).ready(function($) {
 		$(".search-block").show()
 	});
 
+	if($(window).innerWidth() < 1100) {
+      var fixed = true;
+    }
+
 
 	$('.open-popup').magnificPopup({
-	  	type:'inline'
+	  	type:'inline',
+	  	callbacks: {
+    		open: function() {
+    			if($(window).innerWidth() < 1100) {
+    				API2.close();
+    				API.close();
+    			}
+    		}
+    	},
+    	overflowY : 'hidden', 
+    	fixedBgPos: true
 	  });
 
 	//countries 

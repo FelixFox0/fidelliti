@@ -11,6 +11,19 @@ class ControllerCommonHeader extends Controller {
 		$data['analytics'] = array();
 
 		$analytics = $this->model_extension_extension->getExtensions('analytics');
+                
+                $data['country_code'] = $this->session->data['country_code'];
+        
+          
+                
+        if($this->session->data['country_code']=='ua'){
+            $data['customer_service'] = $this->url->link('information/information','information_id=20', false, $this->session->data['country_code'], $this->session->data['language_name']);  
+        }elseif($this->session->data['country_code']=='ru'){
+            $data['customer_service'] = $this->url->link('information/information','information_id=21', false, $this->session->data['country_code'], $this->session->data['language_name']);
+        }else{
+            $data['customer_service'] = $this->url->link('information/information','information_id=22', false, $this->session->data['country_code'], $this->session->data['language_name']);
+        }
+                
 
 		foreach ($analytics as $analytic) {
 			if ($this->config->get($analytic['code'] . '_status')) {
@@ -117,9 +130,16 @@ class ControllerCommonHeader extends Controller {
                 
                 $data['text_free_call'] = $this->language->get('text_read_faq_but');
                 
-                $data['text_phone'] = $this->language->get('text_phone_'. $this->session->data['country_code']);
+                if(($this->session->data['country_code']=='ua')||($this->session->data['country_code']=='ru')){
+                    $country_code = $this->session->data['country_code'];
+                }else{
+                    $country_code = 'en';
+                }
                 
-                $data['text2'] = $this->language->get('text2_'. $this->session->data['country_code']);
+                $data['text_phone'] = $this->language->get('text_phone_'. $country_code);
+                $data['text_free_call'] = $this->language->get('text_free_call_'. $country_code);
+                
+                $data['text2'] = $this->language->get('text2_'. $country_code);
                 
                 $data['text_search2'] = $this->language->get('text_search2');
                 $data['text_see_all'] = $this->language->get('text_see_all');

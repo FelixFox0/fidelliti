@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']					= 'Оплата при доставке2';
+$_['heading_title']					= 'Перевод на карту Сбербанка';
 
 // Text
 $_['text_payment']					= 'Оплата';

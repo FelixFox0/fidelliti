@@ -47,6 +47,7 @@
     setTimeout(function(){
       $(".loader").fadeOut();
     }, 1200);
+
   });
 </script>
 
@@ -79,7 +80,7 @@
           <li class="mmobile-image"><p><?php echo $category_1['name']; ?></p><img src="<?php echo $category_1['thumb']; ?>" alt=""></li>
           <?php } ?>
 
-          <li><a href="<?php echo $category_1['href']; ?>"><?php echo $text_see_all; ?></a></li>
+          <!--<li><a href="<?php echo $category_1['href']; ?>"><?php echo $text_see_all; ?></a></li>-->
 
           <?php foreach ($category_1['children'] as $category_2) { ?>
           <li class="column level2">
@@ -120,7 +121,7 @@
           <li class="">
             <span href="<?php echo $cosyone_custom_menu_url1 ?>" class=""><?php echo $cosyone_custom_menu_title1; ?></span>
                 <ul>
-                  <li><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $text_see_all; ?></a></li>
+                  <!--<li><a href="<?php echo $cosyone_custom_menu_url1 ?>"><?php echo $text_see_all; ?></a></li>-->
                   <li class=""><a href="<?php echo $blog ?>"><?php echo $text_blog ?></a></li>
                   <li class=""><a href="https://www.instagram.com/fidelitti/" target="_blank">#Fidelittigirls</a></li>
                 </ul>
@@ -137,7 +138,7 @@
                     
                 
                 <ul>
-                <li><a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $text_see_all; ?></a></li>
+                <!--<li><a href="<?php echo $cosyone_custom_menu_url2 ?>"><?php echo $text_see_all; ?></a></li-->
                   <li class=""><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
                   <li class=""><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
@@ -149,15 +150,16 @@
                 
         <?php } ?>
 
-                <li><a class="mmobile-wicon" href="#"><?php echo $text_customer; ?> <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
-                <li><a class="mmobile-wicon" href="<?php echo $login; ?>"><?php echo $text_login; ?> <i class=""></i><img src="/image/man.png" alt=""></a></li>
-                            <li><a class="mmobile-lang open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true">
+                <li><a class="mmobile-wicon" href="<?php echo $customer_service; ?>"><?php echo $text_customer; ?> <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
+                <li><a class="mmobile-wicon" href="<?php echo $login; ?>"><?php echo $text_login; ?> <i class="icon-maaan"></i></li>
+                <li><a class="mmobile-lang text-center open-popup" href=".popup-countries"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span> <?php echo ' ' . strtoupper($country_s); ?></span></a></li>
+                            <li><a class="mmobile-lang text-center open-popup" href=".top_header_drop_down"><i class="fa fa-comments" aria-hidden="true">
                 </i><?php foreach ($llanguages as $llanguage) { ?>
                     <?php if ($llanguage['code'] == $code) { ?>
                         <?php echo $llanguage['name']; ?>
                     <?php } ?>
                 <?php } ?></a></li>
-                <li><a class="mmobile-lang open-popup" href=".popup-countries"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span>nn</span></a></li>
+                
                 
                 </ul>
       </nav>
@@ -202,7 +204,7 @@
       </div>
       <script>
           var next = 0;
-          var textArr = ['<?php echo $text2; ?>', '<?php echo $text_free_call . $text; ?>'];
+          var textArr = ['<?php echo $text2; ?>', '<?php echo $text_free_call . $text_phone; ?>'];
           setInterval(function(){
             $('.header__promo').hide().html(textArr[next]).fadeIn(1500);
             next++; 
@@ -218,7 +220,7 @@
         <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
         <a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
         <?php }else{ ?>
-        <a href="<?php echo $login; ?>"><?php echo $text_register; ?></a>
+        <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
         <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a>
         <?php } ?>
       </div>

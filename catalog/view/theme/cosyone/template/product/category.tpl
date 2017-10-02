@@ -40,7 +40,7 @@
     <div id="content" class="<?php echo $class; ?> <?php echo $cosyone_grid_category; ?>">
     
   
-  <h1><?php //echo $heading_title; ?></h1>
+  <!--<h1><?php //echo $heading_title; ?></h1>-->
   <?php if ($thumb || $description) { ?>
   <div class="category-info">
 	<?php if ($cosyone_category_thumb == 'enabled' && ($thumb)) { ?>

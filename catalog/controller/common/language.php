@@ -28,11 +28,13 @@ class ControllerCommonLanguage extends Controller {
 		if (!isset($this->request->get['route'])) {
 			$data['redirect'] = $this->url->link('common/home');
 		} else {
+//                    var_dump($this->request->get);
 			$url_data = $this->request->get;
 
 			$route = $url_data['route'];
 
 			unset($url_data['route']);
+                        unset($url_data['_route_']);
 
 			$url = '';
 
@@ -47,6 +49,8 @@ class ControllerCommonLanguage extends Controller {
 	}
 
 	public function language() {
+//            var_dump($this->request->post['code']);
+//            die();
 		if (isset($this->request->post['code'])) {
 			$this->session->data['language'] = $this->request->post['code'];
                         $this->load->model('startup/url');

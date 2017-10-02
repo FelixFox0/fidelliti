@@ -1638,12 +1638,12 @@ button.button, a.button.contrast:hover, .button.contrast:hover, .sq_icon.contras
 	color:#ffffff;
 }
 /* Highlighted button*/
-a.button.active, input.button.active, input.button.active:hover, #button-confirm, .style-2 .add_to_cart { 
+a.button.active, input.button.active, input.button.active:hover, .style-2 .add_to_cart { 
 	background-color: #d6a916;
 	border-color:transparent;
 	color:#ffffff;
 }
-a.button.active:hover, input.button.active:hover, #button-confirm:hover, .style-2 .add_to_cart:hover { 
+a.button.active:hover, input.button.active:hover, .style-2 .add_to_cart:hover { 
 	background-color: #ffffff;
 	border-color:#d6a916;
 	color:#d6a916;
@@ -4407,4 +4407,20 @@ a.scroll_top {
 
 input#shipping{
     display: none;
+}
+
+.attribute thead{
+    display: none !important;
+}
+
+.static-pages #accordion .fa{
+    display: inline-block !important;
+}
+
+.sort-comp{
+    padding-top: 0px !important;
+}
+
+.breadcrumb_wrapper {
+    margin-bottom: 0px;
 }

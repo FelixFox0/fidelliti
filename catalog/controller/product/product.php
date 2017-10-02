@@ -157,7 +157,7 @@ class ControllerProductProduct extends Controller {
 		$this->load->model('catalog/product');
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-
+//var_dump($product_info);
 		if ($product_info) {
 			$url = '';
 
@@ -243,6 +243,7 @@ class ControllerProductProduct extends Controller {
 			$data['text_related'] = $this->language->get('text_related');
 			$data['text_payment_recurring'] = $this->language->get('text_payment_recurring');
 			$data['text_loading'] = $this->language->get('text_loading');
+                        $data['text_add_cart'] = $this->language->get('text_add_cart');
                         
                         
                         
@@ -302,6 +303,7 @@ class ControllerProductProduct extends Controller {
 
 			if ($product_info['image']) {
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 417, 706);
+				$data['popup_big'] = $this->model_tool_image->resize($product_info['image'], 283, 513);
 			} else {
 				$data['popup'] = '';
 			}
@@ -319,6 +321,7 @@ class ControllerProductProduct extends Controller {
 			foreach ($results as $result) {
 				$data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], 417, 706),
+					'popup_big' => $this->model_tool_image->resize($result['image'], 283, 513),
 					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
 				);
 			}
@@ -428,8 +431,11 @@ class ControllerProductProduct extends Controller {
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
+
+					$image_hover = $this->model_tool_image->resize($result['image'], 417, 706);
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
+					$image_hover = $this->model_tool_image->resize($result['image'], 417, 706);
 				}
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
@@ -459,6 +465,7 @@ class ControllerProductProduct extends Controller {
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
+					'img_hover'   => $$image_hover,
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
@@ -483,6 +490,8 @@ class ControllerProductProduct extends Controller {
 				}
 			}
 //                        var_dump($data);
+                        $data['size'] = (float)$product_info['length'] . ' ' . $product_info['unit'] . " x " . (float)$product_info['width'] . ' ' . $product_info['unit'] . " x " . (float)$product_info['height'] . ' ' . $product_info['unit'];
+//                        var_dump($data['size']);
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
@@ -678,6 +687,7 @@ class ControllerProductProduct extends Controller {
 		}
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
+                
 		$recurring_info = $this->model_catalog_product->getProfile($product_id, $recurring_id);
 
 		$json = array();
@@ -749,7 +759,7 @@ class ControllerProductProduct extends Controller {
             $data['payment_zone'] = '';//
             $data['payment_zone_id'] = '';//
             $data['payment_address_format'] = '';
-            $data['payment_method'] = 'Оплата при доставке';//
+            $data['payment_method'] = 'Покупка в 1 клик';//
             $data['payment_code'] = 'cod';//
             
             $data['shipping_lastname'] = '';
@@ -763,7 +773,7 @@ class ControllerProductProduct extends Controller {
             $data['shipping_zone'] = '';//
             $data['shipping_zone_id'] = '';//
             $data['shipping_address_format'] = '';
-            $data['shipping_method'] = 'Доставка с фиксированной стоимостью доставки';//
+            $data['shipping_method'] = 'Покупка в 1 клик';//
             $data['shipping_code'] = 'flat.flat';//
             $data['comment'] = '';
             
@@ -816,6 +826,9 @@ class ControllerProductProduct extends Controller {
             $order_id = $this->model_checkout_order->addOrder($data);
             $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('cod_order_status_id'));
             $this->session->data['order_id'] = $order_id;
+            $this->session->data['guest']['firstname'] = $product_info['name'];
+            $this->session->data['guest']['lastname'] = '';
+            
             $json['success'] = $this->url->link('checkout/success', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 	
 //            $json['success'] = $order_id;

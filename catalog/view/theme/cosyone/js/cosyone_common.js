@@ -54,9 +54,11 @@ $(document).ready(function() {
 	// Language
 	$('#language a').on('click', function(e) {
 		e.preventDefault();
-
+                console.log($(this).attr('href'));
+                $('#language').append('<input name="code" type="hidden">');
+            
 		$('#language input[name=\'code\']').attr('value', $(this).attr('href'));
-
+//                console.log($('#language input[name=\'code\']').val());
 		$('#language').submit();
 	});
 
@@ -280,7 +282,11 @@ var cart = {
 					});*/
 
 					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+
+					$("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 				}
+
+
 			}
 		});
 	},
@@ -303,6 +309,9 @@ var cart = {
 				} else {
 					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
 				}
+
+				$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+				$("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 			}
 		});
 	},
@@ -316,6 +325,7 @@ var cart = {
 				$('#cart > button').button('loading');
 			},
 			success: function(json) {
+				$(".shortcut #cart-total").html(json['total']);
 				$('#cart > button').button('reset');
 
 				$('#cart-total').html(json['total']);
@@ -325,6 +335,9 @@ var cart = {
 				} else {
 					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
 				}
+
+				$('#cart').load('index.php?route=common/cart/info #cart > *');
+				$("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 			}
 		});
 	}

@@ -4,7 +4,7 @@
   <div class="content">
     <?php if ($products || $vouchers) { ?>
     <div class="mini-cart-info">
-      <table>
+      <table class="hidden-xs">
         <?php foreach ($products as $product) { ?>
         <tr>
           <td class="image border"><?php if ($product['thumb']) { ?>
@@ -32,9 +32,39 @@
           </tr>
         <?php } ?>
       </table>
+      
+      <?php if ($products || $vouchers) { ?>
+        <div class="cart-products visible-sm visible-xs">
+          <div class="cart-products__title"><?php echo $text_cart2; ?></div>
+          <?php foreach ($products as $product) { ?>
+            <div class="cart-products__item">
+              <div class="cart-products__item-img">
+                <?php if ($product['thumb']) { ?>
+                <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
+                <?php } ?>
+                <a title="<?php echo $button_remove; ?>" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><span class="remove"><?php echo $button_remove; ?></span></a>
+              </div>
+              <div class="cart-products__item-info">
+                <div class="cart-products__item-name"><a href="#"><?php echo $product['name']; ?> x <?php echo $product['quantity']; ?></a></div>
+                <div class="cart-products__item-atrs">
+                  <?php foreach ($product['option'] as $option) { ?>
+                  <?php echo $option['name']; ?>: <?php echo $option['value']; ?><br />
+                  <?php } ?>
+                  <?php if ($product['recurring']) { ?>
+                  <?php echo $text_recurring ?>: <?php echo $product['recurring']; ?><br />
+                  <?php } ?>
+                </div>
+                <div class="cart-products__item-price"><?php echo $product['price']; ?></div>
+              </div>
+            </div>
+          <?php } ?>
+        </div>
+      <?php } ?>
+
+
     </div>
     <div class="box-cart">
-    <div class="mini-go-cart">
+    <div class="mini-go-cart hidden-sm hidden-xs">
       <a class="" href="<?php echo $cart; ?>"><?php echo $text_cart; ?></a>
     </div>
     <div class="mini-cart-total">

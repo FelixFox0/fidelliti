@@ -34,7 +34,9 @@ $_['text_sotr'] = 'Сотрудничество';
 $_['text_our_prod'] = 'Наше производство';
 $_['text_contact'] = 'Контакты';
 
-$_['text_free_call'] = 'БЕСПЛАТНЫЙ ЗВОНОК ';
+$_['text_free_call_ua'] = 'БЕСПЛАТНЫЙ ЗВОНОК ';
+$_['text_free_call_ru'] = 'БЕСПЛАТНЫЙ ЗВОНОК ';
+$_['text_free_call_en'] = 'По всему миру ';
 
 $_['text_phone_ua'] = '0 800 210 385';
 $_['text_phone_ru'] = '8 800 505 72 13';

@@ -56,8 +56,13 @@ $_['text_mail'] = 'Your mail';
 $_['text_prod'] = 'The following items are ordered:';
 $_['text_price'] = 'To the total cost:';
 $_['text_by1cl'] = 'Buy in one click';
-$_['text_add_favorite'] = 'Add to bookmarks';
+$_['text_add_favorite'] = 'Add to wishlist';
 $_['text_delivery'] = 'Delivery and payment';
 $_['text_sku'] = 'Article:';
 $_['text_detali'] = 'Detail';
 $_['text_size'] = 'Size';
+$_['text_add_cart'] = 'ADDED TO CART';
+
+$_['text_bye'] = 'Buy';
+$_['text_wish'] = 'Wish List';
+$_['text_dop'] = 'ADDITIONAL INFORMATION';

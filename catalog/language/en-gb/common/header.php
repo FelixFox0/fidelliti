@@ -34,14 +34,16 @@ $_['text_sotr'] = 'Cooperation';
 $_['text_our_prod'] = 'Our production';
 $_['text_contact'] = 'Contacts';
 
-$_['text_free_call'] = 'EXTRAORDINARY DISABLED ';
+$_['text_free_call_ua'] = 'FREE CALL ';
+$_['text_free_call_ru'] = 'FREE CALL ';
+$_['text_free_call_en'] = 'Worldwide ';
 
 $_['text_phone_ua'] = '0 800 210 385';
 $_['text_phone_ru'] = '8 800 505 72 13';
 $_['text_phone_en'] = '+38 093 170 21 16';
 
-$_['text2_ua'] = 'FREE EXPRESS DELIVERY FOR ALL UKRAINE';
-$_['text2_ru'] = 'FREE EXPRESS DELIVERY FOR ALL RUSSIA';
+$_['text2_ua'] = 'FREE EXPRESS DELIVERY FOR UKRAINE';
+$_['text2_ru'] = 'FREE EXPRESS DELIVERY FOR RUSSIA';
 $_['text2_en'] = 'Worldwide shipping';
 $_['text_search2'] = 'Product search by catalog';
 $_['text_see_all'] = 'View all';
