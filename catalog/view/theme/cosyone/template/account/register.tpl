@@ -27,13 +27,11 @@
     </div>
         
         <div class="row my-container">
-        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 col-lg-offset-1 margin-b"></div>
-    <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12">
+
         <div class="login-form">
         <div class="login-form-header">
             <h5 class="login-form-name"><?php echo $heading_title; ?></h5>
             <div class="login-form-description"><?php echo $text_account_already; ?></div>
-            <div class="login-form-req"><?php echo $heading_title; ?></div>
         </div>
             <div class="login-form-container">
                 
@@ -723,4 +721,6 @@ $('select[name=\'country_id\']').on('change', function() {
 
 $('select[name=\'country_id\']').trigger('change');
 //--></script>
+
+</div>
 <?php echo $footer; ?>

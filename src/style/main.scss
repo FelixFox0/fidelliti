@@ -3274,5 +3274,36 @@ input.error {
 }
 
 
+.acount-information {
+	.pull-left {
+		margin-right: 15px;
+	}
+}
+
+
+
+.login-form {
+	margin: 50px auto !important;
+	display: block;
+
+	.pull-right {
+		input, a {
+			padding: 9px 20px;
+		}
+	}
+
+	.box-heading {
+		padding: 5px 0;
+		border-bottom: 1px solid #eaeaea;
+		margin-bottom: 15px;
+		font-weight: bold;
+	}
+}
+
+.login-form-container label {
+	font-size: 12px !important;
+	text-align: left !important;
+}
+
 @import "partials/media.scss";
 

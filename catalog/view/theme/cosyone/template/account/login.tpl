@@ -29,23 +29,22 @@
 
 
       <div class="row my-container">
-          <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 col-lg-offset-1 margin-b"></div>
           
-        <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12 col-lg-offset-1 margin-b">
+        <div class="margin-b">
           <div class="login-form">
           <div class="login-form-header">
             <h5 class="login-form-name"><?php echo $heading_title_log; ?></h5>
             <div class="login-form-description"><?php echo $text_returning_customer; ?></div>
           </div>
           <div class="login-form-container">
-              <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+              <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" >
                 <div class="form-group">
                   <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
                 </div>
                 <div class="form-group">
                   <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
                   </div>
-                  <div class="login-form-container__bottom">
+                  <div class="login-form-container__bottom clearfix">
                     <a href="<?php echo $forgotten; ?>" class="pull-left login-forgotten"><?php echo $text_forgotten; ?></a>
                     <input type="submit" value="<?php echo $button_login; ?>" class="button login-form-button pull-right" />
                   </div>                
@@ -59,7 +58,7 @@
         
           <?php if(false){ ?>
           
-        <div class="col-md-6 col-lg-5 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
         <div class="login-form">
         <div class="login-form-header">
             <h5 class="login-form-name"><?php echo $heading_title_reg; ?></h5>

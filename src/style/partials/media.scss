@@ -1493,6 +1493,36 @@
 		display: none;
 	}
 
+	.acount-information {
+		.pull-left {
+			margin-top: 20px !important;
+		}
+
+
+		.cart-info {
+			overflow-x: hidden;
+		}
+	}
+
+	.login-form {
+		width: 100%;
+	}
+
+	.my-container {
+		padding: 0 15px;
+	}
+
+	.h1, h1 {
+		font-size: 18px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.login-form-container label {
+		font-size: 12px !important;
+		text-align: left !important;
+	}
+
 
 }
 
