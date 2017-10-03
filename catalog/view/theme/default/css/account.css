@@ -85,14 +85,14 @@ h1.page-banner-asset-title {
     padding-top: 64px;
     padding-bottom: 64px;
 }
-.my-container input {
+/* .my-container input {
     padding: 12px;
     border: 1px solid #b5b5b5;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     background: #fff;
-}
+} */
 .my-container input.button.login-form-button, .acount-shop-button, 
 a.btn.btn-primary.login-form-button, input.btn.btn-primary.login-form-button, .acount-information-col-edit a.login-form-button {
     opacity: 0.75;
@@ -358,9 +358,10 @@ li.detail {
 .acount-information-col-edit .form-horizontal .control-label {
     text-align: left;
     font-family: gotic, sans-serif;
+    font-size: 12px;
     position: relative;
     letter-spacing: .01em;
-    font-size: 12.9px;
+    font-size: 12px;
     margin-bottom: 15px;
     text-transform: none;
     padding: 7px 0px;
