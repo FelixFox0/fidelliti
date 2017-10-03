@@ -1093,7 +1093,7 @@ class ControllerSaleOrder extends Controller {
 //                        $data['shipping_country']
                         
 //                        var_dump($order_info['shipping_iso_code_2']);
-                        
+//                        die();
 			// Uploaded files
 			$this->load->model('tool/upload');
 
@@ -1139,7 +1139,7 @@ class ControllerSaleOrder extends Controller {
 					'href'     		   => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $product['product_id'], true)
 				);
 			}
-//                        var_dump($data);
+//                        var_dump($order_info['shipping_iso_code_2']);
 			$data['vouchers'] = array();
 
 			$vouchers = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);

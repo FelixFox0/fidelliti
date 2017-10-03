@@ -146,6 +146,7 @@ class ControllerApiCart extends Controller {
 	}
 
 	public function products() {
+//            var_dump(strtolower($this->request->get['country_code']));
 		$this->load->language('api/cart');
 
 		$json = array();
@@ -160,8 +161,17 @@ class ControllerApiCart extends Controller {
 
 			// Products
 			$json['products'] = array();
-
-			$products = $this->cart->getProducts();
+/*
+                        if(strtolower($this->request->get['country_code'])=='ua'){
+                                    $price = $product['price'];
+                                }elseif(strtolower($this->request->get['country_code'])=='ru'){
+                                    $price = $product['price_ru'];
+                                }else{
+                                    $price = $product['price_en'];
+                                }
+                                */
+                        
+			$products = $this->cart->getProducts(strtolower($this->request->get['country_code']));
 
 			foreach ($products as $product) {
 				$product_total = 0;
@@ -187,7 +197,9 @@ class ControllerApiCart extends Controller {
 						'type'                    => $option['type']
 					);
 				}
-
+//                                var_dump($product);
+                                
+                                
 				$json['products'][] = array(
 					'cart_id'    => $product['cart_id'],
 					'product_id' => $product['product_id'],
@@ -197,8 +209,8 @@ class ControllerApiCart extends Controller {
 					'quantity'   => $product['quantity'],
 					'stock'      => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
 					'shipping'   => $product['shipping'],
-					'price'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']),
-					'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']),
+					'price'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency'], '', true, strtolower($this->request->get['country_code'])),
+					'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency'], '', true, strtolower($this->request->get['country_code'])),
 					'reward'     => $product['reward']
 				);
 			}
@@ -217,7 +229,7 @@ class ControllerApiCart extends Controller {
 						'to_email'         => $voucher['to_email'],
 						'voucher_theme_id' => $voucher['voucher_theme_id'],
 						'message'          => $voucher['message'],
-						'price'            => $this->currency->format($voucher['amount'], $this->session->data['currency']),			
+						'price'            => $this->currency->format($voucher['amount'], $this->session->data['currency'], '', true, strtolower($this->request->get['country_code'])),			
 						'amount'           => $voucher['amount']
 					);
 				}
@@ -236,11 +248,11 @@ class ControllerApiCart extends Controller {
 				'taxes'  => &$taxes,
 				'total'  => &$total
 			);
-			
+//			var_dump($total_data);
 			$sort_order = array();
 
 			$results = $this->model_extension_extension->getExtensions('total');
-
+//                        var_dump($results);
 			foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 			}
@@ -250,7 +262,7 @@ class ControllerApiCart extends Controller {
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
 					$this->load->model('total/' . $result['code']);
-					
+//					var_dump($result);
 					// We have to put the totals in an array so that they pass by reference.
 					$this->{'model_total_' . $result['code']}->getTotal($total_data);
 				}
@@ -269,7 +281,7 @@ class ControllerApiCart extends Controller {
 			foreach ($totals as $total) {
 				$json['totals'][] = array(
 					'title' => $total['title'],
-					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
+					'text'  => $this->currency->format($total['value'], $this->session->data['currency'], '', true, strtolower($this->request->get['country_code']))
 				);
 			}
 		}

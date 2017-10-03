@@ -32,7 +32,8 @@ class Cart {
 		}
 	}
 
-	public function getProducts() {
+	public function getProducts($country_code = false) {
+//            var_dump($country_code);
 		$product_data = array();
 
 		$cart_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "cart WHERE customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");
@@ -187,7 +188,16 @@ class Cart {
                                 }
                                 */
                                 
-                                if(isset($this->request->get['country_code'])){
+                                if($country_code){
+                                    if($country_code=='ua'){
+                                        $price = $product_query->row['price'];
+                                    }elseif($country_code=='ru'){
+                                        $price = $product_query->row['price_ru'];
+                                    }else{
+                                        $price = $product_query->row['price_en'];
+                                    }
+                                    
+                                }elseif(isset($this->request->get['country_code'])){
                                     if($this->request->get['country_code']=='ua'){
                                         $price = $product_query->row['price'];
                                     }elseif($this->request->get['country_code']=='ru'){

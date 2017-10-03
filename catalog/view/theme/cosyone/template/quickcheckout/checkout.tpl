@@ -719,6 +719,7 @@ function validatePaymentMethod() {
 // Shipping Method
 <?php if ($shipping_required) { ?>
 	function reloadShippingMethod(type) {
+            loadCartInfo();
 		if (type == 'payment') {
 			var post_data = $('#payment-address input[type=\'text\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select, #shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select');
 		} else {

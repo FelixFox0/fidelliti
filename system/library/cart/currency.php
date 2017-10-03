@@ -60,7 +60,7 @@ class Currency {
 		if (!$value) {
 			$value = $this->currencies[$currency]['value'];
 		}
-
+//                var_dump($number);
 //                var_dump($country_code);
                 if($country_code){
                     $symbol_right = '';
