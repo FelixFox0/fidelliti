@@ -62,7 +62,7 @@
             <a href="<?php echo $order; ?>" class="account-header-link" title="Посмотреть все">Посмотреть все</a>
           </div>
           <div class="empty-cell-description">
-            <div class="acount-description">Количество Ваших заказов сейчас: 0</div>
+            <div class="acount-description">Количество Ваших заказов сейчас: <?php echo $total_orders; ?></div>
             <a class="acount-shop-button" href="/" title="Магазин">Магазин</a>
           </div>
         </div>
@@ -74,23 +74,23 @@
           <ul class="detail-set">
             <li class="detail">
               <div class="detail-name l3">Фамилия: </div>
-              <div class="detail-value l4 last-name">Вадим</div>
+              <div class="detail-value l4 last-name"><?php echo $lastname; ?></div>
             </li>
             <li class="detail">
               <div class="detail-name l3">Имя: </div>
-              <div class="detail-value l4 first-name">Вадим</div>
+              <div class="detail-value l4 first-name"><?php echo $firstname; ?></div>
             </li>
             <li class="detail">
               <div class="detail-name l3">Страна: </div>
-              <div class="detail-value l4 country">Российская Федерация</div>
+              <div class="detail-value l4 country"><?php echo $country; ?></div>
             </li>
             <li class="detail">
               <div class="detail-name l3">Телефон: </div>
-              <div class="detail-value l4 phone">38093123123123</div>
+              <div class="detail-value l4 phone"><?php echo $phone; ?></div>
             </li>
             <li class="detail">
               <div class="detail-name l3">Электронная почта: </div>
-              <div class="detail-value l4 email">padavan94@gmail.com</div>
+              <div class="detail-value l4 email"><?php echo $email; ?></div>
             </li>
           </ul>
         </div>

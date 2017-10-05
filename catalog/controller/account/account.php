@@ -51,6 +51,7 @@ class ControllerAccountAccount extends Controller {
 		$data['text_transaction'] = $this->language->get('text_transaction');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
 		$data['text_recurring'] = $this->language->get('text_recurring');
+//                var_dump($data);
 		
 		$data['menu_account'] = $this->language->get('menu_account');
 		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
@@ -86,7 +87,24 @@ class ControllerAccountAccount extends Controller {
 			$data['reward'] = $this->url->link('account/reward', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		} else {
 			$data['reward'] = '';
-		}		
+		}	
+                
+                
+//                var_dump($this->customer->getFirstName());
+//                var_dump($this->customer->getLastName());
+//                var_dump($this->customer->getEmail());
+//                var_dump($this->customer->getTelephone());
+                
+//                var_dump($this->model_account_address->getAddress($this->customer->getAddressId())['country']);
+                
+                $data['firstname'] = $this->customer->getFirstName();
+                $data['lastname'] = $this->customer->getLastName();
+                $data['email'] = $this->customer->getEmail();
+                $data['phone'] = $this->customer->getTelephone();
+                $this->load->model('account/address');
+                $data['country'] = $this->model_account_address->getAddress($this->customer->getAddressId())['country'];
+                $this->load->model('account/order');
+                $data['total_orders'] = $this->model_account_order->getTotalOrders();
 		
 		$data['return'] = $this->url->link('account/return', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['transaction'] = $this->url->link('account/transaction', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
@@ -102,6 +120,9 @@ class ControllerAccountAccount extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 		
+                
+                
+                
 		$this->response->setOutput($this->load->view('account/account', $data));
 	}
 
