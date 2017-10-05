@@ -38,7 +38,9 @@
                               <?php foreach ($filter_group['filter'] as $filter) { ?>
                                 <div class="checkk">
                                 <input type="checkbox" class="filtered" name="filter[<?php echo $filter_group['filter_group_id']; ?>][]" value="<?php echo $filter['filter_id']; ?>" id="filter<?php echo $filter['filter_id']; ?>" />
+                                <?php if($filter['color']){ ?>
                                 <i class="color" style="background-color: #<?php echo $filter['color']; ?>"></i>
+                                <?php } ?>
                                 <label for="filter<?php echo $filter['filter_id']; ?>">
                                 <?php echo $filter['name']; ?> </label>
                                 </div>

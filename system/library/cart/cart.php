@@ -187,7 +187,8 @@ class Cart {
                                     }
                                 }
                                 */
-                                
+//                               var_dump($country_code);
+//                               die();
                                 if($country_code){
                                     if($country_code=='ua'){
                                         $price = $product_query->row['price'];
@@ -388,10 +389,11 @@ class Cart {
 		return $weight;
 	}
 
-	public function getSubTotal() {
+	public function getSubTotal($country_code = false) {
+//            var_dump($country_code);
 		$total = 0;
 
-		foreach ($this->getProducts() as $product) {
+		foreach ($this->getProducts($country_code) as $product) {
 			$total += $product['total'];
 		}
 
@@ -418,10 +420,10 @@ class Cart {
 		return $tax_data;
 	}
 
-	public function getTotal() {
+	public function getTotal($country_code = false) {
 		$total = 0;
 
-		foreach ($this->getProducts() as $product) {
+		foreach ($this->getProducts($country_code) as $product) {
 			$total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
 		}
 

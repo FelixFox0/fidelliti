@@ -4424,3 +4424,10 @@ input#shipping{
 .breadcrumb_wrapper {
     margin-bottom: 0px;
 }
+
+@media (max-width: 992px) {
+
+    .white-popup._new a {
+        margin-top: 5px!important;
+    }
+}

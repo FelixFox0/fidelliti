@@ -450,7 +450,7 @@ class ControllerApiOrder extends Controller {
 				}
 
 				// Validate minimum quantity requirements.
-				$products = $this->cart->getProducts();
+				$products = $this->cart->getProducts(strtolower($this->request->get['country_code']));
 
 				foreach ($products as $product) {
 					$product_total = 0;
@@ -564,7 +564,7 @@ class ControllerApiOrder extends Controller {
 					// Products
 					$order_data['products'] = array();
 
-					foreach ($this->cart->getProducts() as $product) {
+					foreach ($this->cart->getProducts(strtolower($this->request->get['country_code'])) as $product) {
 						$option_data = array();
 
 						foreach ($product['option'] as $option) {
@@ -624,7 +624,8 @@ class ControllerApiOrder extends Controller {
 					$total_data = array(
 						'totals' => &$totals,
 						'taxes'  => &$taxes,
-						'total'  => &$total
+						'total'  => &$total,
+                                                'country_code'=> strtolower($this->request->get['country_code']),
 					);
 			
 					$sort_order = array();

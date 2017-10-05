@@ -59,7 +59,7 @@ $_['text_by1cl'] = 'Buy in one click';
 $_['text_add_favorite'] = 'Add to wishlist';
 $_['text_delivery'] = 'Delivery and payment';
 $_['text_sku'] = 'Article:';
-$_['text_detali'] = 'Detail';
+$_['text_detali'] = 'Details';
 $_['text_size'] = 'Size';
 $_['text_add_cart'] = 'ADDED TO CART';
 

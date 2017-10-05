@@ -33,11 +33,11 @@
 <?php if (count($countries) > 1) { ?>
 <div class="first-frame">
   <div class="first-frame__image">
-    <img src="image/CountrySelector.jpg" alt="image">
+    <img src="image/fidelitti-country-selector.jpg" alt="image">
   </div>
   <div class="first-frame__countries">
     <div class="first-frame__title">
-      Please select a country and language to continue.
+      Please select a country and language/Пожалуйста, выберите страну и язык.
     </div>
     <div class="first-frame__list">
       <select name="" id="country" class="form-control">

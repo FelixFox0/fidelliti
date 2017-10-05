@@ -54,7 +54,44 @@
 
 </head>
 <body class="<?php echo $class; ?>">
-
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) { (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter46168851 = new Ya.Metrika({
+                    id:‎46168851,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true,
+                    ecommerce:"dataLayer" 
+                }); 
+            } catch(e) {
+            } 
+        });
+        var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () {
+            n.parentNode.insertBefore(s, n);
+        };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js";
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false); 
+        } else {
+            f(); 
+        } 
+    })
+    (document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+<div>
+    <img src="https://mc.yandex.ru/watch/46168851" style="position:absolute; left:-9999px;" alt="" />
+</div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
 <div class="loader"> 
   <img src="/image/cropped-fidelitti_icon.gif" alt="cropped-fidelitti_icon">
 </div>
@@ -371,7 +408,8 @@
                           
                         
                         <div class="wrapper-image">
-                          <img src="<?php echo $category_1['thumb']; ?>" />
+                            <img src="/image/catalog/fidelitti-blog.jpg">
+                          
                         </div>
                       </div>
                   </div>
@@ -398,7 +436,7 @@
                 
                 </ul>
                 <div class="wrapper-image">
-                  <img src="<?php echo $category_1['thumb']; ?>" />
+                  <img src="/image/catalog/about-company.jpg">
                 </div>
                 
                 </ul>

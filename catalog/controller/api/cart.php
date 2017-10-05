@@ -241,18 +241,19 @@ class ControllerApiCart extends Controller {
 			$totals = array();
 			$taxes = $this->cart->getTaxes();
 			$total = 0;
-
+//                        var_dump($totals);
 			// Because __call can not keep var references so we put them into an array. 
 			$total_data = array(
 				'totals' => &$totals,
 				'taxes'  => &$taxes,
-				'total'  => &$total
+				'total'  => &$total,
+                                'country_code'=> strtolower($this->request->get['country_code']),
 			);
 //			var_dump($total_data);
 			$sort_order = array();
 
 			$results = $this->model_extension_extension->getExtensions('total');
-//                        var_dump($results);
+//                        var_dump($totals);
 			foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 			}
@@ -265,6 +266,7 @@ class ControllerApiCart extends Controller {
 //					var_dump($result);
 					// We have to put the totals in an array so that they pass by reference.
 					$this->{'model_total_' . $result['code']}->getTotal($total_data);
+//                                        var_dump($totals);
 				}
 			}
 
@@ -277,7 +279,7 @@ class ControllerApiCart extends Controller {
 			array_multisort($sort_order, SORT_ASC, $totals);
 
 			$json['totals'] = array();
-
+//                        var_dump($totals);
 			foreach ($totals as $total) {
 				$json['totals'][] = array(
 					'title' => $total['title'],
