@@ -9,7 +9,7 @@ $_['text_unsubscribe']	= 'You have successfully unsubscribed!';
 $_['text_message']		= '<p>You have successfully unsubscribe %s from our newsletter.</p>';
 $_['text_info']	= 'Your personal data will be used by Fidelitti to subscribe to a newsletter that you have explicitly requested. For more information, see <a href="/policy">privacy policy</a>';
 // Entry
-$_['entry_email']		= 'Get exclusive deals you will not find anywhere else straight to your inbox!';
+$_['entry_email']		= 'Subscribe to the newsletter, and the first to receive information about discounts and promotions!';
 
 // Button 
 $_['button_join']		= 'Subscribe / Unsubscribe';

@@ -1,4 +1,4 @@
-<modification>  
+<modification>
 	<id><![CDATA[cosyone theme]]></id>
 	<version><![CDATA[1.0]]></version>
 	<vqmver><![CDATA[2.X]]></vqmver>
@@ -166,7 +166,7 @@
 				$total = $this->model_catalog_product->getTotalProducts(array('filter_category_id'  => $category_2['category_id'], 'filter_sub_category' => true));
 				
         		if ($category_2['image']) {
-				$category_2_image = $this->model_tool_image->resize($category_2['image'], $this->config->get('cosyone_menu_mega_second_image_w'), $this->config->get('cosyone_menu_mega_second_image_h'));
+				$category_2_image = $this->model_tool_image->resize($category_2['image'], 350, 350);
 				} else {
 				$category_2_image = '';
 				}

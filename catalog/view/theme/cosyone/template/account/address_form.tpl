@@ -17,14 +17,7 @@
         </div>
       </div>
 
-        <div class="row my-container">
-            
-            
-            
-            
-            
-        </div>>
-        
+ 
       <div class="account-header  my-container sp-container">
         <div class="account-welcome">
           <span class="h2"><?php echo $heading_hello; ?></span>
@@ -55,15 +48,15 @@
           <ul class="section-edit">
             <li class="section">
               <a href="<?php echo $edit; ?>" class="cta3 add-smooth-underline">
-                Сведения о Личном кабинете</a>
+                <?php echo $text_about_account; ?></a>
             </li>
             <li class="section">
-              <a href="<?php echo $add; ?>" class="cta3 add-smooth-underline">
-                Адресная Книга</a>
+              <a href="<?php echo $address; ?>" class="cta3 add-smooth-underline">
+                <?php echo $text_address; ?></a>
             </li>
             <li class="section">
               <a href="<?php echo $newsletter; ?>" class="cta3 add-smooth-underline">
-                НАСТРОЙКИ ЭЛЕКТРОННОЙ ПОЧТЫ</a>
+                <?php echo $text_newsletter; ?></a>
             </li>
           </ul>
 
@@ -99,7 +92,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group">
+            <div class="form-group" style="display: none">
             <label class="col-lg-2 col-md-2 col-sm-2 col-xs-3 control-label" for="input-company"><?php echo $entry_company; ?></label>
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 ">
               <input type="text" name="company" value="<?php echo $company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-company" class="form-control" />
@@ -114,7 +107,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group">
+            <div class="form-group" style="display: none">
             <label class="col-lg-2 col-md-2 col-sm-2 col-xs-3 control-label" for="input-address-2"><?php echo $entry_address_2; ?></label>
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 ">
               <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
@@ -129,7 +122,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group required">
+            <div class="form-group required" style="display: none">
             <label class="col-lg-2 col-md-2 col-sm-2 col-xs-3 control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 ">
               <input type="text" name="postcode" value="<?php echo $postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />

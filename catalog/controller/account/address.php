@@ -27,6 +27,7 @@ class ControllerAccountAddress extends Controller {
 		}
 
 		$this->load->language('account/address');
+                $this->load->language('account/account');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -193,6 +194,10 @@ class ControllerAccountAddress extends Controller {
 		$data['menu_order'] = $this->language->get('menu_order');
 		$data['menu_edit'] = $this->language->get('menu_edit');
                 
+                $data['text_about_account'] = $this->language->get('text_about_account');
+                $data['text_address'] = $this->language->get('text_address');
+                $data['text_newsletter'] = $this->language->get('text_newsletter');
+                
 
 		$data['text_address_book'] = $this->language->get('text_address_book');
 		$data['text_empty'] = $this->language->get('text_empty');
@@ -201,6 +206,13 @@ class ControllerAccountAddress extends Controller {
 		$data['button_edit'] = $this->language->get('button_edit');
 		$data['button_delete'] = $this->language->get('button_delete');
 		$data['button_back'] = $this->language->get('button_back');
+                
+                $data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['wishlist'] = $this->url->link('account/wishlist', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
+		$data['order'] = $this->url->link('account/order', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['edit'] = $this->url->link('account/edit', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -262,6 +274,7 @@ class ControllerAccountAddress extends Controller {
 		}
 
 		$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['back'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -318,6 +331,10 @@ class ControllerAccountAddress extends Controller {
 		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
 		$data['menu_order'] = $this->language->get('menu_order');
 		$data['menu_edit'] = $this->language->get('menu_edit');
+                
+                $data['text_about_account'] = $this->language->get('text_about_account');
+                $data['text_address'] = $this->language->get('text_address');
+                $data['text_newsletter'] = $this->language->get('text_newsletter');
 		
 		$data['text_edit_address'] = $this->language->get('text_edit_address');
 		$data['text_yes'] = $this->language->get('text_yes');
@@ -509,6 +526,7 @@ class ControllerAccountAddress extends Controller {
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
  		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 

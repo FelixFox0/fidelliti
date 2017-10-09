@@ -17,6 +17,11 @@ class ControllerAccountOrder extends Controller {
                 $data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$url = '';
 
+                $data['menu_account'] = $this->language->get('menu_account');
+		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
+		$data['menu_order'] = $this->language->get('menu_order');
+		$data['menu_edit'] = $this->language->get('menu_edit');
+                
 		if (isset($this->request->get['page'])) {
 			$url .= '&page=' . $this->request->get['page'];
 		}
@@ -98,6 +103,9 @@ class ControllerAccountOrder extends Controller {
 
 		$data['results'] = sprintf($this->language->get('text_pagination'), ($order_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($order_total - 10)) ? $order_total : ((($page - 1) * 10) + 10), $order_total, ceil($order_total / 10));
 
+                
+                $data['total_orders'] = $this->model_account_order->getTotalOrders();
+                
 		$data['continue'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 //                var_dump($data);
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -393,6 +401,7 @@ class ControllerAccountOrder extends Controller {
 			$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                        $data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 	 		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 			$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 

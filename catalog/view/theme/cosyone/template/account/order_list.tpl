@@ -29,16 +29,16 @@
 
          <ul class="account-top-menu">
             <li>
-              <a href="<?php echo $account; ?>">Обзор</a>
+              <a href="<?php echo $account; ?>"><?php echo $menu_account; ?></a>
             </li>
             <li>
-              <a href="<?php echo $wishlist; ?>">Предпочтения</a>
+              <a href="<?php echo $wishlist; ?>"><?php echo $menu_wishlist; ?></a>
             </li>
             <li>
-              <a href="<?php echo $order; ?>">Заказы</a>
+              <a href="<?php echo $order; ?>"><?php echo $menu_order; ?></a>
             </li>
             <li>
-              <a href="<?php echo $edit; ?>">Данные личного кабинета</a>
+              <a href="<?php echo $edit; ?>"><?php echo $menu_edit; ?></a>
             </li>
           </ul>
       </div>
@@ -88,8 +88,7 @@
         <?php } else { ?>
         <p><?php echo $text_empty; ?></p>
         <?php } ?>
-        <!-- Тут добавить количество товаров  -->
-        <p><?php echo $text_product_number; ?></p>
+        <p><?php echo $text_product_number; ?> <?php echo $total_orders; ?></p>
         </div>
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  acount-information-col acount-information-col-order">
           <div class="cell-header">

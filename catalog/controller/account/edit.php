@@ -72,6 +72,7 @@ class ControllerAccountEdit extends Controller {
 		$data['menu_wishlist'] = $this->language->get('menu_wishlist');
 		$data['menu_order'] = $this->language->get('menu_order');
 		$data['menu_edit'] = $this->language->get('menu_edit');
+                
 		
 		$data['entry_firstname'] = $this->language->get('entry_firstname');
 		$data['entry_lastname'] = $this->language->get('entry_lastname');
@@ -131,9 +132,14 @@ class ControllerAccountEdit extends Controller {
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
  		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
+                
+                $data['text_about_account'] = $this->language->get('text_about_account');
+                $data['text_address'] = $this->language->get('text_address');
+                $data['text_newsletter'] = $this->language->get('text_newsletter');
 
 		if ($this->request->server['REQUEST_METHOD'] != 'POST') {
 			$customer_info = $this->model_account_customer->getCustomer($this->customer->getId());

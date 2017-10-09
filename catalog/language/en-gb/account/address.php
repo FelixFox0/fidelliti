@@ -1,6 +1,14 @@
 <?php
 // Heading
 $_['heading_title']        = 'Address Book';
+$_['heading_hello'] = 'Welcome';
+$_['heading_text'] = 'If you have any questions or need help, please contact us';
+$_['text_my_account_sp'] = 'My account';
+$_['heading_logout'] = 'Exit';
+$_['button_next'] = 'Save';
+$_['button_back'] = 'Cancel';
+$_['adress_discription'] = 'Here you can change your personal information, make changes to your address book or change your email settings';
+$_['row_require'] = '* Required field';
 
 // Text
 $_['text_account']         = 'Account';
@@ -15,7 +23,7 @@ $_['text_empty']           = 'You have no addresses in your account.';
 $_['entry_firstname']      = 'First Name';
 $_['entry_lastname']       = 'Last Name';
 $_['entry_company']        = 'Company';
-$_['entry_address_1']      = 'Address 1';
+$_['entry_address_1']      = 'Address';
 $_['entry_address_2']      = 'Address 2';
 $_['entry_postcode']       = 'Post Code';
 $_['entry_city']           = 'City';

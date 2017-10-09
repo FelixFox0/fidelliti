@@ -137,7 +137,8 @@ class ModelModuleAdvajaxfilter extends Model {
 	}
 
 	public function getSubCategories($data) {
-		$sql = "SELECT DISTINCT cd.category_id, CONCAT(cd.name, ' (', COUNT(*), ')' ) AS 'name' FROM `" . DB_PREFIX . "category` c" .
+//		$sql = "SELECT DISTINCT cd.category_id, CONCAT(cd.name, ' (', COUNT(*), ')' ) AS 'name' FROM `" . DB_PREFIX . "category` c" .
+                $sql = "SELECT DISTINCT cd.category_id, cd.name AS 'name' FROM `" . DB_PREFIX . "category` c" .        
 			   " LEFT JOIN " . DB_PREFIX . "category_description cd ON(cd.category_id=c.category_id) " .
 			   " LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON(c.category_id=p2c.category_id) " .
 			   " LEFT JOIN " . DB_PREFIX . "product p ON(p.product_id=p2c.`product_id`) " .
@@ -151,6 +152,8 @@ class ModelModuleAdvajaxfilter extends Model {
 		$sql .= " GROUP BY cd.category_id ORDER BY `c`.`sort_order`, `cd`.`name`";
 
 		$query = $this->db->query($sql);
+//                var_dump($query->rows);
+//                die();
 		return $query->rows;
 	}
 
@@ -1214,6 +1217,8 @@ class ModelModuleAdvajaxfilter extends Model {
 	}
 
 	public function getProducts($data) {
+//            var_dump($data);
+//            var_dump($this->request->get);
 		$customer_group_id = $this->getCustomerGroup();
 
 		$sql = "SELECT product_id FROM(";

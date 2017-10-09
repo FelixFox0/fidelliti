@@ -1,5 +1,6 @@
 <?php
 // Heading
+$_['heading_title']                = 'Авторизация';
 $_['heading_title_log']                = 'Авторизация';
 $_['heading_main']                = 'Вход';
 // Text

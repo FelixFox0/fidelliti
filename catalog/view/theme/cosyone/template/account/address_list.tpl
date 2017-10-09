@@ -59,15 +59,15 @@
           <ul class="section-edit">
             <li class="section">
               <a href="<?php echo $edit; ?>" class="cta3 add-smooth-underline">
-                Сведения о Личном кабинете</a>
+                <?php echo $text_about_account; ?></a>
             </li>
             <li class="section">
-              <a href="<?php echo $add; ?>" class="cta3 add-smooth-underline">
-                Адресная Книга</a>
+              <a href="<?php echo $address; ?>" class="cta3 add-smooth-underline">
+                <?php echo $text_address; ?></a>
             </li>
             <li class="section">
               <a href="<?php echo $newsletter; ?>" class="cta3 add-smooth-underline">
-                НАСТРОЙКИ ЭЛЕКТРОННОЙ ПОЧТЫ</a>
+                <?php echo $text_newsletter; ?></a>
             </li>
           </ul>
 
