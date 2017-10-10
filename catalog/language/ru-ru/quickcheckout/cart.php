@@ -2,7 +2,7 @@
 // Text
 $_['text_cart']	= 'Корзина';
 $_['text_image']	= 'Изображение';
-$_['text_name']		= 'Продукт';
+$_['text_name']		= 'Товар';
 $_['text_quantity']	= 'Количество';
 $_['text_price']	= 'Цена';
 $_['text_total']	= 'Всего';

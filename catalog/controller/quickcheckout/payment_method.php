@@ -129,9 +129,18 @@ class ControllerQuickCheckoutPaymentMethod extends Controller {
 						if ($recurring) {
 							if (property_exists($this->{'model_payment_' . $result['code']}, 'recurringPayments') && $this->{'model_payment_' . $result['code']}->recurringPayments()) {
 								$method_data[$result['code']] = $method;
+                                                                
 							}
 						} else {
 							$method_data[$result['code']] = $method;
+//                                                        var_dump($result['code']);
+                                                        /*
+                                                        if (file_exists('image/payment/'. $method['code'] . '.png')) {
+                                                            $method_data[$result['code']]['image'] = 'image/payment/'. $method['code'] . '.png';
+                                                        } else {
+                                                            $method_data[$result['code']]['image'] = '';
+                                                        }*/
+//                                                        var_dump($method_data);
 						}
 					}
 				}
