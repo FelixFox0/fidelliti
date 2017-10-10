@@ -50,15 +50,15 @@
           <ul class="section-edit">
             <li class="section">
               <a href="<?php echo $edit; ?>" class="cta3 add-smooth-underline">
-                Сведения о Личном кабинете</a>
+                <?php echo $text_about_account; ?></a>
             </li>
             <li class="section">
-              <a href="<?php echo $add; ?>" class="cta3 add-smooth-underline">
-                Адресная Книга</a>
+              <a href="<?php echo $address; ?>" class="cta3 add-smooth-underline">
+                <?php echo $text_address; ?></a>
             </li>
             <li class="section">
               <a href="<?php echo $newsletter; ?>" class="cta3 add-smooth-underline">
-                НАСТРОЙКИ ЭЛЕКТРОННОЙ ПОЧТЫ</a>
+                <?php echo $text_newsletter; ?></a>
             </li>
           </ul>
 
@@ -108,7 +108,7 @@
                     <?php } ?>
                   </div>
                 </div>
-                <div class="form-group">
+                  <div class="form-group" style="display: none;">
                   <label class="col-lg-1 col-md-1 col-sm-2 col-xs-3 control-label" for="input-fax"><?php echo $entry_fax; ?></label>
                   <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9">
                     <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />

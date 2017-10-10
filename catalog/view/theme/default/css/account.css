@@ -10,6 +10,9 @@ h1.page-banner-asset-title {
     right: 0;
     left: 0;
     color: #fff;
+    /*text-shadow: #171717 2px 2px;*/
+/*    color: #171717;
+    opacity: 0.75;*/
     text-align: center;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -20,6 +23,7 @@ h1.page-banner-asset-title {
     letter-spacing: .1em;
     text-transform: uppercase;
     font-family: gotic, sans-serif;
+    
 }
 .page-banner-asset-cell .cell-placeholder-1-5 {
     position: relative;
@@ -44,7 +48,7 @@ h1.page-banner-asset-title {
     -moz-background-size: cover;
     background-size: cover;
     background-color: #f4e6e6;
-    background-image: url(/image/account.png);
+    background-image: url(/image/fidelitti-log-in.jpg);
 }
 .page-banner-asset-cell img {
     width: 100%;
@@ -432,6 +436,7 @@ input.btn.btn-primary.login-form-button{
     h1.page-banner-asset-title{
         font-size: 19px;
         top: 30%;
+        
     }
     .my-container {
     padding-top: 5px;

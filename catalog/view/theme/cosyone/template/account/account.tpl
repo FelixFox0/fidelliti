@@ -48,48 +48,47 @@
       <div class="acount-information">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 acount-information-col">
           <div class="cell-header">
-            <h4>Предпочтения</h4>
+            <h4><?php echo $menu_wishlist; ?></h4>
           </div>
           <div class="empty-cell-description">
-            <div class="acount-description">На любой странице товара щелкните «Добавить в Избранное», чтобы сохранить понравившиеся товары для последующего просмотра и покупки.
-            </div>            
-            <a class="acount-shop-button" href="/" title="Магазин">Магазин</a>
+            <div class="acount-description"><?php echo $text_description; ?></div>            
+            <a class="acount-shop-button" href="<?php echo $home; ?>" title="<?php echo $text_shop; ?>"><?php echo $text_shop; ?></a>
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 acount-information-col">
           <div class="cell-header">
-            <h4>Заказы</h4>
-            <a href="<?php echo $order; ?>" class="account-header-link" title="Посмотреть все">Посмотреть все</a>
+            <h4><?php echo $menu_order; ?></h4>
+            <a href="<?php echo $order; ?>" class="account-header-link" title="<?php echo $text_see_all; ?>"><?php echo $text_see_all; ?></a>
           </div>
           <div class="empty-cell-description">
-            <div class="acount-description">Количество Ваших заказов сейчас: <?php echo $total_orders; ?></div>
-            <a class="acount-shop-button" href="/" title="Магазин">Магазин</a>
+            <div class="acount-description"><?php echo $text_total_orders; ?> <?php echo $total_orders; ?></div>
+            <a class="acount-shop-button" href="<?php echo $home; ?>" title="<?php echo $text_shop; ?>"><?php echo $text_shop; ?></a>
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 acount-information-col">          
           <div class="cell-header">
-            <h4>Данные Личного кабинета</h4>
-            <a href="<?php echo $edit; ?>" class="account-header-link" title="Изменить">Изменить</a>
+            <h4><?php echo $menu_edit; ?></h4>
+            <a href="<?php echo $edit; ?>" class="account-header-link" title="<?php echo $text_edit; ?>"><?php echo $text_edit; ?></a>
           </div>
           <ul class="detail-set">
             <li class="detail">
-              <div class="detail-name l3">Фамилия: </div>
+              <div class="detail-name l3"><?php echo $text_lastname; ?> </div>
               <div class="detail-value l4 last-name"><?php echo $lastname; ?></div>
             </li>
             <li class="detail">
-              <div class="detail-name l3">Имя: </div>
+              <div class="detail-name l3"><?php echo $text_firstname; ?> </div>
               <div class="detail-value l4 first-name"><?php echo $firstname; ?></div>
             </li>
             <li class="detail">
-              <div class="detail-name l3">Страна: </div>
+              <div class="detail-name l3"><?php echo $text_country; ?> </div>
               <div class="detail-value l4 country"><?php echo $country; ?></div>
             </li>
             <li class="detail">
-              <div class="detail-name l3">Телефон: </div>
+              <div class="detail-name l3"><?php echo $text_phone; ?> </div>
               <div class="detail-value l4 phone"><?php echo $phone; ?></div>
             </li>
             <li class="detail">
-              <div class="detail-name l3">Электронная почта: </div>
+              <div class="detail-name l3"><?php echo $text_mail; ?> </div>
               <div class="detail-value l4 email"><?php echo $email; ?></div>
             </li>
           </ul>

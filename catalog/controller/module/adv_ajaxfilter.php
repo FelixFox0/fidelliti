@@ -117,7 +117,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 			$data['categories'] = $this->model_module_adv_ajaxfilter->getSubCategories($_data);
 			$data['expanded_categories'] = isset($adv_ajaxfilter_setting['expanded_categories']) ? 1 : 0;
 		}
-
+//                var_dump($data['categories']);
 		$data['attributes'] = $this->model_module_adv_ajaxfilter->getAttributes($_data);
 
 		foreach($data['attributes'] as $j => $attr_group) {
@@ -222,7 +222,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		
 		$data['url']   = $this->url->link('product/adv_ajaxfilter', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
                 $data['product_total'] = $product_total;
-//                var_dump($data);
+//                var_dump($data['categories']);
 //                die();
 		return $this->load->view('module/adv_ajaxfilter', $data);
         
@@ -269,6 +269,37 @@ class ControllerModuleAdvajaxfilter extends Controller {
         } else {
 			$order = 'ASC';
 		}
+//                var_dump(explode('&', substr(htmlspecialchars_decode($this->request->server['HTTP_REFERER']), strpos(htmlspecialchars_decode($this->request->server['HTTP_REFERER']),'?')+1)));
+//                        var_dump(explode('&', substr(htmlspecialchars_decode($this->request->server['HTTP_REFERER']), strpos(htmlspecialchars_decode($this->request->server['HTTP_REFERER']),'?')+1)));
+//        var_dump(strpos(htmlspecialchars_decode($this->request->server['HTTP_REFERER']), '?'));
+        foreach (explode('&', substr(htmlspecialchars_decode($this->request->server['HTTP_REFERER']), strpos(htmlspecialchars_decode($this->request->server['HTTP_REFERER']),'?')+1)) as $value) {
+            $keys = explode('=', $value);
+            if(isset($keys[1])){
+                $get[$keys[0]] = $keys[1];
+            }
+        }
+//        var_dump($get);
+//        htmlspecialchars_decode($this->request->server['HTTP_REFERER']);
+//        var_dump($this->request->get);
+                
+                if(isset($get['sort'])) {
+			$sort = $get['sort'];
+		} else if (isset($get['sort'])) {
+            $sort = $get['sort'];
+        } else {
+			$sort = 'p.sort_order';
+		}
+
+		if(isset($get['order'])) {
+			$order = $get['order'];
+		} else if (isset($get['order'])) {
+            $order = $get['order'];
+        } else {
+			$order = 'ASC';
+		}
+                
+//                var_dump($sort);
+//                var_dump($order);
 
 		$this->load->model('module/adv_ajaxfilter');
 		$this->load->model('catalog/product');

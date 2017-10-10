@@ -1,9 +1,14 @@
 <?php
 // Heading
 $_['heading_title'] = 'My Wish List';
+$_['heading_title'] = 'My bookmarks';
+$_['heading_hello'] = 'Welcome';
+$_['heading_text'] = 'If you have any questions or need help, please contact us';
+$_['heading_logout'] = 'Exit';
 
 // Text
 $_['text_account']  = 'Account';
+$_['text_account_start']  = 'WHERE TO BEGIN';
 $_['text_instock']  = 'In Stock';
 $_['text_wishlist'] = 'Wish List (%s)';
 $_['text_login']    = 'You must <a href="%s">login</a> or <a href="%s">create an account</a> to save <a href="%s">%s</a> to your <a href="%s">wish list</a>!';
@@ -18,3 +23,4 @@ $_['column_model']  = 'Model';
 $_['column_stock']  = 'Stock';
 $_['column_price']  = 'Unit Price';
 $_['column_action'] = 'Action';
+$_['button_continue_wish'] = 'Shop';

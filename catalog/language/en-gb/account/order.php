@@ -19,6 +19,15 @@ $_['text_success']          = 'Success: You have added <a href="%s">%s</a> to yo
 $_['text_empty']            = 'You have not made any previous orders!';
 $_['text_error']            = 'The order you requested could not be found!';
 
+$_['heading_title_chzv'] = 'FAQ';
+$_['contact_text'] = 'Please visit our Frequently Asked Questions or Contact Us section';
+$_['text_product_number'] = 'Number of your orders now:';
+
+$_['menu_account'] = 'Overview';
+$_['menu_wishlist'] = 'Wishlist';
+$_['menu_order'] = 'Order';
+$_['menu_edit'] = 'Personal account details';
+
 // Column
 $_['column_order_id']       = 'Order ID';
 $_['column_customer']       = 'Customer';

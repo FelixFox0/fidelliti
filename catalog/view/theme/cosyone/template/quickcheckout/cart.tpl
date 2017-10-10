@@ -48,7 +48,7 @@
  <table class="quickcheckout-cart contrast_font hidden-xs hidden-sm">
    <thead>
      <tr>
-       <td class="image mobile_hide"><?php echo $text_image; ?></td>
+       <td class="image mobile_hide"><?php echo $text_name; ?></td>
        <td class="quantity"><?php echo $text_quantity; ?></td>
        <td class="unit-price mobile_hide"><?php echo $text_price; ?></td>
        <td class="total"><?php echo $text_total; ?></td>

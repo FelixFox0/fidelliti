@@ -30,6 +30,8 @@ class ControllerAccountAccount extends Controller {
 		} else {
 			$data['success'] = '';
 		}
+                
+                $data['home'] = $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name']);
 
 		$data['heading_title'] = $this->language->get('heading_title');
 		$data['heading_hello'] = $this->language->get('heading_hello');
@@ -51,6 +53,18 @@ class ControllerAccountAccount extends Controller {
 		$data['text_transaction'] = $this->language->get('text_transaction');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
 		$data['text_recurring'] = $this->language->get('text_recurring');
+                
+                $data['text_shop'] = $this->language->get('text_shop');
+                
+                $data['text_lastname'] = $this->language->get('text_lastname');
+                $data['text_firstname'] = $this->language->get('text_firstname');
+                $data['text_country'] = $this->language->get('text_country');
+                $data['text_phone'] = $this->language->get('text_phone');
+                $data['text_mail'] = $this->language->get('text_mail');
+                $data['text_edit'] = $this->language->get('text_edit');
+                $data['text_total_orders'] = $this->language->get('text_total_orders');
+                $data['text_see_all'] = $this->language->get('text_see_all');
+                $data['text_description'] = $this->language->get('text_description');
 //                var_dump($data);
 		
 		$data['menu_account'] = $this->language->get('menu_account');

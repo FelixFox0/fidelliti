@@ -20,14 +20,14 @@ foreach ($payment_methods as $payment_method) {
     <?php if ($payment_method['code'] == $code || !$code || !$exists) { ?>
       <?php $code = $payment_method['code']; ?>
 	  <?php $exists = true; ?>
-      <input type="radio" name="payment_method" value="<?php echo $payment_method['code']; ?>" id="<?php echo $payment_method['code']; ?>" checked="checked" />
+          <input type="radio" name="payment_method" value="<?php echo $payment_method['code']; ?>" id="<?php echo $payment_method['code']; ?>" checked="checked" />
       <?php } else { ?>
       <input type="radio" name="payment_method" value="<?php echo $payment_method['code']; ?>" id="<?php echo $payment_method['code']; ?>" />
       <?php } ?></td>
     <td valign="middle">
     <label for="<?php echo $payment_method['code']; ?>"><?php if (($payment_logo) && file_exists(DIR_APPLICATION . 'view/theme/default/image/payment/' . $payment_method['code'] . '.png')) { ?>
-	<img style="vertical-align:middle;display:inline-block" src="<?php echo HTTPS_SERVER . 'catalog/view/theme/default/image/payment/' . $payment_method['code'] . '.png'; ?>" alt="<?php echo $payment_method['title']; ?>" />&nbsp;
-	<?php } ?><?php echo $payment_method['title']; ?></label></td>
+	
+	<?php } ?><?php echo $payment_method['title']; ?> <img style="vertical-align:middle;display:inline-block" src="<?php echo HTTPS_SERVER . 'catalog/view/theme/default/image/payment/' . $payment_method['code'] . '.png'; ?>" alt="<?php echo $payment_method['title']; ?>" />&nbsp;</label></td>
 	
   </tr>
   <?php } ?>

@@ -134,7 +134,7 @@
                         </select>
                     </div>
                 <?php } elseif($display_categories == 'checkbox') { ?>
-                        <div id="filter_categories">
+                        <div id="filter_categories1">
                             <?php foreach($categories as $category) { ?>
                             
                                     <div class="checkk">
@@ -409,6 +409,8 @@
     });
 
     $('.js-filter').click(function(event) {
+    
+    
         event.preventDefault();
 
         console.log($(this).data('target') === 'sort')

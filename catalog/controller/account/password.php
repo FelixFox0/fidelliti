@@ -101,9 +101,13 @@ class ControllerAccountPassword extends Controller {
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['recurring'] = $this->url->link('account/recurring', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['add'] = $this->url->link('account/address/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['address'] = $this->url->link('account/address', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['logout'] = $this->url->link('account/logout', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['account'] = $this->url->link('account/account', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
 
+                $data['text_about_account'] = $this->language->get('text_about_account');
+                $data['text_address'] = $this->language->get('text_address');
+                $data['text_newsletter'] = $this->language->get('text_newsletter');
 
 		if (isset($this->request->post['password'])) {
 			$data['password'] = $this->request->post['password'];
