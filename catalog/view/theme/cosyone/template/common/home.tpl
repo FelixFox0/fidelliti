@@ -1,4 +1,41 @@
 <?php echo $header; ?>
+
+<div class="first-screen">
+  <div class="main-slider container">
+    <div class="main-slider__container owl-carousel owl-theme">
+      <div class="main-slider__item item">
+        <div class="main-slider__item-year">2017</div>
+        <div class="main-slider__item-name">Spring Collection</div>
+        <div class="main-slider__item-show-more"><a href="Discover more"></a></div>
+      </div>
+      <div class="main-slider__item item">
+        <div class="main-slider__item-year">2017</div>
+        <div class="main-slider__item-name">Spring Collection</div>
+        <div class="main-slider__item-show-more"><a href="Discover more"></a></div>
+      </div>
+      <div class="main-slider__item item">
+        <div class="main-slider__item-year">2017</div>
+        <div class="main-slider__item-name">Spring Collection</div>
+        <div class="main-slider__item-show-more"><a href="Discover more"></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="first-screen__scroll-down">
+    <div class="scroll-btn">
+    <a href="#">
+      <span class="mouse">
+        <span>
+        </span>
+      </span>
+    </a>
+    </div>
+  </div>
+</div>
+
+
+<?php if (false): ?>
+  
+
 <div class="banners">
   <div class="container banners__container">
     <div class="banners__item">
@@ -179,4 +216,6 @@
   </div>
 </div>
 <?php } ?>
+
+<?php endif ?>
 <?php echo $footer; ?> 

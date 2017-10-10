@@ -1,2 +1,8 @@
 2017-10-06 7:57:48 - PHP Notice:  Undefined variable: thumb in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_product_category.tpl on line 44
 2017-10-06 8:00:39 - PHP Notice:  Undefined variable: language in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\vqmod\vqcache\vq2-catalog_view_theme_cosyone_template_common_header.tpl on line 214
+2017-10-07 16:39:21 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-07 16:39:21 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-10-07 16:39:21 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-07 16:39:21 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-10-07 16:39:21 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-07 16:39:21 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
