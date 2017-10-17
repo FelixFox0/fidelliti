@@ -55,7 +55,7 @@ class ControllerModuleCosyoneFeatures extends Controller {
 			// http://fonts.googleapis.com/css?family=Exo:300,400,700' rel='stylesheet' type='text/css
 			$this->document->addStyle('//fonts.googleapis.com/css?' . $this->config->get('config_template'));
 		} else {
-			$this->document->addStyle('catalog/view/theme/default/stylesheet/carousel.css');
+			$this->document->addStyle('/catalog/view/theme/default/stylesheet/carousel.css');
 		}
 		
 		    $this->children = array(

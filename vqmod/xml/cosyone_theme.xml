@@ -1,4 +1,4 @@
-<modification>
+<modification> 
 	<id><![CDATA[cosyone theme]]></id>
 	<version><![CDATA[1.0]]></version>
 	<vqmver><![CDATA[2.X]]></vqmver>
@@ -204,16 +204,16 @@
 			<search position="after"><![CDATA[$this->load->model('tool/image');]]></search>
 			<add><![CDATA[
 			if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 			} else {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 			}
 			$data['direction'] = $this->language->get('direction');
 			]]></add>
 		</operation>
 		<operation error="skip">
 			<search position="replace"><![CDATA[
-			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
+			$this->document->addScript('/catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
 			]]></search>
 			<add></add>
 		</operation>
@@ -444,9 +444,9 @@ $data['small'] = '';
 			]]></search>
 			<add>
 			if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 			} else {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 			}
 			$this->load->language('common/cosyone');
 			$data['text_category_expire'] = $this->language->get('text_category_expire');
@@ -526,9 +526,9 @@ $data['small'] = '';
 			<search position="after"><![CDATA[$this->load->model('tool/image');]]></search>
 			<add><![CDATA[
 			if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 			} else {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 			}
 			$data['direction'] = $this->language->get('direction');
 			$this->load->language('common/cosyone');
@@ -650,9 +650,9 @@ $data['small'] = '';
 			<search position="after"><![CDATA[$this->load->model('tool/image');]]></search>
 			<add><![CDATA[
 			if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 			} else {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 			}
 			]]></add>
 		</operation>
@@ -672,9 +672,9 @@ $data['small'] = '';
 			<search position="after"><![CDATA[$this->load->model('tool/image');]]></search>
 			<add><![CDATA[
 			if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 			} else {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 			}
 			$this->load->language('common/cosyone');
 				$data['text_category_expire'] = $this->language->get('text_category_expire');

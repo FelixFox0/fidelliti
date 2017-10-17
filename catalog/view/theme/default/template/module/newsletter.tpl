@@ -71,7 +71,7 @@ $.cookie( 'newsletter_already_popup' , 1 , { expires: 14 , path: '/' });
 <script type="text/javascript"><!--
 $('#button-newsletter<?php echo $module; ?>').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=module/newsletter/validate',
+		url: '/index.php?route=module/newsletter/validate',
 		type: 'post',
 		data: $('#newsletter_email<?php echo $module; ?>'),
 		dataType: 'json',

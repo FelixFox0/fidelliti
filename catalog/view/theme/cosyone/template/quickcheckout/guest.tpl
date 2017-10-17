@@ -190,7 +190,7 @@ $('#custom-field-payment .custom-field[data-sort]').detach().each(function() {
 
 $('#payment-address select[name=\'customer_group_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/checkout/customfield&customer_group_id=' + this.value,
+		url: '/index.php?route=checkout/checkout/customfield&customer_group_id=' + this.value,
 		dataType: 'json',
 		success: function(json) {
 			$('#payment-address .custom-field').hide();
@@ -232,7 +232,7 @@ $('#payment-address button[id^=\'button-payment-custom-field\']').on('click', fu
 			clearInterval(timer);
 		
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -281,7 +281,7 @@ $('.datetime').datetimepicker({
 
 $('#payment-address select[name=\'country_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/checkout/country&country_id=' + this.value,
+		url: '/index.php?route=quickcheckout/checkout/country&country_id=' + this.value,
 		dataType: 'json',
 		cache: false,
 		beforeSend: function() {
@@ -352,7 +352,7 @@ $('#payment-address input[name=\'shipping_address\']').on('change', function() {
 		$('#shipping-address').show();
 		
 		$.ajax({
-			url: 'index.php?route=quickcheckout/guest_shipping&customer_group_id=' + $('#payment-address select[name=\'customer_group_id\']').val(),
+			url: '/index.php?route=quickcheckout/guest_shipping&customer_group_id=' + $('#payment-address select[name=\'customer_group_id\']').val(),
 			dataType: 'html',
 			cache: false,
 			beforeSend: function() {
@@ -394,7 +394,7 @@ $('#payment-address input[name=\'create_account\']').on('change', function() {
 		$('#create_account').slideDown('slow');
 		
 		$.ajax({
-			url: 'index.php?route=quickcheckout/register',
+			url: '/index.php?route=quickcheckout/register',
 			dataType: 'html',
 			cache: false,
 			beforeSend: function() {

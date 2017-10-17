@@ -2,18 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/cosyone/stylesheet/stylesheet.css" />
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
-<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" media="screen" />
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/cosyone_common.js"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
-<script type="text/javascript" src="catalog/view/javascript/jquery/datetimepicker/moment.js"></script>
-<script type="text/javascript" src="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="/catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="/catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="/catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/catalog/view/theme/cosyone/stylesheet/stylesheet.css" />
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
+<link href="/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" media="screen" />
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/cosyone_common.js"></script>
+<link rel="stylesheet" type="text/css" href="/catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+<script type="text/javascript" src="/catalog/view/javascript/jquery/datetimepicker/moment.js"></script>
+<script type="text/javascript" src="/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"></script>
 <?php foreach ($styles as $style) { ?>
 <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -400,7 +400,7 @@ $('.quantity_button.plus').on('click', function(){
     });
 </script>
 <?php if ($special_date_end > 0) { ?>
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/countdown/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/countdown/jquery.countdown.min.js"></script>
 <script type="text/javascript">
 	$('.offer').countdown({
 		until: <?php echo $special_date_end ?>, 
@@ -415,7 +415,7 @@ $('.quantity_button.plus').on('click', function(){
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
-		url: 'index.php?route=product/product/getRecurringDescription',
+		url: '/index.php?route=product/product/getRecurringDescription',
 		type: 'post',
 		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
 		dataType: 'json',
@@ -435,7 +435,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
+		url: '/index.php?route=checkout/cart/add',
 		type: 'post',
 		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
@@ -477,7 +477,7 @@ $('#button-cart').on('click', function() {
 				
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 				$('.alert a').attr('target','_top');
-				$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+				$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 			}
 		}
 	});
@@ -511,7 +511,7 @@ $('button[id^=\'button-upload\']').on('click', function() {
 			clearInterval(timer);
 			
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -550,7 +550,7 @@ $('button[id^=\'button-upload\']').on('click', function() {
 var ql_wishlist = {
 	'add': function(product_id) {
 		$.ajax({
-			url: 'index.php?route=account/wishlist/add',
+			url: '/index.php?route=account/wishlist/add',
 			type: 'post',
 			data: 'product_id=' + product_id,
 			dataType: 'json',
@@ -582,7 +582,7 @@ var ql_wishlist = {
 var ql_compare = {
 	'add': function(product_id) {
 		$.ajax({
-			url: 'index.php?route=product/compare/add',
+			url: '/index.php?route=product/compare/add',
 			type: 'post',
 			data: 'product_id=' + product_id,
 			dataType: 'json',

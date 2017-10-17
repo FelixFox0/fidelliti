@@ -5,13 +5,13 @@ class ControllerModuleCosyoneDeals extends Controller {
 
 		$data['heading_title'] = $this->language->get('heading_title');
 				
-		if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-		$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+		if (file_exists('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
+		$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 		} else {
-		$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+		$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 		}
 		
-		$this->document->addStyle('catalog/view/theme/cosyone/stylesheet/owl.transitions.css');
+		$this->document->addStyle('/catalog/view/theme/cosyone/stylesheet/owl.transitions.css');
 		
 		$data['text_tax'] = $this->language->get('text_tax');
 

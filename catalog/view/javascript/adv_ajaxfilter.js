@@ -260,7 +260,7 @@ function filter(b, c ) {
         $(cont).advOverlay();
         $("#adv_ajaxfilter").advOverlay();
 
-        $.ajax({url:"index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json",
+        $.ajax({url:"/index.php?route=module/adv_ajaxfilter/getproducts", type:"POST", data:a + (b ? "&getPriceLimits=true" : ""), dataType:"json",
             success:function (g) {
                 adv_result(g, b);
                 cache[h] = g;
@@ -421,9 +421,9 @@ function adv_result(g, b) {
         maxHeight:"90%",
         className: "quickview",
         onClosed: function() {
-        $('#cart').load('index.php?route=common/cart/info #cart > *');
-        $('#header_wishlist').load('index.php?route=common/header_wishlist_compare/info #header_wishlist');
-        $('#header_compare').load('index.php?route=common/header_wishlist_compare/info #header_compare');
+        $('#cart').load('/index.php?route=common/cart/info #cart > *');
+        $('#header_wishlist').load('/index.php?route=common/header_wishlist_compare/info #header_wishlist');
+        $('#header_compare').load('/index.php?route=common/header_wishlist_compare/info #header_compare');
         }});
         
         // Custom Shopme code ends

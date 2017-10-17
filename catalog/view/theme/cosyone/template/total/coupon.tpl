@@ -12,7 +12,7 @@
 <script type="text/javascript"><!--
 $('#button-coupon').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=total/coupon/coupon',
+		url: '/index.php?route=total/coupon/coupon',
 		type: 'post',
 		data: 'coupon=' + encodeURIComponent($('input[name=\'coupon\']').val()),
 		dataType: 'json',

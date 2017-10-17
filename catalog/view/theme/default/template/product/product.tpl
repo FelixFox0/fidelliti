@@ -411,7 +411,7 @@
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
-		url: 'index.php?route=product/product/getRecurringDescription',
+		url: '/index.php?route=product/product/getRecurringDescription',
 		type: 'post',
 		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
 		dataType: 'json',
@@ -431,7 +431,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
+		url: '/index.php?route=checkout/cart/add',
 		type: 'post',
 		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
@@ -473,7 +473,7 @@ $('#button-cart').on('click', function() {
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
-				$('#cart > ul').load('index.php?route=common/cart/info ul li');
+				$('#cart > ul').load('/index.php?route=common/cart/info ul li');
 			}
 		},
         error: function(xhr, ajaxOptions, thrownError) {
@@ -514,7 +514,7 @@ $('button[id^=\'button-upload\']').on('click', function() {
 			clearInterval(timer);
 
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -559,11 +559,11 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
+$('#review').load('/index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
 
 $('#button-review').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
+		url: '/index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
 		type: 'post',
 		dataType: 'json',
 		data: $("#form-review").serialize(),

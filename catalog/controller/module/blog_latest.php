@@ -2,7 +2,7 @@
 class ControllerModuleBlogLatest extends Controller {
 	public function index($setting) {
 		
-		$this->document->addStyle('catalog/view/theme/cosyone/stylesheet/blog.css');
+		$this->document->addStyle('/catalog/view/theme/cosyone/stylesheet/blog.css');
 		
 		static $module = 0;
 		
@@ -21,8 +21,8 @@ class ControllerModuleBlogLatest extends Controller {
 		$data['thumb'] = $setting['thumb'];
 		
 		if ($data['carousel']) {
-		//$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
-		$this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+		//$this->document->addStyle('/catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+		$this->document->addScript('/catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
 		}
 		
 

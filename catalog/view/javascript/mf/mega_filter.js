@@ -1260,7 +1260,7 @@ MegaFilter.prototype = {
 	__initLoader: function() {
 		this._jqLoader = jQuery('<span style="cursor: wait; z-index: 100; margin: 0; padding: 0; position: absolute; text-align: center; background-color: rgba(255,255,255,0.7);"></span>')
 			.prependTo( this._jqContent )
-			.html( '<img src="catalog/view/theme/default/stylesheet/mf/images/ajax-loader.gif" alt="" />' )
+			.html( '<img src="/catalog/view/theme/default/stylesheet/mf/images/ajax-loader.gif" alt="" />' )
 			.hide();
 	},
 	

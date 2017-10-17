@@ -103,7 +103,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 		}
 
 		$.ajax({
-			url: 'index.php?route=quickcheckout/shipping_method/set',
+			url: '/index.php?route=quickcheckout/shipping_method/set',
 			type: 'post',
 			data: post_data,
 			dataType: 'html',
@@ -127,7 +127,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 	<?php } else { ?>
 		if ($('#shipping-address input[name=\'shipping_address\']').val() == 'new') {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/shipping_method/set',
+				url: '/index.php?route=quickcheckout/shipping_method/set',
 				type: 'post',
 				data: $('#shipping-address input[type=\'text\'], #shipping-address input[type=\'checkbox\']:checked, #shipping-address input[type=\'radio\']:checked, #shipping-address input[type=\'hidden\'], #shipping-address select, #shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select'),
 				dataType: 'html',
@@ -146,7 +146,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 			});
 		} else {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/shipping_method/set&address_id=' + $('#shipping-address select[name=\'address_id\']').val(),
+				url: '/index.php?route=quickcheckout/shipping_method/set&address_id=' + $('#shipping-address select[name=\'address_id\']').val(),
 				type: 'post',
 				data: $('#shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select'),
 				dataType: 'html',

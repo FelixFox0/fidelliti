@@ -234,7 +234,7 @@ $('#collapse-shipping-address button[id^=\'button-shipping-custom-field\']').on(
 			clearInterval(timer);
 
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -285,7 +285,7 @@ $('.datetime').datetimepicker({
 <script type="text/javascript"><!--
 $('#collapse-shipping-address select[name=\'country_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/checkout/country&country_id=' + this.value,
+		url: '/index.php?route=checkout/checkout/country&country_id=' + this.value,
 		dataType: 'json',
 		beforeSend: function() {
 			$('#collapse-shipping-address select[name=\'country_id\']').after(' <i class="fa fa-circle-o-notch fa-spin"></i>');

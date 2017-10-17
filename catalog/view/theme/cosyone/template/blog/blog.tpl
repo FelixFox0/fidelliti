@@ -182,14 +182,14 @@ $('#comment').delegate('.pagination a', 'click', function(e) {
 	
 });
 
-$('#comment').load('index.php?route=blog/blog/comment&blog_id=<?php echo $blog_id; ?>');
+$('#comment').load('/index.php?route=blog/blog/comment&blog_id=<?php echo $blog_id; ?>');
 //--></script>
 
 <script type="text/javascript"><!--
 
 $('#button-comment').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=blog/blog/write&blog_id=<?php echo $blog_id; ?>',
+		url: '/index.php?route=blog/blog/write&blog_id=<?php echo $blog_id; ?>',
 		type: 'post',
 		dataType: 'json',
 		//data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&email=' + encodeURIComponent($('input[name=\'email\']').val()) + '&comment=' + encodeURIComponent($('textarea[name=\'comment\']').val()) + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),

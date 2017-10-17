@@ -12,13 +12,13 @@ class Url {
 	}
 
 	public function link($route, $args = '', $secure = false, $country_code = false, $language = false) {
-		if ($this->ssl && $secure) {
+		/*if ($this->ssl && $secure) {*/
 //			$url = 'https://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
                         $url = 'https://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\');
-		} else {
+		/*} else {
 //			$url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') . '/index.php?route=' . $route;
                         $url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\');
-		}
+		}*/
                 if($country_code){
                     $url .= '/'.$country_code;
                 }

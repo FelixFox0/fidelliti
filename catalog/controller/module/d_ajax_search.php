@@ -6,7 +6,7 @@ class ControllerModuleDAjaxSearch extends Controller {
 		$d_ajax_search = $this->config->get('d_ajax_search');
 		if ($d_ajax_search['search_on_off']) {
 			
-			$this->document->addStyle('catalog/view/theme/cosyone/stylesheet/d_ajax_search.css');
+			$this->document->addStyle('/catalog/view/theme/cosyone/stylesheet/d_ajax_search.css');
 			
 			
 			$data['search_width'] = $d_ajax_search['search_width'];

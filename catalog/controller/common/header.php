@@ -32,7 +32,11 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		if ($this->request->server['HTTPS']) {
-			$server = $this->config->get('config_ssl');
+                        if($this->config->get('config_ssl')){
+                            $server = $this->config->get('config_ssl');
+                        }else{
+                            $server = '/';
+                        }
 		} else {
 			$server = $this->config->get('config_url');
 		}

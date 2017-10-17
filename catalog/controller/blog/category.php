@@ -3,7 +3,7 @@ class ControllerBlogCategory extends Controller {
 	
 	public function index() {  
 	
-	$this->document->addStyle('catalog/view/theme/cosyone/stylesheet/blog.css');
+	$this->document->addStyle('/catalog/view/theme/cosyone/stylesheet/blog.css');
 		
 	$this->language->load('blog/blog');
 	

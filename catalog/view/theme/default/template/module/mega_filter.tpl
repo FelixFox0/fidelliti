@@ -236,7 +236,7 @@
 															value="<?php echo $i; ?>" />
 													</div>
 													<label class="mfilter-tb-as-td" for="mfilter-opts-rating-<?php echo (int) $_idx; ?>-<?php echo $i; ?>">
-														<?php echo $i; ?> <img src="catalog/view/theme/default/stylesheet/mf/images/stars-<?php echo $i; ?>.png" alt="" />
+														<?php echo $i; ?> <img src="/catalog/view/theme/default/stylesheet/mf/images/stars-<?php echo $i; ?>.png" alt="" />
 													</label>
 													<div class="mfilter-tb-as-td mfilter-col-count"><span class="mfilter-counter">0</span></div>
 												</div>

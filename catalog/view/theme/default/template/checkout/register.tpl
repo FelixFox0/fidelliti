@@ -352,7 +352,7 @@ $('#address .form-group[data-sort]').detach().each(function() {
 
 $('#collapse-payment-address input[name=\'customer_group_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/checkout/customfield&customer_group_id=' + this.value,
+		url: '/index.php?route=checkout/checkout/customfield&customer_group_id=' + this.value,
 		dataType: 'json',
 		success: function(json) {
 			$('#collapse-payment-address .custom-field').hide();
@@ -395,7 +395,7 @@ $('#collapse-payment-address button[id^=\'button-payment-custom-field\']').on('c
 			clearInterval(timer);
 
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -446,7 +446,7 @@ $('.datetime').datetimepicker({
 <script type="text/javascript"><!--
 $('#collapse-payment-address select[name=\'country_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/checkout/country&country_id=' + this.value,
+		url: '/index.php?route=checkout/checkout/country&country_id=' + this.value,
 		dataType: 'json',
 		beforeSend: function() {
 			$('#collapse-payment-address select[name=\'country_id\']').after(' <i class="fa fa-circle-o-notch fa-spin"></i>');

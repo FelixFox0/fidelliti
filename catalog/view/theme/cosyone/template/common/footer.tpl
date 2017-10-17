@@ -137,7 +137,7 @@
   <div class="container bottom_line__container">
   <div id="powered text-center"><?php echo $powered; ?></div>
   <?php if ($cosyone_footer_payment_icon) { ?>
-   <div id="footer_payment_icon"><img src="image/<?php echo $cosyone_footer_payment_icon; ?>" alt="" /></div>
+   <div id="footer_payment_icon"><img src="/image/<?php echo $cosyone_footer_payment_icon; ?>" alt="" /></div>
    <?php } ?>
    <div class="clearfix"></div>
    </div>
@@ -147,19 +147,19 @@ OpenCart is open source software and you are free to remove the powered by OpenC
 Please donate via PayPal to donate@opencart.com
 //-->
 </div>  <!-- .outer_container ends -->
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/jquery.cookie.js"></script>
 
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/colorbox/jquery.colorbox-min.js"></script>
-<link href="catalog/view/theme/cosyone/js/colorbox/custom_colorbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/colorbox/jquery.colorbox-min.js"></script>
+<link href="/catalog/view/theme/cosyone/js/colorbox/custom_colorbox.css" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/quickview.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/quickview.js"></script>
 <?php if($cosyone_use_retina) { ?>
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/retina.min.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/retina.min.js"></script>
 <?php } ?>
 <?php echo $live_search; ?>
 <?php echo $cosyone_cookie; ?>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="catalog/view/javascript/main.js"></script>
+<script type="text/javascript" src="/catalog/view/javascript/main.js"></script>
 </section>
     </div>
     <!-- BEGIN JIVOSITE CODE {literal} -->

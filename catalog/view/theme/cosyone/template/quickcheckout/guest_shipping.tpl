@@ -160,7 +160,7 @@ $('#shipping-address button[id^=\'button-shipping-custom-field\']').on('click', 
 			clearInterval(timer);
 			
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -209,7 +209,7 @@ $('.datetime').datetimepicker({
 
 $('#shipping-address select[name=\'country_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=quickcheckout/checkout/country&country_id=' + this.value,
+		url: '/index.php?route=quickcheckout/checkout/country&country_id=' + this.value,
 		dataType: 'json',
 		cache: false,
 		beforeSend: function() {

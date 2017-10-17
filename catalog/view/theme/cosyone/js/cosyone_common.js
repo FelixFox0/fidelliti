@@ -217,7 +217,7 @@ $(document).on('click', '#cboxWrapper .button.contrast', function(event) {
 var cart = {
         'popup': function(product_id, quantity) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/popup',
+			url: '/index.php?route=checkout/cart/popup',
 			type: 'post',
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
@@ -243,7 +243,7 @@ var cart = {
 	},
 	'add': function(product_id, quantity) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/add',
+			url: '/index.php?route=checkout/cart/add',
 			type: 'post',
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
@@ -281,9 +281,9 @@ var cart = {
 					maxHeight:200
 					});*/
 
-					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+					$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 
-					$("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
+					$("#cart-panel .mm-panels > *").load('/index.php?route=common/cart/info #cart > *');
 				}
 
 
@@ -292,7 +292,7 @@ var cart = {
 	},
 	'update': function(key, quantity) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/edit',
+			url: '/index.php?route=checkout/cart/edit',
 			type: 'post',
 			data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
@@ -307,17 +307,17 @@ var cart = {
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
 					location = 'index.php?route=checkout/cart';
 				} else {
-					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+					$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 				}
 
-				$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+				$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 				$("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 			}
 		});
 	},
 	'remove': function(key) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/remove',
+			url: '/index.php?route=checkout/cart/remove',
 			type: 'post',
 			data: 'key=' + key,
 			dataType: 'json',
@@ -333,10 +333,10 @@ var cart = {
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
 					location = 'index.php?route=checkout/cart';
 				} else {
-					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+					$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 				}
 
-				$('#cart').load('index.php?route=common/cart/info #cart > *');
+				$('#cart').load('/index.php?route=common/cart/info #cart > *');
 				$("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 			}
 		});
@@ -349,7 +349,7 @@ var voucher = {
 	},
 	'remove': function(key) {
 		$.ajax({
-			url: 'index.php?route=checkout/cart/remove',
+			url: '/index.php?route=checkout/cart/remove',
 			type: 'post',
 			data: 'key=' + key,
 			dataType: 'json',
@@ -365,7 +365,7 @@ var voucher = {
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
 					location = 'index.php?route=checkout/cart';
 				} else {
-					$('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+					$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 				}
 			}
 		});
@@ -376,7 +376,7 @@ var wishlist = {
 'add': function(product_id) {
 	event.preventDefault();
 $.ajax({
-url: 'index.php?route=account/wishlist/add',
+url: '/index.php?route=account/wishlist/add',
 type: 'post',
 data: 'product_id=' + product_id,
 dataType: 'json',
@@ -389,7 +389,7 @@ if (json['success']) {
 	  }
 	});
 
-/*$('.shortcut.wishlist').load('index.php?route=common/header_wishlist_compare/info #header_wishlist');*/
+/*$('.shortcut.wishlist').load('/index.php?route=common/header_wishlist_compare/info #header_wishlist');*/
 }
 
 if (json['info']) {
@@ -400,7 +400,7 @@ if (json['info']) {
 	  }
 	});
 
-$('.shortcut.wishlist').load('index.php?route=common/header_wishlist_compare/info #header_wishlist');
+$('.shortcut.wishlist').load('/index.php?route=common/header_wishlist_compare/info #header_wishlist');
 }}
 });
 },
@@ -411,7 +411,7 @@ $('.shortcut.wishlist').load('index.php?route=common/header_wishlist_compare/inf
 var compare = {
 	'add': function(product_id) {
 		$.ajax({
-			url: 'index.php?route=product/compare/add',
+			url: '/index.php?route=product/compare/add',
 			type: 'post',
 			data: 'product_id=' + product_id,
 			dataType: 'json',

@@ -584,7 +584,7 @@ $('#address .form-group[data-sort]').detach().each(function() {
 
 $('input[name=\'customer_group_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=account/register/customfield&customer_group_id=' + this.value,
+		url: '/index.php?route=account/register/customfield&customer_group_id=' + this.value,
 		dataType: 'json',
 		success: function(json) {
 			$('.custom-field').hide();
@@ -629,7 +629,7 @@ $('button[id^=\'button-custom-field\']').on('click', function() {
 			clearInterval(timer);
 			
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -680,7 +680,7 @@ $('.datetime').datetimepicker({
 <script type="text/javascript"><!--
 $('select[name=\'country_id\']').on('change', function() {
 	$.ajax({
-		url: 'index.php?route=account/account/country&country_id=' + this.value,
+		url: '/index.php?route=account/account/country&country_id=' + this.value,
 		dataType: 'json',
 		beforeSend: function() {
 			$('select[name=\'country_id\']').after(' <i class="fa fa-circle-o-notch fa-spin"></i>');

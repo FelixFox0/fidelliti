@@ -262,19 +262,19 @@ class ControllerModuleMegaFilter extends Controller {
 			
 			MijoShop::get()->addHeader(JPATH_MIJOSHOP_OC.'/catalog/view/theme/default/stylesheet/mf/style-2.css');
 		} else {
-			//$this->document->addScript('catalog/view/javascript/mf/jquery-ui.min.js?v'.$data['_v']);
-			$this->document->addScript('catalog/view/javascript/mf/iscroll.js?v'.$data['_v']);
-			$this->document->addScript('catalog/view/javascript/mf/mega_filter.js?v'.$data['_v']);
+			//$this->document->addScript('/catalog/view/javascript/mf/jquery-ui.min.js?v'.$data['_v']);
+			$this->document->addScript('/catalog/view/javascript/mf/iscroll.js?v'.$data['_v']);
+			$this->document->addScript('/catalog/view/javascript/mf/mega_filter.js?v'.$data['_v']);
 
-			$this->document->addStyle('catalog/view/theme/default/stylesheet/mf/jquery-ui.min.css?v'.$data['_v']);
+			$this->document->addStyle('/catalog/view/theme/default/stylesheet/mf/jquery-ui.min.css?v'.$data['_v']);
 			
 			if( file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/stylesheet/mf/style.css') ) {
-				$this->document->addStyle('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/mf/style.css?v'.$data['_v']);
+				$this->document->addStyle('/catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/mf/style.css?v'.$data['_v']);
 			} else {
-				$this->document->addStyle('catalog/view/theme/default/stylesheet/mf/style.css?v'.$data['_v']);
+				$this->document->addStyle('/catalog/view/theme/default/stylesheet/mf/style.css?v'.$data['_v']);
 			}
 			
-			$this->document->addStyle('catalog/view/theme/default/stylesheet/mf/style-2.css?v'.$data['_v']);
+			$this->document->addStyle('/catalog/view/theme/default/stylesheet/mf/style-2.css?v'.$data['_v']);
 		}
 
 		/**
@@ -347,7 +347,7 @@ class ControllerModuleMegaFilter extends Controller {
 		}
 		
 		$this->document->setTitle($this->language->get('heading_title'));
-		$this->document->addScript('catalog/view/javascript/jquery/jquery.total-storage.min.js');						
+		$this->document->addScript('/catalog/view/javascript/jquery/jquery.total-storage.min.js');						
 
 		/**
 		 * Breadcrumb 

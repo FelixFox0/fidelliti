@@ -75,7 +75,7 @@ foreach ($payment_methods as $payment_method) {
 $('#payment-method input[name=\'payment_method\'], #payment-method select[name=\'payment_method\']').on('change', function() {
 	<?php if (!$logged) { ?>
 		$.ajax({
-			url: 'index.php?route=quickcheckout/payment_method/set',
+			url: '/index.php?route=quickcheckout/payment_method/set',
 			type: 'post',
 			data: $('#payment-address input[type=\'text\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select, #payment-method input[type=\'text\'], #payment-method input[type=\'checkbox\']:checked, #payment-method input[type=\'radio\']:checked, #payment-method input[type=\'hidden\'], #payment-method select'),
 			dataType: 'html',
@@ -94,7 +94,7 @@ $('#payment-method input[name=\'payment_method\'], #payment-method select[name=\
 	<?php } else { ?>
 		if ($('#payment-address input[name=\'payment_address\']').val() == 'new') {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/payment_method/set',
+				url: '/index.php?route=quickcheckout/payment_method/set',
 				type: 'post',
 				data: $('#payment-address input[type=\'text\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select, #payment-method input[type=\'text\'], #payment-method input[type=\'checkbox\']:checked, #payment-method input[type=\'radio\']:checked, #payment-method input[type=\'hidden\'], #payment-method select'),
 				dataType: 'html',
@@ -112,7 +112,7 @@ $('#payment-method input[name=\'payment_method\'], #payment-method select[name=\
 			});
 		} else {
 			$.ajax({
-				url: 'index.php?route=quickcheckout/payment_method/set&address_id=' + $('#payment-address select[name=\'address_id\']').val(),
+				url: '/index.php?route=quickcheckout/payment_method/set&address_id=' + $('#payment-address select[name=\'address_id\']').val(),
 				type: 'post',
 				data: $('#payment-method input[type=\'text\'], #payment-method input[type=\'checkbox\']:checked, #payment-method input[type=\'radio\']:checked, #payment-method input[type=\'hidden\'], #payment-method select'),
 				dataType: 'html',

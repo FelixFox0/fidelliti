@@ -188,13 +188,13 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$data['instock_visible'] = isset($adv_ajaxfilter_setting['instock_visible']) ? 1 : 0;
 
 		if($data['options'] || $data['manufacturers'] || $data['attributes'] || $data['price_slider']) {
-			$this->document->addScript('catalog/view/javascript/jquery-ui/jquery-ui.js');
-			$this->document->addScript('catalog/view/javascript/jquery.plugins.adv.js');
-			$this->document->addScript('catalog/view/javascript/adv_ajaxfilter.js');
+			$this->document->addScript('/catalog/view/javascript/jquery-ui/jquery-ui.js');
+			$this->document->addScript('/catalog/view/javascript/jquery.plugins.adv.js');
+			$this->document->addScript('/catalog/view/javascript/adv_ajaxfilter.js');
 			
-			$this->document->addStyle('catalog/view/javascript/jquery-ui/css/jquery-ui.css');
-			$this->document->addStyle('catalog/view/theme/default/stylesheet/adv_ajaxfilter.css');
-			$this->document->addStyle('catalog/view/theme/default/stylesheet/jquery.loadmask.css');
+			$this->document->addStyle('/catalog/view/javascript/jquery-ui/css/jquery-ui.css');
+			$this->document->addStyle('/catalog/view/theme/default/stylesheet/adv_ajaxfilter.css');
+			$this->document->addStyle('/catalog/view/theme/default/stylesheet/jquery.loadmask.css');
 		}
 
         $adv_ajaxfilter_setting['adv_ajaxfilter_afterload'] ="";
@@ -481,10 +481,10 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$data['button_continue'] = $this->language->get('button_continue');
 		
 		
-		if (file_exists('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
+		if (file_exists('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js')) {
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_' . $this->language->get('code') . '.js');
 			} else {
-			$this->document->addScript('catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
+			$this->document->addScript('/catalog/view/theme/cosyone/js/countdown/jquery.countdown_en.js');
 			}
 			$this->load->language('common/cosyone');
 			$data['text_category_expire'] = $this->language->get('text_category_expire');

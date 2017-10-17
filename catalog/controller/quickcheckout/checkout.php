@@ -7,14 +7,14 @@ class ControllerQuickCheckoutCheckout extends Controller {
 		}*/
 
 		if ($this->config->get('quickcheckout_load_screen')) {
-			$this->document->addScript('catalog/view/javascript/jquery/quickcheckout/quickcheckout.block.js');
+			$this->document->addScript('/catalog/view/javascript/jquery/quickcheckout/quickcheckout.block.js');
 		}
 		
 		if ($this->config->get('quickcheckout_countdown')) {
-			$this->document->addScript('catalog/view/javascript/jquery/quickcheckout/quickcheckout.countdown.js');
+			$this->document->addScript('/catalog/view/javascript/jquery/quickcheckout/quickcheckout.countdown.js');
 		}
 		
-			$this->document->addStyle('catalog/view/theme/cosyone/stylesheet/quickcheckout.css');
+			$this->document->addStyle('/catalog/view/theme/cosyone/stylesheet/quickcheckout.css');
 		
 		
 		if ($this->config->get('quickcheckout_layout') == '1') {
@@ -23,7 +23,7 @@ class ControllerQuickCheckoutCheckout extends Controller {
 			
 		} elseif ($this->config->get('quickcheckout_layout') == '2') {
 			
-				$data['stylesheet'] = 'catalog/view/theme/cosyone/stylesheet/quickcheckout_two.css';
+				$data['stylesheet'] = '/catalog/view/theme/cosyone/stylesheet/quickcheckout_two.css';
 			
 		} else {
 			
@@ -39,9 +39,9 @@ class ControllerQuickCheckoutCheckout extends Controller {
 			$data['mobile_stylesheet'] = '';
 		}
 		
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
-		$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
-		$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+		$this->document->addScript('/catalog/view/javascript/jquery/datetimepicker/moment.js');
+		$this->document->addScript('/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
+		$this->document->addStyle('/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
 
 		// Required by klarna
 		if ($this->config->get('klarna_account') || $this->config->get('klarna_invoice')) {

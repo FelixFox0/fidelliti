@@ -2,7 +2,7 @@
 class ControllerModuleCosyoneTwitterfeed extends Controller {
 	public function index() {
 		
-		$this->document->addScript('catalog/view/theme/cosyone/js/tweetfeed.min.js');
+		$this->document->addScript('/catalog/view/theme/cosyone/js/tweetfeed.min.js');
 		
 		$title = $this->config->get('cosyone_twitterfeed_title');
 		if(empty($title[$this->config->get('config_language_id')])) {

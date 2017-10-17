@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
-<script type="text/javascript" src="catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery-all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
@@ -35,7 +35,7 @@
       $("#one_click_form").validate({
         submitHandler: function(form) {
           $.ajax({
-            url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
+            url: '/index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
             type: 'post',
             data: $('#one_click_form').serialize(),
             dataType: 'json',
@@ -1300,7 +1300,7 @@ $(".to_review").click(function() {
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
-		url: 'index.php?route=product/product/getRecurringDescription',
+		url: '/index.php?route=product/product/getRecurringDescription',
 		type: 'post',
 		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
 		dataType: 'json',
@@ -1320,7 +1320,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
+		url: '/index.php?route=checkout/cart/add',
 		type: 'post',
 		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
@@ -1360,7 +1360,7 @@ $('#button-cart').on('click', function() {
         $(".shortcut #cart-total").html(json['total']);
         $('#cart-total').html(json['total']);
         
-        $('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+        $('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
         $("#cart-panel .mm-panels > *").load('index.php?route=common/cart/info #cart > *');
 
 				if($(window).innerWidth() > 110) {
@@ -1381,7 +1381,7 @@ $('#button-cart').on('click', function() {
             }
           });
 
-          $('#cart').load('index.php?route=common/cart/info #cart > *'); //Added
+          $('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
         } else {
           var API2 = $("#cart-panel").data( "mmenu" );
           API2.open();
@@ -1427,7 +1427,7 @@ $('button[id^=\'button-upload\']').on('click', function() {
 			clearInterval(timer);
 			
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: '/index.php?route=tool/upload',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -1472,11 +1472,11 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
+$('#review').load('/index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
 
 $('#button-review').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
+		url: '/index.php?route=product/product/write&product_id=<?php echo $product_id; ?>',
 		type: 'post',
 		dataType: 'json',
 		data: $("#form-review").serialize(),
@@ -1511,7 +1511,7 @@ $('#button-review').on('click', function() {
 /*$('#one_click').on('click', function(e) {
         e.preventDefault();
 	$.ajax({
-		url: 'index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
+		url: '/index.php?route=product/product/oneclickbye&product_id=<?php echo $product_id; ?>',
 		type: 'post',
 		data: $('#one_click_form').serialize(),
 		dataType: 'json',

@@ -15,7 +15,7 @@
         <input type="radio" name="code" value="<?php echo $payment_option['code']; ?>" />
         <?php } ?>
         <?php if ($iso_code_3 == 'NLD') { ?>
-        <img src="catalog/view/theme/default/image/klarna_nld_banner.png" />
+        <img src="/catalog/view/theme/default/image/klarna_nld_banner.png" />
         <?php } ?>
         <?php echo $payment_option['title']; ?></label>
     </div>
@@ -124,7 +124,7 @@
 <script type="text/javascript"><!--
 $('#button-confirm').on('click', function() {
 	$.ajax({
-		url: 'index.php?route=payment/klarna_account/send',
+		url: '/index.php?route=payment/klarna_account/send',
 		type: 'post',
 		data: $('#payment input[type=\'text\'], #payment input[type=\'checkbox\']:checked, #payment input[type=\'radio\']:checked, #payment select'),
 		dataType: 'json',

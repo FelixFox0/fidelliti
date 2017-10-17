@@ -14,6 +14,6 @@ headCart();
 });
 });
 function headCart(){
-	$('#cart').load('index.php?route=common/cart/info #cart > *');
+	$('#cart').load('/index.php?route=common/cart/info #cart > *');
 	$('#wishlist-total').html(json['total']);
 }

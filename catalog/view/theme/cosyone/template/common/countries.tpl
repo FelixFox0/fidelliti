@@ -33,7 +33,7 @@
 <?php if (count($countries) > 1) { ?>
 <div class="first-frame">
   <div class="first-frame__image">
-    <img src="image/fidelitti-country-selector.jpg" alt="image">
+    <img src="/image/fidelitti-country-selector.jpg" alt="image">
   </div>
   <div class="first-frame__countries">
     <div class="first-frame__title">
