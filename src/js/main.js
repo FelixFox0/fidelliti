@@ -111,9 +111,10 @@ $(document).ready(function($) {
 
 	$('.main-slider__container').owlCarousel({
     loop:true,
-    margin:10,
+    margin:0,
     nav:true,
-    items: 1
+    items: 1,
+    navText: ['<i class="icon-arrow-l"></i>','<i class="icon-arrow-l"></i>']
 })
 
 

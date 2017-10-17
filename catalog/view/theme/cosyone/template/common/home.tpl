@@ -4,19 +4,34 @@
   <div class="main-slider container">
     <div class="main-slider__container owl-carousel owl-theme">
       <div class="main-slider__item item">
-        <div class="main-slider__item-year">2017</div>
-        <div class="main-slider__item-name">Spring Collection</div>
-        <div class="main-slider__item-show-more"><a href="Discover more"></a></div>
+        <div class="main-slider__item-img">
+          <img src="/image/slide1.jpg" alt="">
+          <div class="main-slider__main">
+            <div class="main-slider__item-year">2017</div>
+            <div class="main-slider__item-name">Fall <br> Collection</div>
+            <div class="main-slider__item-show-more"><a href="Discover more">discover more</a></div>
+          </div>
+        </div>
       </div>
       <div class="main-slider__item item">
-        <div class="main-slider__item-year">2017</div>
-        <div class="main-slider__item-name">Spring Collection</div>
-        <div class="main-slider__item-show-more"><a href="Discover more"></a></div>
+        <div class="main-slider__item-img">
+          <img src="/image/slide1.jpg" alt="">
+          <div class="main-slider__main">
+            <div class="main-slider__item-year">2017</div>
+            <div class="main-slider__item-name">Fall <br> Collection</div>
+            <div class="main-slider__item-show-more"><a href="Discover more">discover more</a></div>
+          </div>
+        </div>
       </div>
       <div class="main-slider__item item">
-        <div class="main-slider__item-year">2017</div>
-        <div class="main-slider__item-name">Spring Collection</div>
-        <div class="main-slider__item-show-more"><a href="Discover more"></a></div>
+        <div class="main-slider__item-img">
+          <img src="/image/slide1.jpg" alt="">
+          <div class="main-slider__main">
+            <div class="main-slider__item-year">2017</div>
+            <div class="main-slider__item-name">Fall <br> Collection</div>
+            <div class="main-slider__item-show-more"><a href="Discover more">discover more</a></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -28,6 +43,61 @@
         </span>
       </span>
     </a>
+    </div>
+  </div>
+</div>
+
+<div class="woman-collection">
+  <div class="container woman-collection__container">
+    <div class="woman-collection__inner">
+      <div class="woman-collection__info">
+        <h3>Woman Shoes Collection</h3>
+        <p>A staple that every girl needs in their wardrobe. Our lost time playsuit is super versatile and can be worn all year round. With it's classic silhouette and drawstring cinched waist.</p>
+        <a href="#">explore</a>
+      </div>
+      <div class="woman-collection__img">
+        <img src="/image/wooman1.png" alt="wooman">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="categories-home">
+  <div class="categories-home__wooman">
+    <a href="#" class="categories-home__item first">
+      WOMAN
+    </a>
+    <a href="#" class="categories-home__item bags">
+      BAGS
+    </a>
+    <a href="#" class="categories-home__item shoes">
+      SHOES
+    </a>
+    <a href="#" class="categories-home__item accessories">
+      accessories
+    </a>
+  </div>
+  <div class="categories-home__man">
+    <a href="#" class="categories-home__item first">
+      MAN
+    </a>
+    <a href="#" class="categories-home__item bags2">
+      BAGS
+    </a>
+    <a href="#" class="categories-home__item accessories2">
+      accessories
+    </a>
+  </div>
+</div>
+<div class="discount-home">
+  <div class="container discount-home__container">
+    <div class="discount-home__inner">
+      <div class="discount-home__info">
+        <h3>40 % AUTUMN SALE</h3>
+        <p>IN STORE</p>
+        <a href="#">discover more</a>
+      </div>
+      
     </div>
   </div>
 </div>

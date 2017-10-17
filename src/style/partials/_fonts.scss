@@ -17,6 +17,14 @@
 @include font-face("Rob-b", "fonts/Roboto-Bold", normal, $file-formats: ttf);
 
 @include font-face("gotic", "fonts/GOTHIC", normal, $file-formats: woff);
+@include font-face("pt-b", "fonts/FuturaPTBold", normal, $file-formats: woff);
+@include font-face("pt-book", "fonts/FuturaPTBook", normal, $file-formats: woff);
+@include font-face("pt-eb", "fonts/FuturaPTCondExtraBold", normal, $file-formats: woff);
+@include font-face("pt-medium", "fonts/FuturaPTMedium", normal, $file-formats: woff);
+
+@include font-face("pop-b", "fonts/Poppins-Bold", normal, $file-formats: woff);
+@include font-face("pop-sb", "fonts/Poppins-SemiBold", normal, $file-formats: woff);
+
 
 @include font-face("Icons", "fonts/dg-desktop-icons", normal, $file-formats: woff);
 
