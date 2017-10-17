@@ -6,7 +6,7 @@ $http_host = $_SERVER['HTTP_HOST'];
 define('HTTP_SERVER', 'http://'.$http_host.'/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://'.$http_host.'/');
+define('HTTPS_SERVER', 'https://'.$http_host.'/');
 
 // DIR
 define('DIR_APPLICATION', $server_document_root.'/catalog/');

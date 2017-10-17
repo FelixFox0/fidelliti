@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <?php echo $description; ?>
-  <div class="row"><?php echo $column_left; ?>
+<div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>

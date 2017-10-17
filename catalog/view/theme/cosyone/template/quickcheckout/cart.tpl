@@ -115,8 +115,8 @@
         <tbody>
             <?php foreach ($totals as $total) { ?>
               <tr>
-                <td style="text-align:right;" colspan="4"><?php echo $total['title']; ?>:</td>
-                <td style="text-align:right;"><?php echo $total['text']; ?></td>
+                <td style="text-align:right; font-size: 14px;" colspan="4"><?php echo $total['title']; ?>:</td>
+                <td style="text-align:right; font-size: 14px;"><?php echo $total['text']; ?></td>
               </tr>
         <?php } ?>
           </tbody>
@@ -134,8 +134,8 @@
         <tbody>
             <?php foreach ($totals as $total) { ?>
               <tr>
-                <td style="text-align:left;" colspan="4"><?php echo $total['title']; ?>:</td>
-                <td style="text-align:right;"><?php echo $total['text']; ?></td>
+                <td style="text-align:left; font-size: 14px;" colspan="4"><?php echo $total['title']; ?>:</td>
+                <td style="text-align:right; font-size: 14px;"><?php echo $total['text']; ?></td>
               </tr>
         <?php } ?>
           </tbody>

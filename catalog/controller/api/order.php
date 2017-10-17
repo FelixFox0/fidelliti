@@ -366,6 +366,7 @@ class ControllerApiOrder extends Controller {
 	}
 
 	public function edit() {
+            $this->request->get['country_code'] = strtolower($this->request->get['country_code']);
 		$this->load->language('api/order');
 
 		$json = array();

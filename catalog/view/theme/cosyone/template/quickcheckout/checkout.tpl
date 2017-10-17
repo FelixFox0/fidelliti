@@ -960,8 +960,8 @@ function loadCartInfo() {
 
 
 $(document).ready(function(){
-	loadCart();
-	loadCartInfo();
+	/*loadCart();
+	loadCartInfo();*/
 });
 <?php } ?>
 

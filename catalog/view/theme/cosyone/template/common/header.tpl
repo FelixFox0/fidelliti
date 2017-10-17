@@ -141,6 +141,7 @@
                   <li class=""><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
                   <li class=""><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
+                  <li class=""><a href="<?php echo $our_stores; ?>"><?php echo $informations[9]['title']; ?></a></li>
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
                 </ul>
 
@@ -393,6 +394,7 @@
                 <li class="column level2"><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
                 <li class="column level2"><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
                 <li class="column level2"><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
+                <li class="column level2"><a href="<?php echo $our_stores; ?>"><?php echo $informations[9]['title']; ?></a></li>
                 <li class="column level2"><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
                 
                 

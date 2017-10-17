@@ -7,8 +7,8 @@ define('HTTP_SERVER', 'http://'.$http_host.'/admin/');
 define('HTTP_CATALOG', 'http://'.$http_host.'/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://'.$http_host.'/admin/');
-define('HTTPS_CATALOG', 'http://'.$http_host.'/');
+define('HTTPS_SERVER', 'https://'.$http_host.'/admin/');
+define('HTTPS_CATALOG', 'https://'.$http_host.'/');
 
 // DIR
 define('DIR_APPLICATION', $server_document_root.'/admin/');

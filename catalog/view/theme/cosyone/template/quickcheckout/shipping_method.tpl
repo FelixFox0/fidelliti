@@ -30,7 +30,7 @@ foreach ($shipping_methods as $shipping_method) {
       <?php } else { ?>
       <input type="radio" name="shipping_method" value="<?php echo $quote['code']; ?>" id="<?php echo $quote['code']; ?>" />
       <?php } ?></td>
-    <td><label for="<?php echo $quote['code']; ?>"><?php echo $quote['title']; ?></label></td>
+    <td><label style="font-size: 16px;" for="<?php echo $quote['code']; ?>"><?php echo $quote['title']; ?></label></td>
     <td style="text-align: right;" class="rtl-left"><label for="<?php echo $quote['code']; ?>"><span class="shipping-sum"><?php echo $quote['text']; ?></span></label></td>
   </tr>
   <?php } ?>
@@ -111,6 +111,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 			success: function(html) {
 				<?php if ($cart) { ?>
 				loadCart();
+                                loadCartInfo();
 				<?php } ?>
 			},
 			<?php if ($debug) { ?>
@@ -134,6 +135,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 				success: function(html) {
 					<?php if ($cart) { ?>
 					loadCart();
+                                        loadCartInfo();
 					<?php } ?>
 				},
 				<?php if ($debug) { ?>
@@ -152,6 +154,7 @@ $('#shipping-method input[name=\'shipping_method\'], #shipping-method select[nam
 				success: function(html) {
 					<?php if ($cart) { ?>
 					loadCart();
+                                        loadCartInfo();
 					<?php } ?>
 				},
 				<?php if ($debug) { ?>

@@ -147,6 +147,7 @@ class ControllerApiCart extends Controller {
 
 	public function products() {
 //            var_dump(strtolower($this->request->get['country_code']));
+            $this->request->get['country_code'] = strtolower($this->request->get['country_code']);
 		$this->load->language('api/cart');
 
 		$json = array();

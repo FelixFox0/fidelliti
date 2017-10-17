@@ -127,6 +127,7 @@ class ControllerCommonHeader extends Controller {
                 
                 $data['my_company'] = $this->url->link('information/informationf','information_id=7', false, $this->session->data['country_code'], $this->session->data['language_name']);
                 $data['our_production'] = $this->url->link('information/informationf','information_id=8', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                $data['our_stores'] = $this->url->link('information/informationf','information_id=9', false, $this->session->data['country_code'], $this->session->data['language_name']);
                 
                 $data['text_free_call'] = $this->language->get('text_read_faq_but');
                 
@@ -252,17 +253,18 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = 'common-home';
 		}
                 
-                $this->load->model('catalog/information');
+                $this->load->model('catalog/informationf');
 
 		$data['informations'] = array();
-
-		foreach ($this->model_catalog_information->getInformations() as $result) {
-			if ($result['top']) {
-				$data['informations'][] = array(
+//                var_dump($this->model_catalog_informationf->getInformations());
+		foreach ($this->model_catalog_informationf->getInformations() as $result) {
+//                    var_dump($result);
+			/*if ($result['top']) {*/
+				$data['informations'][$result['information_id']] = array(
 					'title' => $result['title'],
-					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
+					'href'  => $this->url->link('information/informationf', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
-			}
+			/*}*/
 		}
 //                var_dump($data['informations']);
                 
