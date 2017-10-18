@@ -22,22 +22,21 @@
 <script src="/catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="/catalog/view/theme/cosyone/stylesheet/stylesheet.css" />
 <link href="/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.css">
+
+<link rel="stylesheet" type="text/css" href="/catalog/view/theme/cosyone/stylesheet/perfect-scrollbar.css" />
 <link href="/catalog/view/theme/default/css/account.css" rel="stylesheet">
 <link href="/catalog/view/theme/default/css/main.css" rel="stylesheet">
 
 
 <script type="text/javascript" src="/catalog/view/theme/cosyone/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.min.js"></script>
+<script type="text/javascript" src="/catalog/view/theme/cosyone/js/perfect-scrollbar.jquery.min.js"></script>
 <script type="text/javascript" src="/catalog/view/theme/cosyone/js/cosyone_common.js"></script>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
 
-<!--[if IE 8]>
-<link rel="stylesheet" type="text/css" href="/catalog/view/theme/cosyone/stylesheet/ie8.css" />
-<![endif]-->
+
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>

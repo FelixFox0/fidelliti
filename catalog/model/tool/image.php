@@ -4,7 +4,14 @@ class ModelToolImage extends Model {
 		if (!is_file(DIR_IMAGE . $filename)) {
 			return;
 		}
-
+/*
+                var_dump(exif_read_data('C:\OpenServer\domains\new.fidelitti.loc\image\catalog/fidelitti-blog.jpg'));
+                var_dump(exif_read_data(DIR_IMAGE . 'catalog/fidelitti-blog.jpg'));
+//        var_dump(DIR_IMAGE . 'catalog/fidelitti-blog.jpg');
+//                var_dump(exif_read_data('C:\OpenServer\domains\new.fidelitti.loc\image\catalog', 'EXIF', 'COMPUTED', true));
+                die();
+*/
+                
 		$extension = pathinfo($filename, PATHINFO_EXTENSION);
 
 		$old_image = $filename;

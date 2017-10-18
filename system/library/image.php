@@ -54,7 +54,7 @@ class Image {
 		return $this->mime;
 	}
 
-	public function save($file, $quality = 90) {
+	public function save($file, $quality = 80) {
 		$info = pathinfo($file);
 
 		$extension = strtolower($info['extension']);
