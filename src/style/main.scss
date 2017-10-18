@@ -3769,7 +3769,7 @@ input.error {
 			background-color: #f4f4f4;
 			padding: 20px 44px;
 			text-transform: uppercase;
-			font-size: 14px;
+			font-size: 15px;
 			font-family: "pt-medium";
 			margin-top: 56px;
 
@@ -3786,6 +3786,53 @@ input.error {
 		align-items: center;
 		background-color: rgba(0,0,0,.4);
 		padding: 50px 60px;
+	}
+}
+
+.fid-collections {
+	padding: 160px 0 100px 0;
+
+	&__items {
+		display: flex;
+	}
+
+	&__item {
+		width: 33.3%;
+		text-align: center;
+
+		&-img {
+			margin-bottom: 53px;
+		}
+
+		&-articul {
+			color: #929499;
+			font-size: 12px;
+			font-family: "pop-sb";
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+
+		&-name {
+			font-size: 20px;
+			font-family: "pt-medium";
+			color: #242528;
+			margin-bottom: 24px;
+		}
+
+		&-show {
+			a {
+				font-size: 12px;
+				text-transform: uppercase;
+				font-family: "pop-sb";
+				padding: 14px 54px;
+				background-color: #242528;
+				color: #fff;
+
+				&:hover {
+					background-color: #54565c;
+				}
+			}
+		}
 	}
 }
 

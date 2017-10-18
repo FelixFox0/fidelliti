@@ -102,6 +102,56 @@
   </div>
 </div>
 
+<div class="fid-collections">
+  <div class="container">
+    <div class="fid-collections__items">
+      <div class="fid-collections__item">
+        <div class="fid-collections__item-img">
+          <a href="#"><img src="/image/item1.jpg" alt=""></a>
+        </div>
+        <div class="fid-collections__item-articul">
+          Ref.  1023/221
+        </div>
+        <div class="fid-collections__item-name">
+          CYLINDRO
+        </div>
+        <div class="fid-collections__item-show">
+          <a href="#">shop now</a>
+        </div>
+      </div>
+      <div class="fid-collections__item">
+        <div class="fid-collections__item-img">
+          <a href="#"><img src="/image/item2.jpg" alt=""></a>
+        </div>
+        <div class="fid-collections__item-articul">
+          Ref.  1023/221
+        </div>
+        <div class="fid-collections__item-name">
+          CYLINDRO
+        </div>
+        <div class="fid-collections__item-show">
+          <a href="#">shop now</a>
+        </div>
+      </div>
+      <div class="fid-collections__item">
+        <div class="fid-collections__item-img">
+          <a href="#"><img src="/image/item3.jpg" alt=""></a>
+        </div>
+        <div class="fid-collections__item-articul">
+          Ref.  1023/221
+        </div>
+        <div class="fid-collections__item-name">
+          CYLINDRO
+        </div>
+        <div class="fid-collections__item-show">
+          <a href="#">shop now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
 
 <?php if (false): ?>
   
