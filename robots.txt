@@ -50,11 +50,6 @@ Disallow: /*&tracking=
 Disallow: /*route=product/search
 Disallow: /*?page=
 Disallow: /*&page=
-Clean-param: tracking
-Clean-param: filter_name
-Clean-param: filter_sub_category
-Clean-param: filter_description
-Disallow: /wishlist
 Disallow: /login
 Disallow: /index.php?route=product/manufacturer
 Disallow: /index.php?route=product/compare

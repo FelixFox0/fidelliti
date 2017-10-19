@@ -726,8 +726,11 @@ class ControllerProductProduct extends Controller {
 	}
         
         public function oneclickbye() {
-//            var_dump($this->request->post);
+//            var_dump($this->request->server['REQUEST_METHOD']);
 //            die();
+            
+            
+            if ($this->request->server['REQUEST_METHOD'] == 'POST') {
             
             $this->session->data['country_code'];
             
@@ -834,5 +837,10 @@ class ControllerProductProduct extends Controller {
 //            $json['success'] = $order_id;
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($json));
+            }else{
+                $json['success'] = $this->url->link('error/not_found', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
+            }
+            
+//         var_dump($json['success']);
         }
 }

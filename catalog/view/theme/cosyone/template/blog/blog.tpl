@@ -110,7 +110,8 @@
                 <div class="blog_stats">
                 <?php if($author_status){ ?><span><b class="text"><?php echo $text_posted_by; ?></b> <b class="hl"><?php echo $blog['author']; ?></b></span><?php } ?>
 				<?php if($page_view_status){ ?><span><b class="text"><?php echo $text_read; ?></b> <b class="hl"><?php echo $blog['count_read']; ?></b></span><?php } ?>
-                </div> <!-- blog-stats ends -->
+                </div>
+                <!-- blog-stats ends -->
                 <p><?php echo $blog['short_description']; ?></p>
                 
                 </div> <!-- right ends -->

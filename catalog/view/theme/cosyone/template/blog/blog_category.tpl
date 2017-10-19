@@ -37,8 +37,9 @@
                 <div class="left contrast_font">
                 <?php if($date_added_status){ ?>
             	<div class="date_added secondary_background">
-				<span class="day"><?php echo date("d",strtotime($blog['date_added_full']));?></span>
-				<span class="month"><?php echo date("M",strtotime($blog['date_added_full']));?></span>
+				<!--<span class="day"><?php echo date("d",strtotime($blog['date_added_full']));?></span>
+				<span class="month"><?php echo date("M",strtotime($blog['date_added_full']));?></span>-->
+                                <?php echo $blog['date_added_full'];?>
 				</div>
                 <?php } ?>
                 </div> <!-- left ends -->
