@@ -440,8 +440,13 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$min_price = $this->currency->convert($min_price * $this->k, $this->config->get('config_currency'), $this->session->data['currency']);
 		$max_price = $this->currency->convert($max_price * $this->k, $this->config->get('config_currency'), $this->session->data['currency']);
 
-
-		$result_html = $this->getProductsTmpl($results, $product_total);
+                $this->load->model('catalog/category');
+//                var_dump($this->model_catalog_category->getCategory($data['categories'][0]));
+//                var_dump($results);
+//                die();
+                $meta_title = $this->model_catalog_category->getCategory($data['categories'][0])['meta_title'];
+                        
+		$result_html = $this->getProductsTmpl($results, $product_total, $meta_title);
 
 		$json = json_encode(array(  'result_html' => $result_html,
                                     'min_price' => $min_price,
@@ -455,7 +460,8 @@ class ControllerModuleAdvajaxfilter extends Controller {
 		$this->response->setOutput($json);
 	}
 
-	private function getProductsTmpl($results, $product_total) {
+	private function getProductsTmpl($results, $product_total, $meta_title = false) {
+                $data['meta_title'] = $meta_title;
 		$this->load->language('product/category');
 		$data['text_refine'] = $this->language->get('text_refine'); 
 		$data['text_empty'] = $this->language->get('text_empty');

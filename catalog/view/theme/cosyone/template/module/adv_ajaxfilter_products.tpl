@@ -10,10 +10,10 @@
     <a href=".pop-prod<?php echo $product['product_id']; ?>" class="icon-cart2 quick-buy open-popup"></a> 
        <div class="image">
         <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
-        <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
-        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+        <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $meta_title; ?>" /></a></div>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $meta_title; ?>; ?>" /></a>
         <?php } elseif ($product['thumb']) { ?>
-        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $meta_title; ?>; ?>" /></a>
         <?php } ?>
 
         <?php if ($cosyone_text_ql) {?>
@@ -70,7 +70,7 @@
       <div class="product-popup pop-prod<?php echo $product['product_id']; ?> mfp-hide">
         <div class="product-popup__img">
             <?php if($product['thumb']) { ?>
-              <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+              <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a>
             <?php } ?>
         </div>
         <div class="product-popup__info">
