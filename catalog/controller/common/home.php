@@ -1,9 +1,19 @@
 <?php
 class ControllerCommonHome extends Controller {
 	public function index() {
-		$this->document->setTitle($this->config->get('config_meta_title'));
-		$this->document->setDescription($this->config->get('config_meta_description'));
-		$this->document->setKeywords($this->config->get('config_meta_keyword'));
+//            var_dump($this->session->data);
+//            die();
+            if($this->session->data['language_name']=='ukr'){
+                $code = '_ua';
+            }elseif($this->session->data['language_name']=='rus'){
+                $code = '';
+            }else{
+                $code = '_en';
+            }
+            
+		$this->document->setTitle($this->config->get('config_meta_title' . $code));
+		$this->document->setDescription($this->config->get('config_meta_description' . $code));
+		$this->document->setKeywords($this->config->get('config_meta_keyword' . $code));
                 
                 $this->load->language('common/home');
                 $data['shopping'] = $this->language->get('shopping');

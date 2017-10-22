@@ -43,7 +43,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
               <div class="form-group required">
-                <label class="col-sm-2 control-label" for="input-meta-title"><?php echo $entry_meta_title; ?></label>
+                <label class="col-sm-2 control-label" for="input-meta-title"><?php echo $entry_meta_title; ?> ru</label>
                 <div class="col-sm-10">
                   <input type="text" name="config_meta_title" value="<?php echo $config_meta_title; ?>" placeholder="<?php echo $entry_meta_title; ?>" id="input-meta-title" class="form-control" />
                   <?php if ($error_meta_title) { ?>
@@ -52,17 +52,62 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-meta-description"><?php echo $entry_meta_description; ?></label>
+                <label class="col-sm-2 control-label" for="input-meta-description"><?php echo $entry_meta_description; ?> ru</label>
                 <div class="col-sm-10">
                   <textarea name="config_meta_description" rows="5" placeholder="<?php echo $entry_meta_description; ?>" id="input-meta-description" class="form-control"><?php echo $config_meta_description; ?></textarea>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-meta-keyword"><?php echo $entry_meta_keyword; ?></label>
+                <label class="col-sm-2 control-label" for="input-meta-keyword"><?php echo $entry_meta_keyword; ?> ru</label>
                 <div class="col-sm-10">
                   <textarea name="config_meta_keyword" rows="5" placeholder="<?php echo $entry_meta_keyword; ?>" id="input-meta-keyword" class="form-control"><?php echo $config_meta_keyword; ?></textarea>
                 </div>
               </div>
+                
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-meta-title"><?php echo $entry_meta_title; ?> ua</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_meta_title_ua" value="<?php echo $config_meta_title_ua; ?>" placeholder="<?php echo $entry_meta_title; ?>" id="input-meta-title" class="form-control" />
+                  <?php if ($error_meta_title_ua) { ?>
+                  <div class="text-danger"><?php echo $error_meta_title; ?></div>
+                  <?php } ?>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-meta-description"><?php echo $entry_meta_description; ?> ua</label>
+                <div class="col-sm-10">
+                  <textarea name="config_meta_description_ua" rows="5" placeholder="<?php echo $entry_meta_description; ?>" id="input-meta-description" class="form-control"><?php echo $config_meta_description_ua; ?></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-meta-keyword"><?php echo $entry_meta_keyword; ?> ua</label>
+                <div class="col-sm-10">
+                  <textarea name="config_meta_keyword_ua" rows="5" placeholder="<?php echo $entry_meta_keyword; ?>" id="input-meta-keyword" class="form-control"><?php echo $config_meta_keyword_ua; ?></textarea>
+                </div>
+              </div>
+                  
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-meta-title"><?php echo $entry_meta_title; ?> en</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_meta_title_en" value="<?php echo $config_meta_title_en; ?>" placeholder="<?php echo $entry_meta_title; ?>" id="input-meta-title" class="form-control" />
+                  <?php if ($error_meta_title_en) { ?>
+                  <div class="text-danger"><?php echo $error_meta_title; ?></div>
+                  <?php } ?>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-meta-description"><?php echo $entry_meta_description; ?> en</label>
+                <div class="col-sm-10">
+                  <textarea name="config_meta_description_en" rows="5" placeholder="<?php echo $entry_meta_description; ?>" id="input-meta-description" class="form-control"><?php echo $config_meta_description_en; ?></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-meta-keyword"><?php echo $entry_meta_keyword; ?> en</label>
+                <div class="col-sm-10">
+                  <textarea name="config_meta_keyword_en" rows="5" placeholder="<?php echo $entry_meta_keyword; ?>" id="input-meta-keyword" class="form-control"><?php echo $config_meta_keyword_en; ?></textarea>
+                </div>
+              </div>
+                
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-theme"><?php echo $entry_theme; ?></label>
                 <div class="col-sm-10">

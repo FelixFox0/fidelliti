@@ -263,6 +263,18 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$data['error_meta_title'] = '';
 		}
+                
+                if (isset($this->error['meta_title_ua'])) {
+			$data['error_meta_title_ua'] = $this->error['meta_title_ua'];
+		} else {
+			$data['error_meta_title_ua'] = '';
+		}
+                
+                if (isset($this->error['meta_title_en'])) {
+			$data['error_meta_title_en'] = $this->error['meta_title_en'];
+		} else {
+			$data['error_meta_title_en'] = '';
+		}
 
 		if (isset($this->error['country'])) {
 			$data['error_country'] = $this->error['country'];
@@ -403,6 +415,45 @@ class ControllerSettingSetting extends Controller {
 			$data['config_meta_keyword'] = $this->config->get('config_meta_keyword');
 		}
 
+                
+                if (isset($this->request->post['config_meta_title_ua'])) {
+			$data['config_meta_title_ua'] = $this->request->post['config_meta_title_ua'];
+		} else {
+			$data['config_meta_title_ua'] = $this->config->get('config_meta_title_ua');
+		}
+
+		if (isset($this->request->post['config_meta_description_ua'])) {
+			$data['config_meta_description_ua'] = $this->request->post['config_meta_description_ua'];
+		} else {
+			$data['config_meta_description_ua'] = $this->config->get('config_meta_description_ua');
+		}
+
+		if (isset($this->request->post['config_meta_keyword_ua'])) {
+			$data['config_meta_keyword_ua'] = $this->request->post['config_meta_keyword_ua'];
+		} else {
+			$data['config_meta_keyword_ua'] = $this->config->get('config_meta_keyword_ua');
+		}
+                
+                
+                if (isset($this->request->post['config_meta_title_en'])) {
+			$data['config_meta_title_en'] = $this->request->post['config_meta_title_en'];
+		} else {
+			$data['config_meta_title_en'] = $this->config->get('config_meta_title_en');
+		}
+
+		if (isset($this->request->post['config_meta_description_en'])) {
+			$data['config_meta_description_en'] = $this->request->post['config_meta_description_en'];
+		} else {
+			$data['config_meta_description_en'] = $this->config->get('config_meta_description_en');
+		}
+
+		if (isset($this->request->post['config_meta_keyword_en'])) {
+			$data['config_meta_keyword_en'] = $this->request->post['config_meta_keyword_en'];
+		} else {
+			$data['config_meta_keyword_en'] = $this->config->get('config_meta_keyword_en');
+		}
+                
+                
 		if (isset($this->request->post['config_theme'])) {
 			$data['config_theme'] = $this->request->post['config_theme'];
 		} else {
@@ -1125,12 +1176,22 @@ class ControllerSettingSetting extends Controller {
 	}
 
 	protected function validate() {
+//            var_dump($this->request->post);
+//            die();
 		if (!$this->user->hasPermission('modify', 'setting/setting')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
 		if (!$this->request->post['config_meta_title']) {
 			$this->error['meta_title'] = $this->language->get('error_meta_title');
+		}
+                
+                if (!$this->request->post['config_meta_title_ua']) {
+			$this->error['meta_title_ua'] = $this->language->get('error_meta_title');
+		}
+                
+                if (!$this->request->post['config_meta_title_en']) {
+			$this->error['meta_title_en'] = $this->language->get('error_meta_title');
 		}
 
 		if (!$this->request->post['config_name']) {

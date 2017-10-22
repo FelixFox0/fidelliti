@@ -1256,7 +1256,8 @@ class ModelModuleAdvajaxfilter extends Model {
 		if($data['instock']) {
 			$sql .= " AND p.quantity > 0 AND (pov.quantity is null OR pov.quantity > 0)";
 		}
-
+//                var_dump($data['categories']);
+//                die();
 		if($data['categories']) {
 			$sql .= " AND p2c.category_id IN (" . implode(",", $data['categories']) . ")";
 		}

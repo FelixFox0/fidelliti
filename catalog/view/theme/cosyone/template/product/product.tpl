@@ -105,13 +105,13 @@
             <?php if ($thumb) { ?>
               <?php if ($cosyone_product_zoom) { ?>
               <li data-thumb="<?php echo $thumb; ?>" data-src="<?php echo $popup; ?>">
-                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $meta_title; ?>" />
 
               </li>
 
               <?php } else { ?>
               <li data-thumb="<?php echo $popup; ?>" data-src="<?php echo $popup; ?>">
-                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $meta_title; ?>" />
 
               </li>
               <?php } ?>
@@ -119,7 +119,7 @@
             <?php foreach ($images as $image) { ?>
                 <li data-thumb="<?php echo $image['thumb']; ?>" data-src="<?php echo $image['popup']; ?>">
 
-                  <img src="<?php echo $image['popup']; ?>" />
+                  <img src="<?php echo $image['popup']; ?>" alt="<?php echo $meta_title; ?>" />
                 </li>
                 <?php } ?>
           </div>
@@ -213,7 +213,7 @@
          <div id="input-option<?php echo $option['product_option_id']; ?>" class="clean-option-image">
             <?php foreach ($option['product_option_value'] as $option_value) { ?>
               <div class="single-option main_font" <?php if ($option_value['price']) { ?>data-tooltip="<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>"<?php } ?>>
-              <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name']; ?>" /></label>
+              <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $meta_title; ?>" /></label>
                 </div>
             <?php } ?>
           </div>
@@ -472,11 +472,11 @@
       <div class="image">
       
       <?php if ($cosyone_product_zoom) { ?>
-      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" style="cursor:move" rel="position:'inside', showTitle: false" id='zoom1'><img itemprop="image" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" style="cursor:move" rel="position:'inside', showTitle: false" id='zoom1'><img itemprop="image" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $meta_title; ?>" /></a>
       <!-- zoom link-->
       <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" id="zoom-btn" class="colorbox" rel="colorbox"><i class="fa fa-search-plus"></i></a>
       <?php } else { ?>
-      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img itemprop="image" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img itemprop="image" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $meta_title; ?>" /></a>
       <?php } ?>
       
       <?php if ($cosyone_percentage_sale_badge == 'enabled') { ?>
@@ -501,12 +501,12 @@
         <?php } else { ?>
         <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="colorbox" rel="useZoom: 'zoom1', smallImage: '<?php echo $image['thumb']; ?>'">
         <?php } ?>
-        <img src="<?php echo $image['small']; ?>" title="<?php echo $heading_title; ?>" width="<?php echo $additional_width; ?>" height="<?php echo $additional_height; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+        <img src="<?php echo $image['small']; ?>" title="<?php echo $heading_title; ?>" width="<?php echo $additional_width; ?>" height="<?php echo $additional_height; ?>" alt="<?php echo $meta_title; ?>" /></a></li>
         <?php } ?>
         
         <!-- Show even the main image among the additional if  -->
          <?php if ($cosyone_product_zoom) { ?>
-       <li><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery colorbox" rel="useZoom: 'zoom1', smallImage: '<?php echo $thumb; ?>'"><img src="<?php echo $small; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" width="<?php echo $additional_width; ?>" height="<?php echo $additional_height; ?>"/></a></li>
+       <li><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery colorbox" rel="useZoom: 'zoom1', smallImage: '<?php echo $thumb; ?>'"><img src="<?php echo $small; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $meta_title; ?>" width="<?php echo $additional_width; ?>" height="<?php echo $additional_height; ?>"/></a></li>
         <?php } ?>
         </ul>
         
@@ -671,7 +671,7 @@
          <div id="input-option<?php echo $option['product_option_id']; ?>" class="clean-option-image">
             <?php foreach ($option['product_option_value'] as $option_value) { ?>
               <div class="single-option main_font" <?php if ($option_value['price']) { ?>data-tooltip="<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>"<?php } ?>>
-              <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name']; ?>" /></label>
+              <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $meta_title; ?>" /></label>
                 </div>
             <?php } ?>
           </div>
@@ -853,7 +853,7 @@
          <div id="input-option<?php echo $option['product_option_id']; ?>" class="clean-option-image">
             <?php foreach ($option['product_option_value'] as $option_value) { ?>
               <div class="single-option main_font" <?php if ($option_value['price']) { ?>data-tooltip="<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>"<?php } ?>>
-              <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name']; ?>" /></label>
+              <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" /><label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><img src="<?php echo $option_value['image']; ?>" alt="<?php echo $meta_title; ?>" /></label>
                 </div>
             <?php } ?>
           </div>
@@ -1139,7 +1139,7 @@
          <div class="sale_badge">-<?php echo $product['sales_percantage']; ?>%</div>
 	    <?php } ?>
         <?php if ($product['thumb']) { ?>
-        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a>
         <?php } ?>
         
         <?php if ($cosyone_text_ql) { ?>

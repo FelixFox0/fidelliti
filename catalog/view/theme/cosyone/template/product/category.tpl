@@ -44,7 +44,7 @@
   <?php if ($thumb || $description) { ?>
   <div class="category-info">
 	<?php if ($cosyone_category_thumb == 'enabled' && ($thumb)) { ?>
-    <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" /></div>
+    <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $meta_title; ?>" /></div>
     <?php } ?>
     <?php if ($description) { ?>
     <?php echo $description; ?>
@@ -65,7 +65,7 @@
 
     <div class="item contrast_font">
     <?php if ($category['thumb']) { ?>
-	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $category['name']; ?>" /></a></div>
+	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a></div>
 	<?php } ?>
     <div class="name"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></div>
     </div>
@@ -103,10 +103,10 @@
 	    <div class="sale_badge">-<?php echo $product['sales_percantage']; ?>%</div>
 	    <?php } ?>
         <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
-        <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
-        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+        <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $meta_title; ?>" /></a></div>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a>
         <?php } elseif ($product['thumb']) { ?>
-        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a>
         <?php } ?>
 
         <?php if ($cosyone_text_ql) {?>

@@ -68,7 +68,8 @@
     </div>
 	
     
-    <?php if ($tags) { ?>
+    <?php //if ($tags) { ?>
+    <?php if (false) { ?>
 	<div class="tags">
     <span class="contrast_font"><?php echo $text_tags; ?></span>
 	<?php for ($i = 0; $i < count($tags); $i++) { ?>
@@ -83,7 +84,8 @@
     </div>
     </div>
 
-    <?php if ($related_blogs) { ?>
+    <?php //if ($related_blogs) { ?>
+    <?php if (false) { ?>
 		<div class="box-heading"><?php echo $text_related_blog; ?></div>
 		<div class="blog_grid_holder related column-<?php echo $rel_per_row; ?>">
             <?php foreach ($related_blogs as $blog) { ?>
