@@ -1,51 +1,6 @@
 <?php echo $header; ?>
+<?php echo $home_top_top; ?>
 
-<div class="first-screen">
-  <div class="main-slider container">
-    <div class="main-slider__container owl-carousel owl-theme">
-      <div class="main-slider__item item">
-        <div class="main-slider__item-img">
-          <img src="/image/slide1.jpg" alt="">
-          <div class="main-slider__main">
-            <div class="main-slider__item-year">2017</div>
-            <div class="main-slider__item-name">Fall <br> Collection</div>
-            <div class="main-slider__item-show-more"><a href="Discover more">discover more</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="main-slider__item item">
-        <div class="main-slider__item-img">
-          <img src="/image/slide1.jpg" alt="">
-          <div class="main-slider__main">
-            <div class="main-slider__item-year">2017</div>
-            <div class="main-slider__item-name">Fall <br> Collection</div>
-            <div class="main-slider__item-show-more"><a href="Discover more">discover more</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="main-slider__item item">
-        <div class="main-slider__item-img">
-          <img src="/image/slide1.jpg" alt="">
-          <div class="main-slider__main">
-            <div class="main-slider__item-year">2017</div>
-            <div class="main-slider__item-name">Fall <br> Collection</div>
-            <div class="main-slider__item-show-more"><a href="Discover more">discover more</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="first-screen__scroll-down">
-    <div class="scroll-btn">
-    <a href="#">
-      <span class="mouse">
-        <span>
-        </span>
-      </span>
-    </a>
-    </div>
-  </div>
-</div>
 
 <div class="woman-collection">
   <div class="container woman-collection__container">
@@ -91,7 +46,7 @@
 </div>
 <div class="discount-home">
   <div class="container discount-home__container">
-    <div class="discount-home__inner">
+      <div class="discount-home__inner" style="background-image: url('/image/fidelitti-30-sale.gif');">
       <div class="discount-home__info">
         <h3>40 % AUTUMN SALE</h3>
         <p>IN STORE</p>
@@ -102,56 +57,8 @@
   </div>
 </div>
 
-<div class="fid-collections">
-  <div class="container">
-    <div class="fid-collections__items">
-      <div class="fid-collections__item">
-        <div class="fid-collections__item-img">
-          <a href="#"><img src="/image/item1.jpg" alt=""></a>
-        </div>
-        <div class="fid-collections__item-articul">
-          Ref.  1023/221
-        </div>
-        <div class="fid-collections__item-name">
-          CYLINDRO
-        </div>
-        <div class="fid-collections__item-show">
-          <a href="#">shop now</a>
-        </div>
-      </div>
-      <div class="fid-collections__item">
-        <div class="fid-collections__item-img">
-          <a href="#"><img src="/image/item2.jpg" alt=""></a>
-        </div>
-        <div class="fid-collections__item-articul">
-          Ref.  1023/221
-        </div>
-        <div class="fid-collections__item-name">
-          CYLINDRO
-        </div>
-        <div class="fid-collections__item-show">
-          <a href="#">shop now</a>
-        </div>
-      </div>
-      <div class="fid-collections__item">
-        <div class="fid-collections__item-img">
-          <a href="#"><img src="/image/item3.jpg" alt=""></a>
-        </div>
-        <div class="fid-collections__item-articul">
-          Ref.  1023/221
-        </div>
-        <div class="fid-collections__item-name">
-          CYLINDRO
-        </div>
-        <div class="fid-collections__item-show">
-          <a href="#">shop now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div>
 
+<?php echo $content_bottom; ?>
 
 <?php if (false): ?>
   

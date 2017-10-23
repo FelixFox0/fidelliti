@@ -1,6 +1,17 @@
 <?php
 class ControllerModuleSlideshow extends Controller {
 	public function index($setting) {
+            
+            if($this->session->data['language_name']=='ukr'){
+                $code = '_ua';
+            }elseif($this->session->data['language_name']=='rus'){
+                $code = '';
+            }else{
+                $code = '_en';
+            }
+            
+                $data['title'] = $this->config->get('config_meta_title' . $code);
+            
 		static $module = 0;		
 
 		$this->load->model('design/banner');

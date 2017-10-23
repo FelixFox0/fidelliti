@@ -1,3 +1,4 @@
+<?php if(false){ ?>
 <h3><?php echo $heading_title; ?></h3>
 <div class="row">
   <?php foreach ($products as $product) { ?>
@@ -39,4 +40,45 @@
     </div>
   </div>
   <?php } ?>
+</div>
+
+<?php } ?>
+
+
+<div class="fid-collections">
+  <div class="container">
+    <div class="fid-collections__items">
+        
+      <?php foreach ($products as $product) { ?>
+      <div class="fid-collections__item">
+        <div class="fid-collections__item-img">
+          <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt=""></a>
+        </div>
+        <div class="fid-collections__item-articul">
+          <?php echo $product['model']; ?>
+        </div>
+          
+          <?php if ($product['price']) { ?>
+        <p class="price">
+          <?php if (!$product['special']) { ?>
+          <?php echo $product['price']; ?>
+          <?php } else { ?>
+          <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+          <?php } ?>
+        </p>
+        <?php } ?>
+          
+        <div class="fid-collections__item-name">
+          <?php echo $product['name']; ?>
+        </div>
+        <div class="fid-collections__item-show">
+            <a href="javascript:void(0)" onclick="cart.add('<?php echo $product['product_id']; ?>');" style="font-weight: 700; font-family: gotic;"><?php echo $button_cart; ?></a>
+        </div>
+      </div>
+      <?php } ?>
+        
+        
+    </div>
+  </div>
+  
 </div>

@@ -66,6 +66,7 @@ class ControllerModuleFeatured extends Controller {
 						'price'       => $price,
 						'special'     => $special,
 						'tax'         => $tax,
+                                                'model'       => $product_info['model'],
 						'rating'      => $rating,
 						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);

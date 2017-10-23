@@ -24,7 +24,11 @@ class ControllerCommonCountries extends Controller {
             }
 //            var_dump($data['countries']);
 //            die();
-            $data['browser_lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+            if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+                $data['browser_lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+            } else {
+                $data['browser_lang'] = '';
+            }
 //            var_dump($data['browser_lang']);
 //            die();
             $this->load->model('localisation/language');
