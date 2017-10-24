@@ -12,6 +12,9 @@ class ControllerModuleSlideshow extends Controller {
             
                 $data['title'] = $this->config->get('config_meta_title' . $code);
             
+                $this->load->language('module/slideshow');
+                $data['text_link'] = $this->language->get('text_link');
+                
 		static $module = 0;		
 
 		$this->load->model('design/banner');
@@ -23,12 +26,13 @@ class ControllerModuleSlideshow extends Controller {
 		$data['banners'] = array();
 
 		$results = $this->model_design_banner->getBanner($setting['banner_id']);
-
+//                var_dump($results);
 		foreach ($results as $result) {
 			if (is_file(DIR_IMAGE . $result['image'])) {
 				$data['banners'][] = array(
 					'title' => $result['title'],
 					'link'  => $result['link'],
+                                        'description'  => html_entity_decode($result['description']),
 					'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])
 				);
 			}

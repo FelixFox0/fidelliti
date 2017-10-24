@@ -1,7 +1,7 @@
 <?php
 class ControllerCommonCountries extends Controller {
 	public function index() {
-            //$this->load->language('common/countries');
+            $this->load->language('common/countries');
             $data['geo_country'] = json_decode(file_get_contents('http://freegeoip.net/json/'.$this->request->server['REMOTE_ADDR']))->country_code;
 //            var_dump($data['geo_country']);
 //            die();
@@ -40,7 +40,8 @@ class ControllerCommonCountries extends Controller {
 		foreach ($results as $result) {
 			if ($result['status']) {
 				$data['languages'][] = array(
-					'name' => $result['name'],
+//					'name' => $result['name'],
+                                        'name' => $this->language->get($result['code']),
 					'code' => $result['code']
 				);
 			}

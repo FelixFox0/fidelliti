@@ -47,6 +47,7 @@
 
 <div class="fid-collections">
   <div class="container">
+      <h3 style="text-align: center; font-weight: 700;"><?php echo $heading_title; ?></h3>
     <div class="fid-collections__items">
         
       <?php foreach ($products as $product) { ?>
@@ -54,16 +55,16 @@
         <div class="fid-collections__item-img">
           <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt=""></a>
         </div>
-        <div class="fid-collections__item-articul">
+        <!--<div class="fid-collections__item-articul">
           <?php echo $product['model']; ?>
-        </div>
+        </div>-->
           
           <?php if ($product['price']) { ?>
         <p class="price">
           <?php if (!$product['special']) { ?>
           <?php echo $product['price']; ?>
           <?php } else { ?>
-          <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+          <span class="price-new" style="color: #962d35;"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
           <?php } ?>
         </p>
         <?php } ?>

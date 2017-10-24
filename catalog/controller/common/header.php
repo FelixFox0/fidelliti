@@ -211,7 +211,8 @@ class ControllerCommonHeader extends Controller {
 		foreach ($results as $result) {
 			if ($result['status']) {
 				$data['llanguages'][] = array(
-					'name' => $result['name'],
+//					'name' => $result['name'],
+                                        'name' => $this->language->get($result['code']),
 					'code' => $result['code'],
 				);
 			}

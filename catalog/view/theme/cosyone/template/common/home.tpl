@@ -6,9 +6,9 @@
   <div class="container woman-collection__container">
     <div class="woman-collection__inner">
       <div class="woman-collection__info">
-        <h3>Woman Shoes Collection</h3>
-        <p>A staple that every girl needs in their wardrobe. Our lost time playsuit is super versatile and can be worn all year round. With it's classic silhouette and drawstring cinched waist.</p>
-        <a href="#">explore</a>
+        <h3><?php echo $text_wsc; ?></h3>
+        <p style="font-family: gotic; font-weight: 700;"><?php echo $text_wsc_d; ?></p>
+        <a href="<?php echo $categories1[2]['link']; ?>" style="font-family: gotic; font-weight: 700;"><?php echo $text_wsc_b; ?></a>
       </div>
       <div class="woman-collection__img">
         <img src="/image/wooman1.png" alt="wooman">
@@ -19,38 +19,24 @@
 
 <div class="categories-home">
   <div class="categories-home__wooman">
-    <a href="#" class="categories-home__item first">
-      WOMAN
-    </a>
-    <a href="#" class="categories-home__item bags">
-      BAGS
-    </a>
-    <a href="#" class="categories-home__item shoes">
-      SHOES
-    </a>
-    <a href="#" class="categories-home__item accessories">
-      accessories
-    </a>
+    <a href="<?php echo $categories1[0]['link']; ?>" class="categories-home__item first" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[0]['name']; ?></a>
+    <a href="<?php echo $categories1[1]['link']; ?>" class="categories-home__item bags" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[1]['name']; ?></a>
+    <a href="<?php echo $categories1[2]['link']; ?>" class="categories-home__item shoes" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[2]['name']; ?></a>
+    <a href="<?php echo $categories1[3]['link']; ?>" class="categories-home__item accessories" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[3]['name']; ?></a>
   </div>
   <div class="categories-home__man">
-    <a href="#" class="categories-home__item first">
-      MAN
-    </a>
-    <a href="#" class="categories-home__item bags2">
-      BAGS
-    </a>
-    <a href="#" class="categories-home__item accessories2">
-      accessories
-    </a>
+    <a href="<?php echo $categories1['link']; ?>" class="categories-home__item first" style="font-family: gotic; font-weight: 700;"><?php echo $categories2[0]['name']; ?></a>
+    <a href="<?php echo $categories1['link']; ?>" class="categories-home__item bags2" style="font-family: gotic; font-weight: 700;"><?php echo $categories2[1]['name']; ?></a>
+    <a href="<?php echo $categories1['link']; ?>" class="categories-home__item accessories2" style="font-family: gotic; font-weight: 700;"><?php echo $categories2[2]['name']; ?></a>
   </div>
 </div>
 <div class="discount-home">
   <div class="container discount-home__container">
       <div class="discount-home__inner" style="background-image: url('/image/fidelitti-30-sale.gif');">
       <div class="discount-home__info">
-        <h3>40 % AUTUMN SALE</h3>
-        <p>IN STORE</p>
-        <a href="#">discover more</a>
+        <h3><?php echo $text_sale; ?></h3>
+        <p><?php echo $text_sale_d; ?></p>
+        <a href="<?php echo $categories1[4]['link']; ?>"><?php echo $text_sale_b; ?></a>
       </div>
       
     </div>

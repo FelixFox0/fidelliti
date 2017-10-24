@@ -52,6 +52,7 @@
             <thead>
               <tr>
                 <td class="text-left"><?php echo $entry_title; ?></td>
+                <td class="text-left">Описание</td>
                 <td class="text-left"><?php echo $entry_link; ?></td>
                 <td class="text-left"><?php echo $entry_image; ?></td>
                 <td class="text-right"><?php echo $entry_sort_order; ?></td>
@@ -69,7 +70,20 @@
                   <?php if (isset($error_banner_image[$image_row][$language['language_id']])) { ?>
                   <div class="text-danger"><?php echo $error_banner_image[$image_row][$language['language_id']]; ?></div>
                   <?php } ?>
-                  <?php } ?></td>
+                  <?php } ?>
+                </td>
+                
+                <td class="text-left"><?php foreach ($languages as $language) { ?>
+                  <div class="input-group pull-left"><span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /> </span>
+                    <input type="text" name="banner_image[<?php echo $image_row; ?>][banner_image_description][<?php echo $language['language_id']; ?>][description]" value="<?php echo isset($banner_image['banner_image_description'][$language['language_id']]) ? $banner_image['banner_image_description'][$language['language_id']]['description'] : ''; ?>" placeholder="Описание"  class="form-control" />
+                  </div>
+                  <?php if (isset($error_banner_image[$image_row][$language['language_id']])) { ?>
+                  <div class="text-danger"><?php echo $error_banner_image[$image_row][$language['language_id']]; ?></div>
+                  <?php } ?>
+                  <?php } ?>
+                </td>
+                
+                
                 <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>
                 <td class="text-left"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $banner_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                   <input type="hidden" name="banner_image[<?php echo $image_row; ?>][image]" value="<?php echo $banner_image['image']; ?>" id="input-image<?php echo $image_row; ?>" /></td>
@@ -81,7 +95,7 @@
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="4"></td>
+                <td colspan="5"></td>
                 <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="<?php echo $button_banner_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
               </tr>
             </tfoot>
@@ -99,6 +113,13 @@ function addImage() {
 	<?php foreach ($languages as $language) { ?>
 	html += '    <div class="input-group">';
 	html += '      <span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span><input type="text" name="banner_image[' + image_row + '][banner_image_description][<?php echo $language['language_id']; ?>][title]" value="" placeholder="<?php echo $entry_title; ?>" class="form-control" />';
+    html += '    </div>';
+	<?php } ?>
+	html += '  </td>';	
+    html += '  <td class="text-left">';
+	<?php foreach ($languages as $language) { ?>
+	html += '    <div class="input-group">';
+	html += '      <span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span><input type="text" name="banner_image[' + image_row + '][banner_image_description][<?php echo $language['language_id']; ?>][description]" value="" placeholder="<?php echo $entry_title; ?>" class="form-control" />';
     html += '    </div>';
 	<?php } ?>
 	html += '  </td>';	

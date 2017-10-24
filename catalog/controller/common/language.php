@@ -19,7 +19,8 @@ class ControllerCommonLanguage extends Controller {
 		foreach ($results as $result) {
 			if ($result['status']) {
 				$data['languages'][] = array(
-					'name' => $result['name'],
+//					'name' => $result['name'],
+                                        'name' => $this->language->get($result['code']),
 					'code' => $result['code']
 				);
 			}

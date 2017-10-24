@@ -334,6 +334,7 @@ class ControllerDesignBanner extends Controller {
 		if (isset($this->request->get['banner_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$banner_info = $this->model_design_banner->getBanner($this->request->get['banner_id']);
 		}
+                
 
 		$data['token'] = $this->session->data['token'];
 
@@ -366,7 +367,7 @@ class ControllerDesignBanner extends Controller {
 		} else {
 			$banner_images = array();
 		}
-
+//var_dump($banner_images);
 		$data['banner_images'] = array();
 
 		foreach ($banner_images as $banner_image) {
