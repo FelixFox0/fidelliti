@@ -53,9 +53,9 @@
       <select id="lang" name="languages" class="form-control">
           <?php foreach ($languages as $language) { ?>
           <?php if(strripos($language['code'],$browser_lang)===false){ ?>
-            <option value="<?php echo $language['name']; ?>"><?php echo $language['name']; ?></option>
+            <option value="<?php echo $language['value']; ?>"><?php echo $language['name']; ?></option>
           <?php }else{ ?>
-            <option value="<?php echo $language['name']; ?>" selected="selected"><?php echo $language['name']; ?></option>
+            <option value="<?php echo $language['value']; ?>" selected="selected"><?php echo $language['name']; ?></option>
           <?php } ?>
           <?php } ?>
       </select>

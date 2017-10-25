@@ -40,7 +40,7 @@ class ControllerCommonCountries extends Controller {
 		foreach ($results as $result) {
 			if ($result['status']) {
 				$data['languages'][] = array(
-//					'name' => $result['name'],
+					'value' => $result['name'],
                                         'name' => $this->language->get($result['code']),
 					'code' => $result['code']
 				);

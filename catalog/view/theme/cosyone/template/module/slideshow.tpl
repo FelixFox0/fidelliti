@@ -36,7 +36,7 @@ $('#slideshow<?php echo $module; ?>').owlCarousel({
           <img src="<?php echo $banner['image']; ?>" alt="<?php echo $title; ?>">
           <div class="main-slider__main">
             <div class="main-slider__item-year"><?php echo $banner['title']; ?></div>
-            <div class="main-slider__item-name"><?php echo $banner['description']; ?></div>
+            <h1 class="main-slider__item-name" style="letter-spacing: 0px;"><?php echo $banner['description']; ?></h1>
             <?php if ($banner['link']) { ?>
             <div class="main-slider__item-show-more"><a href="<?php echo $banner['link']; ?>"><?php echo $text_link; ?></a></div>
             <?php } ?>
@@ -49,7 +49,7 @@ $('#slideshow<?php echo $module; ?>').owlCarousel({
     </div>
   <div class="first-screen__scroll-down">
     <div class="scroll-btn">
-    <a href="#">
+    <a>
       <span class="mouse">
         <span>
         </span>
@@ -58,3 +58,10 @@ $('#slideshow<?php echo $module; ?>').owlCarousel({
     </div>
   </div>
 </div>
+
+<script>
+	$(".scroll-btn").on("click", function(event){
+		event.preventDefault();
+		$("html, body").animate({ scrollTop: $(".woman-collection").offset().top }, 1000);
+	})
+</script>
