@@ -263,27 +263,21 @@ var cart = {
 
 				if (json['success']) {
 
-					$.magnificPopup.open({
-					  items: {
-					    src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title">ДОБАВЛЕНО В КОРЗИНУ</h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
-					    type: 'inline'
-					  }
-					});
-
-					/*$.colorbox({
-					html:'<div class="cart_notification"><div class="product"><img src="' + json['image'] + '"/><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
-					className: "notification",
-					initialHeight:50,
-					initialWidth:50,
-					width:"90%",
-					maxWidth:400,
-					height:"90%",
-					maxHeight:200
-					});*/
-
 					$('#cart').load('/index.php?route=common/cart/info #cart > *'); //Added
 
 					$("#cart-panel .mm-panels > *").load('/index.php?route=common/cart/info #cart > *');
+
+					if($(window).innerWidth() > 1100) {
+						$.magnificPopup.open({
+						  items: {
+						    src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title">ДОБАВЛЕНО В КОРЗИНУ</h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+						    type: 'inline'
+						  }
+						});
+					} else {
+						window.API2.open(); 
+					}
+					
 				}
 
 
