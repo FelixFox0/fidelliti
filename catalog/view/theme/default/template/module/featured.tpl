@@ -73,7 +73,7 @@
           <?php echo $product['name']; ?>
         </div>
         <div class="fid-collections__item-show">
-            <a href="javascript:void(0)" onclick="cart.add('<?php echo $product['product_id']; ?>');" style="font-weight: 700; font-family: gotic;"><?php echo $button_cart; ?></a>
+            <a href="javascript:void(0)" onclick="cart.add('<?php echo $product['product_id']; ?>');" style="font-size: 12px; font-family: pt-medium;"><?php echo $button_cart; ?></a>
         </div>
       </div>
       <?php } ?>

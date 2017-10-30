@@ -38,7 +38,7 @@ $('#slideshow<?php echo $module; ?>').owlCarousel({
             <div class="main-slider__item-year"><?php echo $banner['title']; ?></div>
             <h1 class="main-slider__item-name" style="letter-spacing: 0px;"><?php echo $banner['description']; ?></h1>
             <?php if ($banner['link']) { ?>
-            <div class="main-slider__item-show-more"><a href="<?php echo $banner['link']; ?>"><?php echo $text_link; ?></a></div>
+            <div class="main-slider__item-show-more"><a href="<?php echo $banner['link']; ?>" style="font-size: 12px; padding: 18px 42px; font-family: pt-medium;"><?php echo $text_link; ?></a></div>
             <?php } ?>
           </div>
         </div>

@@ -1,14 +1,29 @@
 <?php echo $header; ?>
 <?php echo $home_top_top; ?>
 
-
+<style>
+    @media only screen and (max-width: 480px){
+        .discount-home__inner a {
+            padding: 15px 19px;
+        }
+        .woman-collection__info p {
+            font-family: pt-b;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 1.15px;
+        }
+        .categories-home__item {
+            font-size: 16px;
+        }
+    }
+</style>
 <div class="woman-collection" id="woman-collection">
   <div class="container woman-collection__container">
     <div class="woman-collection__inner">
       <div class="woman-collection__info">
-        <h3><?php echo $text_wsc; ?></h3>
-        <p style="font-family: gotic; font-weight: 700;"><?php echo $text_wsc_d; ?></p>
-        <a href="<?php echo $categories1[2]['link']; ?>" style="font-family: gotic; font-weight: 700;"><?php echo $text_wsc_b; ?></a>
+        <h3 style="font-family: pt-book;"><?php echo $text_wsc; ?></h3>
+        <p style="font-family: pt-b;"><?php echo $text_wsc_d; ?></p>
+        <a href="<?php echo $categories1[2]['link']; ?>" style="font-size: 12px; padding: 18px 42px; font-family: pt-medium;"><?php echo $text_wsc_b; ?></a>
       </div>
       <div class="woman-collection__img">
         <img src="/image/wooman1.png" alt="wooman">
@@ -19,15 +34,15 @@
 
 <div class="categories-home">
   <div class="categories-home__wooman">
-    <a href="<?php echo $categories1[0]['link']; ?>" class="categories-home__item first" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[0]['name']; ?></a>
-    <a href="<?php echo $categories1[1]['link']; ?>" class="categories-home__item bags" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[1]['name']; ?></a>
-    <a href="<?php echo $categories1[2]['link']; ?>" class="categories-home__item shoes" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[2]['name']; ?></a>
-    <a href="<?php echo $categories1[3]['link']; ?>" class="categories-home__item accessories" style="font-family: gotic; font-weight: 700;"><?php echo $categories1[3]['name']; ?></a>
+    <a href="<?php echo $categories1[0]['link']; ?>" class="categories-home__item first" style="font-family: pt-b;"><?php echo $categories1[0]['name']; ?></a>
+    <a href="<?php echo $categories1[1]['link']; ?>" class="categories-home__item bags" style="font-family: pt-b;"><?php echo $categories1[1]['name']; ?></a>
+    <a href="<?php echo $categories1[2]['link']; ?>" class="categories-home__item shoes" style="font-family: pt-b;"><?php echo $categories1[2]['name']; ?></a>
+    <a href="<?php echo $categories1[3]['link']; ?>" class="categories-home__item accessories" style="font-family: pt-b;"><?php echo $categories1[3]['name']; ?></a>
   </div>
   <div class="categories-home__man">
-    <a href="<?php echo $categories1['link']; ?>" class="categories-home__item first" style="font-family: gotic; font-weight: 700;"><?php echo $categories2[0]['name']; ?></a>
-    <a href="<?php echo $categories1['link']; ?>" class="categories-home__item bags2" style="font-family: gotic; font-weight: 700;"><?php echo $categories2[1]['name']; ?></a>
-    <a href="<?php echo $categories1['link']; ?>" class="categories-home__item accessories2" style="font-family: gotic; font-weight: 700;"><?php echo $categories2[2]['name']; ?></a>
+    <a href="<?php echo $categories2[0]['link']; ?>" class="categories-home__item first" style="font-family: pt-b;"><?php echo $categories2[0]['name']; ?></a>
+    <a href="<?php echo $categories2[1]['link']; ?>" class="categories-home__item bags2" style="font-family: pt-b;"><?php echo $categories2[1]['name']; ?></a>
+    <a href="<?php echo $categories2[2]['link']; ?>" class="categories-home__item accessories2" style="font-family: pt-b;"><?php echo $categories2[2]['name']; ?></a>
   </div>
 </div>
 <div class="discount-home">
@@ -36,7 +51,7 @@
       <div class="discount-home__info">
         <h3><?php echo $text_sale; ?></h3>
         <p><?php echo $text_sale_d; ?></p>
-        <a href="<?php echo $categories1[4]['link']; ?>"><?php echo $text_sale_b; ?></a>
+        <a style="padding: 15px 19px;" href="<?php echo $categories1[4]['link']; ?>"><?php echo $text_sale_b; ?></a>
       </div>
       
     </div>
