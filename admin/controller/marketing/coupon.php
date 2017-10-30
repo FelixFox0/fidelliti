@@ -405,7 +405,15 @@ class ControllerMarketingCoupon extends Controller {
 			$data['code'] = '';
 		}
 
-		if (isset($this->request->post['type'])) {
+		if (isset($this->request->post['country_code'])) {
+			$data['country_code'] = $this->request->post['country_code'];
+		} elseif (!empty($coupon_info)) {
+			$data['country_code'] = $coupon_info['country_code'];
+		} else {
+			$data['country_code'] = '';
+		}
+                
+                if (isset($this->request->post['type'])) {
 			$data['type'] = $this->request->post['type'];
 		} elseif (!empty($coupon_info)) {
 			$data['type'] = $coupon_info['type'];

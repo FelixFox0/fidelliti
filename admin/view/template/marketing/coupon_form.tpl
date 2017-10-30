@@ -42,6 +42,20 @@
                   <?php } ?>
                 </div>
               </div>
+                
+                
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-type"><span data-toggle="tooltip" title="<?php echo $help_type; ?>">Регион</span></label>
+                <div class="col-sm-10">
+                  <select name="country_code" id="input-type" class="form-control">
+                    <option <?php if($country_code=='ua'){ echo"selected"; } ?> value="ua">UA</option>
+                    <option <?php if($country_code=='ru'){ echo"selected"; } ?> value="ru">RU</option>
+                    <option <?php if($country_code=='en'){ echo"selected"; } ?> value="en">EN</option>
+                  </select>
+                </div>
+              </div>
+                
+                
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-code"><span data-toggle="tooltip" title="<?php echo $help_code; ?>"><?php echo $entry_code; ?></span></label>
                 <div class="col-sm-10">

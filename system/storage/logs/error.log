@@ -159,3 +159,11 @@
 2017-10-26 14:34:42 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
 2017-10-26 14:34:42 - PHP Notice:  Undefined index: thumb_hover in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
 2017-10-26 14:34:42 - PHP Notice:  Undefined index: description in C:\OPENSERVER\OpenServer\domains\fidelliti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-10-30 13:08:35 - PHP Notice:  Undefined index: thumb_hover in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-30 13:08:35 - PHP Notice:  Undefined index: description in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-10-30 13:08:35 - PHP Notice:  Undefined index: thumb_hover in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-30 13:08:35 - PHP Notice:  Undefined index: description in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-10-30 13:08:37 - PHP Notice:  Undefined index: thumb_hover in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-30 13:08:37 - PHP Notice:  Undefined index: description in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
+2017-10-30 13:08:37 - PHP Notice:  Undefined index: thumb_hover in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 11
+2017-10-30 13:08:37 - PHP Notice:  Undefined index: description in C:\OpenServer\domains\fidelitti.loc\catalog\view\theme\cosyone\template\module\cosyone_recently.tpl on line 34
