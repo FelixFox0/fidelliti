@@ -86,6 +86,17 @@ $(document).ready(function() {
     "<div class='slide_arrow_prev'><i class='fa fa-angle-left'></i></div>",
     "<div class='slide_arrow_next'><i class='fa fa-angle-right'></i></div>"
     ],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:4
+        }
+    }
       
   }); 
 }); 
