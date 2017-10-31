@@ -270,7 +270,7 @@ var cart = {
 					if($(window).innerWidth() > 1100) {
 						$.magnificPopup.open({
 						  items: {
-						    src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title">ДОБАВЛЕНО В КОРЗИНУ</h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+						    src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title">ДОБАВЛЕНО В КОРЗИНУ</h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" onclick="$.magnificPopup.close();return false;" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
 						    type: 'inline'
 						  }
 						});

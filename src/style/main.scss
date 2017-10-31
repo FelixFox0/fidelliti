@@ -2045,7 +2045,9 @@ a {
 		display: none !important;
 	}
 
-	& > .lg-close {
+	& > .lg-close,
+	#lg-zoom-in,
+	#lg-zoom-out {
 		display: block !important;
 	}
 }
@@ -3834,6 +3836,10 @@ input.error {
 			}
 		}
 	}
+}
+
+#ajax_search_results {
+	display: none !important;
 }
 
 .common-home {

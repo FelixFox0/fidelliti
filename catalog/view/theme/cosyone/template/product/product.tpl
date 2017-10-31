@@ -6,6 +6,7 @@
 <script type="text/javascript" src="/catalog/view/theme/cosyone/js/cloud-zoom.1.0.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/js/lightgallery-all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js"></script>
 
 <div class="one-click mfp-hide">
   <div class="one-click__inner">
@@ -1376,7 +1377,7 @@ $('#button-cart').on('click', function() {
             });*/
             $.magnificPopup.open({
             items: {
-              src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title"><?php echo $text_add_cart; ?></h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
+              src: '<div class="white-popup _new"><div class="product"><h3 class="white-popup__title"><?php echo $text_add_cart; ?></h3><span>' + json['success'] + '</span></div><div class="bottom"><a class="button" onclick="$.magnificPopup.close();return false;" href="' + json['link_cart'] + '">' + json['text_cart'] + '</a> ' + '<a class="button" href="' + json['link_checkout'] + '">' + json['text_checkout'] + '</a></div></div>',
               type: 'inline'
             }
           });

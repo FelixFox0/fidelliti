@@ -109,6 +109,8 @@
  
 $(document).ready(function($) {
 
+
+
 	$('.main-slider__container').owlCarousel({
     loop:true,
     margin:0,
@@ -119,6 +121,13 @@ $(document).ready(function($) {
 
 
 	if($(window).innerWidth() < 1100) {
+		$(document).ready(function(){
+		  $('.product-page__image .owl-item img').wrap('<span style="display:inline-block"></span>')
+		    .css('display', 'block')
+		    .parent()
+		    .zoom();
+		});
+
 		$("#my-menu").mmenu({
 			navbar: {
 		    	title: null
