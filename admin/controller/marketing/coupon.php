@@ -176,6 +176,7 @@ class ControllerMarketingCoupon extends Controller {
 				'coupon_id'  => $result['coupon_id'],
 				'name'       => $result['name'],
 				'code'       => $result['code'],
+                                'country_code'=> $result['country_code'],
 				'discount'   => $result['discount'],
 				'date_start' => date($this->language->get('date_format_short'), strtotime($result['date_start'])),
 				'date_end'   => date($this->language->get('date_format_short'), strtotime($result['date_end'])),
@@ -559,7 +560,7 @@ class ControllerMarketingCoupon extends Controller {
 			$this->error['code'] = $this->language->get('error_code');
 		}
 
-		$coupon_info = $this->model_marketing_coupon->getCouponByCode($this->request->post['code']);
+		$coupon_info = $this->model_marketing_coupon->getCouponByCode($this->request->post['code'], $this->request->post['country_code']);
 
 		if ($coupon_info) {
 			if (!isset($this->request->get['coupon_id'])) {

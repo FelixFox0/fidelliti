@@ -19,6 +19,7 @@
       <li><a href="<?php echo $review; ?>"><?php echo $text_review; ?></a></li>
       <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
       <li><a href="<?php echo $informationf; ?>">Статические страницы</a></li>
+      <li><a href="<?php echo $label; ?>"><?php echo $text_label; ?></a></li>
     </ul>
   </li>
   <li id="extension"><a class="parent"><i class="fa fa-puzzle-piece fa-fw"></i> <span><?php echo $text_extension; ?></span></a>

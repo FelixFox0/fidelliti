@@ -52,7 +52,7 @@ class ControllerCommonCart extends Controller {
                 $data['text_cart2'] = $this->language->get('text_cart2');
 		$data['text_checkout'] = $this->language->get('text_checkout');
 		$data['text_recurring'] = $this->language->get('text_recurring');
-		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency'], '', true, strtolower($this->session->data['country_code'])));
 		$data['text_loading'] = $this->language->get('text_loading');
 
 		$data['button_remove'] = $this->language->get('button_remove');
@@ -93,14 +93,14 @@ class ControllerCommonCart extends Controller {
 
 			// Display prices
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency'], '', true, strtolower($this->session->data['country_code']));
 			} else {
 				$price = false;
 			}
 
 			// Display prices
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency']);
+				$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'], $this->session->data['currency'], '', true, strtolower($this->session->data['country_code']));
 			} else {
 				$total = false;
 			}
@@ -127,7 +127,7 @@ class ControllerCommonCart extends Controller {
 				$data['vouchers'][] = array(
 					'key'         => $key,
 					'description' => $voucher['description'],
-					'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency'])
+					'amount'      => $this->currency->format($voucher['amount'], $this->session->data['currency'], '', true, strtolower($this->session->data['country_code']))
 				);
 			}
 		}
@@ -137,7 +137,7 @@ class ControllerCommonCart extends Controller {
 		foreach ($totals as $total) {
 			$data['totals'][] = array(
 				'title' => $total['title'],
-				'text'  => $this->currency->format($total['value'], $this->session->data['currency']),
+				'text'  => $this->currency->format($total['value'], $this->session->data['currency'], '', true, strtolower($this->session->data['country_code'])),
 			);
 		}
 

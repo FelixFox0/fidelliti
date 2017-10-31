@@ -1,9 +1,21 @@
 <?php
 class ModelTotalCoupon extends Model {
-	public function getCoupon($code) {
+	public function getCoupon($code, $country_code='') {
+//            var_dump($country_code);
+//            die();
+                if(!$country_code){
+                    if(isset($this->session->data['country_code'])){
+                        $country_code = strtolower($this->session->data['country_code']);
+                    } else {
+                        $country_code = strtolower($this->request->get['country_code']);
+                    }
+                }
+                if(($country_code!='ua')&&($country_code!='ru')){
+                    $country_code = 'en';
+                }
 		$status = true;
 
-		$coupon_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE code = '" . $this->db->escape($code) . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
+		$coupon_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE code = '" . $this->db->escape($code) . "' AND country_code = '" . $this->db->escape($country_code) . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
 
 		if ($coupon_query->num_rows) {
 			if ($coupon_query->row['total'] > $this->cart->getSubTotal()) {

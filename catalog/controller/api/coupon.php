@@ -18,8 +18,8 @@ class ControllerApiCoupon extends Controller {
 			} else {
 				$coupon = '';
 			}
-
-			$coupon_info = $this->model_total_coupon->getCoupon($coupon);
+                        $this->request->get['country_code'] = strtolower($this->request->get['country_code']);
+			$coupon_info = $this->model_total_coupon->getCoupon($coupon, strtolower($this->request->get['country_code']));
 
 			if ($coupon_info) {
 				$this->session->data['coupon'] = $this->request->post['coupon'];

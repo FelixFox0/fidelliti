@@ -439,6 +439,48 @@ class ControllerCatalogCategory extends Controller {
 				);
 			}
 		}
+                
+                
+                		// Labels
+		$this->load->model('design/label');
+
+		if (isset($this->request->post['product_label_id_ua'])) {
+			$data['label_id_ua'] = $this->request->post['product_label_id'];
+		} elseif (!empty($category_info)) {
+			$data['label_id_ua'] = $category_info['label_id_ua'];
+		} else {
+			$data['label_id_ua'] = 0;
+		}
+		
+		if (isset($this->request->post['product_label_id_ru'])) {
+			$data['label_id_ru'] = $this->request->post['product_label_id'];
+		} elseif (!empty($category_info)) {
+			$data['label_id_ru'] = $category_info['label_id_ru'];
+		} else {
+			$data['label_id_ru'] = 0;
+		}
+                
+                
+                if (isset($this->request->post['product_label_id_en'])) {
+			$data['label_id_en'] = $this->request->post['product_label_id'];
+		} elseif (!empty($category_info)) {
+			$data['label_id_en'] = $category_info['label_id_en'];
+		} else {
+			$data['label_id_en'] = 0;
+		}
+
+		$data['product_labels'] = array();
+		$labels = $this->model_design_label->getLabels();
+		foreach ($labels as $label_info) {
+			if ($label_info) {
+				$data['product_labels'][] = array(
+					'product_label_id' => $label_info['product_label_id'],
+					'label_name' => $label_info['label_name']
+				);
+			}
+		}
+                
+                
 
 		$this->load->model('setting/store');
 

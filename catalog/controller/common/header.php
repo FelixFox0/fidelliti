@@ -1,6 +1,10 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+            
+//            var_dump($this->currency->format('1', $this->session->data['currency'], '', true, strtolower($this->session->data['country_code'])));
+//            var_dump($this->session->data['country_code']);
+            
 //            var_dump($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 //            die();
 //            var_dump($this->session->data['language_name']);

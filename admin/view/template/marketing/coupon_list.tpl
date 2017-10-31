@@ -45,6 +45,11 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_code; ?>"><?php echo $column_code; ?></a>
                     <?php } ?></td>
+                  
+                  <td class="text-left">
+                    <a href="<?php echo $sort_code; ?>">Регион</a>
+                  </td>
+                  
                   <td class="text-right"><?php if ($sort == 'c.discount') { ?>
                     <a href="<?php echo $sort_discount; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_discount; ?></a>
                     <?php } else { ?>
@@ -79,6 +84,7 @@
                     <?php } ?></td>
                   <td class="text-left"><?php echo $coupon['name']; ?></td>
                   <td class="text-left"><?php echo $coupon['code']; ?></td>
+                  <td class="text-left"><?php echo $coupon['country_code']; ?></td>
                   <td class="text-right"><?php echo $coupon['discount']; ?></td>
                   <td class="text-left"><?php echo $coupon['date_start']; ?></td>
                   <td class="text-left"><?php echo $coupon['date_end']; ?></td>

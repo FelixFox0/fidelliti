@@ -46,7 +46,7 @@ class ControllerQuickCheckoutVoucher extends Controller {
 		if (version_compare(VERSION, '2.1.0.0', '>=')) {
 			$this->load->model('total/coupon');
 			
-			$coupon_info = $this->model_total_coupon->getCoupon($this->request->post['coupon']);
+			$coupon_info = $this->model_total_coupon->getCoupon($this->request->post['coupon'], strtolower($this->session->data['country_code']));
 		} else {
 			$this->load->model('checkout/coupon');
 			

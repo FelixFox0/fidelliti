@@ -126,6 +126,7 @@
       
       <div class="row">
       
+      <?php if (false) { ?>
       <div class="col-sm-8">
       <?php if ($modules) { ?>
       <div class="row">
@@ -135,6 +136,8 @@
       </div>
       <?php } ?>
       </div>
+      <?php } ?>
+      
       
       <div class="col-sm-4">
       

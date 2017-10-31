@@ -13,6 +13,7 @@ class ControllerCommonMenu extends Controller {
 		$data['text_backup'] = $this->language->get('text_backup');
 		$data['text_banner'] = $this->language->get('text_banner');
 		$data['text_captcha'] = $this->language->get('text_captcha');
+		$data['text_label'] = "Стикеры";
 		$data['text_catalog'] = $this->language->get('text_catalog');
 		$data['text_category'] = $this->language->get('text_category');
 		$data['text_confirm'] = $this->language->get('text_confirm');
@@ -155,6 +156,7 @@ class ControllerCommonMenu extends Controller {
 		$data['payment'] = $this->url->link('extension/payment', 'token=' . $this->session->data['token'], true);
 		$data['paypal_search'] = $this->url->link('payment/pp_express/search', 'token=' . $this->session->data['token'], true);
 		$data['product'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'], true);
+		$data['label'] = $this->url->link('design/label', 'token=' . $this->session->data['token'], true);
 		$data['report_sale_order'] = $this->url->link('report/sale_order', 'token=' . $this->session->data['token'], true);
 		$data['report_sale_tax'] = $this->url->link('report/sale_tax', 'token=' . $this->session->data['token'], true);
 		$data['report_sale_shipping'] = $this->url->link('report/sale_shipping', 'token=' . $this->session->data['token'], true);

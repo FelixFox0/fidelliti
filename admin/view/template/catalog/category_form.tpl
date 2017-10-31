@@ -101,6 +101,61 @@
                   </div>
                 </div>
               </div>
+                
+                
+                
+                
+                              <div class="form-group">
+				<label class="col-sm-2 control-label" for="input-tax-class">Стикер ua</label>
+				<div class="col-sm-10">
+				  <select name="label_id_ua" id="input-product_label" class="form-control">
+					<option value="0"><?php echo $text_none; ?></option>
+					<?php foreach ($product_labels as $product_label) { ?>
+					<?php if ($product_label['product_label_id'] == $label_id_ua) { ?>
+					<option value="<?php echo $product_label['product_label_id']; ?>" selected="selected"><?php echo $product_label['label_name']; ?></option>
+					<?php } else { ?>
+					<option value="<?php echo $product_label['product_label_id']; ?>"><?php echo $product_label['label_name']; ?></option>
+					<?php } ?>
+					<?php } ?>
+				  </select>
+				</div>
+			  </div>
+			  <div class="form-group">
+			  <label class="col-sm-2 control-label" for="input-tax-class">Стикер ru</label>
+				<div class="col-sm-10">
+				  <select name="label_id_ru" id="input-product_label" class="form-control">
+					<option value="0"><?php echo $text_none; ?></option>
+					<?php foreach ($product_labels as $product_label) { ?>
+					<?php if ($product_label['product_label_id'] == $label_id_ru) { ?>
+					<option value="<?php echo $product_label['product_label_id']; ?>" selected="selected"><?php echo $product_label['label_name']; ?></option>
+					<?php } else { ?>
+					<option value="<?php echo $product_label['product_label_id']; ?>"><?php echo $product_label['label_name']; ?></option>
+					<?php } ?>
+					<?php } ?>
+				  </select>
+				</div>
+			  </div>
+                
+                          <div class="form-group">
+			  <label class="col-sm-2 control-label" for="input-tax-class">Стикер en</label>
+				<div class="col-sm-10">
+				  <select name="label_id_en" id="input-product_label" class="form-control">
+					<option value="0"><?php echo $text_none; ?></option>
+					<?php foreach ($product_labels as $product_label) { ?>
+					<?php if ($product_label['product_label_id'] == $label_id_en) { ?>
+					<option value="<?php echo $product_label['product_label_id']; ?>" selected="selected"><?php echo $product_label['label_name']; ?></option>
+					<?php } else { ?>
+					<option value="<?php echo $product_label['product_label_id']; ?>"><?php echo $product_label['label_name']; ?></option>
+					<?php } ?>
+					<?php } ?>
+				  </select>
+				</div>
+			  </div>
+                
+                
+                
+                
+                
               <div class="form-group">
                 <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
                 <div class="col-sm-10">

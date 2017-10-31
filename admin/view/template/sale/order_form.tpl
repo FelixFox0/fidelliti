@@ -2348,7 +2348,7 @@ $('#button-payment-method').on('click', function() {
 // Coupon
 $('#button-coupon').on('click', function() {
 	$.ajax({
-		url: '<?php echo $store_url; ?>index.php?route=api/coupon&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val(),
+		url: '<?php echo $store_url; ?>index.php?route=api/coupon&token=' + token + '&store_id=' + $('select[name=\'store_id\'] option:selected').val() + '&country_code=<?php echo $country_code ?>',
 		type: 'post',
 		data: 'coupon=' + $('input[name=\'coupon\']').val(),
 		dataType: 'json',
@@ -2501,6 +2501,7 @@ $('#button-save').on('click', function() {
 		dataType: 'json',
 		crossDomain: true,
 		beforeSend: function() {
+                        //$('#button-coupon').trigger('click');
 			$('#button-save').button('loading');
 		},
 		complete: function() {
