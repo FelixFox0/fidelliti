@@ -14,6 +14,8 @@ class ControllerModuleFeatured extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
+                
+                $this->load->model('catalog/label');
 
 		$data['products'] = array();
 
@@ -57,10 +59,35 @@ class ControllerModuleFeatured extends Controller {
 					} else {
 						$rating = false;
 					}
-
+                                        
+//                                        var_dump($product_info);
+//                                        die();
+                                        
+                                        $label = $this->model_catalog_label->getLabel($product_info['label']);
+//                          
+                                        if($label){
+                                            if($label['label_width'] && $label['label_height']){
+                                                $label['label_image'] = $this->model_tool_image->resize($label['label_image'],$label['label_width'], $label['label_height']);
+                                            }elseif($label['label_width']){
+                                                $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], $label['label_width']);
+                                            }elseif($label['label_height']){
+                                                $label['label_image'] = $this->model_tool_image->resize_height($label['label_image'], $label['label_height']);
+                                            }else{
+                                                $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], 45);
+                                            }
+                                        }
+                                        $images = $this->model_catalog_product->getProductImages($product_info['product_id']);
+//                                        var_dump($images);
+                                        if(isset($images[0]['image']) && !empty($images[0]['image'])){
+                                            $images =$images[0]['image'];
+                                        } else {
+                                            $images = 'no_image.png';
+                                        }
+                                        
 					$data['products'][] = array(
 						'product_id'  => $product_info['product_id'],
 						'thumb'       => $image,
+                                                'thumb_hover'  => $this->model_tool_image->resize($images, $setting['width'], $setting['height']),
 						'name'        => $product_info['name'],
 						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 						'price'       => $price,
@@ -68,6 +95,7 @@ class ControllerModuleFeatured extends Controller {
 						'tax'         => $tax,
                                                 'model'       => $product_info['model'],
 						'rating'      => $rating,
+                                                'label'       => $label,
 						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
 				}

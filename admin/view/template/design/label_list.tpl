@@ -62,9 +62,7 @@
                   <td class="text-left"><?php echo $label['label_name']; ?></td>
                   <td class="text-right">
 					  <?php if($label['label_image']) { ?>
-					  <img class="thumbnail pull-right" src="../image/<?php echo $label['label_image']; ?>" height="<?php echo $label['label_height'] ?>" width="<?php echo $label['label_width'] ?>"/>
-					  <?php } else { ?>
-						Пусто
+					  <img class="thumbnail pull-right" src="<?php echo $label['label_image']; ?>"/>
 					  <?php } ?>
 					</td>
                   <td class="text-right"><?php echo $label['sort_order']; ?></td>

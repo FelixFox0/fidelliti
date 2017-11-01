@@ -175,8 +175,21 @@ class ControllerDesignLabel extends Controller {
         $label_total = $this->model_design_label->getTotallabels();
 
         $results = $this->model_design_label->getLabels($filter_data);
-
+        
+        $this->load->model('tool/image');
+        
         foreach ($results as $result) {
+            if($result){
+                if($result['label_width'] && $result['label_height']){
+                    $result['label_image'] = $this->model_tool_image->resize($result['label_image'],$result['label_width'], $result['label_height']);
+                }elseif($result['label_width']){
+                    $result['label_image'] = $this->model_tool_image->resize_width($result['label_image'], $result['label_width']);
+                }elseif($result['label_height']){
+                    $result['label_image'] = $this->model_tool_image->resize_height($result['label_image'], $result['label_height']);
+                }else{
+                    $result['label_image'] = $this->model_tool_image->resize_width($result['label_image'], 45);
+                }
+            }
             $data['labels'][] = array(
                 'product_label_id' => $result['product_label_id'],
                 'label_name'            => $result['label_name'],
@@ -279,7 +292,7 @@ class ControllerDesignLabel extends Controller {
         $data['text_amount'] = $this->language->get('text_amount');
 
         $data['entry_name'] = $this->language->get('entry_name');
-        $data['entry_label_height'] = $this->language->get('entry_label_width');
+        $data['entry_label_height'] = $this->language->get('entry_label_height');
         $data['entry_label_width'] = $this->language->get('entry_label_width');
         $data['entry_image'] = $this->language->get('entry_image');
         $data['entry_sort_order'] = $this->language->get('entry_sort_order');
@@ -352,7 +365,7 @@ class ControllerDesignLabel extends Controller {
         } elseif (!empty($label_info)) {
             $data['label_height'] = $label_info['label_height'];
         } else {
-            $data['label_height'] = '75';
+            $data['label_height'] = '0';
         }
 
         if (isset($this->request->post['label_width'])) {
@@ -360,7 +373,7 @@ class ControllerDesignLabel extends Controller {
         } elseif (!empty($label_info)) {
             $data['label_width'] = $label_info['label_width'];
         } else {
-            $data['label_width'] = '75';
+            $data['label_width'] = '0';
         }
 
         if (isset($this->request->post['image'])) {
@@ -415,17 +428,17 @@ class ControllerDesignLabel extends Controller {
             $this->error['label_name'] = $this->language->get('error_name');
         }
 
-        if ((utf8_strlen($this->request->post['label_height']) == '')) {
-            $this->error['label_height'] = $this->language->get('error_label_height');
-        }
+//        if ((utf8_strlen($this->request->post['label_height']) == '')) {
+//            $this->error['label_height'] = $this->language->get('error_label_height');
+//        }
 
         if ((float)$this->request->post['label_height'] < 0) {
             $this->error['label_height'] = $this->language->get('error_label_height_zero');
         }
 
-        if ((utf8_strlen($this->request->post['label_width']) == '')) {
-            $this->error['label_width'] = $this->language->get('error_label_width');
-        }
+//        if ((utf8_strlen($this->request->post['label_width']) == '')) {
+//            $this->error['label_width'] = $this->language->get('error_label_width');
+//        }
 
         if ((float)$this->request->post['label_width'] < 0) {
             $this->error['label_width'] = $this->language->get('error_label_width_zero');

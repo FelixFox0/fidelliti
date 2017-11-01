@@ -8,6 +8,8 @@
     --><div class="item contrast_font product-layout">
     <!-- <a href="javascript:void(0)" class="icon-cart2 quick-buy" onclick="cart.add('<?php echo $product['product_id']; ?>')"></a> -->
     <a href=".pop-prod<?php echo $product['product_id']; ?>" class="icon-cart2 quick-buy open-popup"></a> 
+    
+        
        <div class="image">
         <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
         <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $meta_title; ?>" /></a></div>
@@ -21,6 +23,10 @@
         <a href="<?php echo $product['quickview']; ?>" rel="nofollow" class="button quickview"><i class="fa fa-eye"></i> <?php echo $cosyone_text_ql; ?></a>
         </div>
     	<?php } ?>
+        <?php if ($product['label']) { ?>
+            <img src="<?php echo $product['label']['label_image']; ?>" alt="<?php echo $product['label']['label_name']; ?>" class="product-layout__bage">
+        <?php } ?>  
+    
         </div><!-- image ends -->
       <div class="information_wrapper">
       <div class="left">
@@ -99,3 +105,19 @@
       </div>
     </div><!--
     --><?php } ?>
+    
+<style>
+    .product-layout__bage{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    .product-layout:hover .product-layout__bage{
+        opacity: 0;
+        transition: .9s;
+    }
+    .product-layout:not(:hover) .product-layout__bage{
+        opacity: 1;
+        transition: 1.5s;
+    }
+</style>

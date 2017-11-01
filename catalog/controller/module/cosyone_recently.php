@@ -29,6 +29,8 @@ class ControllerModuleCosyoneRecently extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
+                
+                $this->load->model('catalog/label');
 
 		$data['products'] = array();
 
@@ -93,6 +95,20 @@ class ControllerModuleCosyoneRecently extends Controller {
 				} else {
 				$sales_percantage = false;
 				}
+                                
+                                $label = $this->model_catalog_label->getLabel($product_info['label']);
+//                          
+                                if($label){
+                                    if($label['label_width'] && $label['label_height']){
+                                        $label['label_image'] = $this->model_tool_image->resize($label['label_image'],$label['label_width'], $label['label_height']);
+                                    }elseif($label['label_width']){
+                                        $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], $label['label_width']);
+                                    }elseif($label['label_height']){
+                                        $label['label_image'] = $this->model_tool_image->resize_height($label['label_image'], $label['label_height']);
+                                    }else{
+                                        $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], 45);
+                                    }
+                                }
 				
 				$data['products'][] = array(
 					'product_id'  => $product_info['product_id'],
@@ -107,6 +123,7 @@ class ControllerModuleCosyoneRecently extends Controller {
 					'sales_percantage' => number_format($sales_percantage, 0, ',', '.'),
 			 		'brand_name' 	 => $product_info['manufacturer'],
                                         'special_date_end' => 0,
+                                        'label'       => $label,
 				);
 			}
 		}

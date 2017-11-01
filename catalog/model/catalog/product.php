@@ -20,14 +20,17 @@ class ModelCatalogProduct extends Model {
                     $query1->row['unit'] = '';
                 }
 //                 $query1->row['unit'];
-//                var_dump($query1->row['unit']);
+//                var_dump($query->row);
 //                die();
                 if($this->session->data['country_code']=='ua'){
                     $price = 'price';
+                    $label = 'label_id_ua';
                 }elseif($this->session->data['country_code']=='ru'){
                     $price = 'price_ru';
+                    $label = 'label_id_ru';
                 }else{
                     $price = 'price_en';
+                    $label = 'label_id_en';
                 }
 		if ($query->num_rows) {
 			return array(
@@ -78,6 +81,7 @@ class ModelCatalogProduct extends Model {
                                 'sku'              => $query->row['sku'],
                                 'detali'           => $query->row['detali'],
                                 'razmer'           => $query->row['razmer'],
+                                'label'            => $query->row[$label],
 			);
 		} else {
 			return false;

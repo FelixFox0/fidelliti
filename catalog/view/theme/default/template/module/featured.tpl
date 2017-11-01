@@ -48,13 +48,26 @@
 <div class="fid-collections">
   <div class="container">
       <h3 style="text-align: center; font-weight: 700;"><?php echo $heading_title; ?></h3>
-    <div class="fid-collections__items">
+    <div class="fid-collections__items product-grid">
         
       <?php foreach ($products as $product) { ?>
-      <div class="fid-collections__item">
-        <div class="fid-collections__item-img">
-          <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt=""></a>
+      <div class="fid-collections__item product-layout">
+        <div class="fid-collections__item-img image">
+         <!--<a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt=""></a>-->
+          
+          <?php if ($product['thumb_hover']) { ?>
+        <div class="image_hover" style="display: block; opacity: 0;"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="" /></a></div>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="" /></a>
+        <?php } elseif ($product['thumb']) { ?>
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="" /></a>
+        <?php } ?>
+        
+        <?php if ($product['label']) { ?>
+            <img src="<?php echo $product['label']['label_image']; ?>" alt="<?php echo $product['label']['label_name']; ?>" class="product-layout__bage">
+        <?php } ?>  
         </div>
+        
+          
         <!--<div class="fid-collections__item-articul">
           <?php echo $product['model']; ?>
         </div>-->
@@ -83,3 +96,28 @@
   </div>
   
 </div>
+
+<style>
+    .image_hover:hover{
+        opacity: 1!important;
+        transition: .7s;
+    }
+    .image_hover:not(:hover){
+        opacity: 0!important;
+        transition: .7s;
+    }
+    .product-layout__bage{
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        /*width: 35px;*/
+    }
+    .image:hover .product-layout__bage{
+        opacity: 0;
+        transition: .9s;
+    }
+    .image:not(:hover) .product-layout__bage{
+        opacity: 1;
+        transition: 1.5s;
+    }
+</style>

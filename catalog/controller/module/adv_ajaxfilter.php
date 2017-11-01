@@ -512,6 +512,8 @@ class ControllerModuleAdvajaxfilter extends Controller {
 			$data['cosyone_default_view'] = $this->config->get('cosyone_default_view');
 
 		$data['products'] = array();
+                
+                $this->load->model('catalog/label');
 
 		foreach ($results as $result) {
 			if ($result['image']) {
@@ -564,6 +566,22 @@ class ControllerModuleAdvajaxfilter extends Controller {
 				}
 				// Cosyone end
 
+                                
+                        $label = $this->model_catalog_label->getLabel($result['label']);
+//                          
+                        if($label){
+                            if($label['label_width'] && $label['label_height']){
+                                $label['label_image'] = $this->model_tool_image->resize($label['label_image'],$label['label_width'], $label['label_height']);
+                            }elseif($label['label_width']){
+                                $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], $label['label_width']);
+                            }elseif($label['label_height']){
+                                $label['label_image'] = $this->model_tool_image->resize_height($label['label_image'], $label['label_height']);
+                            }else{
+                                $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], 45);
+                            }
+                        }
+                        
+                                
 			$data['products'][] = array(
 				'product_id'  => $result['product_id'],
 				'thumb'       => $image,
@@ -571,6 +589,7 @@ class ControllerModuleAdvajaxfilter extends Controller {
 				'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
 				'price'       => $price,
 				'special'     => $special,
+                                'label'       => $label,
 				
 				// Cosyone custom code starts	
 			  'sales_percantage' => number_format($sales_percantage, 0, ',', '.'),

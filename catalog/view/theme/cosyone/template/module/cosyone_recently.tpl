@@ -8,12 +8,20 @@
       <!--
     --><div class="item contrast_font product-layout">
        <div class="image">
-        <!-- <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
+        <?php if (false) { ?>   
+        <?php if ($product['thumb_hover'] && $cosyone_rollover_effect == 'enabled') { ?>
         <div class="image_hover"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb_hover']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
         <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
         <?php } elseif ($product['thumb']) { ?> -->
         <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
-        <!-- <?php } ?> -->
+        <?php } ?>
+
+        <?php } ?>
+        
+        <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+        <?php if ($product['label']) { ?>
+            <img src="<?php echo $product['label']['label_image']; ?>" alt="<?php echo $product['label']['label_name']; ?>" class="product-layout__bage">
+        <?php } ?>  
 
         <?php if ($cosyone_text_ql && false) {?>
         <div class="main_quicklook">
@@ -31,7 +39,7 @@
       <div class="rating"><span class="rating r<?php echo $product['rating']; ?>"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
       <?php } ?>
       </div>
-      <div class="description main_font"><?php echo $product['description']; ?></div>
+      <div class="description main_font"><?php // echo $product['description']; ?></div>
       <?php if ($product['price']) { ?>
       <div class="price">
         <?php if (!$product['special']) { ?>
@@ -101,3 +109,29 @@ $(document).ready(function() {
   }); 
 }); 
 </script>
+
+<style>
+    .image_hover:hover{
+        opacity: 1!important;
+        transition: .7s;
+    }
+    .image_hover:not(:hover){
+        opacity: 0!important;
+        transition: .7s;
+    }
+    .product-layout__bage{
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        width: auto!important;
+        /*width: 35px;*/
+    }
+    .image:hover .product-layout__bage{
+        opacity: 0;
+        transition: .9s;
+    }
+    .image:not(:hover) .product-layout__bage{
+        opacity: 1;
+        transition: 1.5s;
+    }
+</style>
