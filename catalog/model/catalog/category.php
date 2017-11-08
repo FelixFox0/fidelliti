@@ -1,15 +1,50 @@
 <?php
 class ModelCatalogCategory extends Model {
 	public function getCategory($category_id) {
+            if($this->session->data['country_code']=='ua'){
+                $country_code = 'ua';
+            }elseif($this->session->data['country_code']=='ru'){
+                $country_code = 'ru';
+            }else{
+                $country_code = 'en';
+            }
+            if($this->session->data['country_code']=='ua'){
+                $label = 'label_id_ua';
+            }elseif($this->session->data['country_code']=='ru'){
+                $label = 'label_id_ru';
+            }else{
+                $label = 'label_id_en';
+            }
+            
 		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id) LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.category_id = '" . (int)$category_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND c.status = '1'");
-
+                $query->row['label'] = $query->row[$label];
+                
 		return $query->row;
 	}
 
 	public function getCategories($parent_id = 0) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "category c LEFT JOIN " . DB_PREFIX . "category_description cd ON (c.category_id = cd.category_id) LEFT JOIN " . DB_PREFIX . "category_to_store c2s ON (c.category_id = c2s.category_id) WHERE c.parent_id = '" . (int)$parent_id . "' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND c2s.store_id = '" . (int)$this->config->get('config_store_id') . "'  AND c.status = '1' ORDER BY c.sort_order, LCASE(cd.name)");
-
-		return $query->rows;
+                
+                 if($this->session->data['country_code']=='ua'){
+                    $country_code = 'ua';
+                }elseif($this->session->data['country_code']=='ru'){
+                    $country_code = 'ru';
+                }else{
+                    $country_code = 'en';
+                }
+                if($this->session->data['country_code']=='ua'){
+                    $label = 'label_id_ua';
+                }elseif($this->session->data['country_code']=='ru'){
+                    $label = 'label_id_ru';
+                }else{
+                    $label = 'label_id_en';
+                }
+                
+                foreach ($query->rows as $key => $value) {
+                    $query->rows[$key]['label'] = $value[$label];
+                }
+                
+		return $query->rows;                
 	}
 
 	public function getCategoryFilters($category_id) {

@@ -54,6 +54,21 @@ class ControllerCommonFooter extends Controller {
 				);
 			}
 		}
+                
+                
+                 $this->load->model('catalog/informationf');
+
+		$data['informations'] = array();
+//                var_dump($this->model_catalog_informationf->getInformations());
+		foreach ($this->model_catalog_informationf->getInformations() as $result) {
+//                    var_dump($result);
+			/*if ($result['top']) {*/
+				$data['informations'][$result['information_id']] = array(
+					'title' => $result['title'],
+					'href'  => $this->url->link('information/informationf', 'information_id=' . $result['information_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
+				);
+			/*}*/
+		}
 
 		$data['contact'] = $this->url->link('information/contact','', false, $this->session->data['country_code'], $this->session->data['language_name']);
 		$data['return'] = $this->url->link('account/return/add', '', true, $this->session->data['country_code'], $this->session->data['language_name']);
@@ -91,6 +106,8 @@ class ControllerCommonFooter extends Controller {
                 
 //		$data['powered'] = sprintf(date('Y', time()), $this->config->get('config_name'), $this->language->get('text_powered'));
 
+                $data['our_stores'] = $this->url->link('information/informationf','information_id=9', false, $this->session->data['country_code'], $this->session->data['language_name']);
+                
                 $data['powered'] = '© ' . date('Y', time()) . ' ' . $this->config->get('config_name') . $this->language->get('text_powered');
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {

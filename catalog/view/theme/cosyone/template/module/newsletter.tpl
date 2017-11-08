@@ -88,7 +88,8 @@ $('#button-newsletter<?php echo $module; ?>').on('click', function() {
 				alert(json['error']['warning']);
 			} else {
 				alert(json['success']);
-				
+                                
+				dataLayer.push({'event': 'sub'});
 				$('#newsletter_email').val('');
 			}
 		}

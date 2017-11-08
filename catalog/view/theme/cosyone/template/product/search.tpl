@@ -1,4 +1,21 @@
 <?php echo $header; ?>
+
+<style>
+    .product-layout__bage{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    .product-layout:hover .product-layout__bage{
+        opacity: 0;
+        transition: .6s;
+    }
+    .product-layout:not(:hover) .product-layout__bage{
+        opacity: 1;
+        transition: 1.5s;
+    }
+</style>
+
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -119,6 +136,10 @@
         <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a>
         <?php } ?>
 
+        <?php if ($product['label']) { ?>
+            <img src="<?php echo $product['label']['label_image']; ?>" alt="<?php echo $product['label']['label_name']; ?>" class="product-layout__bage">
+        <?php } ?>  
+        
         </div><!-- image ends -->
       <div class="information_wrapper">
       <div class="left">
@@ -190,7 +211,7 @@
             <a href="javascript:void(0)" class="button" onclick="cart.add('<?php echo $product['product_id']; ?>')"><?php echo $text_bye; ?></a>
           </div>
           <div class="product-popup__list">
-            <a href="javascript:void(0)" class="button" onclick="wishlist.add('<?php echo $product['product_id']; ?>')"><?php echo $text_wish; ?></a>
+            <a href="javascript:void(0)" class="button wishlistTrigger" onclick="wishlist.add('<?php echo $product['product_id']; ?>')"><?php echo $text_wish; ?></a>
           </div>
           <div class="product-popup__more"><a href="#"><?php echo $text_dop; ?></a></div> 
         </div>

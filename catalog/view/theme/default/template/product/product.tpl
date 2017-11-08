@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+ <script>dataLayer.push({'event': 'product'});</script>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>

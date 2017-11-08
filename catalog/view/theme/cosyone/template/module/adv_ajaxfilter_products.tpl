@@ -98,7 +98,7 @@
             <a href="javascript:void(0)" class="button" onclick="cart.add('<?php echo $product['product_id']; ?>')"><?php echo $text_bye; ?></a>
           </div>
           <div class="product-popup__list">
-            <a href="javascript:void(0)" class="button" onclick="wishlist.add('<?php echo $product['product_id']; ?>')"><?php echo $text_wish; ?></a>
+            <a href="javascript:void(0)" class="button wishlistTrigger" onclick="wishlist.add('<?php echo $product['product_id']; ?>')"><?php echo $text_wish; ?></a>
           </div>
           <div class="product-popup__more"><a href="#"><?php echo $text_dop; ?></a></div> 
         </div>

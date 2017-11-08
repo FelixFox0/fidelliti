@@ -95,7 +95,7 @@
        </tr>
        <tr class='btns'>
          <td colspan="4">
-           <a href="" class="sq_icon wishlist_add" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="<?php echo $text_wishlist; ?>"><i class="fa fa-heart-o"  ></i> <?php echo $text_wishlist; ?></a>
+           <a href="" class="sq_icon wishlist_add wishlistTrigger" onclick="wishlist.add(<?php echo $product['cart_id']; ?>)" data-tooltip="<?php echo $text_wishlist; ?>"><i class="fa fa-heart-o"  ></i> <?php echo $text_wishlist; ?></a>
            <a href="<?php echo $product['cart_id']; ?>" data-tooltip="<?php echo $button_remove; ?>" class="button-remove sq_icon" data-remove="<?php echo $product['cart_id']; ?>"><i class="fa "></i><?php echo $text_remove_but; ?></a>
          </td>
        </tr>

@@ -215,6 +215,8 @@ class ControllerProductSearch extends Controller {
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
+                        
+                        $this->load->model('catalog/label');
 
 			foreach ($results as $result) {
 				if ($result['image']) {
@@ -246,6 +248,21 @@ class ControllerProductSearch extends Controller {
 				} else {
 					$rating = false;
 				}
+                                
+                                $label = $this->model_catalog_label->getLabel($result['label']);
+//                          
+                                if($label){
+                                    if($label['label_width'] && $label['label_height']){
+                                        $label['label_image'] = $this->model_tool_image->resize($label['label_image'],$label['label_width'], $label['label_height']);
+                                    }elseif($label['label_width']){
+                                        $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], $label['label_width']);
+                                    }elseif($label['label_height']){
+                                        $label['label_image'] = $this->model_tool_image->resize_height($label['label_image'], $label['label_height']);
+                                    }else{
+                                        $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], 45);
+                                    }
+                                }
+                        
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
@@ -257,6 +274,7 @@ class ControllerProductSearch extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
+                                        'label'       =>  $label,
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name'])
 				);
 			}

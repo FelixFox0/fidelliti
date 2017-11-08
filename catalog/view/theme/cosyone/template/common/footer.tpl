@@ -24,6 +24,7 @@
               <?php } ?>
               <li></i><a href="<?php echo $contact; ?>"><?php echo $text_call_me; ?></a></li>
               <li></i><a href="<?php echo $faq; ?>"><?php echo $text_faq; ?></a></li>
+              <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
             </ul>
         </div>
       </div>
@@ -76,6 +77,8 @@
       <?php } ?>
       <li></i><a href="<?php echo $contact; ?>"><?php echo $text_call_me; ?></a></li>
       <li></i><a href="<?php echo $faq; ?>"><?php echo $text_faq; ?></a></li>
+      <li><a href="<?php echo $our_stores; ?>"><?php echo $informations[9]['title']; ?></a></li>
+      <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
     </ul>
   </div><!--
   --><div class="column">

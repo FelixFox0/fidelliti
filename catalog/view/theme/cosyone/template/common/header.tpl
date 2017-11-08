@@ -60,6 +60,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   });
 </script>
 
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/41e130d1a7327afff797fbea3/d9de2107ba4b474987bf74e05.js");</script>
 
 </head>
 <body class="<?php echo $class; ?>">
@@ -155,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <li class=""><a href="<?php echo $my_company; ?>"><?php echo $text_about; ?></a></li>
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_sotr; ?></a></li>
                   <li class=""><a href="<?php echo $our_production; ?>"><?php echo $text_our_prod; ?></a></li>
-                  <li class=""><a href="<?php echo $our_stores; ?>"><?php echo $informations[9]['title']; ?></a></li>
+                  <!--<li class=""><a href="<?php echo $our_stores; ?>"><?php echo $informations[9]['title']; ?></a></li>-->
                   <li class=""><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
                 </ul>
 
@@ -163,7 +164,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </li>
                 
         <?php } ?>
-
+                <li><a class="mmobile-wicon" href="<?php echo $our_stores; ?>" class=""><?php echo $informations[9]['title']; ?><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
                 <li><a class="mmobile-wicon" href="<?php echo $customer_service; ?>"><?php echo $text_customer; ?> <i class=""><img src="/image/menu_icon_phone2.png" alt=""></i></a></li>
                 <li><a class="mmobile-wicon" href="<?php echo $login; ?>"><?php echo $text_login; ?> <i class="icon-maaan"></i></li>
                 <li><a class="mmobile-lang text-center open-popup" href=".popup-countries"><i class="fa fa-globe" aria-hidden="true"></i></i><?php echo $shippig; ?> <span> <?php echo ' ' . strtoupper($country_s); ?></span></a></li>

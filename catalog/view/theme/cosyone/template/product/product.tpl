@@ -8,6 +8,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js"></script>
 
+
+<?php if ($label) { ?>
+<style>
+    .owl-item:first-child li span:last-child{
+        position: static !important;
+    }
+</style>
+<?php } ?>  
+<style>
+    .lightSlider>li>img{
+        max-width: 417px;
+    }
+</style>
+
+
 <div class="one-click mfp-hide">
   <div class="one-click__inner">
     <div class="one-click__header">
@@ -99,15 +114,20 @@
 
   
   <div class="product-page _top">
+      
     <div class="container">
       <div class="product-page__container">
       <div class="product-page__image">
         <div class="product-slider" id="#imageGallery">
+            
             <?php if ($thumb) { ?>
               <?php if ($cosyone_product_zoom) { ?>
               <li data-thumb="<?php echo $thumb; ?>" data-src="<?php echo $popup; ?>">
+                  
                 <img itemprop="image" src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $meta_title; ?>" />
-
+                <?php if ($label) { ?>
+                    <img src="<?php echo $label['label_image']; ?>" alt="<?php echo $label['label_name']; ?>" class="product-layout__bage">
+                <?php } ?>  
               </li>
 
               <?php } else { ?>
@@ -124,6 +144,7 @@
                 </li>
                 <?php } ?>
           </div>
+          
       </div>
       <div class="product-page__info" id="product">
             <div class="product-page__title">
@@ -308,7 +329,7 @@
                       
                       
                       <div class="icons_wrapper">
-                <a class="" onclick="wishlist.add('<?php echo $product_id; ?>');" ><i class="fa fa-heart-o"></i><?php echo $text_add_favorite; ?></a>
+                <a class ="wishlistTrigger"  onclick="wishlist.add('<?php echo $product_id; ?>');" ><i class="fa fa-heart-o wishlistTrigger"></i><?php echo $text_add_favorite; ?></a>
                 <a href="#"><?php echo $text_delivery; ?></a>
     
                     </div>
@@ -778,7 +799,7 @@
           <button type="submit" id="one_click" data-loading-text="<?php echo $text_loading; ?>" class="button contrast"><i class="fa fa-shopping-cart"></i> <?php echo $button_cart; ?></button>
           
           <div class="icons_wrapper">
-    <a class="sq_icon" onclick="wishlist.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart"></i></a>
+    <a class="sq_icon wishlistTrigger" onclick="wishlist.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart wishlistTrigger"></i></a>
     <a class="sq_icon compare" onclick="compare.add('<?php echo $product_id; ?>');" data-tooltip="<?php echo $button_compare; ?>"><i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left main_compare"></i></a>
         </div>
         
@@ -1172,12 +1193,12 @@
       <button type="submit" class="button contrast" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');" ><i class="fa fa-shopping-cart"></i> <?php echo $button_cart; ?></button>
     </div>  
         <div class="icons_wrapper">
-    <a class="sq_icon" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart"></i></a><a class="sq_icon compare" onclick="compare.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_compare; ?>"><i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left"></i></a>
+    <a class="sq_icon wishlistTrigger" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="wishlistTrigger fa fa-heart"></i></a><a class="sq_icon compare" onclick="compare.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_compare; ?>"><i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left"></i></a>
     <?php if ($cosyone_text_ql) { ?>
     <a href="<?php echo $product['quickview']; ?>" rel="nofollow" class="sq_icon qlook quickview" data-tooltip="<?php echo $cosyone_text_ql; ?>"><i class="fa fa-eye"></i></a>
     <?php } ?>
     <a class="sq_icon contrast add_to_cart" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');" data-tooltip="<?php echo $button_cart; ?>"><i class="fa fa-shopping-cart"></i></a>
-    <a class="plain_link wishlist" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" ><?php echo $button_wishlist; ?></a>
+    <a class="plain_link wishlist wishlistTrigger" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" ><?php echo $button_wishlist; ?></a>
     <a class="plain_link compare" onclick="compare.add('<?php echo $product['product_id']; ?>');" ><?php echo $button_compare; ?></a>
         </div>
         </div>
@@ -1318,6 +1339,15 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	});
 });
 //--></script> 
+    
+    
+    <script type="text/javascript"><!--
+    $('#lg-zoom-in').on('click', function() {
+    console.log('azazaza');
+    
+    });
+    //--></script> 
+    
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
 	$.ajax({
@@ -1551,7 +1581,7 @@ $('.product-slider').lightSlider({
           nextHtml: '<i class="fa fa-angle-double-down" aria-hidden="true"></i>',
             onSliderLoad: function(el) {
               el.lightGallery({
-                  selector: '.product-slider .lslide'
+                  selector: '.product-slider .lslide',
               });
           },
           responsive : [

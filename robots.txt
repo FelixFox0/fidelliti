@@ -1,5 +1,4 @@
 User-agent: *
-Allow: /
 Disallow: /*route=account/
 Disallow: /*route=affiliate/
 Disallow: /*route=checkout/

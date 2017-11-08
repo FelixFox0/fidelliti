@@ -88,6 +88,7 @@ class ControllerProductCategory extends Controller {
 		}
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
+//                var_dump($category_info);
 
 		if ($category_info) {
 			$this->document->setTitle($category_info['meta_title']);
@@ -149,24 +150,43 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
-
+                        
+                        $this->load->model('catalog/label');
+                        
+                        
 			$data['categories'] = array();
 
 			$results = $this->model_catalog_category->getCategories($category_id);
 
 			foreach ($results as $result) {
+//                            var_dump($result);
 				$filter_data = array(
 					'filter_category_id'  => $result['category_id'],
 					'filter_sub_category' => true
 				);
+                                
+                                $label = $this->model_catalog_label->getLabel($result['label']);
+//                          
+                                if($label){
+                                    if($label['label_width'] && $label['label_height']){
+                                        $label['label_image'] = $this->model_tool_image->resize($label['label_image'],$label['label_width'], $label['label_height']);
+                                    }elseif($label['label_width']){
+                                        $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], $label['label_width']);
+                                    }elseif($label['label_height']){
+                                        $label['label_image'] = $this->model_tool_image->resize_height($label['label_image'], $label['label_height']);
+                                    }else{
+                                        $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], 45);
+                                    }
+                                }
 
 				$data['categories'][] = array(
 					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
 					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url, false, $this->session->data['country_code'], $this->session->data['language_name']),
                                         'thumb' => ($result['image']) ? $this->model_tool_image->resize($result['image'], 675, 500) : $this->model_tool_image->resize('no_image.png', 675, 500),
+                                        'label' => $label,
 				);
 			}
-
+//                        var_dump($data['categories']);
 			$data['products'] = array();
 
 			$filter_data = array(

@@ -303,7 +303,7 @@ class ControllerProductProduct extends Controller {
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
-				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 417, 706);
+				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 750, 1360, 100);
 				$data['popup_big'] = $this->model_tool_image->resize($product_info['image'], 283, 513);
 			} else {
 				$data['popup'] = '';
@@ -321,7 +321,7 @@ class ControllerProductProduct extends Controller {
 
 			foreach ($results as $result) {
 				$data['images'][] = array(
-					'popup' => $this->model_tool_image->resize($result['image'], 417, 706),
+					'popup' => $this->model_tool_image->resize($result['image'], 750, 1360, 100),
 					'popup_big' => $this->model_tool_image->resize($result['image'], 283, 513),
 					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
 				);
@@ -398,6 +398,23 @@ class ControllerProductProduct extends Controller {
 				);
 			}
 
+                        $this->load->model('catalog/label');
+                        $label = $this->model_catalog_label->getLabel($product_info['label']);
+//                          
+                        if($label){
+                            if($label['label_width'] && $label['label_height']){
+                                $label['label_image'] = $this->model_tool_image->resize($label['label_image'],$label['label_width'], $label['label_height']);
+                            }elseif($label['label_width']){
+                                $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], $label['label_width']);
+                            }elseif($label['label_height']){
+                                $label['label_image'] = $this->model_tool_image->resize_height($label['label_image'], $label['label_height']);
+                            }else{
+                                $label['label_image'] = $this->model_tool_image->resize_width($label['label_image'], 45);
+                            }
+                        }
+                        
+                        $data['label'] = $label;
+                        
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
 			} else {

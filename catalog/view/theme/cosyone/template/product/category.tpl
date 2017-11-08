@@ -1,4 +1,22 @@
 <?php echo $header; ?>
+<style>
+    .product-layout__bage{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        width: auto!important;
+        height: auto!important;
+    }
+    .contrast_font:hover .product-layout__bage{
+        opacity: 0!important;
+        transition: .4s!important;
+    }
+    .contrast_font:not(:hover) .product-layout__bage{
+        opacity: 1;
+        transition: .7s!important;
+    }
+</style>
 <div class="container ">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -40,7 +58,7 @@
     <div id="content" class="<?php echo $class; ?> <?php echo $cosyone_grid_category; ?>">
     
   
-  <!--<h1><?php //echo $heading_title; ?></h1>-->
+        <h1 class="container" style="padding-left:30px; padding-right:30px; margin-top:15px;"><?php echo $heading_title; ?></h1>
   <?php if ($thumb || $description) { ?>
   <div class="category-info">
 	<?php if ($cosyone_category_thumb == 'enabled' && ($thumb)) { ?>
@@ -65,7 +83,12 @@
 
     <div class="item contrast_font">
     <?php if ($category['thumb']) { ?>
-	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a></div>
+	<div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" alt="<?php echo $meta_title; ?>" /></a>
+        <?php if ($category['label']) { ?>
+            <img src="<?php echo $category['label']['label_image']; ?>" alt="<?php echo $category['label']['label_name']; ?>" class="product-layout__bage">
+        <?php } ?>  
+        </div>
+        
 	<?php } ?>
     <div class="name"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></div>
     </div>
@@ -143,13 +166,13 @@
       <button type="submit" class="button contrast" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');" ><i class="fa fa-shopping-cart"></i> <?php echo $button_cart; ?></button>
     </div>  
     <div class="icons_wrapper">
-    <a class="sq_icon" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart"></i></a>
+    <a class="sq_icon wishlistTrigger" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_wishlist; ?>"><i class="fa fa-heart"></i></a>
     <a class="sq_icon compare" onclick="compare.add('<?php echo $product['product_id']; ?>');" data-tooltip="<?php echo $button_compare; ?>"><i class="fa fa-arrow-right"></i><i class="fa fa-arrow-left"></i></a>
     <?php if ($cosyone_text_ql) {?>
     <a href="<?php echo $product['quickview']; ?>" rel="nofollow" class="sq_icon qlook quickview" data-tooltip="<?php echo $cosyone_text_ql; ?>"><i class="fa fa-eye"></i></a>
     <?php } ?>
     <a class="sq_icon contrast add_to_cart" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');" data-tooltip="<?php echo $button_cart; ?>"><i class="fa fa-shopping-cart"></i></a>
-    <a class="plain_link wishlist" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" ><?php echo $button_wishlist; ?></a>
+    <a class="plain_link wishlist wishlistTrigger" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" ><?php echo $button_wishlist; ?></a>
     <a class="plain_link compare" onclick="compare.add('<?php echo $product['product_id']; ?>');" ><?php echo $button_compare; ?></a>
     </div>
 

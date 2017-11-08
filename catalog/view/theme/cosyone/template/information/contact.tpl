@@ -41,9 +41,9 @@
 
 <div class="contact-page">
   <div class="contact-page__form-wrap">
-    <div class="contact-page__title">
+    <!--<div class="contact-page__title">
       <?php echo $text_location; ?>
-    </div>
+    </div>-->
     <div class="contact-page__tabs">
       <a href="#" class="button active">E-mail</a>
       <a href="#" class="button contrast js-toggler"><?php echo $text_number; ?></a>

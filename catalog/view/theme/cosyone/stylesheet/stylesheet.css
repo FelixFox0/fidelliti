@@ -2409,8 +2409,8 @@ a.button.remove:hover, .button.remove:hover {
 .product-grid .price-old {
 	display:block;
 }
-.product-grid .price-new {
-	
+.price-new {
+	color: #653133!important;
 }
 .product-grid .price .price-tax {
 	display: none;
@@ -4430,4 +4430,8 @@ input#shipping{
     .white-popup._new a {
         margin-top: 5px!important;
     }
+}
+
+.product-layout div{
+    border: none!important;
 }
