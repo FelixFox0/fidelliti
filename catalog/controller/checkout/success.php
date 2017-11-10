@@ -39,7 +39,7 @@ class ControllerCheckoutSuccess extends Controller {
 			unset($this->session->data['voucher']);
 			unset($this->session->data['vouchers']);
 			unset($this->session->data['totals']);
-                        
+                        /*
                         $this->load->model('account/order');
                         var_dump($this->model_account_order->getOrder($order_id));
                         var_dump($this->model_account_order->getOrderProducts($order_id));
@@ -47,7 +47,7 @@ class ControllerCheckoutSuccess extends Controller {
 //                        var_dump($this->model_account_order->getOrderProducts($order_id));
                         $commerse = '';
                         
-                        
+                        */
 		}
                 
 		$this->document->setTitle($this->language->get('heading_title'));
