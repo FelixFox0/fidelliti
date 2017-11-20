@@ -10,7 +10,9 @@ class ControllerProductProduct extends Controller {
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home', '', false, $this->session->data['country_code'], $this->session->data['language_name'])
+                        
 		);
+               
 
 		$this->load->model('catalog/category');
 
@@ -35,7 +37,7 @@ class ControllerProductProduct extends Controller {
 						'text' => $category_info['name'],
 						'href' => $this->url->link('product/category', 'path=' . $path, false, $this->session->data['country_code'], $this->session->data['language_name'])
 					);
-				}
+                                         		}
 			}
 
 			// Set the last category breadcrumb
@@ -213,6 +215,8 @@ class ControllerProductProduct extends Controller {
 				'text' => $product_info['name'],
 				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name'])
 			);
+                        $data['href'] = $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'], false, $this->session->data['country_code'], $this->session->data['language_name']);
+		
 
 			$this->document->setTitle($product_info['meta_title']);
                         $data['meta_title'] = $product_info['meta_title'];
@@ -303,8 +307,9 @@ class ControllerProductProduct extends Controller {
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
-				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 750, 1360, 100);
-				$data['popup_big'] = $this->model_tool_image->resize($product_info['image'], 283, 513);
+				$data['popup'] = $this->model_tool_image->resize($product_info['image'], 1920, 2880, 100);
+				$data['popup_big'] = $this->model_tool_image->resize($product_info['image'], 283, 283);
+                                $data['popup_orig'] = $this->model_tool_image->origin($product_info['image']);
 			} else {
 				$data['popup'] = '';
 			}
@@ -321,9 +326,10 @@ class ControllerProductProduct extends Controller {
 
 			foreach ($results as $result) {
 				$data['images'][] = array(
-					'popup' => $this->model_tool_image->resize($result['image'], 750, 1360, 100),
-					'popup_big' => $this->model_tool_image->resize($result['image'], 283, 513),
-					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+					'popup' => $this->model_tool_image->resize($result['image'], 1920, 2880, 100),
+					'popup_big' => $this->model_tool_image->resize($result['image'], 283, 283),
+					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height')),
+                                        'popup_orig' => $this->model_tool_image->origin($result['image']),
 				);
 			}
 

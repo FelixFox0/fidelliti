@@ -405,7 +405,7 @@ class ControllerDesignBanner extends Controller {
 		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 64)) {
 			$this->error['name'] = $this->language->get('error_name');
 		}
-
+/*
 		if (isset($this->request->post['banner_image'])) {
 			foreach ($this->request->post['banner_image'] as $banner_image_id => $banner_image) {
 				foreach ($banner_image['banner_image_description'] as $language_id => $banner_image_description) {
@@ -415,7 +415,7 @@ class ControllerDesignBanner extends Controller {
 				}
 			}
 		}
-
+*/
 		return !$this->error;
 	}
 

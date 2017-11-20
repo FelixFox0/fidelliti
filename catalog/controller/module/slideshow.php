@@ -30,7 +30,8 @@ class ControllerModuleSlideshow extends Controller {
 		foreach ($results as $result) {
 			if (is_file(DIR_IMAGE . $result['image'])) {
 				$data['banners'][] = array(
-					'title' => $result['title'],
+//					'title' => $result['title'],
+                                        'title'  => html_entity_decode($result['title']),
 					'link'  => $result['link'],
                                         'description'  => html_entity_decode($result['description']),
 					'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])

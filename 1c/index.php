@@ -14,8 +14,8 @@ if(isset($_GET['token'])){
                 echo 'Error: DB not exist';
                 die();
             }
-            if(isset($_POST['products'])){
-                $products = json_decode($_POST['products']);
+            if(isset($_GET['products'])){
+                $products = json_decode($_GET['products']);
 //                $products = (array) $products;
 //                var_dump($products);
                 foreach ($products as $key => $value) {
@@ -25,8 +25,10 @@ if(isset($_GET['token'])){
                     }else{
                         $stock_status_id = 8;
                     }
+                    
 //                    mysql_query("UPDATE " . $db_prefix . "product SET quantity = '" . (int)$value['quantity'] . "', stock_status_id = '" . (int)$stock_status_id . "', price = '" . (float)$value['price'] . "', status = '1', date_modified = NOW() WHERE sku = '" . $value['sku'] . "'");
-                    mysql_query("UPDATE " . $db_prefix . "product SET quantity = '" . (int)$value['quantity'] . "', stock_status_id = '" . (int)$stock_status_id . "', status = '1', date_modified = NOW() WHERE sku = '" . $value['sku'] . "'");
+                    mysql_query("UPDATE " . $db_prefix . "product SET quantity = '" . (int)$value['quantity'] . "', stock_status_id = '" . (int)$stock_status_id . "', date_modified = NOW() WHERE sku = '" . $value['sku'] . "'");
+                    
                     if (isset($value['size'])) {
 			foreach ($value['size'] as $key_size => $option_value) {
                             $option_value = (array) $option_value;

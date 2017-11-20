@@ -33,10 +33,18 @@ $('#slideshow<?php echo $module; ?>').owlCarousel({
       <?php foreach ($banners as $banner) { ?>
       <div class="main-slider__item item">
         <div class="main-slider__item-img">
-          <img src="<?php echo $banner['image']; ?>" alt="<?php echo $title; ?>">
+            <?php if ($banner['link']) { ?>
+                <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $title; ?>"></a>
+            <?php }else{ ?>
+                <img src="<?php echo $banner['image']; ?>" alt="<?php echo $title; ?>">
+            <?php } ?>
           <div class="main-slider__main">
+            <?php if ($banner['title']) { ?>
             <div class="main-slider__item-year"><?php echo $banner['title']; ?></div>
+            <?php } ?>
+            <?php if ($banner['description']) { ?>
             <h1 class="main-slider__item-name" style="letter-spacing: 0px;"><?php echo $banner['description']; ?></h1>
+            <?php } ?>
             <?php if ($banner['link']) { ?>
             <div class="main-slider__item-show-more"><a href="<?php echo $banner['link']; ?>" style="font-size: 12px; padding: 18px 42px; font-family: pt-medium;"><?php echo $text_link; ?></a></div>
             <?php } ?>
